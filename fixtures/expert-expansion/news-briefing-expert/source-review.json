@@ -1,0 +1,46 @@
+{
+  "reviewedAt": "2026-10-08",
+  "method": "Opened and read primary editorial standards from AP and Reuters and the RFC Editor's timestamp specification through web browsing. These sources inform workflow, not a claim that any current news was retrieved.",
+  "scope": "Source attribution, correction transparency, selective quotation, and known UTC offsets. No live story, breaking-news feed, subscription service, or current platform quota was verified.",
+  "sources": [
+    {
+      "title": "The Associated Press — Telling the Story",
+      "url": "https://www.ap.org/about/news-values-and-principles/telling-the-story/",
+      "reviewedSections": ["Use of Others' Material", "Providing Attribution", "Quotations", "Corrections/ Correctives"],
+      "reviewedFacts": [
+        "AP calls for attribution to original sources and vetting of information taken from the internet.",
+        "AP distinguishes brief credited use of others' material from retransmitting full stories and calls for clear correction labels.",
+        "AP stresses quotations in context and faithful translation."
+      ]
+    },
+    {
+      "title": "Reuters Journalistic Standards",
+      "url": "https://reutersagency.com/about/standards-values/",
+      "reviewedSections": ["Accuracy", "Corrections", "Sourcing", "Quotes", "Reporting from the Internet"],
+      "reviewedFacts": [
+        "Reuters prioritizes accuracy over speed, transparent correction, named and properly attributed sourcing, and cross-checking where possible.",
+        "Reuters explicitly cautions against describing a single source as plural sources."
+      ]
+    },
+    {
+      "title": "RFC 3339 — Date and Time on the Internet: Timestamps",
+      "url": "https://www.rfc-editor.org/info/rfc3339/",
+      "reviewedSections": ["4.2 Local Offsets", "4.4 Unqualified Local Time", "5.6 Internet Date/Time Format"],
+      "reviewedFacts": [
+        "A numeric local offset is local time minus UTC, enabling explicit cross-offset conversion.",
+        "Unqualified local time is ambiguous across locations; the brief preserves unknown offsets instead of inventing them."
+      ]
+    }
+  ],
+  "implementationInferences": [
+    "A repost of one article is a distribution copy, not independent corroboration of its claim.",
+    "For a retrospective cutoff, retrieval may occur later; later corrections should be presented separately rather than backdated into what was publicly known at cutoff.",
+    "A user-provided URL or screenshot is not proof that the original page was opened in the current task."
+  ],
+  "notVerified": [
+    "Any current news event or today's complete coverage",
+    "Any live source subscription, monitor, alert or delivery",
+    "The fictional .invalid example pages",
+    "Entitlement to reproduce any paywalled article"
+  ]
+}

@@ -1,0 +1,588 @@
+name: yuzhihuihe-api-platform
+
+x-postgres-password: &postgres-password ${POSTGRES_PASSWORD:-local-postgres-password}
+x-redis-password: &redis-password ${REDIS_PASSWORD:-local-redis-password}
+x-minio-user: &minio-user ${MINIO_ROOT_USER:-local-minio-admin}
+x-minio-password: &minio-password ${MINIO_ROOT_PASSWORD:-local-minio-password}
+# 必填项。这里刻意不提供内置默认值：这一个值既用于签署所有 /internal/** 调用，*又*（通过下面的
+# PAYMENT_MOCK_CALLBACK_SECRET）曾经兼任模拟支付回调的密钥。一旦把默认值提交进仓库，伪造回调就变得
+# 轻而易举，因此现在只要运维没有提供真实密钥，整套服务栈就拒绝启动。
+x-internal-hmac: &internal-hmac ${SECURITY_INTERNAL_HMAC_SECRET:?SECURITY_INTERNAL_HMAC_SECRET must be set to a private random value}
+x-document-converter-auth: &document-converter-auth ${DOCUMENT_CONVERTER_AUTH_TOKEN:?DOCUMENT_CONVERTER_AUTH_TOKEN must be set}
+
+services:
+  postgres:
+    image: postgres:17-alpine@sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73
+    environment:
+      POSTGRES_DB: api_model_platform
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: *postgres-password
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/001-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d api_model_platform"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  postgres-extensions:
+    image: postgres:17-alpine@sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      POSTGRES_PASSWORD: *postgres-password
+    entrypoint: ["/bin/sh", "-ec"]
+    command:
+      - |
+        export PGPASSWORD="$${POSTGRES_PASSWORD}"
+        psql -v ON_ERROR_STOP=1 -h postgres -U postgres -d api_model_platform \
+          -c "CREATE EXTENSION IF NOT EXISTS btree_gist WITH SCHEMA public;"
+    restart: "no"
+
+  redis:
+    image: redis:7.4-alpine@sha256:ff02b58f971e7d7d156a1267e283fcbbeee91773b6aa36c49dac28ecfe28eadf
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD:-local-redis-password}"]
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -a '${REDIS_PASSWORD:-local-redis-password}' ping | grep PONG"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  minio:
+    image: quay.io/minio/minio:RELEASE.2025-04-22T22-12-26Z@sha256:a1ea29fa28355559ef137d71fc570e508a214ec84ff8083e39bc5428980b015e
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: *minio-user
+      MINIO_ROOT_PASSWORD: *minio-password
+    volumes:
+      - minio-data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  minio-init:
+    image: quay.io/minio/mc:RELEASE.2025-04-16T18-13-26Z@sha256:aead63c77f9db9107f1696fb08ecb0faeda23729cde94b0f663edf4fe09728e3
+    depends_on:
+      minio:
+        condition: service_healthy
+    environment:
+      MINIO_ROOT_USER: *minio-user
+      MINIO_ROOT_PASSWORD: *minio-password
+      STORAGE_BUCKET: ${STORAGE_FILES_BUCKET:-api-model-platform-local}
+    entrypoint: ["/bin/sh", "-ec"]
+    command:
+      - |
+        until mc alias set local http://minio:9000 "$${MINIO_ROOT_USER}" "$${MINIO_ROOT_PASSWORD}"; do
+          sleep 1
+        done
+        mc mb --ignore-existing "local/$${STORAGE_BUCKET}"
+        mc anonymous set none "local/$${STORAGE_BUCKET}"
+    restart: "no"
+
+  wiremock:
+    image: wiremock/wiremock:3.13.1-alpine@sha256:59b04800ed8099194243f3dd1da728fd498df3ea9692a126de3ef9bf1c4aa9a2
+    command: ["--global-response-templating", "--verbose"]
+    volumes:
+      - ./wiremock:/home/wiremock:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://localhost:8080/__admin/health >/dev/null"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  clamav:
+    image: clamav/clamav:1.4.3@sha256:75fb5fd95fcbe1d7e6d240c369c1572b686ee2c95949d1042b5148de8eddebb4
+    environment:
+      CLAMD_CONF_StreamMaxLength: ${GATEWAY_SKILLS_MAX_PACKAGE_BYTES:-209715200}
+      CLAMD_CONF_MaxFileSize: ${GATEWAY_SKILLS_MAX_PACKAGE_BYTES:-209715200}
+      CLAMD_CONF_MaxScanSize: ${GATEWAY_SKILLS_MAX_EXTRACTED_BYTES:-524288000}
+    volumes:
+      - clamav-data:/var/lib/clamav
+    healthcheck:
+      test: ["CMD-SHELL", "clamdscan --ping 1 >/dev/null 2>&1"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 60s
+    restart: unless-stopped
+
+  document-converter:
+    image: yuzhihuihe/document-converter:local
+    build:
+      context: ../document-converter
+      dockerfile: Dockerfile
+    environment:
+      DOCUMENT_CONVERTER_AUTH_TOKEN: *document-converter-auth
+      DOCUMENT_CONVERTER_MAX_INPUT_BYTES: 20971520
+      DOCUMENT_CONVERTER_MAX_OUTPUT_BYTES: 20971520
+      DOCUMENT_CONVERTER_WORKERS: 2
+      DOCUMENT_CONVERTER_MAX_PENDING: 4
+      DOCUMENT_CONVERTER_TIMEOUT_MS: 20000
+      DOCUMENT_CONVERTER_KILL_REAP_TIMEOUT_MS: 1000
+    networks:
+      - converter
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 64
+    cpus: 1.0
+    mem_limit: 512m
+    tmpfs:
+      - /tmp:size=256m,mode=1770,uid=10001,gid=10001,noexec,nosuid,nodev
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8080/health/ready').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 20s
+    restart: unless-stopped
+
+  jwt-keygen:
+    image: node:22.17.0-alpine@sha256:fc3e945f920b7e3000cd1af86c4ae406ec70c72f328b667baf0f3a8910d69eed
+    environment:
+      JWT_KEY_ID: ${SECURITY_JWT_ACTIVE_KEY_ID:-local-platform-active}
+      JWT_KEY_PATH: /keys/platform-jwt-jwks.json
+    command: ["node", "/bootstrap/generate-jwt-key.mjs"]
+    volumes:
+      - jwt-keys:/keys
+      - ./bootstrap/generate-jwt-key.mjs:/bootstrap/generate-jwt-key.mjs:ro
+    restart: "no"
+
+  platform-service:
+    image: yuzhihuihe/platform-service:local
+    build:
+      context: ..
+      dockerfile: platform-service/Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+      postgres-extensions:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+      jwt-keygen:
+        condition: service_completed_successfully
+    environment:
+      # 可覆盖，以便真实部署脱离 'local' 开发 profile。注意内容安全的 MOCK 语义审核提供方只在
+      # local/test profile 下被接受，因此非 local 的 profile 还必须配置真实的提供方
+      # （见下方 CONTENT_SAFETY_*）。
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-local}
+      OTEL_TRACING_ENABLED: ${OTEL_TRACING_ENABLED:-false}
+      OTEL_HEAD_SAMPLING_PROBABILITY: ${OTEL_HEAD_SAMPLING_PROBABILITY:-0.1}
+      OTEL_TRACES_ENDPOINT: ${OTEL_TRACES_ENDPOINT:-http://otel-collector:4318/v1/traces}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/api_model_platform?currentSchema=platform
+      SPRING_DATASOURCE_USERNAME: platform_app
+      SPRING_DATASOURCE_PASSWORD: ${PLATFORM_DB_PASSWORD:-local-platform-password}
+      SPRING_FLYWAY_SCHEMAS: platform
+      SPRING_FLYWAY_DEFAULT_SCHEMA: platform
+      SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA: platform
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      SPRING_DATA_REDIS_PASSWORD: *redis-password
+      SECURITY_JWT_JWK_SET_LOCATION: file:/run/secrets/platform-jwt-jwks.json
+      SECURITY_JWT_ACTIVE_KEY_ID: ${SECURITY_JWT_ACTIVE_KEY_ID:-local-platform-active}
+      SECURITY_JWT_ISSUER: ${SECURITY_JWT_ISSUER:-yuzhihuihe-local}
+      SECURITY_INTERNAL_HMAC_SECRET: *internal-hmac
+      GATEWAY_INTERNAL_BASE_URL: http://gateway-service:8080
+      PAYMENT_MOCK_ENABLED: ${PAYMENT_MOCK_ENABLED:-false}
+      # 刻意不使用 *internal-hmac。模拟回调按设计就是不鉴权的，它唯一的闸门就是这个 HMAC，
+      # 因此它绝不能与签署 /internal/** 调用所用的密钥相同。
+      # 留空即故障关闭（fail-closed）：MockPaymentService 拒绝启动，所有回调一律被拒绝。
+      PAYMENT_MOCK_CALLBACK_SECRET: ${PAYMENT_MOCK_CALLBACK_SECRET:-}
+      PAYMENT_WECHAT_PAY_ENABLED: ${PAYMENT_WECHAT_PAY_ENABLED:-false}
+      PAYMENT_WECHAT_PAY_APP_ID: ${PAYMENT_WECHAT_PAY_APP_ID:-}
+      PAYMENT_WECHAT_PAY_MERCHANT_ID: ${PAYMENT_WECHAT_PAY_MERCHANT_ID:-}
+      PAYMENT_WECHAT_PAY_MERCHANT_PRIVATE_KEY_RESOURCE: ${PAYMENT_WECHAT_PAY_MERCHANT_PRIVATE_KEY_RESOURCE:-}
+      PAYMENT_WECHAT_PAY_API_V3_KEY: ${PAYMENT_WECHAT_PAY_API_V3_KEY:-}
+      PAYMENT_WECHAT_PAY_CERTIFICATE_SERIAL: ${PAYMENT_WECHAT_PAY_CERTIFICATE_SERIAL:-}
+      PAYMENT_WECHAT_PAY_PLATFORM_PUBLIC_KEY_RESOURCE: ${PAYMENT_WECHAT_PAY_PLATFORM_PUBLIC_KEY_RESOURCE:-}
+      PAYMENT_WECHAT_PAY_PLATFORM_PUBLIC_KEY_ID: ${PAYMENT_WECHAT_PAY_PLATFORM_PUBLIC_KEY_ID:-}
+      PAYMENT_WECHAT_PAY_NOTIFY_URL: ${PAYMENT_WECHAT_PAY_NOTIFY_URL:-}
+      PAYMENT_WECHAT_PAY_CONNECT_TIMEOUT: ${PAYMENT_WECHAT_PAY_CONNECT_TIMEOUT:-3s}
+      PAYMENT_WECHAT_PAY_READ_TIMEOUT: ${PAYMENT_WECHAT_PAY_READ_TIMEOUT:-10s}
+      PAYMENT_WECHAT_PAY_TOTAL_OPERATION_TIMEOUT: ${PAYMENT_WECHAT_PAY_TOTAL_OPERATION_TIMEOUT:-15s}
+      PAYMENT_ALIPAY_ENABLED: ${PAYMENT_ALIPAY_ENABLED:-false}
+      PAYMENT_ALIPAY_APP_ID: ${PAYMENT_ALIPAY_APP_ID:-}
+      PAYMENT_ALIPAY_APPLICATION_PRIVATE_KEY_RESOURCE: ${PAYMENT_ALIPAY_APPLICATION_PRIVATE_KEY_RESOURCE:-}
+      PAYMENT_ALIPAY_ALIPAY_PUBLIC_KEY_RESOURCE: ${PAYMENT_ALIPAY_ALIPAY_PUBLIC_KEY_RESOURCE:-}
+      PAYMENT_ALIPAY_SELLER_ID: ${PAYMENT_ALIPAY_SELLER_ID:-}
+      PAYMENT_ALIPAY_GATEWAY_URL: ${PAYMENT_ALIPAY_GATEWAY_URL:-https://openapi.alipay.com/gateway.do}
+      PAYMENT_ALIPAY_NOTIFY_URL: ${PAYMENT_ALIPAY_NOTIFY_URL:-}
+      PAYMENT_ALIPAY_RETURN_URL: ${PAYMENT_ALIPAY_RETURN_URL:-}
+      PAYMENT_ALIPAY_CHARSET: ${PAYMENT_ALIPAY_CHARSET:-UTF-8}
+      PAYMENT_ALIPAY_SIGN_TYPE: ${PAYMENT_ALIPAY_SIGN_TYPE:-RSA2}
+      PAYMENT_ALIPAY_CONNECT_TIMEOUT: ${PAYMENT_ALIPAY_CONNECT_TIMEOUT:-3s}
+      PAYMENT_ALIPAY_READ_TIMEOUT: ${PAYMENT_ALIPAY_READ_TIMEOUT:-10s}
+      PAYMENT_ALIPAY_TOTAL_OPERATION_TIMEOUT: ${PAYMENT_ALIPAY_TOTAL_OPERATION_TIMEOUT:-15s}
+      PAYMENT_ALIPAY_WAP_APP_ID: ${PAYMENT_ALIPAY_WAP_APP_ID:-}
+      PAYMENT_ALIPAY_WAP_ENABLED: ${PAYMENT_ALIPAY_WAP_ENABLED:-false}
+      PAYMENT_ALIPAY_WAP_APPLICATION_PRIVATE_KEY_RESOURCE: ${PAYMENT_ALIPAY_WAP_APPLICATION_PRIVATE_KEY_RESOURCE:-}
+      PAYMENT_ALIPAY_WAP_ALIPAY_PUBLIC_KEY_RESOURCE: ${PAYMENT_ALIPAY_WAP_ALIPAY_PUBLIC_KEY_RESOURCE:-}
+      PAYMENT_ALIPAY_WAP_SELLER_ID: ${PAYMENT_ALIPAY_WAP_SELLER_ID:-${PAYMENT_ALIPAY_SELLER_ID:-}}
+      PAYMENT_ALIPAY_WAP_RETURN_URL: ${PAYMENT_ALIPAY_WAP_RETURN_URL:-${PAYMENT_ALIPAY_RETURN_URL:-}}
+      PAYMENT_ORDER_EXPIRY: ${PAYMENT_ORDER_EXPIRY:-15m}
+      PAYMENT_JOBS_BATCH_SIZE: ${PAYMENT_JOBS_BATCH_SIZE:-50}
+      PAYMENT_JOBS_CLAIM_TIMEOUT: ${PAYMENT_JOBS_CLAIM_TIMEOUT:-30s}
+      PAYMENT_JOBS_INITIAL_BACKOFF: ${PAYMENT_JOBS_INITIAL_BACKOFF:-5s}
+      PAYMENT_JOBS_MAX_BACKOFF: ${PAYMENT_JOBS_MAX_BACKOFF:-1h}
+      PAYMENT_JOBS_MAX_ATTEMPTS: ${PAYMENT_JOBS_MAX_ATTEMPTS:-12}
+      PAYMENT_JOBS_EXPIRED_ORDER_DELAY_MS: ${PAYMENT_JOBS_EXPIRED_ORDER_DELAY_MS:-5000}
+      PAYMENT_JOBS_RECHARGE_EXPIRY_DELAY_MS: ${PAYMENT_JOBS_RECHARGE_EXPIRY_DELAY_MS:-5000}
+      PAYMENT_JOBS_COMPENSATION_DELAY_MS: ${PAYMENT_JOBS_COMPENSATION_DELAY_MS:-5000}
+      REFUND_JOBS_PREPARATION_DELAY_MS: ${REFUND_JOBS_PREPARATION_DELAY_MS:-5000}
+      REFUND_JOBS_COMPENSATION_DELAY_MS: ${REFUND_JOBS_COMPENSATION_DELAY_MS:-10000}
+      REFUND_JOBS_BATCH_SIZE: ${REFUND_JOBS_BATCH_SIZE:-50}
+      REFUND_JOBS_CLAIM_TIMEOUT: ${REFUND_JOBS_CLAIM_TIMEOUT:-30s}
+      REFUND_JOBS_INITIAL_BACKOFF: ${REFUND_JOBS_INITIAL_BACKOFF:-5s}
+      REFUND_JOBS_MAX_BACKOFF: ${REFUND_JOBS_MAX_BACKOFF:-1h}
+      REFUND_JOBS_MAX_ATTEMPTS: ${REFUND_JOBS_MAX_ATTEMPTS:-12}
+      REFUND_PROVIDER_NOTIFY_URL: ${REFUND_PROVIDER_NOTIFY_URL:-https://localhost/console/platform/refunds/wechat-pay/callback}
+      RECONCILIATION_JOB_ENABLED: ${RECONCILIATION_JOB_ENABLED:-true}
+      RECONCILIATION_DAILY_CRON: ${RECONCILIATION_DAILY_CRON:-0 30 2 * * *}
+      RECONCILIATION_ZONE: ${RECONCILIATION_ZONE:-Asia/Shanghai}
+      RECONCILIATION_MAX_BILL_BYTES: ${RECONCILIATION_MAX_BILL_BYTES:-52428800}
+      RECONCILIATION_MAX_RECORDS: ${RECONCILIATION_MAX_RECORDS:-1000000}
+      OPERATING_BACKFILL_BATCH_SIZE: ${OPERATING_BACKFILL_BATCH_SIZE:-500}
+      OPERATING_BACKFILL_FIXED_DELAY_MS: ${OPERATING_BACKFILL_FIXED_DELAY_MS:-60000}
+      # 连续包月自动续费。enabled 默认 false：上线顺序必须是
+      # 「迁移 → 后端 → 前端 → 打开调度」，默认开启会在存量订阅被核对之前就开始扣款。
+      SUBSCRIPTION_JOBS_ENABLED: ${SUBSCRIPTION_JOBS_ENABLED:-false}
+      SUBSCRIPTION_JOBS_BATCH_SIZE: ${SUBSCRIPTION_JOBS_BATCH_SIZE:-50}
+      SUBSCRIPTION_JOBS_RENEWAL_DELAY_MS: ${SUBSCRIPTION_JOBS_RENEWAL_DELAY_MS:-60000}
+      SUBSCRIPTION_JOBS_CLAIM_TIMEOUT: ${SUBSCRIPTION_JOBS_CLAIM_TIMEOUT:-5m}
+      SUBSCRIPTION_JOBS_INITIAL_BACKOFF: ${SUBSCRIPTION_JOBS_INITIAL_BACKOFF:-1h}
+      SUBSCRIPTION_JOBS_MAX_BACKOFF: ${SUBSCRIPTION_JOBS_MAX_BACKOFF:-24h}
+      SUBSCRIPTION_JOBS_MAX_ATTEMPTS: ${SUBSCRIPTION_JOBS_MAX_ATTEMPTS:-3}
+      SUBSCRIPTION_JOBS_GRACE_PERIOD: ${SUBSCRIPTION_JOBS_GRACE_PERIOD:-7d}
+      SUBSCRIPTION_JOBS_CHARGE_LEAD_TIME: ${SUBSCRIPTION_JOBS_CHARGE_LEAD_TIME:-24h}
+      SUBSCRIPTION_JOBS_MAX_RENEWALS: ${SUBSCRIPTION_JOBS_MAX_RENEWALS:-36}
+      SUBSCRIPTION_JOBS_STUCK_QUEUED_ALERT_AFTER: ${SUBSCRIPTION_JOBS_STUCK_QUEUED_ALERT_AFTER:-45d}
+      SUBSCRIPTION_JOBS_PRICE_INCREASE_REQUIRES_CONFIRMATION: ${SUBSCRIPTION_JOBS_PRICE_INCREASE_REQUIRES_CONFIRMATION:-true}
+      # 只有这些 profile 才允许关掉上面那条合规开关；否则 platform-service 拒绝启动。
+      SUBSCRIPTION_JOBS_PRICE_INCREASE_OVERRIDE_ALLOWED_PROFILES: ${SUBSCRIPTION_JOBS_PRICE_INCREASE_OVERRIDE_ALLOWED_PROFILES:-local,test,integration}
+      # 涨价报价待用户确认的时限，超时则终止订阅。下限 24h（代码里强制）：
+      # 扣款发生在周期结束前 CHARGE_LEAD_TIME，用户在扣款之后仍需要一段可回应的时间。
+      SUBSCRIPTION_JOBS_PRICE_CONFIRMATION_TIMEOUT: ${SUBSCRIPTION_JOBS_PRICE_CONFIRMATION_TIMEOUT:-30d}
+      # 必填，不给默认值。若留空，这两个值会回退到 LoginActivityService/DeviceIdentityService 中
+      # 提交进仓库的公开常量、以及一个已提交的 HMAC 密钥——但仅在当前所有激活 profile 都是
+      # local/test 时才会这样，而默认 profile 正是 local。
+      # 把它们设为必填，就意味着没有任何部署能用公开的 pepper 悄悄做设备指纹。
+      LOGIN_RISK_PEPPER: ${LOGIN_RISK_PEPPER:?LOGIN_RISK_PEPPER must be set to a private random value}
+      PASSWORD_LOGIN_RATE_LIMIT_HMAC_KEY: ${PASSWORD_LOGIN_RATE_LIMIT_HMAC_KEY:?PASSWORD_LOGIN_RATE_LIMIT_HMAC_KEY must be set to a private random value}
+      PASSWORD_LOGIN_ACCOUNT_LIMIT: ${PASSWORD_LOGIN_ACCOUNT_LIMIT:-5}
+      PASSWORD_LOGIN_ACCOUNT_WINDOW: ${PASSWORD_LOGIN_ACCOUNT_WINDOW:-15m}
+      PASSWORD_LOGIN_IP_LIMIT: ${PASSWORD_LOGIN_IP_LIMIT:-20}
+      PASSWORD_LOGIN_IP_WINDOW: ${PASSWORD_LOGIN_IP_WINDOW:-10m}
+      PASSWORD_LOGIN_BLOCK_DURATION: ${PASSWORD_LOGIN_BLOCK_DURATION:-15m}
+      GEOIP_V4_DATA_SOURCE: ${GEOIP_V4_DATA_SOURCE:-/run/geoip/ip2region_v4.xdb}
+      GEOIP_V6_DATA_SOURCE: ${GEOIP_V6_DATA_SOURCE:-/run/geoip/ip2region_v6.xdb}
+      # 短信是选择加入（opt-in）的功能，绝不能继承任何可用的密钥。它过去的默认值是
+      # SMS_ENABLED=true + SMS_PROVIDER=mock 外加四个提交进仓库的 base64 密钥，于是只要某个部署
+      # 忘了配置短信，就会悄悄启用该子系统，用本仓库里公开的密钥去加密手机号、哈希登录验证码，
+      # 而且一条消息也发不出去（mock 提供方会丢弃每条消息）。这些密钥的每个消费方都会在启动时
+      # 拒绝空值（sms_phone_lookup_key_required、sms_code_pepper_required、
+      # sms_request_ip_key_required、invalid_secret_master_key），因此空默认值把一次静默的错误
+      # 配置变成了一次响亮的启动失败。
+      SMS_ENABLED: ${SMS_ENABLED:-false}
+      SMS_PROVIDER: ${SMS_PROVIDER:-aliyun}
+      SMS_ENCRYPTION_KEY: ${SMS_ENCRYPTION_KEY:-}
+      SMS_PHONE_LOOKUP_KEY: ${SMS_PHONE_LOOKUP_KEY:-}
+      SMS_CODE_PEPPER: ${SMS_CODE_PEPPER:-}
+      SMS_REQUEST_IP_KEY: ${SMS_REQUEST_IP_KEY:-}
+      SMS_CAPTCHA_ENABLED: ${SMS_CAPTCHA_ENABLED:-true}
+      SMS_CAPTCHA_CHALLENGE_LIFETIME: ${SMS_CAPTCHA_CHALLENGE_LIFETIME:-120s}
+      SMS_CAPTCHA_PROOF_LIFETIME: ${SMS_CAPTCHA_PROOF_LIFETIME:-120s}
+      SMS_CAPTCHA_ISSUE_IP_LIMIT: ${SMS_CAPTCHA_ISSUE_IP_LIMIT:-10}
+      NOTIFICATION_FANOUT_BATCH_SIZE: ${NOTIFICATION_FANOUT_BATCH_SIZE:-50}
+      NOTIFICATION_FANOUT_FIXED_DELAY: ${NOTIFICATION_FANOUT_FIXED_DELAY:-5000}
+      NOTIFICATION_BROADCAST_BATCH_SIZE: ${NOTIFICATION_BROADCAST_BATCH_SIZE:-50}
+      NOTIFICATION_BROADCAST_FIXED_DELAY: ${NOTIFICATION_BROADCAST_FIXED_DELAY:-5000}
+      NOTIFICATION_WALLET_DIGEST_CRON: ${NOTIFICATION_WALLET_DIGEST_CRON:-0 0 9 * * *}
+      SMS_ALIYUN_ENDPOINT: ${SMS_ALIYUN_ENDPOINT:-dysmsapi.aliyuncs.com}
+      SMS_ALIYUN_ACCESS_KEY_ID: ${SMS_ALIYUN_ACCESS_KEY_ID:-}
+      SMS_ALIYUN_ACCESS_KEY_SECRET: ${SMS_ALIYUN_ACCESS_KEY_SECRET:-}
+      SMS_ALIYUN_SIGN_NAME: ${SMS_ALIYUN_SIGN_NAME:-宇智汇和东莞科技}
+      SMS_ALIYUN_REGION_ID: ${SMS_ALIYUN_REGION_ID:-cn-hangzhou}
+      EMAIL_ENABLED: ${EMAIL_ENABLED:-false}
+      EMAIL_CODE_PEPPER: ${EMAIL_CODE_PEPPER:-}
+      EMAIL_SMTP_HOST: ${EMAIL_SMTP_HOST:-}
+      EMAIL_SMTP_PORT: ${EMAIL_SMTP_PORT:-465}
+      EMAIL_SMTP_USERNAME: ${EMAIL_SMTP_USERNAME:-}
+      EMAIL_SMTP_PASSWORD: ${EMAIL_SMTP_PASSWORD:-}
+      EMAIL_FROM: ${EMAIL_FROM:-}
+      EMAIL_FROM_NAME: ${EMAIL_FROM_NAME:-一加AI中台}
+      EMAIL_REPLY_TO: ${EMAIL_REPLY_TO:-}
+      PLATFORM_CONSENT_VERSION: ${PLATFORM_CONSENT_VERSION:-2026-09-15}
+      SECURITY_COOKIES_SECURE: "false"
+    # 没有显式上限时，一个被攻陷或仅仅只是过载的服务就能把整台宿主机吃满，并把 postgres 一起拖垮。
+    # 相对于观测到的稳态用量，这些限额刻意给得宽松；它们的作用是兜住失控，而不是调优性能。
+    # 丢弃 capabilities 是因为这两个服务在绑定 :8080 之后都不再需要任何 capability。
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 512
+    cpus: 2.0
+    mem_limit: 2g
+    volumes:
+      - jwt-keys:/run/secrets:ro
+      - ./geoip:/run/geoip:ro
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          test -s /run/geoip/ip2region_v4.xdb &&
+          test -s /run/geoip/ip2region_v6.xdb &&
+          curl -fsS http://localhost:8080/actuator/health/readiness
+      interval: 5s
+      timeout: 3s
+      retries: 30
+      start_period: 20s
+    restart: unless-stopped
+
+  gateway-service:
+    image: yuzhihuihe/gateway-service:local
+    build:
+      context: ..
+      dockerfile: gateway-service/Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+      wiremock:
+        condition: service_healthy
+      clamav:
+        condition: service_healthy
+    environment:
+      # 可覆盖，以便真实部署脱离 'local' 开发 profile。注意内容安全的 MOCK 语义审核提供方只在
+      # local/test profile 下被接受，因此非 local 的 profile 还必须配置真实的提供方
+      # （见下方 CONTENT_SAFETY_*）。
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-local}
+      OTEL_TRACING_ENABLED: ${OTEL_TRACING_ENABLED:-false}
+      OTEL_HEAD_SAMPLING_PROBABILITY: ${OTEL_HEAD_SAMPLING_PROBABILITY:-0.1}
+      OTEL_TRACES_ENDPOINT: ${OTEL_TRACES_ENDPOINT:-http://otel-collector:4318/v1/traces}
+      SPRING_R2DBC_URL: r2dbc:postgresql://postgres:5432/api_model_platform?schema=gateway
+      SPRING_R2DBC_USERNAME: gateway_app
+      SPRING_R2DBC_PASSWORD: ${GATEWAY_DB_PASSWORD:-local-gateway-password}
+      SPRING_FLYWAY_URL: jdbc:postgresql://postgres:5432/api_model_platform?currentSchema=gateway
+      SPRING_FLYWAY_USER: gateway_app
+      SPRING_FLYWAY_PASSWORD: ${GATEWAY_DB_PASSWORD:-local-gateway-password}
+      SPRING_FLYWAY_SCHEMAS: gateway
+      SPRING_FLYWAY_DEFAULT_SCHEMA: gateway
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      SPRING_DATA_REDIS_PASSWORD: *redis-password
+      # 必填：这三个是仅有的、用于保护 API 密钥存储与上游提供方凭证的服务端密钥。
+      # 它们绝不能回退到提交进仓库的默认值。
+      SECURITY_API_KEY_PEPPER: ${SECURITY_API_KEY_PEPPER:?SECURITY_API_KEY_PEPPER must be set to a private random value}
+      GATEWAY_SECRETS_ENCRYPTION_KEY: ${GATEWAY_SECRETS_ENCRYPTION_KEY:?GATEWAY_SECRETS_ENCRYPTION_KEY must be set to a base64-encoded 32-byte key}
+      GATEWAY_CLIENT_API_BASE_URL: ${GATEWAY_CLIENT_API_BASE_URL:-http://127.0.0.1:18081/v1}
+      GATEWAY_SKILLS_ROOT: /app/skills
+      # 技能目录以受管的数据库为权威来源；filesystem 只是一种显式的回滚模式。
+      GATEWAY_SKILLS_SOURCE: ${GATEWAY_SKILLS_SOURCE:-database}
+      GATEWAY_SKILLS_MAX_FILE_BYTES: ${GATEWAY_SKILLS_MAX_FILE_BYTES:-1048576}
+      GATEWAY_SKILLS_MAX_TOTAL_BYTES: ${GATEWAY_SKILLS_MAX_TOTAL_BYTES:-4194304}
+      GATEWAY_SKILLS_MAX_FILES_PER_SKILL: ${GATEWAY_SKILLS_MAX_FILES_PER_SKILL:-64}
+      GATEWAY_SKILLS_MAX_PACKAGE_BYTES: ${GATEWAY_SKILLS_MAX_PACKAGE_BYTES:-209715200}
+      GATEWAY_SKILLS_FILESYSTEM_ARCHIVE_CACHE_MAX_ENTRIES: ${GATEWAY_SKILLS_FILESYSTEM_ARCHIVE_CACHE_MAX_ENTRIES:-64}
+      GATEWAY_SKILLS_FILESYSTEM_ARCHIVE_CACHE_MAX_BYTES: ${GATEWAY_SKILLS_FILESYSTEM_ARCHIVE_CACHE_MAX_BYTES:-64MB}
+      GATEWAY_SKILLS_FILESYSTEM_DOWNLOAD_MAX_SESSIONS: ${GATEWAY_SKILLS_FILESYSTEM_DOWNLOAD_MAX_SESSIONS:-1000}
+      GATEWAY_SKILLS_FILESYSTEM_DOWNLOAD_MAX_ARCHIVE_BYTES: ${GATEWAY_SKILLS_FILESYSTEM_DOWNLOAD_MAX_ARCHIVE_BYTES:-512MB}
+      GATEWAY_SKILLS_MAX_EXTRACTED_BYTES: ${GATEWAY_SKILLS_MAX_EXTRACTED_BYTES:-524288000}
+      GATEWAY_SKILLS_MAX_PACKAGE_ENTRIES: ${GATEWAY_SKILLS_MAX_PACKAGE_ENTRIES:-2000}
+      GATEWAY_SKILLS_MIN_COMPRESSION_RATIO: ${GATEWAY_SKILLS_MIN_COMPRESSION_RATIO:-100}
+      GATEWAY_SKILLS_ICON_MAX_BYTES: ${GATEWAY_SKILLS_ICON_MAX_BYTES:-4194304}
+      GATEWAY_SKILLS_DELETED_RETENTION: ${GATEWAY_SKILLS_DELETED_RETENTION:-30d}
+      GATEWAY_SKILLS_DOWNLOAD_SESSION_TTL: ${GATEWAY_SKILLS_DOWNLOAD_SESSION_TTL:-24h}
+      GATEWAY_SKILLS_LOG_RETENTION: ${GATEWAY_SKILLS_LOG_RETENTION:-90d}
+      GATEWAY_SKILLS_DOWNLOAD_LIMIT: ${GATEWAY_SKILLS_DOWNLOAD_LIMIT:-60}
+      GATEWAY_SKILLS_DOWNLOAD_WINDOW: ${GATEWAY_SKILLS_DOWNLOAD_WINDOW:-1m}
+      GATEWAY_SKILLS_DOWNLOAD_RATE_LIMIT_TIMEOUT: ${GATEWAY_SKILLS_DOWNLOAD_RATE_LIMIT_TIMEOUT:-1s}
+      GATEWAY_SKILLS_CLEANUP_BATCH_SIZE: ${GATEWAY_SKILLS_CLEANUP_BATCH_SIZE:-500}
+      GATEWAY_SKILLS_CLEANUP_MAX_DOWNLOAD_BATCHES: ${GATEWAY_SKILLS_CLEANUP_MAX_DOWNLOAD_BATCHES:-20}
+      GATEWAY_SKILLS_CLEANUP_DELAY_MS: ${GATEWAY_SKILLS_CLEANUP_DELAY_MS:-3600000}
+      GATEWAY_SKILLS_CLEANUP_INITIAL_DELAY_MS: ${GATEWAY_SKILLS_CLEANUP_INITIAL_DELAY_MS:-3600000}
+      SECURITY_INTERNAL_HMAC_SECRET: *internal-hmac
+      SECURITY_JWT_JWK_SET_URI: http://platform-service:8080/.well-known/jwks.json
+      SECURITY_JWT_ISSUER: ${SECURITY_JWT_ISSUER:-yuzhihuihe-local}
+      GATEWAY_CONSOLE_TOKEN_VALIDATION_URI: http://platform-service:8080/console/platform/auth/validate
+      STORAGE_FILES_ENDPOINT: http://minio:9000
+      STORAGE_FILES_REGION: ${STORAGE_FILES_REGION:-us-east-1}
+      STORAGE_FILES_ACCESS_KEY: *minio-user
+      STORAGE_FILES_SECRET_KEY: *minio-password
+      STORAGE_FILES_BUCKET: ${STORAGE_FILES_BUCKET:-api-model-platform-local}
+      # 公网匿名读图（图生图用）：厂商（天翼）自己去拉客户端上传回来的参考图。
+      # 不设置 GATEWAY_FILES_CONTENT_TOKEN_SECRET 时整个功能关闭——
+      # /v1/files/{id}/content 一律 404、生图的 image_file_id 一律 501，
+      # 图生图退回「调用方自备公网图片 URL」。这是一条需要显式开启的能力。
+      GATEWAY_FILES_CONTENT_TOKEN_SECRET: ${GATEWAY_FILES_CONTENT_TOKEN_SECRET:-}
+      GATEWAY_FILES_CONTENT_TOKEN_TTL: ${GATEWAY_FILES_CONTENT_TOKEN_TTL:-10m}
+      # 匿名读图端点的限流（按来源 IP 固定窗口）。设计文档
+      # docs/operations/图生图方案B-网关中转设计.md:71 把它列为必做项：
+      # 「必须限流（否则被当免费图床）…超限 429」。默认 120 次/分钟既覆盖厂商的
+      # 批量与重试，也把单 IP 出口压在约 2.4 GiB/分钟以内（120 × 20 MiB 上限）。
+      # FAIL_CLOSED 默认 true：Redis 不可用时返回 503 而不是放行——
+      # 限流器不能降级成"全部放行"，否则一次 Redis 抖动就等于把免费图床的门打开。
+      GATEWAY_FILES_CONTENT_TOKEN_RATE_LIMIT_PER_IP: ${GATEWAY_FILES_CONTENT_TOKEN_RATE_LIMIT_PER_IP:-120}
+      GATEWAY_FILES_CONTENT_TOKEN_RATE_LIMIT_WINDOW: ${GATEWAY_FILES_CONTENT_TOKEN_RATE_LIMIT_WINDOW:-1m}
+      GATEWAY_FILES_CONTENT_TOKEN_RATE_LIMIT_FAIL_CLOSED: ${GATEWAY_FILES_CONTENT_TOKEN_RATE_LIMIT_FAIL_CLOSED:-true}
+      GATEWAY_PUBLIC_BASE_URL: ${GATEWAY_PUBLIC_BASE_URL:-https://api.yuzhh.com}
+      DOCUMENT_CONVERTER_BASE_URL: http://document-converter:8080
+      DOCUMENT_CONVERTER_AUTH_TOKEN: *document-converter-auth
+      DOCUMENT_CONVERTER_ALLOW_INSECURE_LOCAL: "true"
+      DOCUMENT_CONVERTER_ALLOWED_HOSTS: document-converter
+      DOCUMENT_CONVERTER_MAX_OUTPUT_BYTES: 20971520
+      DOCUMENT_CONVERTER_TIMEOUT: 20s
+      CONTENT_SAFETY_ENABLED: ${CONTENT_SAFETY_ENABLED:-true}
+      CONTENT_SAFETY_FAIL_CLOSED: ${CONTENT_SAFETY_FAIL_CLOSED:-true}
+      CONTENT_SAFETY_SEMANTIC_PROVIDER: ${CONTENT_SAFETY_SEMANTIC_PROVIDER:-MOCK}
+      CONTENT_SAFETY_SEMANTIC_BASE_URL: ${CONTENT_SAFETY_SEMANTIC_BASE_URL:-http://wiremock:8080}
+      # 与上面的 PROVIDER 默认值 MOCK 配套：**默认必须是 true，否则这个组合自相矛盾。**
+      # SemanticSafetyProviderRegistry 要求「用 MOCK」必须同时满足 allow-mock=true
+      # 且 profile ∈ {local,test}；PROVIDER 默认 MOCK 而这里默认 false 时，
+      # 任何一次重启都会让网关以 content_safety_mock_provider_not_allowed 启动失败。
+      # 2026-10-12 生产实测踩到过：一份"碰巧一直没被重启触发"的非法配置，
+      # 在镜像重建后立刻让网关崩溃循环约 25 分钟。生产已改，这里同步。
+      CONTENT_SAFETY_SEMANTIC_ALLOW_MOCK: ${CONTENT_SAFETY_SEMANTIC_ALLOW_MOCK:-true}
+      CONTENT_SAFETY_SEMANTIC_CREDENTIAL: ${CONTENT_SAFETY_SEMANTIC_CREDENTIAL:-local-content-safety-only}
+      CONTENT_SAFETY_CLAMAV_ENABLED: ${CONTENT_SAFETY_CLAMAV_ENABLED:-true}
+      CONTENT_SAFETY_CLAMAV_HOST: ${CONTENT_SAFETY_CLAMAV_HOST:-clamav}
+      CONTENT_SAFETY_CLAMAV_PORT: ${CONTENT_SAFETY_CLAMAV_PORT:-3310}
+      CONTENT_SAFETY_CLAMAV_CONNECT_TIMEOUT: ${CONTENT_SAFETY_CLAMAV_CONNECT_TIMEOUT:-2s}
+      CONTENT_SAFETY_CLAMAV_READ_TIMEOUT: ${CONTENT_SAFETY_CLAMAV_READ_TIMEOUT:-10m}
+      CONTENT_SAFETY_OUTBOX_ENABLED: ${CONTENT_SAFETY_OUTBOX_ENABLED:-true}
+      CONTENT_SAFETY_OUTBOX_BATCH_SIZE: ${CONTENT_SAFETY_OUTBOX_BATCH_SIZE:-100}
+      CONTENT_SAFETY_OUTBOX_LEASE: ${CONTENT_SAFETY_OUTBOX_LEASE:-5m}
+      CONTENT_SAFETY_OUTBOX_INITIAL_BACKOFF: ${CONTENT_SAFETY_OUTBOX_INITIAL_BACKOFF:-1m}
+      CONTENT_SAFETY_OUTBOX_MAXIMUM_BACKOFF: ${CONTENT_SAFETY_OUTBOX_MAXIMUM_BACKOFF:-1h}
+      CONTENT_SAFETY_OUTBOX_MAXIMUM_ATTEMPTS: ${CONTENT_SAFETY_OUTBOX_MAXIMUM_ATTEMPTS:-10}
+      CONTENT_SAFETY_OUTBOX_DELIVERY_TIMEOUT: ${CONTENT_SAFETY_OUTBOX_DELIVERY_TIMEOUT:-10s}
+      CONTENT_SAFETY_OUTBOX_INITIAL_DELAY: ${CONTENT_SAFETY_OUTBOX_INITIAL_DELAY:-10s}
+      CONTENT_SAFETY_OUTBOX_FIXED_DELAY: ${CONTENT_SAFETY_OUTBOX_FIXED_DELAY:-5s}
+    # 两个 JVM 都以 -XX:MaxRAMPercentage=75.0 运行，因此没有容器限额时，它们各自会按整台宿主机的
+    # 内存去规划堆大小。真正起到约束作用的正是这个限额。
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 512
+    cpus: 2.0
+    mem_limit: 2g
+    volumes:
+      - ../skills:/app/skills:ro
+    networks:
+      - default
+      - converter
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8080/actuator/health/readiness"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+      start_period: 20s
+    restart: unless-stopped
+
+  local-bootstrap:
+    image: postgres:17-alpine@sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73
+    depends_on:
+      platform-service:
+        condition: service_healthy
+      gateway-service:
+        condition: service_healthy
+    environment:
+      POSTGRES_PASSWORD: *postgres-password
+      LOCAL_ADMIN_EMAIL: ${LOCAL_ADMIN_EMAIL:-admin@local.test}
+      LOCAL_ADMIN_PASSWORD: ${LOCAL_ADMIN_PASSWORD:?LOCAL_ADMIN_PASSWORD must be set to a private random value}
+    volumes:
+      - ./postgres/bootstrap-local.sql:/bootstrap/bootstrap-local.sql:ro
+    entrypoint: ["/bin/sh", "-ec"]
+    command:
+      - |
+        export PGPASSWORD="$${POSTGRES_PASSWORD}"
+        psql -h postgres -U postgres -d api_model_platform \
+          -v admin_email="$${LOCAL_ADMIN_EMAIL}" \
+          -v admin_password="$${LOCAL_ADMIN_PASSWORD}" \
+          -f /bootstrap/bootstrap-local.sql
+    restart: "no"
+
+  web-console:
+    image: yuzhihuihe/web-console:local
+    build:
+      context: ../web-console
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-http://8.138.108.191/v1}
+    # 官方 nginx 镜像的 entrypoint 会把 /var/cache/nginx 的属主改成 uid 101，并为 worker 降权，
+    # 因此需要 CHOWN/SETGID/SETUID；其余所有默认 capability
+    # （AUDIT_WRITE、KILL、MKNOD、NET_RAW、SETFCAP 等）都被丢弃。
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 128
+    cpus: 0.5
+    mem_limit: 256m
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "-", "http://127.0.0.1:8080/healthz"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:1.27.5-alpine@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10
+    depends_on:
+      local-bootstrap:
+        condition: service_completed_successfully
+      minio-init:
+        condition: service_completed_successfully
+      web-console:
+        condition: service_healthy
+    ports:
+      - "${NGINX_PORT:-18081}:8080"
+    # nginx 监听的是非特权端口 8080，但官方镜像的 entrypoint 与 worker 降权仍然需要
+    # CHOWN/SETGID/SETUID。参见上方的 web-console。
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 256
+    cpus: 1.0
+    mem_limit: 256m
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1:8080/health/platform >/dev/null && wget -q -O - http://127.0.0.1:8080/health/gateway >/dev/null"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+  redis-data:
+  minio-data:
+  jwt-keys:
+  clamav-data:
+
+networks:
+  converter:
+    internal: true

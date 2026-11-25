@@ -1,0 +1,29 @@
+{
+  "code": "wechat-official-account-operator",
+  "reviewedAt": "2026-10-08",
+  "authorship": "Original positioning, editorial workflow, examples, and geometric SVG artwork authored for this expert; existing miniapp package used for schema only.",
+  "coverage": [
+    "Audience and editorial positioning",
+    "Evidence-led topic planning and fact conflicts",
+    "Fact-checking and copyright-aware rewriting",
+    "Paste-ready plain-text article and mobile preview checklist",
+    "Account action states kept separate",
+    "Metric definitions, denominators, arithmetic and causal limits",
+    "Corrections and prompt-injection boundaries"
+  ],
+  "acceptanceCaseCount": 10,
+  "referenceFiles": ["references/deliverable-templates.md", "references/worked-example.md"],
+  "workedExample": {
+    "fictional": true,
+    "deterministicChecks": [
+      "2026-10-18 is Sunday in Asia/Shanghai",
+      "400 / 2000 = 20%",
+      "375 / 2500 = 15%",
+      "20% - 15% = 5 percentage points",
+      "400 - 375 = 25 readers"
+    ],
+    "notVerified": ["Conflicting event time", "Signup URL", "Image permission", "Editor preview", "Account publication"]
+  },
+  "platformSources": "See source-review.json; current platform limits and account state are deliberately left for task-time verification.",
+  "hostExecutionClaim": "No model trial, live account use, publication or cloud import claimed by this author check."
+}

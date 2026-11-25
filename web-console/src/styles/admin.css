@@ -1,0 +1,908 @@
+.admin-page {
+  width: min(var(--app-content-width), 100%);
+}
+
+.admin-page__header,
+.admin-toolbar,
+.admin-panel__header,
+.admin-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.admin-page__header {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--app-border);
+}
+
+.admin-page__header h2,
+.admin-panel__header h3 {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.admin-page__header h2 {
+  font-size: 26px;
+  font-weight: 650;
+  letter-spacing: -.5px;
+  line-height: 1.3;
+}
+
+.admin-page__header p,
+.admin-panel__header p {
+  margin: 3px 0 0;
+  color: var(--app-muted);
+  font-size: 13px;
+}
+
+.admin-toolbar {
+  --admin-filter-control-height: 40px;
+
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 14px;
+}
+
+.admin-toolbar .el-input,
+.admin-toolbar .el-select {
+  width: min(220px, 100%);
+}
+
+.admin-toolbar .el-input__wrapper,
+.admin-toolbar .el-select__wrapper,
+.admin-toolbar .el-date-editor,
+.admin-toolbar .el-range-editor,
+.admin-toolbar .el-button {
+  box-sizing: border-box;
+  height: var(--admin-filter-control-height);
+  min-height: var(--admin-filter-control-height);
+}
+
+.admin-toolbar .el-button {
+  box-sizing: border-box;
+  width: 84px;
+  min-width: 84px;
+  justify-content: center;
+  margin-left: 0;
+}
+
+.admin-panel {
+  overflow: hidden;
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius);
+  box-shadow: var(--app-shadow-sm);
+}
+
+.admin-panel + .admin-panel {
+  margin-top: 16px;
+}
+
+.admin-panel__header,
+.admin-pagination {
+  padding: 12px 14px;
+  background: var(--app-surface-subtle);
+  border-bottom: 1px solid var(--app-border);
+}
+
+.admin-pagination {
+  color: var(--app-muted);
+  border-top: 1px solid var(--app-border);
+  border-bottom: 0;
+  font-size: 12px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--app-border);
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.admin-table th {
+  color: var(--app-muted);
+  background: var(--app-surface-subtle);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.admin-table tbody tr {
+  transition: background-color var(--app-motion-fast) ease;
+}
+
+.admin-table tbody tr:hover {
+  background: var(--app-primary-soft);
+}
+
+.admin-table td,
+.admin-number {
+  font-variant-numeric: tabular-nums;
+}
+
+.admin-table code {
+  color: var(--app-fg);
+  font-size: 12px;
+}
+
+.admin-empty {
+  padding: 28px 16px !important;
+  color: var(--app-muted);
+  text-align: center !important;
+}
+
+.admin-metrics {
+  display: grid;
+  margin-bottom: 16px;
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius);
+  box-shadow: var(--app-shadow-sm);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.admin-metric {
+  min-width: 0;
+  min-height: 92px;
+  padding: 16px;
+  border-right: 1px solid var(--app-border);
+}
+
+.admin-metric:last-child {
+  border-right: 0;
+}
+
+.admin-metric span,
+.admin-metric strong {
+  display: block;
+}
+
+.admin-metric span {
+  color: var(--app-muted);
+  font-size: 12px;
+}
+
+.admin-metric strong {
+  margin-top: 4px;
+  overflow-wrap: anywhere;
+  font-size: 22px;
+}
+
+.admin-form-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.admin-form-grid .is-full {
+  grid-column: 1 / -1;
+}
+
+.admin-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-status-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.admin-status-item {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--app-surface-subtle);
+  border: 1px solid var(--app-border);
+  border-radius: 6px;
+  transition: background-color var(--app-motion-fast) ease,
+    border-color var(--app-motion-fast) ease;
+}
+
+.admin-status-item:hover {
+  background: var(--app-surface);
+  border-color: var(--app-border-strong);
+}
+
+.admin-dashboard {
+  --admin-dashboard-chart-height: 320px;
+}
+
+.admin-health-band {
+  display: grid;
+  margin-bottom: 16px;
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius);
+  box-shadow: var(--app-shadow-sm);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.admin-health-band__item {
+  display: flex;
+  min-width: 0;
+  min-height: 58px;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  border-right: 1px solid var(--app-border);
+}
+
+.admin-health-band__item:last-child {
+  border-right: 0;
+}
+
+.admin-health-band__item strong,
+.admin-health-band__item span {
+  display: block;
+}
+
+.admin-health-band__item span {
+  color: var(--app-muted);
+  font-size: 12px;
+}
+
+.admin-health-band__indicator {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+  background: #94a3b8;
+  border-radius: 50%;
+}
+
+.admin-health-band__indicator.success {
+  background: #16a34a;
+  box-shadow: 0 0 0 3px var(--app-success-soft);
+}
+
+.admin-health-band__indicator.danger {
+  background: #dc2626;
+  box-shadow: 0 0 0 3px var(--app-danger-soft);
+}
+
+.admin-dashboard-metric {
+  display: grid;
+  min-height: 118px;
+  align-content: start;
+  grid-template-columns: 34px minmax(0, 1fr);
+  grid-template-rows: 30px auto minmax(17px, auto);
+}
+
+.admin-dashboard-metric .admin-dashboard-metric__icon {
+  display: inline-grid;
+  width: 30px;
+  height: 30px;
+  grid-row: 1 / span 3;
+  place-items: center;
+  color: var(--app-primary);
+  background: var(--app-primary-soft);
+  border-radius: 6px;
+}
+
+.admin-dashboard-metric > span:not(.admin-dashboard-metric__icon) {
+  display: flex;
+  min-height: 30px;
+  align-items: center;
+}
+
+.admin-dashboard-metric > strong,
+.admin-dashboard-metric > small {
+  grid-column: 2;
+}
+
+.admin-dashboard-metric > small {
+  min-height: 17px;
+  margin-top: 3px;
+  color: var(--app-muted);
+  font-size: 12px;
+}
+
+.admin-dashboard-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 3fr) minmax(300px, 2fr);
+}
+
+.admin-chart-panel {
+  min-width: 0;
+}
+
+.admin-dashboard-grid > .admin-chart-panel {
+  margin-top: 0;
+}
+
+.admin-dashboard-grid > .admin-chart-panel > .admin-panel__header {
+  min-height: 62px;
+  align-items: flex-start;
+}
+
+.admin-usage-chart,
+.admin-system-panel {
+  margin-top: 16px;
+}
+
+.admin-dashboard-chart-shell {
+  position: relative;
+  min-height: var(--admin-dashboard-chart-height);
+}
+
+.admin-dashboard-chart-empty {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  left: 16px;
+  padding: 7px 10px;
+  color: var(--app-muted);
+  background: rgb(255 255 255 / 94%);
+  border: 1px solid var(--app-border);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.admin-dashboard-state {
+  display: grid;
+  min-height: var(--admin-dashboard-chart-height);
+  place-items: center;
+  padding: 24px;
+  color: var(--app-muted);
+  text-align: center;
+}
+
+.admin-dashboard-state.is-error,
+.admin-inline-error {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--app-danger, #b91c1c);
+}
+
+.admin-dashboard-state button,
+.admin-inline-error button {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 11px;
+  color: var(--app-primary);
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 650;
+}
+
+.admin-inline-error {
+  margin: 12px 14px 0;
+  padding: 10px 12px;
+  background: var(--app-danger-soft);
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+}
+
+.admin-range-control {
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(58px, 1fr));
+  padding: 3px;
+  background: var(--app-surface-muted);
+  border: 1px solid var(--app-border);
+  border-radius: 7px;
+}
+
+.admin-range-control button {
+  min-height: 36px;
+  padding: 0 12px;
+  color: var(--app-muted);
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 650;
+}
+
+.admin-range-control button[aria-pressed='true'] {
+  color: var(--app-primary);
+  background: var(--app-surface);
+  box-shadow: 0 1px 2px rgb(15 23 42 / 12%);
+}
+
+.admin-range-control button:disabled {
+  cursor: wait;
+  opacity: .65;
+}
+
+.admin-range-control button:focus-visible,
+.admin-dashboard-state button:focus-visible,
+.admin-inline-error button:focus-visible {
+  outline: 2px solid var(--app-primary);
+  outline-offset: 2px;
+}
+
+.admin-package-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0 14px 12px;
+  list-style: none;
+}
+
+.admin-package-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-top: 1px solid var(--app-border);
+}
+
+.admin-package-list span {
+  color: var(--app-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.system-grid {
+  padding: 14px;
+}
+
+.admin-operational-facts {
+  display: grid;
+  margin: 0;
+  padding: 0 14px 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.admin-operational-facts div {
+  padding: 10px 12px;
+  background: var(--app-surface-subtle);
+  border-top: 1px solid var(--app-border);
+}
+
+.admin-operational-facts dt {
+  color: var(--app-muted);
+  font-size: 12px;
+}
+
+.admin-operational-facts dd {
+  margin: 4px 0 0;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* =========================================================
+   运营概览页 UI 装修 — 企业级 B 端风格
+   圆角统一 8px · 弱阴影靠边框 · 字体层级清晰
+   ========================================================= */
+.admin-dashboard {
+  --admin-dashboard-chart-height: 300px;
+  --admin-card-radius: 8px;
+}
+
+/* 卡片圆角统一 8px，阴影弱化，层级靠边框 */
+.admin-dashboard .admin-panel,
+.admin-dashboard .admin-metrics,
+.admin-dashboard .admin-health-band {
+  border-radius: var(--admin-card-radius);
+  box-shadow: var(--app-shadow-xs);
+}
+
+.admin-dashboard .admin-panel__header {
+  padding: 14px 18px;
+}
+
+/* 字体层级：页面标题 > 指标数字 > 图表标题 > 辅助文字 */
+.admin-dashboard .admin-page__header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.admin-dashboard .admin-panel__header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--app-fg);
+}
+
+.admin-dashboard .admin-dashboard-metric > strong {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--app-fg);
+}
+
+/* 二级指标行：成功率 / P95 / 新增用户 / Token */
+.admin-metrics--secondary {
+  margin-top: 12px;
+}
+
+.admin-metrics--secondary .admin-dashboard-metric {
+  min-height: 96px;
+}
+
+.admin-metrics--secondary .admin-dashboard-metric > strong {
+  font-size: 22px;
+}
+
+/* 指标图标背景降低饱和 */
+.admin-metrics--secondary .admin-dashboard-metric__icon {
+  background: var(--app-surface-subtle);
+  color: var(--app-muted-strong);
+}
+
+/* 近 7 天趋势迷你卡片 */
+.admin-mini-trend {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.admin-mini-trend__summary {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 0 18px 8px;
+}
+
+.admin-mini-trend__summary strong {
+  font-size: 24px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--app-fg);
+}
+
+.admin-mini-trend__summary span {
+  color: var(--app-muted);
+  font-size: 12px;
+}
+
+.admin-mini-trend__delta {
+  margin-left: auto;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.admin-mini-trend__delta.is-up {
+  color: var(--app-success);
+  background: var(--app-success-soft);
+}
+
+.admin-mini-trend__delta.is-down {
+  color: var(--app-danger);
+  background: var(--app-danger-soft);
+}
+
+.admin-mini-trend__delta.is-flat {
+  color: var(--app-muted);
+  background: var(--app-surface-muted);
+}
+
+.admin-mini-trend__chart {
+  height: 96px;
+  padding: 0 8px 12px;
+}
+
+/* 系统组件状态网格 */
+.admin-component-grid {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.admin-component-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 13px;
+  background: var(--app-surface-subtle);
+  border: 1px solid var(--app-border);
+  border-radius: 6px;
+}
+
+.admin-component-item__icon {
+  display: inline-grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  place-items: center;
+  color: var(--app-muted-strong);
+  background: var(--app-surface);
+  border-radius: 6px;
+}
+
+.admin-component-item__meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-component-item__name {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--app-fg);
+}
+
+.admin-component-item__detail {
+  display: block;
+  color: var(--app-muted);
+  font-size: 11px;
+}
+
+.admin-component-item__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.admin-component-item__status::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--app-muted);
+}
+
+.admin-component-item__status.is-success::before {
+  background: #16a34a;
+}
+
+.admin-component-item__status.is-danger::before {
+  background: #dc2626;
+}
+
+/* 最近异常调用记录列表 */
+.admin-failure-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-failure-list {
+  flex: 1;
+  margin: 0;
+  padding: 0 14px;
+  list-style: none;
+}
+
+.admin-failure-list li {
+  display: grid;
+  gap: 4px 12px;
+  padding: 11px 0;
+  border-top: 1px solid var(--app-border);
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto auto;
+}
+
+.admin-failure-list li:first-child {
+  border-top: 0;
+}
+
+.admin-failure-list__model {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--app-fg);
+}
+
+.admin-failure-list__error {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--app-danger);
+  font-size: 12px;
+}
+
+.admin-failure-list__time {
+  align-self: start;
+  color: var(--app-muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.admin-failure-list__meta {
+  grid-column: 2;
+  color: var(--app-muted);
+  font-size: 11px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.admin-failure-empty {
+  padding: 28px 16px;
+  color: var(--app-muted);
+  text-align: center;
+  font-size: 13px;
+}
+
+/* 底部双列：系统组件状态 + 异常调用 */
+.admin-dashboard-tail {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+}
+
+/* 网格内面板重置 margin-top，避免与 grid gap 叠加 */
+.admin-dashboard-grid > .admin-panel,
+.admin-dashboard-tail > .admin-panel {
+  margin-top: 0;
+}
+
+@media (max-width: 1100px) {
+  .admin-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-metric:nth-child(2) {
+    border-right: 0;
+  }
+
+  .admin-metric:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--app-border);
+  }
+
+  .admin-status-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-dashboard-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-operational-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-dashboard-tail {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-component-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-toolbar {
+    --admin-filter-control-height: 44px;
+  }
+
+  .admin-page__header,
+  .admin-panel__header,
+  .admin-pagination {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-toolbar > *,
+  .admin-toolbar .el-input,
+  .admin-toolbar .el-select,
+  .admin-toolbar .el-button {
+    width: 100%;
+  }
+
+  .admin-form-grid,
+  .admin-status-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-component-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-dashboard {
+    --admin-dashboard-chart-height: 280px;
+  }
+
+  .admin-dashboard .admin-metrics,
+  .admin-health-band,
+  .admin-operational-facts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-dashboard .admin-metric {
+    border-right: 0;
+    border-bottom: 1px solid var(--app-border);
+  }
+
+  .admin-dashboard .admin-metric:last-child {
+    border-bottom: 0;
+  }
+
+  /* 手机上 KPI 保持两列：单列会要滚动约 1000px 才看完 8 张卡 */
+  .admin-dashboard .admin-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-dashboard .admin-metric {
+    border-right: 1px solid var(--app-border);
+    border-bottom: 1px solid var(--app-border);
+  }
+
+  .admin-dashboard .admin-metric:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .admin-dashboard .admin-metric:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+
+  .admin-health-band__item,
+  .admin-health-band__item:last-child {
+    border-right: 0;
+    border-bottom: 1px solid var(--app-border);
+  }
+
+  .admin-health-band__item:last-child {
+    border-bottom: 0;
+  }
+
+  .admin-pagination .el-pagination button,
+  .admin-pagination .el-pager li {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .admin-pagination .el-pager li:not(.is-active) {
+    display: none;
+  }
+
+  .admin-page .el-tabs__item,
+  .admin-page .el-checkbox,
+  .admin-page .el-switch {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* =========================================================
+   暗色模式覆盖 — 修复 admin 区块的硬编码浅色
+   ========================================================= */
+[data-theme="dark"],
+html.dark {
+  .admin-table td {
+    border-bottom-color: var(--app-border);
+  }
+
+  .admin-table tbody tr:hover {
+    background: var(--app-surface-subtle);
+  }
+
+  .admin-table code {
+    color: var(--app-muted-strong);
+  }
+
+  .admin-dashboard-chart-empty {
+    background: var(--app-surface-raised);
+    border-color: var(--app-border);
+  }
+
+  .admin-range-control button[aria-pressed='true'] {
+    box-shadow: var(--app-shadow-xs);
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-08",
+  "code": "startup-partner",
+  "status": "passed_local_trial",
+  "runner": {
+    "model": "gpt-6-sol",
+    "reasoningEffort": "ultra",
+    "environment": "Independent Codex subagent reading the packaged Entry Skill and references; not the Yuzai/cloud-host LLM."
+  },
+  "artifactSha256": "a6cb8ed8b6e5368be89eb2033c2ee70ef12081c58a072ac23e7d62e2db2a8a19",
+  "skillSha256": "11c0f1f9944c88d29d96ed8dc3d7fa029e39fc28f582fe2835bc7f3b37a3eaa4",
+  "executedSkillSha256": "11c0f1f9944c88d29d96ed8dc3d7fa029e39fc28f582fe2835bc7f3b37a3eaa4",
+  "reviewedBy": "Parent agent",
+  "parentReview": [
+    "完整读取决策、实验与现金 CSV；0 实际付费没有误写为 20 客户，0/0 的 CAC 未写成零。",
+    "复算 199-39=160，固定成本覆盖人数 ceil(1800/160)=12，含 600 实验费为 15；五个现金情景均相符。",
+    "14 天计划明确仅准备方案、未联系或收费；600 元是拟支出，199/39 为假设。",
+    "审查草案还列了次月余额和 runway 备选计算；输入仅要求月度 CSV，成品给出一个月五情景，没有次月或 runway 不构成未满足请求。"
+  ],
+  "trialReport": "validation-fixture/trial-result.json",
+  "evidenceSha256": {
+    "input.json": "9a454a0cbb2bf214c295a306ae79e30a1bb61ea56b293f84fe314977934df9b3",
+    "review-contract.json": "4173b2d0debc337f6fa03db4b6f5d8f8824559cfe53e4bd2f1988769167e6697",
+    "trial-response.md": "23dbdc37cd1b6246b1e4ae88786839c0e7b5f87fc510b59ae2de59a33497b1d8",
+    "trial-result.json": "16ee4ef236c9660e251e157c79b59c3e9adbac9899e4c54a69aa2d86c755b9d5",
+    "output/cash.csv": "1e4c3d8c19e5094fa95c676120d72a1df868fb6e17863c09e1ca9ca324b0a8a1",
+    "output/decision.md": "06654bc1b58e60e0320ff692ff24b78a3a8fb099cfe9a16d3e35febde60a225a",
+    "output/experiment.csv": "12bb942ee43f88ba38771e506ad4c3398935d8e5e5610acd101208869e9cd376"
+  },
+  "limits": [
+    "虚构材料与隔离任务的一次试用不证明所有模型和真实项目都能可靠完成。",
+    "没有在线发布、真实客户操作或生产服务验收。",
+    "未把 10 个静态场景写成 10 次模型运行。"
+  ]
+}

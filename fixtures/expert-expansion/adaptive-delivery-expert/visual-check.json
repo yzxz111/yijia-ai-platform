@@ -1,0 +1,29 @@
+{
+  "overflow": [],
+  "previewType": "Standalone rendering of package presentation; not a live application screenshot.",
+  "date": "2026-10-08",
+  "artifactSha256": "0f510e904d3546dceedfa2fe6cb408efd5a724301673760384582d82cd9011dd",
+  "reviewer": "Parent agent",
+  "visuallyInspected": [
+    "preview-zh.png",
+    "preview-en.png"
+  ],
+  "result": "Readable Chinese and English presentation with no observed clipping; standalone preview, not live host UI.",
+  "sharedBanner": {
+    "file": "source-assets/illustration.png",
+    "sha256": "3d336dfd3eb8775b674298d1d9192f35c141a4766956bb90bb46fd401be2343c",
+    "dimensions": [
+      1440,
+      480
+    ],
+    "textFree": true,
+    "checks": [
+      "Renderer verified empty visible text and no SVG text/foreignObject.",
+      "Parent visually inspected pure graphical banner in both locale previews."
+    ]
+  },
+  "exampleImageLocale": "zh",
+  "englishPresentation": "English metadata and editable canvas; Chinese example image separately declares zh locale.",
+  "generatedPreviewScreenshotsVersioned": false,
+  "regenerate": "node scripts/render-expert-expansion.cjs --code adaptive-delivery-expert --preview"
+}

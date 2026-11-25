@@ -1,0 +1,833 @@
+{
+  "canvas": {
+    "en": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "One sentence"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": ", test a venture with customers"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "Problem evidence · payment · cash"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "One of ten studios paid for a pilot. Assess the evidence and plan the next test."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "Four friendly interviews, one first-month payment, and actual costs."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 36,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "Pilot evidence and next gate"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "field": "preview.intro",
+          "height": 42,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "text": "Keep observed results separate from new assumptions."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 328
+        },
+        {
+          "field": "preview.table",
+          "height": 172,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "Signal / Current reading / Next check"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              25,
+              45,
+              30
+            ],
+            "headers": [
+              "Signal",
+              "Current reading",
+              "Next check"
+            ],
+            "rows": [
+              [
+                "Problem",
+                "Three mention no-shows",
+                "Get actual counts"
+              ],
+              [
+                "Payment",
+                "One first-month sale",
+                "Test new leads"
+              ],
+              [
+                "Cash",
+                "Calculate month-one loss",
+                "Cap test spend"
+              ]
+            ]
+          },
+          "width": 520,
+          "x": 48,
+          "y": 380
+        },
+        {
+          "field": "title",
+          "height": 38,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "Startup Partner"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 70,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "Shape an idea into interviews, falsifiable tests, channel plans, and unit economics. Keep observations, assumptions, and outside facts distinct."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 272
+        },
+        {
+          "field": "usageGuide",
+          "height": 92,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Share the customer, problem, interview or sales evidence, price idea, and cash limit. With only an idea, start with interview questions and a small test."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 352
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Customer proof"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 198
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Channel tests"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 198
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Unit economics"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 226
+        },
+        {
+          "field": "prompt.0",
+          "height": 70,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "I have four friendly interviews for a no-show tool. Separate evidence from guesses and plan a test with unfamiliar customers."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 458
+        },
+        {
+          "field": "prompt.1",
+          "height": 70,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "I have ten targeted invites, one paid pilot, and cost records. Calculate first-month contribution, acquisition cost, and cash change."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 536
+        },
+        {
+          "field": "prompt.2",
+          "height": 70,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Design a 14-day falsifiable test: interview questions, a paid signal, and a threshold for changing course."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 614
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 56,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Friendly interviews do not establish market demand; a before-and-after change alone does not prove impact."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 566
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 56,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "State the sample, time window, and payment gate; revise the idea if the gate is missed."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 628
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    },
+    "zh": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "一句话"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "，让创业假设接受客户检验"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "问题证据 · 付费信号 · 现金"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "十家工作室中一位付费试点，帮我判断证据强弱并设计下一轮验证。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "四次熟人访谈、一笔首月付款与实际支出。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 36,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "试点证据与下一轮门槛"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "field": "preview.intro",
+          "height": 42,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "text": "把观察结果和下一步假设分开。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 328
+        },
+        {
+          "field": "preview.table",
+          "height": 172,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "信号 / 当前判断 / 下一步"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              25,
+              45,
+              30
+            ],
+            "headers": [
+              "信号",
+              "当前判断",
+              "下一步"
+            ],
+            "rows": [
+              [
+                "客户痛点",
+                "三人提及爽约",
+                "查真实频率"
+              ],
+              [
+                "付费",
+                "一笔首月付款",
+                "测陌生客户"
+              ],
+              [
+                "现金",
+                "首月净流出需计算",
+                "设预算上限"
+              ]
+            ]
+          },
+          "width": 520,
+          "x": 48,
+          "y": 380
+        },
+        {
+          "field": "title",
+          "height": 38,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "创业伙伴"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 70,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "从模糊想法到早期试点，整理真实客户问题、验证实验、渠道与单客经济；把观察值、假设和待核外部事实分开。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 272
+        },
+        {
+          "field": "usageGuide",
+          "height": 92,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "说明想服务谁、解决什么问题、已有访谈或销售记录、计划收费和可用预算；即使只有想法，也能先得到访谈提纲与低成本验证实验。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 352
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "客户问题验证"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 198
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "获客与试点实验"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 198
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "单客经济与现金"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 226
+        },
+        {
+          "field": "prompt.0",
+          "height": 70,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "我想帮小型工作室减少爽约。只有四次熟人访谈，请区分证据和猜测，设计下一轮陌生客户验证。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 458
+        },
+        {
+          "field": "prompt.1",
+          "height": 70,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "已有十次定向邀约、一位付费试点和真实成本。请计算首月单客贡献、获客成本与现金变化。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 536
+        },
+        {
+          "field": "prompt.2",
+          "height": 70,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "帮我设一个十四天的可证伪试验：访谈什么、怎样拿到付费信号、低于什么门槛就调整。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 614
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 56,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "熟人样本不能推成市场需求；试点前后差异也不能直接推成因果效果。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 566
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 56,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "写明实验人数、时间和付费门槛；失败时调整对象、问题或方案。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 628
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    }
+  },
+  "description": "从模糊想法到早期试点，整理真实客户问题、验证实验、渠道与单客经济；把观察值、假设和待核外部事实分开。",
+  "descriptionEn": "Shape an idea into interviews, falsifiable tests, channel plans, and unit economics. Keep observations, assumptions, and outside facts distinct.",
+  "exampleImageLocale": "zh",
+  "examplePrompts": [
+    "我想帮小型工作室减少爽约。只有四次熟人访谈，请区分证据和猜测，设计下一轮陌生客户验证。",
+    "已有十次定向邀约、一位付费试点和真实成本。请计算首月单客贡献、获客成本与现金变化。",
+    "帮我设一个十四天的可证伪试验：访谈什么、怎样拿到付费信号、低于什么门槛就调整。"
+  ],
+  "examplePromptsEn": [
+    "I have four friendly interviews for a no-show tool. Separate evidence from guesses and plan a test with unfamiliar customers.",
+    "I have ten targeted invites, one paid pilot, and cost records. Calculate first-month contribution, acquisition cost, and cash change.",
+    "Design a 14-day falsifiable test: interview questions, a paid signal, and a threshold for changing course."
+  ],
+  "name": "创业伙伴",
+  "nameEn": "Startup Partner",
+  "preview": {
+    "heading": "一句话，让创业假设接受客户检验",
+    "intro": {
+      "text": "把观察结果和下一步假设分开。",
+      "tone": "accent"
+    },
+    "material": "四次熟人访谈、一笔首月付款与实际支出。",
+    "outputParagraphs": [
+      "熟人样本不能推成市场需求；试点前后差异也不能直接推成因果效果。",
+      "写明实验人数、时间和付费门槛；失败时调整对象、问题或方案。"
+    ],
+    "outputTitle": "试点证据与下一轮门槛",
+    "request": "十家工作室中一位付费试点，帮我判断证据强弱并设计下一轮验证。",
+    "scene": "问题证据 · 付费信号 · 现金",
+    "table": {
+      "columnWidths": [
+        25,
+        45,
+        30
+      ],
+      "headers": [
+        "信号",
+        "当前判断",
+        "下一步"
+      ],
+      "rows": [
+        [
+          "客户痛点",
+          "三人提及爽约",
+          "查真实频率"
+        ],
+        [
+          "付费",
+          "一笔首月付款",
+          "测陌生客户"
+        ],
+        [
+          "现金",
+          "首月净流出需计算",
+          "设预算上限"
+        ]
+      ]
+    }
+  },
+  "previewEn": {
+    "heading": "One sentence, test a venture with customers",
+    "intro": {
+      "text": "Keep observed results separate from new assumptions.",
+      "tone": "accent"
+    },
+    "material": "Four friendly interviews, one first-month payment, and actual costs.",
+    "outputParagraphs": [
+      "Friendly interviews do not establish market demand; a before-and-after change alone does not prove impact.",
+      "State the sample, time window, and payment gate; revise the idea if the gate is missed."
+    ],
+    "outputTitle": "Pilot evidence and next gate",
+    "request": "One of ten studios paid for a pilot. Assess the evidence and plan the next test.",
+    "scene": "Problem evidence · payment · cash",
+    "table": {
+      "columnWidths": [
+        25,
+        45,
+        30
+      ],
+      "headers": [
+        "Signal",
+        "Current reading",
+        "Next check"
+      ],
+      "rows": [
+        [
+          "Problem",
+          "Three mention no-shows",
+          "Get actual counts"
+        ],
+        [
+          "Payment",
+          "One first-month sale",
+          "Test new leads"
+        ],
+        [
+          "Cash",
+          "Calculate month-one loss",
+          "Cap test spend"
+        ]
+      ]
+    }
+  },
+  "summary": "把创业想法拆成客户问题、访谈证据、获客实验和现金模型，设定可证伪门槛，帮助决定继续、调整或停止。",
+  "summaryEn": "Test a venture through customer evidence, acquisition experiments, unit economics, and cash assumptions, with clear continue, change, or stop gates.",
+  "taskTypes": [
+    "客户问题验证",
+    "获客与试点实验",
+    "单客经济与现金"
+  ],
+  "taskTypesEn": [
+    "Customer proof",
+    "Channel tests",
+    "Unit economics"
+  ],
+  "usageGuide": "说明想服务谁、解决什么问题、已有访谈或销售记录、计划收费和可用预算；即使只有想法，也能先得到访谈提纲与低成本验证实验。",
+  "usageGuideEn": "Share the customer, problem, interview or sales evidence, price idea, and cash limit. With only an idea, start with interview questions and a small test."
+}

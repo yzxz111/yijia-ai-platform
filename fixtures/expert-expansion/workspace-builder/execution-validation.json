@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-08",
+  "code": "workspace-builder",
+  "status": "passed_local_trial",
+  "runner": {
+    "model": "gpt-6-sol",
+    "reasoningEffort": "ultra",
+    "environment": "Independent Codex subagent reading the packaged Entry Skill and references; not the Yuzai/cloud-host LLM."
+  },
+  "artifactSha256": "be989cca0d7fe90bf06abefe4fd15623b98b5383622545f46cb78a5dc5ea6a9f",
+  "skillSha256": "430df1333deed3a4c7b5800e81df68d474914fbe84f95abd07ed340bdc71b667",
+  "executedSkillSha256": "430df1333deed3a4c7b5800e81df68d474914fbe84f95abd07ed340bdc71b667",
+  "reviewedBy": "Parent agent",
+  "parentReview": [
+    "主代理核对固定基线、修改后源码、完整运行输出和保护文件哈希。",
+    "只修改本地虚构试验目录，没有修改产品源代码或提交。",
+    "另对最终包内 HTML 示例实际浏览器验证字段归一化，结果见 example-normalization-check.json。"
+  ],
+  "trialReport": "validation-fixture/trial-result.json",
+  "evidenceSha256": {
+    "baseline-test-output.txt": "6cc6d9eb8fb1ac98a527195d62109e881bae6d2fc5db3931b0bed6c936203627",
+    "baseline.json": "5e9df117c34da9b3b99284a105f9d770e5468d1e4d3e08a6290a47c40cb636b1",
+    "example-normalization-check.cjs": "99852e36b9e8b1c82b97e8e4a7d2930b421a22b05f9db4c2d2191f9edaf502ac",
+    "repair.diff": "5788c5b7aaf31eaa197f518474c07c4c53ea37d48d8f9f7d65ca11df8cd845a3",
+    "trial-mobile.png": "b13be735fe5fca11a3b3c87fc2b919bf0a0ca9e4d2562949c63c2310a7add65b",
+    "trial-response.md": "ca6a403971a38e2192a66c670e948e775254190b8d271979d55f84a2c4e52bd0",
+    "trial-result.json": "4e217c07e7dcf05b7db9fa8b932e859d70e54d3e589e05ec6137d8fdd1846d95",
+    "trial-test-output.txt": "b19b8e1fa3e82b41edd1afdcd51b3d0d823c1320d71e18543a454d0df3f7d709",
+    "after/acceptance.test.cjs": "24190004d1804a49736f602dd3a028d63b2bafca9b523ef255bef0471072ef60",
+    "after/AGENTS.md": "aaa306f4fe9df2734ef519a7fe9e975f1c3e102ce3f270713627f44732380b4c",
+    "after/app.js": "eddbf663107e1130771af67b3aa3add21141cf1e5d1984509ec74ec56ff57b7b",
+    "after/index.html": "a62d0ddaf40b17d3a48fa0aeab9186fc544afa5981f3147da165f0666da59a56",
+    "before/acceptance.test.cjs": "24190004d1804a49736f602dd3a028d63b2bafca9b523ef255bef0471072ef60",
+    "before/AGENTS.md": "aaa306f4fe9df2734ef519a7fe9e975f1c3e102ce3f270713627f44732380b4c",
+    "before/app.js": "9d4ea09befc6520e41abc0cfea3425da9b93d0a9c1fb541ead7ac994128a20e6",
+    "before/index.html": "a62d0ddaf40b17d3a48fa0aeab9186fc544afa5981f3147da165f0666da59a56"
+  },
+  "limits": [
+    "虚构材料与隔离任务的一次试用不证明所有模型和真实项目都能可靠完成。",
+    "没有在线发布、真实客户操作或生产服务验收。",
+    "未把 10 个静态场景写成 10 次模型运行。"
+  ],
+  "tests": {
+    "command": "node --test acceptance.test.cjs",
+    "before": {
+      "total": 10,
+      "passed": 1,
+      "failed": 9
+    },
+    "after": {
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "outputFile": "trial-test-output.txt",
+    "outputSha256": "b19b8e1fa3e82b41edd1afdcd51b3d0d823c1320d71e18543a454d0df3f7d709",
+    "runtime": "Local Chrome via Playwright, loopback HTTP page, 390px viewport",
+    "scope": "Add/reload, toggle, delete, text-only rendering, valid and invalid import, corrupt storage, blocked writes, JSON download and mobile overflow"
+  },
+  "protectedFilesUnchanged": true
+}

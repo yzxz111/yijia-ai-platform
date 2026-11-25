@@ -1,0 +1,833 @@
+{
+  "canvas": {
+    "en": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "One sentence"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": ", make today’s workspace usable"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "Task editing · local save · restore"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "Build a Today workspace where edited tasks survive reload and can be exported."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "Only a local browser is available; no database or calendar access."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 36,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "Today task workspace"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "field": "preview.intro",
+          "height": 42,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "text": "Make add, save, and restore work before adding more modules."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 328
+        },
+        {
+          "field": "preview.table",
+          "height": 172,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "Action / User result / Check"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              25,
+              45,
+              30
+            ],
+            "headers": [
+              "Action",
+              "User result",
+              "Check"
+            ],
+            "rows": [
+              [
+                "Add and edit",
+                "Saved after reload",
+                "Browser pending"
+              ],
+              [
+                "Finish/filter",
+                "Counts follow real data",
+                "Logic check"
+              ],
+              [
+                "Export/restore",
+                "Validate version and IDs",
+                "Import test"
+              ]
+            ]
+          },
+          "width": 520,
+          "x": 48,
+          "y": 380
+        },
+        {
+          "field": "title",
+          "height": 38,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "Workspace Builder"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 70,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "Build practical task and resource tools with clear data sources, saved state, and recoverable exports."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 272
+        },
+        {
+          "field": "usageGuide",
+          "height": 92,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Describe your daily workflow, current data, devices, and repo if any; the expert builds the smallest usable flow and verifies saving."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 352
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Task workspace"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 198
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Time and links"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 198
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Export and restore"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 226
+        },
+        {
+          "field": "prompt.0",
+          "height": 70,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Build a Today workspace where I can add, edit, and finish tasks that survive reload."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 458
+        },
+        {
+          "field": "prompt.1",
+          "height": 70,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Add resource links and a schedule to this app, usable on mobile; do not fake calendar sync."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 536
+        },
+        {
+          "field": "prompt.2",
+          "height": 70,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Add JSON export and safe restore to this local workspace, including invalid-file handling."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 614
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 56,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Local data stays in this browser; show cloud or calendar access only when connected."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 566
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 56,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Check mobile and keyboard use in a running environment and list unrun levels."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 628
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    },
+    "zh": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "一句话"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "，把今日安排做成可用工作台"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "任务编辑 · 本地保存 · 导出恢复"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "做一个今日工作台，任务改完刷新后还在，并能导出备份。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "只有本地浏览器，无数据库或日历授权。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 36,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "今日任务工作台"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "field": "preview.intro",
+          "height": 42,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "text": "先走通新增、保存与恢复，再扩展资料入口。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 328
+        },
+        {
+          "field": "preview.table",
+          "height": 172,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "动作 / 用户可见结果 / 核验"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              25,
+              45,
+              30
+            ],
+            "headers": [
+              "动作",
+              "用户可见结果",
+              "核验"
+            ],
+            "rows": [
+              [
+                "新增编辑",
+                "保存后重载仍显示",
+                "浏览器待验"
+              ],
+              [
+                "完成筛选",
+                "统计随真实数据变化",
+                "逻辑检查"
+              ],
+              [
+                "导出恢复",
+                "校验版本和重复项",
+                "导入测试"
+              ]
+            ]
+          },
+          "width": 520,
+          "x": 48,
+          "y": 380
+        },
+        {
+          "field": "title",
+          "height": 38,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "工作台搭建师"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 70,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "把任务、时间与资料变成可操作的小工具，明确数据来源与保存范围，并验证完整使用路径。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 272
+        },
+        {
+          "field": "usageGuide",
+          "height": 92,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "说清每天要处理的任务、现有数据和目标设备；如有项目请给目录。专家先做可用的最小工作流，再核验保存和恢复。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 352
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "任务工作台"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 198
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "时间与资料"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 198
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "导出恢复"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 226
+        },
+        {
+          "field": "prompt.0",
+          "height": 70,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "请做一个今日工作台，能新增、编辑、完成任务，刷新后仍能找回。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 458
+        },
+        {
+          "field": "prompt.1",
+          "height": 70,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "请在现有项目加入资料链接与时间安排，手机也能操作，别假装已接日历。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 536
+        },
+        {
+          "field": "prompt.2",
+          "height": 70,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "请为这个本地工作台加入 JSON 导出和安全恢复，并验证损坏文件处理。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 614
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 56,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "本地保存只属于当前浏览器；未连接云端或日历时明确标出。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 566
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 56,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "移动端和键盘操作按实际运行环境检查，未执行的层级另列。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 628
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    }
+  },
+  "description": "把任务、时间与资料变成可操作的小工具，明确数据来源与保存范围，并验证完整使用路径。",
+  "descriptionEn": "Build practical task and resource tools with clear data sources, saved state, and recoverable exports.",
+  "exampleImageLocale": "zh",
+  "examplePrompts": [
+    "请做一个今日工作台，能新增、编辑、完成任务，刷新后仍能找回。",
+    "请在现有项目加入资料链接与时间安排，手机也能操作，别假装已接日历。",
+    "请为这个本地工作台加入 JSON 导出和安全恢复，并验证损坏文件处理。"
+  ],
+  "examplePromptsEn": [
+    "Build a Today workspace where I can add, edit, and finish tasks that survive reload.",
+    "Add resource links and a schedule to this app, usable on mobile; do not fake calendar sync.",
+    "Add JSON export and safe restore to this local workspace, including invalid-file handling."
+  ],
+  "name": "工作台搭建师",
+  "nameEn": "Workspace Builder",
+  "preview": {
+    "heading": "一句话，把今日安排做成可用工作台",
+    "intro": {
+      "text": "先走通新增、保存与恢复，再扩展资料入口。",
+      "tone": "accent"
+    },
+    "material": "只有本地浏览器，无数据库或日历授权。",
+    "outputParagraphs": [
+      "本地保存只属于当前浏览器；未连接云端或日历时明确标出。",
+      "移动端和键盘操作按实际运行环境检查，未执行的层级另列。"
+    ],
+    "outputTitle": "今日任务工作台",
+    "request": "做一个今日工作台，任务改完刷新后还在，并能导出备份。",
+    "scene": "任务编辑 · 本地保存 · 导出恢复",
+    "table": {
+      "columnWidths": [
+        25,
+        45,
+        30
+      ],
+      "headers": [
+        "动作",
+        "用户可见结果",
+        "核验"
+      ],
+      "rows": [
+        [
+          "新增编辑",
+          "保存后重载仍显示",
+          "浏览器待验"
+        ],
+        [
+          "完成筛选",
+          "统计随真实数据变化",
+          "逻辑检查"
+        ],
+        [
+          "导出恢复",
+          "校验版本和重复项",
+          "导入测试"
+        ]
+      ]
+    }
+  },
+  "previewEn": {
+    "heading": "One sentence, make today’s workspace usable",
+    "intro": {
+      "text": "Make add, save, and restore work before adding more modules.",
+      "tone": "accent"
+    },
+    "material": "Only a local browser is available; no database or calendar access.",
+    "outputParagraphs": [
+      "Local data stays in this browser; show cloud or calendar access only when connected.",
+      "Check mobile and keyboard use in a running environment and list unrun levels."
+    ],
+    "outputTitle": "Today task workspace",
+    "request": "Build a Today workspace where edited tasks survive reload and can be exported.",
+    "scene": "Task editing · local save · restore",
+    "table": {
+      "columnWidths": [
+        25,
+        45,
+        30
+      ],
+      "headers": [
+        "Action",
+        "User result",
+        "Check"
+      ],
+      "rows": [
+        [
+          "Add and edit",
+          "Saved after reload",
+          "Browser pending"
+        ],
+        [
+          "Finish/filter",
+          "Counts follow real data",
+          "Logic check"
+        ],
+        [
+          "Export/restore",
+          "Validate version and IDs",
+          "Import test"
+        ]
+      ]
+    }
+  },
+  "summary": "围绕真实任务搭建可编辑、可保存、可导出恢复的响应式工作台。",
+  "summaryEn": "Build a responsive workspace for real tasks, with editing, persistence, export, and restore.",
+  "taskTypes": [
+    "任务工作台",
+    "时间与资料",
+    "导出恢复"
+  ],
+  "taskTypesEn": [
+    "Task workspace",
+    "Time and links",
+    "Export and restore"
+  ],
+  "usageGuide": "说清每天要处理的任务、现有数据和目标设备；如有项目请给目录。专家先做可用的最小工作流，再核验保存和恢复。",
+  "usageGuideEn": "Describe your daily workflow, current data, devices, and repo if any; the expert builds the smallest usable flow and verifies saving."
+}

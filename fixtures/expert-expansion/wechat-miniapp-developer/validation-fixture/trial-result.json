@@ -1,0 +1,41 @@
+{
+  "exercise": "wechat-miniapp-developer-isolated-callback-repair",
+  "status": "completed",
+  "projectType": "fictional pure JavaScript callback transport",
+  "expertSkill": "D:/code/Yuzhi9.20/system/fixtures/expert-expansion/wechat-miniapp-developer/SKILL.md",
+  "editedSource": "D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.mjs",
+  "reports": ["trial-response.md", "trial-result.json"],
+  "baseline": { "command": "npm test", "total": 15, "passed": 4, "failed": 11, "exitCode": 1 },
+  "afterRepair": { "command": "npm test", "total": 15, "passed": 15, "failed": 0, "exitCode": 0 },
+  "checks": [
+    { "command": "node --check search-controller.mjs", "exitCode": 0 },
+    { "command": "git diff --check", "exitCode": 0 }
+  ],
+  "commands": [
+    "git status --short --untracked-files=all",
+    "git diff -- USER-NOTES.md",
+    "npm test",
+    "node --check search-controller.mjs",
+    "git diff --check",
+    "git diff -- search-controller.mjs",
+    "Get-FileHash -Algorithm SHA256 -LiteralPath 'AGENTS.md','USER-NOTES.md','package.json','search-controller.test.mjs'"
+  ],
+  "preservedFiles": {
+    "AGENTS.md": "7C2E75E673D9FE5BA08069DAA62D2FA47D57B7AF07414540BEFFD4BD070A5BBE",
+    "USER-NOTES.md": "168029EA3BDEFEEB1D84666974B030734F68BE59F4F234B5CA0A2D3409CE6851",
+    "package.json": "1CC8834F3D0D688F4A6FF858DF143E2E6200D07452FCE5720CF7939348EDC602",
+    "search-controller.test.mjs": "B7E235F91DAB58280839661EE80529C8CF3B019BBBBE744175CB96D57ACED081"
+  },
+  "preexistingChangesPreserved": ["USER-NOTES.md"],
+  "unverified": [
+    "WeChat DevTools simulator",
+    "WeChat platform behavior",
+    "real network and backend",
+    "real device",
+    "host model integration"
+  ],
+  "networkRequestsMade": false,
+  "abortUsed": false,
+  "dependenciesAdded": false,
+  "commitOrPublishPerformed": false
+}

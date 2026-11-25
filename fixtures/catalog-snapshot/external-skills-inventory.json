@@ -1,0 +1,65 @@
+{
+  "scope": "External-source directory inventory only; no uploaded YCPS package exists for these entries. Not part of YCPS restore.",
+  "skills": [
+    {
+      "code": "steipete-gog-b26a82b5c467",
+      "kind": "SKILL",
+      "name": "谷歌命令行工具",
+      "name_en": "Google Command-line Tool",
+      "source_format": "CLAWHUB_SKILL",
+      "status": "PUBLISHED",
+      "category": null,
+      "tags": [],
+      "published_version": "1.0.0",
+      "latest_version": "1.0.0"
+    },
+    {
+      "code": "why20261-douyin-d492844762a6",
+      "kind": "SKILL",
+      "name": "抖音定向舆情监测助手",
+      "name_en": "DouYin",
+      "source_format": "CLAWHUB_SKILL",
+      "status": "PUBLISHED",
+      "category": null,
+      "tags": [],
+      "published_version": "1.3.0",
+      "latest_version": "1.3.0"
+    },
+    {
+      "code": "why20261-tiktok-56544435a617",
+      "kind": "SKILL",
+      "name": "TikTok作品批量下载",
+      "name_en": "Batch Download of TikTok Works",
+      "source_format": "CLAWHUB_SKILL",
+      "status": "PUBLISHED",
+      "category": null,
+      "tags": [],
+      "published_version": "1.0.0",
+      "latest_version": "1.0.0"
+    },
+    {
+      "code": "why20261-xiaohongshu-6d066c0c2bfb",
+      "kind": "SKILL",
+      "name": "小红书作品批量下载",
+      "name_en": "Batch download of Xiaohongshu posts",
+      "source_format": "CLAWHUB_SKILL",
+      "status": "PUBLISHED",
+      "category": null,
+      "tags": [],
+      "published_version": "1.1.4",
+      "latest_version": "1.1.4"
+    },
+    {
+      "code": "wlshlad85-superpowers-b2096dfcb75d",
+      "kind": "SKILL",
+      "name": "Superpowers开发工作流",
+      "name_en": "Superpowers Dev Workflow",
+      "source_format": "CLAWHUB_SKILL",
+      "status": "PUBLISHED",
+      "category": null,
+      "tags": [],
+      "published_version": "1.0.0",
+      "latest_version": "1.0.0"
+    }
+  ]
+}

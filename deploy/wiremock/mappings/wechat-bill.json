@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/v3/bill/tradebill",
+    "queryParameters": { "bill_date": { "equalTo": "2026-08-01" } }
+  },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": {
+      "hash_type": "SHA1",
+      "hash_value": "8f14e45fceea167a5a36dedd4bea2543b44e3f5f",
+      "download_url": "https://bill.localhost/wechat/2026-08-01.csv"
+    }
+  }
+}

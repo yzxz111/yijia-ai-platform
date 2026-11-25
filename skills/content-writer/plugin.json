@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "content-writer",
+  "version": "1.0.0",
+  "description": "Create review-ready, original Chinese social-media drafts for Xiaohongshu, Zhihu, WeChat Official Accounts, and short-video channels from an approved brief.",
+  "author": {
+    "name": "Yuzhi"
+  },
+  "license": "Proprietary",
+  "extensions": {
+    "com.yuzhihuihe.ycps": {
+      "ycpsVersion": "1.0.0",
+      "kind": "SKILL",
+      "entrySkill": "content-writer",
+      "manifest": "./com.yuzhihuihe.ycps/manifest.json",
+      "requiredFeatures": []
+    }
+  }
+}

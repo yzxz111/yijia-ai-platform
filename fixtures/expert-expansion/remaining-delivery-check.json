@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-08",
+  "status": "passed_local_delivery",
+  "completedExpertCount": 10,
+  "newExpertCount": 7,
+  "newPackages": [
+    {
+      "code": "wechat-official-account-operator",
+      "title": {
+        "zh": "微信公众号运营专家",
+        "en": "WeChat Account Editor"
+      },
+      "file": "wechat-official-account-operator-1.0.0.ycps.zip",
+      "version": "1.0.0",
+      "bytes": 94214,
+      "sha256": "02f469e5ba771cb0a1c56aa7fed22165a0876e513b111088a400935715e1d585"
+    },
+    {
+      "code": "adaptive-delivery-expert",
+      "title": {
+        "zh": "自适应成果交付专家",
+        "en": "Adaptive Delivery Expert"
+      },
+      "file": "adaptive-delivery-expert-1.0.0.ycps.zip",
+      "version": "1.0.0",
+      "bytes": 96166,
+      "sha256": "0f510e904d3546dceedfa2fe6cb408efd5a724301673760384582d82cd9011dd"
+    },
+    {
+      "code": "news-briefing-expert",
+      "title": {
+        "zh": "资讯速递专家",
+        "en": "News Briefing Editor"
+      },
+      "file": "news-briefing-expert-1.0.0.ycps.zip",
+      "version": "1.0.0",
+      "bytes": 106896,
+      "sha256": "7f913ce13cfd053feb9ef5c01c64f7e4553b7fd9ef28c151cf3f12b036a3d5ef"
+    },
+    {
+      "code": "design-system-architect",
+      "title": {
+        "zh": "设计系统架构师",
+        "en": "Design System Architect"
+      },
+      "file": "design-system-architect-1.0.0.ycps.zip",
+      "version": "1.0.0",
+      "bytes": 61909,
+      "sha256": "aef1317e95b72061a9572af9fbd3444ddb8716897ad7b04d7c935cdbcbaf63ad"
+    },
+    {
+      "code": "fullstack-delivery-expert",
+      "title": {
+        "zh": "全栈开发专家",
+        "en": "Fullstack Delivery Expert"
+      },
+      "file": "fullstack-delivery-expert-1.0.0.ycps.zip",
+      "version": "1.0.0",
+      "bytes": 64008,
+      "sha256": "b9a13365bf887e485ffac7f71076cf9cd41095494ae028b608ac38bc73099e8b"
+    },
+    {
+      "code": "startup-partner",
+      "title": {
+        "zh": "创业伙伴",
+        "en": "Startup Partner"
+      },
+      "file": "startup-partner-1.0.0.ycps.zip",
+      "version": "1.0.0",
+      "bytes": 74985,
+      "sha256": "a6cb8ed8b6e5368be89eb2033c2ee70ef12081c58a072ac23e7d62e2db2a8a19"
+    },
+    {
+      "code": "workspace-builder",
+      "title": {
+        "zh": "工作台搭建师",
+        "en": "Workspace Builder"
+      },
+      "file": "workspace-builder-1.0.0.ycps.zip",
+      "version": "1.0.0",
+      "bytes": 60267,
+      "sha256": "be989cca0d7fe90bf06abefe4fd15623b98b5383622545f46cb78a5dc5ea6a9f"
+    }
+  ],
+  "bundle": {
+    "versioned": false,
+    "reason": "A delivery bundle duplicates the individual archives. Import one individual .ycps.zip directly."
+  },
+  "offlineImportTests": {
+    "total": 28,
+    "passed": 28,
+    "failed": 0
+  },
+  "staticScenarioReview": {
+    "total": 70,
+    "reviewed": 70,
+    "actualHostModelRuns": 0
+  },
+  "independentLocalTrials": {
+    "count": 7,
+    "documentArtifactTrials": 4,
+    "technicalRepairTrials": 3,
+    "technicalTestsPassed": 25,
+    "model": "gpt-6-sol",
+    "reasoningEffort": "ultra"
+  },
+  "visualReview": {
+    "localePreviews": 14,
+    "visuallyInspected": 14,
+    "overflowDetected": 0,
+    "textFreeSharedBanners": 7
+  },
+  "deterministicRebuildChecks": {
+    "packages": 10,
+    "passed": 10,
+    "rawTranscriptVersioned": false
+  },
+  "protectedArchivesUnchanged": {
+    "expert-expansion/academic-writing-mentor/academic-writing-mentor-1.0.0.ycps.zip": true,
+    "expert-expansion/senior-software-engineer/senior-software-engineer-1.0.0.ycps.zip": true,
+    "expert-expansion/wechat-miniapp-developer/wechat-miniapp-developer-1.0.0.ycps.zip": true,
+    "catalog-snapshot/packages/ai-office-assistant-1.0.0.ycps.zip": true,
+    "catalog-snapshot/packages/content-summarizer-1.0.0.ycps.zip": true,
+    "catalog-snapshot/packages/content-writer-1.0.0.ycps.zip": true,
+    "catalog-snapshot/packages/content-writing-expert-1.0.0.ycps.zip": true,
+    "catalog-snapshot/packages/document-review-expert-1.0.0.ycps.zip": true,
+    "catalog-snapshot/packages/ecommerce-ops-0.1.0.ycps.zip": true,
+    "catalog-snapshot/packages/sales-analysis-expert-1.0.0.ycps.zip": true,
+    "catalog-snapshot/packages/social-media-operations-expert-1.0.0.ycps.zip": true
+  },
+  "limits": [
+    "No live cloud import/publication or real host-model conversation.",
+    "Import tests use real production parsers, compiler and installer with external boundaries mocked.",
+    "Local fictional trials do not establish production integration, real accounts, devices or universal model reliability."
+  ],
+  "finalEvidenceAudit": {
+    "archiveEntryHashes": "passed",
+    "reportArtifactHashes": "passed",
+    "trialEvidenceHashes": "passed",
+    "guideAndDownloadLinks": "passed",
+    "catalogOverview": "index-visual-check.json",
+    "adaptiveMetadataOnlyRevision": "adaptive-delivery-expert/trial-source-equivalence.json"
+  }
+}

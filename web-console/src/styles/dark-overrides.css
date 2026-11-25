@@ -1,0 +1,395 @@
+/* ========================================================
+   暗色模式全局补丁
+   用于覆盖各页面 scoped CSS 中尚未迁移到 CSS 变量的硬编码浅色，
+   避免明亮色块在深色背景下刺眼。
+   ======================================================== */
+
+[data-theme="dark"],
+html.dark {
+  /* ============= PlansView.vue 剩余硬编码 ============= */
+  .plan-card--current {
+    border-color: var(--app-primary-soft) !important;
+  }
+  .plan-card--offline {
+    background: var(--app-surface-subtle) !important;
+    border-color: var(--app-border) !important;
+    color: var(--app-muted-strong) !important;
+  }
+  .plan-card--offline .plan-name,
+  .plan-card--offline .plan-desc,
+  .plan-card--offline .plan-price__amount,
+  .plan-card--offline .quota-item__val,
+  .plan-card--offline .feature-item,
+  .plan-card--offline .plan-section-title,
+  .plan-card--offline .models-row__name,
+  .plan-card--offline .models-row__quota {
+    color: var(--app-muted-strong) !important;
+  }
+  .plan-card--offline .plan-icon {
+    background: var(--app-surface-muted) !important;
+    color: var(--app-muted-strong) !important;
+  }
+  .plan-icon--tier-free {
+    color: var(--app-muted-strong) !important;
+    background: var(--app-surface-muted) !important;
+  }
+  .tag--featured {
+    border-color: var(--app-primary-soft) !important;
+  }
+  .tag--current {
+    color: var(--app-success) !important;
+    background: var(--app-success-soft) !important;
+    border-color: var(--app-success-soft) !important;
+  }
+  .tag--queue {
+    color: var(--app-warning) !important;
+    background: var(--app-warning-soft) !important;
+    border-color: var(--app-warning-soft) !important;
+  }
+  .tag--offline {
+    color: var(--app-muted-strong) !important;
+    background: var(--app-surface-muted) !important;
+    border-color: var(--app-border) !important;
+  }
+  .btn--primary:hover:not(:disabled) {
+    background: var(--app-primary-hover) !important;
+    border-color: var(--app-primary-hover) !important;
+  }
+  .btn--outline {
+    color: var(--app-primary) !important;
+    background: var(--app-surface) !important;
+    border-color: var(--app-primary-soft) !important;
+  }
+  .btn--outline:hover:not(:disabled) {
+    background: var(--app-primary-soft) !important;
+    border-color: var(--app-primary) !important;
+  }
+  .btn--gray {
+    color: var(--app-muted-strong) !important;
+    background: var(--app-surface-muted) !important;
+    border-color: var(--app-border) !important;
+  }
+  .faq-item {
+    background: var(--app-surface) !important;
+    border-color: var(--app-border) !important;
+  }
+  .faq-item:hover {
+    border-color: var(--app-border-strong) !important;
+  }
+  .faq-item[open] {
+    border-color: var(--app-primary-soft) !important;
+  }
+  .faq-item__a {
+    color: var(--app-muted-strong) !important;
+  }
+
+  /* ============= DashboardView.vue 剩余硬编码 ============= */
+  .alert-banner { border-color: var(--app-warning) !important; }
+  .error-banner { border-color: var(--app-danger) !important; }
+  .metric-card:hover { box-shadow: var(--app-shadow-sm) !important; }
+  .metric-icon--purple { color: var(--app-primary) !important; background: var(--app-primary-soft) !important; }
+  .metric-icon--blue { color: var(--app-primary) !important; background: var(--app-primary-soft) !important; }
+  .metric-icon--green { color: var(--app-success) !important; background: var(--app-success-soft) !important; }
+  .metric-icon--orange { color: var(--app-warning) !important; background: var(--app-warning-soft) !important; }
+  .range-control button[aria-pressed='true'] { box-shadow: var(--app-shadow-xs) !important; }
+  .chart-empty { background: var(--app-surface) !important; }
+  .panel-state button:hover { border-color: var(--app-primary-soft) !important; }
+  .quota-card.warning { border-left-color: var(--app-warning) !important; }
+  .quota-card.danger { border-left-color: var(--app-danger) !important; }
+  .quota-card.ok { border-left-color: var(--app-success) !important; }
+  tbody tr:hover { background: var(--app-surface-subtle) !important; }
+  .status-badge.succeeded { color: var(--app-success) !important; background: var(--app-success-soft) !important; }
+  .status-badge.failed { color: var(--app-danger) !important; background: var(--app-danger-soft) !important; }
+  .status-badge.pending { color: var(--app-warning) !important; background: var(--app-warning-soft) !important; }
+
+  /* ============= OrdersView.vue 剩余硬编码 ============= */
+  .stat-card {
+    background: var(--app-surface) !important;
+    box-shadow: none !important;
+    border-color: var(--app-border) !important;
+  }
+  .stat-card:hover { box-shadow: var(--app-shadow-xs) !important; }
+  .stat-icon--green { color: var(--app-success) !important; background: var(--app-success-soft) !important; }
+  .stat-icon--orange { color: var(--app-warning) !important; background: var(--app-warning-soft) !important; }
+  .orders-table th,
+  .orders-table td { border-bottom-color: var(--app-border) !important; }
+  .order-row:hover { background: var(--app-surface-subtle) !important; }
+  .search-box:focus-within { box-shadow: 0 0 0 3px var(--app-primary-soft) !important; }
+  .status-tab.active { box-shadow: var(--app-shadow-xs) !important; }
+  .action-btn--warning {
+    color: var(--app-warning) !important;
+    background: var(--app-warning-soft) !important;
+    border-color: var(--app-warning-soft) !important;
+  }
+  .action-btn--warning:hover { background: var(--app-warning-soft) !important; }
+  .status--success { color: var(--app-success) !important; background: var(--app-success-soft) !important; }
+  .status--warning { color: var(--app-warning) !important; background: var(--app-warning-soft) !important; }
+  .status--danger { color: var(--app-danger) !important; background: var(--app-danger-soft) !important; }
+  .status--info { color: var(--app-muted-strong) !important; background: var(--app-surface-muted) !important; }
+  .action-btn--primary:hover { box-shadow: 0 2px 8px rgb(91 159 248 / 25%) !important; }
+  .action-btn--ghost:hover {
+    border-color: var(--app-primary-soft) !important;
+    background: var(--app-primary-soft) !important;
+  }
+
+  /* ============= UsageLogsView.vue 剩余硬编码 ============= */
+  .table-card {
+    background: var(--app-surface) !important;
+    border-color: var(--app-border) !important;
+  }
+  .data-table th,
+  .data-table td { border-bottom-color: var(--app-border) !important; }
+  .data-table thead th {
+    background: var(--app-surface-subtle) !important;
+    color: var(--app-muted-strong) !important;
+  }
+  .data-row:hover { background: var(--app-surface-subtle) !important; }
+  .stat-card--ul {
+    background: var(--app-surface) !important;
+    border-color: var(--app-border) !important;
+    box-shadow: none !important;
+  }
+  .stat-card--ul:hover { box-shadow: var(--app-shadow-xs) !important; }
+  .stat-icon--green { color: var(--app-success) !important; background: var(--app-success-soft) !important; }
+  .stat-icon--red { color: var(--app-danger) !important; background: var(--app-danger-soft) !important; }
+  .stat-icon--blue { color: var(--app-primary) !important; background: var(--app-primary-soft) !important; }
+  .stat-icon--purple { color: var(--app-primary) !important; background: var(--app-primary-soft) !important; }
+  .stat-label { color: var(--app-muted-strong) !important; }
+  .table-footer { border-top-color: var(--app-border) !important; }
+  .detail-list { border-color: var(--app-border) !important; }
+  .detail-list > div { border-right-color: var(--app-border) !important; border-bottom-color: var(--app-border) !important; }
+  .detail-list dt { color: var(--app-muted-strong) !important; }
+  .action-btn--ghost:hover {
+    background: var(--app-primary-soft) !important;
+    border-color: var(--app-primary-soft) !important;
+    color: var(--app-primary) !important;
+  }
+  .action-btn { color: var(--app-muted-strong) !important; }
+
+  /* ============= NotificationsView.vue 剩余硬编码 ============= */
+  .notif-card:hover { background: var(--app-surface-subtle) !important; }
+  .notif-card.unread { background: var(--app-surface-subtle) !important; }
+
+  .cat-security .notif-icon-wrap { background: var(--app-danger-soft) !important; color: var(--app-danger) !important; }
+  .cat-security .notif-badge { background: var(--app-danger-soft) !important; color: var(--app-danger) !important; }
+  .cat-security .state-icon { background: var(--app-danger-soft) !important; }
+
+  .cat-billing .notif-icon-wrap { background: var(--app-warning-soft) !important; color: var(--app-warning) !important; }
+  .cat-billing .notif-badge { background: var(--app-warning-soft) !important; color: var(--app-warning) !important; }
+  .cat-billing .pref-icon-wrap { background: var(--app-warning-soft) !important; color: var(--app-warning) !important; }
+  .cat-billing .dialog-icon-wrap { background: var(--app-warning-soft) !important; color: var(--app-warning) !important; }
+  .cat-billing .pref-group-icon { background: var(--app-warning-soft) !important; color: var(--app-warning) !important; }
+
+  .cat-usage .notif-icon-wrap { background: var(--app-primary-soft) !important; color: var(--app-primary) !important; }
+  .cat-usage .notif-badge { background: var(--app-primary-soft) !important; color: var(--app-primary) !important; }
+  .cat-usage .pref-icon-wrap { background: var(--app-primary-soft) !important; color: var(--app-primary) !important; }
+  .cat-usage .dialog-icon-wrap { background: var(--app-primary-soft) !important; color: var(--app-primary) !important; }
+  .cat-usage .pref-group-icon { background: var(--app-primary-soft) !important; color: var(--app-primary) !important; }
+
+  .cat-operations .notif-icon-wrap { background: var(--app-success-soft) !important; color: var(--app-success) !important; }
+  .cat-operations .notif-badge { background: var(--app-success-soft) !important; color: var(--app-success) !important; }
+  .cat-operations .pref-icon-wrap { background: var(--app-success-soft) !important; color: var(--app-success) !important; }
+  .cat-operations .dialog-icon-wrap { background: var(--app-success-soft) !important; color: var(--app-success) !important; }
+  .cat-operations .pref-group-icon { background: var(--app-success-soft) !important; color: var(--app-success) !important; }
+
+  .cat-support .notif-icon-wrap { background: var(--app-primary-soft) !important; color: var(--app-primary) !important; }
+  .cat-support .notif-badge { background: var(--app-primary-soft) !important; color: var(--app-primary) !important; }
+  .cat-support .pref-icon-wrap { background: var(--app-primary-soft) !important; color: var(--app-primary) !important; }
+  .cat-support .dialog-icon-wrap { background: var(--app-primary-soft) !important; color: var(--app-primary) !important; }
+  .cat-support .pref-group-icon { background: var(--app-primary-soft) !important; color: var(--app-primary) !important; }
+
+  .preference-group-header.cat-security .pref-group-icon { background: var(--app-danger-soft) !important; color: var(--app-danger) !important; }
+  .pref-icon-wrap.cat-security { background: var(--app-danger-soft) !important; color: var(--app-danger) !important; }
+  .dialog-icon-wrap.cat-security { background: var(--app-danger-soft) !important; color: var(--app-danger) !important; }
+
+  /* Dialog summary 分类块 */
+  .dialog-summary.cat-security { background: var(--app-danger-soft) !important; color: var(--app-danger) !important; border-left-color: var(--app-danger) !important; }
+  .dialog-summary.cat-billing { background: var(--app-warning-soft) !important; color: var(--app-warning) !important; border-left-color: var(--app-warning) !important; }
+  .dialog-summary.cat-usage { background: var(--app-primary-soft) !important; color: var(--app-primary) !important; border-left-color: var(--app-primary) !important; }
+  .dialog-summary.cat-operations { background: var(--app-success-soft) !important; color: var(--app-success) !important; border-left-color: var(--app-success) !important; }
+  .dialog-summary.cat-support { background: var(--app-primary-soft) !important; color: var(--app-primary) !important; border-left-color: var(--app-primary) !important; }
+
+  .state-error { background: var(--app-danger-soft) !important; color: var(--app-danger) !important; }
+  .state-empty { background: var(--app-surface-muted) !important; }
+
+  /* ============= 通用卡片补丁 ============= */
+  [class*="-card"][style*="background: rgb(255"],
+  [class*="-card"][style*="background:#fff"] {
+    background: var(--app-surface) !important;
+  }
+
+  /* ============= Element Plus 弹层/下拉补丁 ============= */
+  .el-dropdown-menu {
+    background: var(--app-surface-raised) !important;
+    border-color: var(--app-border) !important;
+    box-shadow: var(--app-shadow-md) !important;
+  }
+  .el-dropdown-menu__item {
+    color: var(--app-fg) !important;
+  }
+  .el-dropdown-menu__item:hover,
+  .el-dropdown-menu__item:focus {
+    background: var(--app-primary-soft) !important;
+    color: var(--app-primary) !important;
+  }
+
+  /* ============= Element Plus 消息框/确认框 ============= */
+  .el-message-box {
+    background: var(--app-surface-raised) !important;
+    border-color: var(--app-border) !important;
+  }
+  .el-message-box__title {
+    color: var(--app-fg) !important;
+  }
+  .el-message-box__content {
+    color: var(--app-muted-strong) !important;
+  }
+
+  /* ============= 确保骨架屏在暗色下不刺眼 ============= */
+  .el-skeleton__item {
+    background: var(--app-surface-muted) !important;
+  }
+
+  /* ============= admin.css 硬编码浅色 ============= */
+  .admin-table tbody tr:hover {
+    background: var(--app-surface-subtle) !important;
+  }
+  .admin-table code {
+    color: var(--app-muted-strong) !important;
+  }
+
+  /* ============= HeaderBar.vue 硬编码浅色 ============= */
+  .identity:hover {
+    background: var(--app-surface-muted) !important;
+  }
+
+  /* ============= OperatingReportsView.vue 硬编码浅色 ============= */
+  /* 过滤器输入框白底 */
+  .report-filters label > input,
+  .report-filters label > select {
+    background: var(--app-surface) !important;
+    color: var(--app-fg) !important;
+  }
+  /* 错误提示块浅红底 */
+  .report-filter-error,
+  .report-error {
+    background: var(--app-danger-soft) !important;
+    border-color: var(--app-danger) !important;
+    color: var(--app-danger) !important;
+  }
+  /* 粒度切换 / Tabs 浅灰底 */
+  .report-grain,
+  .report-tabs {
+    background: var(--app-surface-muted) !important;
+  }
+  /* 表格浅色边框与表头浅底 */
+  .report-table th,
+  .report-table td {
+    border-bottom-color: var(--app-border) !important;
+  }
+  .report-table th {
+    background: var(--app-surface-subtle) !important;
+    color: var(--app-muted-strong) !important;
+  }
+  /* 定位提示浅蓝底 */
+  .report-located {
+    background: var(--app-primary-soft) !important;
+    border-color: var(--app-primary) !important;
+    color: var(--app-muted-strong) !important;
+  }
+  /* 涨跌色硬编码（绿/红），切换为语义变量 */
+  .report-overview__metrics strong.is-up {
+    color: var(--app-success) !important;
+  }
+  .report-overview__metrics strong.is-down {
+    color: var(--app-danger) !important;
+  }
+
+  /* ============= SupportTicketQueue.vue 硬编码头像底色 ============= */
+  .ticket-thread__avatar {
+    background: var(--app-surface-muted) !important;
+    color: var(--app-muted-strong) !important;
+  }
+  .ticket-thread__item.is-user .ticket-thread__avatar,
+  .ops-identity__avatar {
+    background: var(--app-accent-soft) !important;
+    color: var(--app-accent) !important;
+  }
+
+  /* ============= AdminCommunicationsView.vue 硬编码浅色 ============= */
+  /* 状态标签浅色边框 → 用 rail 色保持可见 */
+  .ops-status--open { border-color: var(--ops-open-rail) !important; }
+  .ops-status--processing { border-color: var(--ops-processing-rail) !important; }
+  .ops-status--closed { border-color: var(--ops-closed-rail) !important; }
+  .ops-status--done { border-color: var(--ops-done-rail) !important; }
+  /* 通信表格浅色边框/表头底/选中行底 */
+  .communications-table th,
+  .communications-table td { border-bottom-color: var(--app-border) !important; }
+  .communications-table th {
+    background: var(--app-surface-subtle) !important;
+    color: var(--app-muted-strong) !important;
+  }
+  .communications-table tr.selected { background: var(--app-primary-soft) !important; }
+
+  /* ============= ContentSafetyView.vue 硬编码浅色边框 ============= */
+  .safety-risk-tag--critical { border-color: var(--risk-critical-rail) !important; }
+  .safety-risk-tag--high { border-color: var(--risk-high-rail) !important; }
+  .safety-risk-tag--medium { border-color: var(--risk-medium-rail) !important; }
+  .safety-risk-tag--low { border-color: var(--risk-low-rail) !important; }
+
+  /* ============= PlansAdminView.vue 硬编码浅色图标底 ============= */
+  .plan-stat-card__icon--active {
+    background: var(--app-success-soft) !important;
+  }
+  /* 活跃套餐分组头部浅绿底 / 下架面板浅红底（Element Plus 变量回退为浅色） */
+  .plan-group-header--active {
+    background: var(--app-success-soft) !important;
+    border-color: var(--app-success-soft) !important;
+  }
+  .plan-archived-panel {
+    border-color: var(--app-danger-soft) !important;
+  }
+  .plan-archived-panel__header {
+    background: var(--app-danger-soft) !important;
+  }
+  /* 草稿版本行浅蓝底 */
+  .plan-version-row--draft {
+    background: var(--app-primary-soft) !important;
+  }
+  /* 规格 grid 浅灰底 */
+  .plan-spec {
+    background: var(--app-surface-subtle) !important;
+  }
+
+  /* ============= OperationsView.vue 硬编码浅色边框 ============= */
+  .ops-health__tag--ok { border-color: var(--health-ok-rail) !important; }
+  .ops-health__tag--bad { border-color: var(--health-bad-rail) !important; }
+  .ops-health__tag--warn { border-color: var(--health-warn-rail) !important; }
+  .ops-health__tag--info { border-color: var(--health-info-rail) !important; }
+
+  /* ============= UsersInvitationsView.vue 硬编码浅色 ============= */
+  /* 表格单元格浅色边框 */
+  .users-table td { border-bottom-color: var(--app-border) !important; }
+  /* 斑马纹浅色背景 → 暗色次级表面，消除"白一个黑一个" */
+  .users-table__row:nth-child(even) td { background: var(--app-surface-subtle) !important; }
+  /* hover 浅色背景 */
+  .users-table__row:hover td { background: var(--app-surface-muted) !important; }
+  /* 封禁详情块 Element Plus 浅色变量 */
+  .disabled-account-detail {
+    border-color: var(--app-danger-soft) !important;
+    background: var(--app-danger-soft) !important;
+  }
+  /* 鼠标悬浮提示白底 */
+  .user-follow-tip {
+    color: var(--app-fg) !important;
+    background: var(--app-surface-raised) !important;
+    border-color: var(--app-border) !important;
+    box-shadow: var(--app-shadow-md) !important;
+  }
+  .user-follow-tip strong { color: var(--app-fg) !important; }
+  .user-follow-tip p { color: var(--app-muted-strong) !important; }
+  .user-follow-tip__action {
+    color: var(--app-primary) !important;
+    background: var(--app-primary-soft) !important;
+  }
+}

@@ -1,0 +1,211 @@
+# 两种策略都会让容器采信 X-Forwarded-For，区别在于*谁*被信任：
+# 'framework' 安装 ForwardedHeaderFilter，它会无条件地依据该请求头重写 getRemoteAddr()，
+# 也就是任何能建立连接的对端都会被采信；'native' 安装 Tomcat 的 RemoteIpValve，
+# 只有当对端地址匹配下面的 internal-proxies 时才会这么做。
+# 所有按 IP 的控制都以 getRemoteAddr() 为键：口令登录 IP 限流、短信验证码 IP 限流、
+# 滑块验证码签发限流以及短信请求指纹。在运行中的服务栈上实测：'framework' 下限流器本来就
+# 以转发后的地址为键（同一个伪造 X-Forwarded-For 的第 25 次失败登录在第 21 次就被限流，
+# 而另一个伪造地址仍被放行），因此本指令并不改变 nginx 之后的按客户端限流效果——它只是把
+# 伪造面从「任意对端」收窄到「私有网络对端」，而 nginx 正是运行在私有网络上。
+# 前提要求：本服务前方的唯一一跳必须位于私有/回环网络（随附的 Compose 栈在桥接网络上
+# 终止于 nginx）。如果本服务被放到公网地址的代理之后，就必须把那个地址加入 internal-proxies，
+# 否则所有客户端都会塌缩进同一个限流桶。
+server:
+  forward-headers-strategy: native
+  tomcat:
+    remoteip:
+      # 只信任对端为私有/回环地址的转发请求头；nginx 是唯一对外发布的主机端口。
+      # 这是 Tomcat 有文档记载的默认集合，这里显式写出，使信任边界可见，
+      # 也不会随框架升级而漂移。
+      internal-proxies: "10\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|192\\.168\\.\\d{1,3}\\.\\d{1,3}|169\\.254\\.\\d{1,3}\\.\\d{1,3}|127\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|172\\.1[6-9]{1}\\.\\d{1,3}\\.\\d{1,3}|172\\.2[0-9]{1}\\.\\d{1,3}\\.\\d{1,3}|172\\.3[0-1]{1}\\.\\d{1,3}\\.\\d{1,3}|0:0:0:0:0:0:0:1|::1"
+
+platform:
+  scheduling:
+    enabled: ${PLATFORM_SCHEDULING_ENABLED:true}
+
+spring:
+  application:
+    name: platform-service
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 26MB
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: never
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+  tracing:
+    enabled: ${OTEL_TRACING_ENABLED:false}
+    sampling:
+      probability: ${OTEL_HEAD_SAMPLING_PROBABILITY:0.1}
+  otlp:
+    tracing:
+      endpoint: ${OTEL_TRACES_ENDPOINT:http://otel-collector:4318/v1/traces}
+
+logging:
+  structured:
+    format:
+      console: logstash
+
+payment:
+  order-expiry: 15m
+  mock:
+    enabled: false
+  callback:
+    # 非法的支付回调会被记录为异常。若以载荷哈希作为异常的主键，未认证的调用方每改动一个字节
+    # 就能插入一条永久记录，因此同一提供方在该时间窗内的回调会归并成一行，
+    # 由 attempt_count 保留证据次数。设为 0s 即恢复按载荷哈希作主键。
+    anomaly-window: ${PAYMENT_CALLBACK_ANOMALY_WINDOW:1h}
+  anomaly:
+    retention: ${PAYMENT_ANOMALY_RETENTION:30d}
+    cleanup-batch-size: ${PAYMENT_ANOMALY_CLEANUP_BATCH_SIZE:500}
+    cleanup-delay-ms: ${PAYMENT_ANOMALY_CLEANUP_DELAY_MS:60000}
+  jobs:
+    batch-size: 50
+    claim-timeout: 30s
+    initial-backoff: 5s
+    max-backoff: 1h
+    max-attempts: 12
+    expired-order-delay-ms: 5000
+    recharge-expiry-delay-ms: 5000
+    compensation-delay-ms: 5000
+
+refund:
+  jobs:
+    preparation-delay-ms: 5000
+    compensation-delay-ms: 10000
+    batch-size: 50
+    claim-timeout: 30s
+    initial-backoff: 5s
+    max-backoff: 1h
+    max-attempts: 12
+
+reconciliation:
+  job-enabled: true
+  daily-cron: "0 30 2 * * *"
+  zone: Asia/Shanghai
+  max-bill-bytes: 52428800
+  max-records: 1000000
+
+# 连续包月自动续费。
+#
+# enabled 默认 false 是刻意的：上线顺序必须是「迁移 → 后端 → 前端 → 打开调度」。
+# 若默认开启，一次部署就会在存量订阅还没被核对之前开始扣款。
+subscription:
+  jobs:
+    enabled: ${SUBSCRIPTION_JOBS_ENABLED:false}
+    batch-size: ${SUBSCRIPTION_JOBS_BATCH_SIZE:50}
+    renewal-delay-ms: ${SUBSCRIPTION_JOBS_RENEWAL_DELAY_MS:60000}
+    claim-timeout: ${SUBSCRIPTION_JOBS_CLAIM_TIMEOUT:5m}
+    initial-backoff: ${SUBSCRIPTION_JOBS_INITIAL_BACKOFF:1h}
+    max-backoff: ${SUBSCRIPTION_JOBS_MAX_BACKOFF:24h}
+    max-attempts: ${SUBSCRIPTION_JOBS_MAX_ATTEMPTS:3}
+    grace-period: ${SUBSCRIPTION_JOBS_GRACE_PERIOD:7d}
+    # 到期前多久扣款。提前一天是为了让「余额不足 → 充值」的窗口落在用户察觉中断之前，
+    # 而且续期实例以 QUEUED 落库、有效期从激活时刻起算，提前扣款不会浪费用户已付的时长。
+    charge-lead-time: ${SUBSCRIPTION_JOBS_CHARGE_LEAD_TIME:24h}
+    max-renewals: ${SUBSCRIPTION_JOBS_MAX_RENEWALS:36}
+    # 扣款成功但权益长期未生效（唯一会「静默吞钱」的路径）的兜底阈值。
+    stuck-queued-alert-after: ${SUBSCRIPTION_JOBS_STUCK_QUEUED_ALERT_AFTER:45d}
+    price-increase-requires-confirmation: ${SUBSCRIPTION_JOBS_PRICE_INCREASE_REQUIRES_CONFIRMATION:true}
+
+sms:
+  enabled: false
+  provider: ${SMS_PROVIDER:aliyun}
+  security:
+    encryption-key: ${SMS_ENCRYPTION_KEY:}
+    phone-lookup-key: ${SMS_PHONE_LOOKUP_KEY:}
+    code-pepper: ${SMS_CODE_PEPPER:}
+    request-ip-key: ${SMS_REQUEST_IP_KEY:}
+  aliyun:
+    endpoint: ${SMS_ALIYUN_ENDPOINT:dysmsapi.aliyuncs.com}
+    access-key-id: ${SMS_ALIYUN_ACCESS_KEY_ID:}
+    access-key-secret: ${SMS_ALIYUN_ACCESS_KEY_SECRET:}
+    sign-name: ${SMS_ALIYUN_SIGN_NAME:宇智汇和东莞科技}
+    region-id: ${SMS_ALIYUN_REGION_ID:cn-hangzhou}
+  proof-expiry: 5m
+  captcha:
+    enabled: ${SMS_CAPTCHA_ENABLED:true}
+    challenge-lifetime: ${SMS_CAPTCHA_CHALLENGE_LIFETIME:120s}
+    proof-lifetime: ${SMS_CAPTCHA_PROOF_LIFETIME:120s}
+    issue-ip-limit: ${SMS_CAPTCHA_ISSUE_IP_LIMIT:10}
+  jobs:
+    batch-size: 50
+    claim-timeout: 30s
+    initial-backoff: 10s
+    max-backoff: 1h
+    max-attempts: 8
+    delivery-delay-ms: 5000
+
+email:
+  enabled: ${EMAIL_ENABLED:false}
+  security:
+    code-pepper: ${EMAIL_CODE_PEPPER:${SMS_CODE_PEPPER:}}
+  smtp:
+    host: ${EMAIL_SMTP_HOST:}
+    port: ${EMAIL_SMTP_PORT:465}
+    username: ${EMAIL_SMTP_USERNAME:}
+    password: ${EMAIL_SMTP_PASSWORD:}
+  from: ${EMAIL_FROM:}
+  from-name: ${EMAIL_FROM_NAME:一加AI中台}
+  reply-to: ${EMAIL_REPLY_TO:}
+
+content-safety:
+  enabled: ${CONTENT_SAFETY_ENABLED:true}
+  fail-closed: ${CONTENT_SAFETY_FAIL_CLOSED:true}
+  policy-signing-secret: ${CONTENT_SAFETY_POLICY_SIGNING_SECRET:${SECURITY_INTERNAL_HMAC_SECRET:}}
+
+identity:
+  terminal-session:
+    presence-ttl: ${TERMINAL_SESSION_PRESENCE_TTL:120s}
+    heartbeat-interval: ${TERMINAL_SESSION_HEARTBEAT_INTERVAL:30s}
+    browser-close-grace: ${TERMINAL_SESSION_BROWSER_CLOSE_GRACE:2m}
+    browser-close-cleanup-delay: ${TERMINAL_SESSION_BROWSER_CLOSE_CLEANUP_DELAY:10000}
+    handoff-timeout: ${LOGIN_HANDOFF_TIMEOUT:10m}
+    completion-grace: ${LOGIN_HANDOFF_COMPLETION_GRACE:1m}
+    handoff-limit: ${LOGIN_HANDOFF_LIMIT:5}
+    handoff-window: ${LOGIN_HANDOFF_WINDOW:10m}
+    audit-retention: ${LOGIN_HANDOFF_AUDIT_RETENTION:30d}
+    cleanup-delay: ${LOGIN_HANDOFF_CLEANUP_DELAY:3600000}
+  password-login-rate-limit:
+    hmac-key: ${PASSWORD_LOGIN_RATE_LIMIT_HMAC_KEY:}
+    account-limit: ${PASSWORD_LOGIN_ACCOUNT_LIMIT:5}
+    account-window: ${PASSWORD_LOGIN_ACCOUNT_WINDOW:15m}
+    ip-limit: ${PASSWORD_LOGIN_IP_LIMIT:20}
+    ip-window: ${PASSWORD_LOGIN_IP_WINDOW:10m}
+    block-duration: ${PASSWORD_LOGIN_BLOCK_DURATION:15m}
+  login-risk:
+    pepper: ${LOGIN_RISK_PEPPER:}
+    geoip-v4-data-source: ${GEOIP_V4_DATA_SOURCE:}
+    geoip-v6-data-source: ${GEOIP_V6_DATA_SOURCE:}
+
+yuzhh:
+  oauth:
+    desktop:
+      enabled: ${OAUTH_DESKTOP_ENABLED:true}
+      client-id: ${OAUTH_DESKTOP_CLIENT_ID:yuzhh-desktop}
+      client-type: PUBLIC
+      redirect-uri: ${OAUTH_DESKTOP_REDIRECT_URI:yuzhhai://oauth/callback}
+      allowed-scopes:
+        - openid
+        - profile
+      code-challenge-methods:
+        - S256
+      authorization-code-ttl: ${OAUTH_DESKTOP_CODE_TTL:5m}
+      refresh-token-ttl: ${OAUTH_DESKTOP_REFRESH_TTL:60d}
+      login-transaction-ttl: ${OAUTH_DESKTOP_TRANSACTION_TTL:10m}
+      cleanup-delay: ${OAUTH_DESKTOP_CLEANUP_DELAY:600000}
+      code-retention: ${OAUTH_DESKTOP_CODE_RETENTION:1d}
+      rotation-retention: ${OAUTH_DESKTOP_ROTATION_RETENTION:1d}
+      revoked-retention: ${OAUTH_DESKTOP_REVOKED_RETENTION:30d}

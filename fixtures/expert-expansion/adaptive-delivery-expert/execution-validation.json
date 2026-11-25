@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-08",
+  "code": "adaptive-delivery-expert",
+  "status": "passed_local_trial",
+  "runner": {
+    "model": "gpt-6-sol",
+    "reasoningEffort": "ultra",
+    "environment": "Independent Codex subagent reading the packaged Entry Skill and references; not the Yuzai/cloud-host LLM."
+  },
+  "artifactSha256": "0f510e904d3546dceedfa2fe6cb408efd5a724301673760384582d82cd9011dd",
+  "skillSha256": "275129b71126e022dd131ef9dcf9938a6cc8105e0734ee654493a5f441906d60",
+  "executedSkillSha256": "c617d15078968e5cf06ffe3ab6f782ea469ab12f08ad564773540f40a0a7c952",
+  "reviewedBy": "Parent agent",
+  "parentReview": [
+    "完整读取 HTML 与 CSV；18 小时必交、12 小时容量、6 小时缺口、含可选项 21 小时和 9 小时缺口一致。",
+    "导出与登录建议合计 10 小时，余 2 小时未塞入未知估时；仅登录负责人为林，其他人与所有日期仍待确认。",
+    "独立查看桌面与 375px 截图，文本可读且无横向截断；未执行生产删除或客户外发。",
+    "试用使用短化英文展示标签前的包；正文及两份参考不变。保留真实执行版本与等价核查，未冒充用最终展示头重新试用。"
+  ],
+  "trialReport": "validation-fixture/trial-result.json",
+  "evidenceSha256": {
+    "executed-package-identity.json": "9c2c858d387fbd0754adea0f32397d5108fbacb84d769abd97bc3e7b959490ef",
+    "executed-SKILL.md": "c617d15078968e5cf06ffe3ab6f782ea469ab12f08ad564773540f40a0a7c952",
+    "input.json": "cdd65ac5a814ba594e9e75a01a7075d44ca19566089351c086e59ee8e4eb3ff5",
+    "review-contract.json": "11a08cf0c2f953c8098b5582d522f944465b3b4454952f4227a745f224dd901e",
+    "trial-response.md": "a4cacf1b511f665f846e2946cfc27f81f5b157e8189d1dc51e417d7a7a2cf7c3",
+    "trial-result.json": "5f96418fe21dca378e999f05e9c168849031c8f0422890c1035f007bb0c1f6ca",
+    "output/brief-desktop.png": "b98f2a6308cab46c5154139a1a1ae53834513d999176cc3c55397588de2e5b3c",
+    "output/brief-mobile.png": "4c099ec7bbe10945b731688cf849f75540c12fb812e7a1906c0cb0c10c20a2ff",
+    "output/brief.html": "12c857a3869ccd5c252faa8f27a2548aa1424ca938ee6c00d2537fa89acbc6da",
+    "output/plan.csv": "80a39a5e70c092e93c5ac4e1db116e72b6672c4b7705c60cd40ac5852ef4fd11"
+  },
+  "limits": [
+    "虚构材料与隔离任务的一次试用不证明所有模型和真实项目都能可靠完成。",
+    "没有在线发布、真实客户操作或生产服务验收。",
+    "未把 10 个静态场景写成 10 次模型运行。"
+  ],
+  "sourceEquivalence": {
+    "status": "equivalent_execution_instructions",
+    "executedSkillSha256": "c617d15078968e5cf06ffe3ab6f782ea469ab12f08ad564773540f40a0a7c952",
+    "finalSkillSha256": "275129b71126e022dd131ef9dcf9938a6cc8105e0734ee654493a5f441906d60",
+    "instructionBodySha256": "4f3ad1b96c6f6f421c8f4bba16529e4d9c5908377e5c436d114935719d0e707e",
+    "bodyByteIdentical": true,
+    "referencesUnchanged": true,
+    "changes": [
+      {
+        "from": "Format selection",
+        "to": "Choose format"
+      },
+      {
+        "from": "File and content delivery",
+        "to": "Deliver files"
+      },
+      {
+        "from": "Completeness checks",
+        "to": "Check result"
+      }
+    ],
+    "scope": "Only three English display tags and matching canvas text were shortened. Actual trial used the preserved earlier SKILL header. No execution instruction or reference changed; actual trial was not rerun. Final ZIP import tests and preview were rerun."
+  }
+}

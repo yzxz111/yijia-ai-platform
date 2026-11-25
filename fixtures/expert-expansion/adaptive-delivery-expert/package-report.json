@@ -1,0 +1,84 @@
+{
+  "artifactSha256": "0f510e904d3546dceedfa2fe6cb408efd5a724301673760384582d82cd9011dd",
+  "assets": {
+    "exampleImage": {
+      "bytes": 37343,
+      "height": 280,
+      "path": "skills/adaptive-delivery-expert/assets/example-image.png",
+      "sha256": "ed92258a312f52d6a767c9e240c9b29eecc3990dff7caa2c4b70b5343e93db40",
+      "width": 1072
+    },
+    "icon": {
+      "bytes": 5620,
+      "height": 240,
+      "path": "skills/adaptive-delivery-expert/assets/icon.png",
+      "sha256": "6e38959827452675b86ccdcf19f8d25eeb0a332f6843a58ffed02b97e39b5f8d",
+      "width": 240
+    },
+    "illustration": {
+      "bytes": 44030,
+      "height": 480,
+      "path": "skills/adaptive-delivery-expert/assets/illustration.png",
+      "sha256": "3d336dfd3eb8775b674298d1d9192f35c141a4766956bb90bb46fd401be2343c",
+      "width": 1440
+    }
+  },
+  "cloudPublished": false,
+  "code": "adaptive-delivery-expert",
+  "compressedBytes": 96166,
+  "entries": {
+    "com.yuzhihuihe.ycps/manifest.json": {
+      "bytes": 445,
+      "sha256": "4ebd38fad65a3a04c63fb078e2fb4cd907dda7178741d54987d8b0277377b8ab"
+    },
+    "plugin.json": {
+      "bytes": 736,
+      "sha256": "f19b84d44ce31730e176b2adbe2ce6a73a84f072b34c097f2083cebf64cc481a"
+    },
+    "skills/adaptive-delivery-expert/SKILL.md": {
+      "bytes": 22070,
+      "sha256": "275129b71126e022dd131ef9dcf9938a6cc8105e0734ee654493a5f441906d60"
+    },
+    "skills/adaptive-delivery-expert/assets/example-image.png": {
+      "bytes": 37343,
+      "sha256": "ed92258a312f52d6a767c9e240c9b29eecc3990dff7caa2c4b70b5343e93db40"
+    },
+    "skills/adaptive-delivery-expert/assets/icon.png": {
+      "bytes": 5620,
+      "sha256": "6e38959827452675b86ccdcf19f8d25eeb0a332f6843a58ffed02b97e39b5f8d"
+    },
+    "skills/adaptive-delivery-expert/assets/illustration.png": {
+      "bytes": 44030,
+      "sha256": "3d336dfd3eb8775b674298d1d9192f35c141a4766956bb90bb46fd401be2343c"
+    },
+    "skills/adaptive-delivery-expert/references/deliverable-templates.md": {
+      "bytes": 2178,
+      "sha256": "5c355a737dc6870334dcd08488c3f9cafd58a34b3a02c279a3e817a25b384cbf"
+    },
+    "skills/adaptive-delivery-expert/references/worked-example.md": {
+      "bytes": 2765,
+      "sha256": "f43c079c085dae87b3a735a7d6d63cd01e652c0a2e4f48c413ab25b1cb9ae988"
+    }
+  },
+  "entryCount": 8,
+  "expandedBytes": 115187,
+  "kind": "EXPERT",
+  "presentation": {
+    "canvasNodes": {
+      "en": 20,
+      "zh": 20
+    },
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  "runtime": {
+    "dependencies": [],
+    "entryAgent": "main",
+    "minClientVersion": "2026.6.30"
+  },
+  "validationScope": "Deterministic packaging, identity, metadata budgets, canvas geometry/runs, decoded asset sizes. See acceptance results for production parser tests.",
+  "version": "1.0.0",
+  "ycpsVersion": "1.1.0"
+}

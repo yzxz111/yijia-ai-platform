@@ -1,0 +1,66 @@
+{
+  "artifact": "senior-software-engineer",
+  "reviewType": "static_instructions_and_offline_scenario_walkthrough",
+  "status": "reviewed",
+  "initialReviewStatus": "issues_found_initial",
+  "scopeStatement": "子 Agent 阅读初版及修订版 senior-software-engineer spec.instructions、两份参考文件，并手工对十个完整虚构输入做离线指令演练；又复核生成的 SKILL.md 与归档字节。示例回复不是实际 Yuzai 应用端模型输出；未在 Yuzai 应用端导入后调用模型做真实端到端行为测试。",
+  "initialReviewedSource": {
+    "spec": "system/fixtures/expert-expansion/specs/senior-software-engineer.json",
+    "specSha256": "ad3ad8c04d3a9e3d40cb1712cfb9feefb81ff53c27ef677b8141ae800f5a1534",
+    "templatesSha256": "6f1a06f97e7c1717cef78bbc90f602bbc4dd815cfd8ec6929b387bf86d4af06a",
+    "workedExampleSha256": "7344ba202dc51baa33e35184032febe55e0e3169aae6db2ad36ce3fcbdfcb8ab"
+  },
+  "initialAssessment": "十项案例中八项有直接、足够的指令覆盖。发现一处真实的确认强度歧义：无法运行时，一般应标注未复现，但可由代码语言语义直接证明的局部缺陷不应被一律降为推测。",
+  "findings": [
+    {
+      "id": "Q01",
+      "severity": "medium",
+      "location": "spec.instructions 工作流程 2；references/deliverable-templates.md 模板 B",
+      "issue": "流程 2 的‘不能运行时……形成候选假设，标为推测，未复现’和模板 B 的‘无可运行环境时写静态分析假设’写得过于绝对。对于 `0 || 5000` 和 `raw === 'true' || '1'`，在给定合同下可从 JavaScript 语义静态确定局部错误；参考 worked-example 也明确承认这一点。",
+      "impact": "专家可能把已静态证明的代码逻辑错误误报成仅猜测，从而削弱诊断；若反向过度修复，则又可能把局部静态证明误说成整个项目已复现和验收。",
+      "recommendedChange": "分别写‘代码逻辑已由可见代码及语言语义静态确认；项目运行复现/集成测试未执行’与‘跨环境、外部服务、调用链或时序根因仍待验证’。静态确认局部逻辑不能自动推出整个项目修复已通过。",
+      "scenarioIds": ["S02", "S05"],
+      "initialDisposition": "open"
+    }
+  ],
+  "scenarioFile": "quality-scenarios.json",
+  "initialScenarioJudgments": {
+    "supported": ["S01", "S03", "S04", "S06", "S07", "S08", "S09", "S10"],
+    "partial": ["S02", "S05"],
+    "uncovered": []
+  },
+  "finalReview": {
+    "status": "static_review_passed",
+    "sourceFiles": {
+      "spec": "system/fixtures/expert-expansion/specs/senior-software-engineer.json",
+      "specSha256": "6c0a7687398975f2e85d53265010bab460e4ce94413dd41ea74868d35738e3f7",
+      "skill": "system/fixtures/expert-expansion/senior-software-engineer/SKILL.md",
+      "skillSha256": "7478c197e9538132d444087333921495d663dace123e51d405f6c256d46b2c3f",
+      "templatesSha256": "e0d61281f18d167faabbd80e3eb195ab153e5f7d86cebffc8d26f5cb2fba2fb4",
+      "workedExampleSha256": "7344ba202dc51baa33e35184032febe55e0e3169aae6db2ad36ce3fcbdfcb8ab",
+      "archive": "system/fixtures/expert-expansion/senior-software-engineer/senior-software-engineer-1.0.0.ycps.zip",
+      "archiveSha256": "8b0aacd81151fc5ede6a64744bc87bd59e09ce7d6f04fc433377c131c0dedafb"
+    },
+    "consistencyChecks": {
+      "specInstructionsEqualSkillBody": true,
+      "archiveSkillMatchesDisk": true,
+      "archiveReferencesMatchDisk": true,
+      "archiveHashMatchesPackageReport": true,
+      "archiveEntryCount": 8
+    },
+    "findingDisposition": [
+      {
+        "id": "Q01",
+        "status": "resolved_in_instructions_and_template",
+        "evidence": "修订后的工作流程2允许基于语言语义、条件分支或完整数据流静态证明局部错误，并明确标‘代码逻辑已确认（静态证明），运行复现未执行’；未知调用方、环境、外部服务或时序原因仍列候选假设。模板A/B同步区分局部静态证明与项目运行验收，worked-example与之保持一致。"
+      }
+    ],
+    "scenarioCoverage": {
+      "count": 10,
+      "finalStaticJudgments": "S01—S10 全部为 supported；逐例依据见 quality-scenarios.json。",
+      "behavioralValidation": "未执行：这是子 Agent 的离线静态判断，示例回复为人工撰写，不是 Yuzai 应用端模型输出。"
+    },
+    "limits": "本审查核对了指令、参考模板、十个离线案例和归档内容一致性。没有验证真实 Yuzai 应用端导入后的模型对话行为；另代理进行的隔离代码修复演练应由主任务单独记录，不能替代应用端模型端到端验收。",
+    "conclusion": "初审发现的一处确认强度歧义已修复，未发现其他可确认的指令缺陷。最终包可进入下一步验收，但不能据此声称真实应用端行为测试通过。"
+  }
+}

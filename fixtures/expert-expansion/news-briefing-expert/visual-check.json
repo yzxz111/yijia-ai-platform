@@ -1,0 +1,29 @@
+{
+  "overflow": [],
+  "previewType": "Standalone rendering of package presentation; not a live application screenshot.",
+  "date": "2026-10-08",
+  "artifactSha256": "7f913ce13cfd053feb9ef5c01c64f7e4553b7fd9ef28c151cf3f12b036a3d5ef",
+  "reviewer": "Parent agent",
+  "visuallyInspected": [
+    "preview-zh.png",
+    "preview-en.png"
+  ],
+  "result": "Readable Chinese and English presentation with no observed clipping; standalone preview, not live host UI.",
+  "sharedBanner": {
+    "file": "source-assets/illustration.png",
+    "sha256": "356f10e187e88cdacc6188f1843d1d98063f4d835a9f58d42e7166911002b73c",
+    "dimensions": [
+      1440,
+      480
+    ],
+    "textFree": true,
+    "checks": [
+      "Renderer verified empty visible text and no SVG text/foreignObject.",
+      "Parent visually inspected pure graphical banner in both locale previews."
+    ]
+  },
+  "exampleImageLocale": "zh",
+  "englishPresentation": "English metadata and editable canvas; Chinese example image separately declares zh locale.",
+  "generatedPreviewScreenshotsVersioned": false,
+  "regenerate": "node scripts/render-expert-expansion.cjs --code news-briefing-expert --preview"
+}

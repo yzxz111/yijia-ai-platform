@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/v3/pay/transactions/h5",
+    "bodyPatterns": [{
+      "matchesJsonPath": {
+        "expression": "$.out_trade_no",
+        "equalTo": "pay_fixture_h5"
+      }
+    }]
+  },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": { "h5_url": "https://pay.localhost/wechat/h5/pay_fixture_h5" }
+  }
+}

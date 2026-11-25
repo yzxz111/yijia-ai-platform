@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-08",
+  "scope": "Author-side source and standalone browser example checks; package rendering, import, real user data, external connections, and host-model behavior remain separate.",
+  "sourceFiles": ["specs/workspace-builder.json", "workspace-builder/references/deliverable-templates.md", "workspace-builder/references/worked-example.md", "scripts/expert-artwork/workspace-builder.cjs"],
+  "checks": [
+    {"name": "builder.metadata(spec)", "result": "passed", "detail": "44 metadata fields; expert metadata values total 11600 UTF-8 bytes; English title 17 characters and description 102 characters."},
+    {"name": "worked example JavaScript syntax", "result": "passed", "detail": "Extracted the HTML script and ran node --check with exit code 0."},
+    {"name": "worked example browser path", "result": "passed", "detail": "Served fenced HTML from an in-memory local HTTP server in installed headless Chrome at 375x812. First run checked empty, add, edit, reload, complete, JSON export contents, invalid import preserving data, confirmed restore, and no horizontal overflow. After repair, reran edit-then-delete, failed storage write retaining draft and retry, 500-item cap plus reload, corrupt startup blocking ordinary overwrite, raw corrupt backup bytes, duplicate-ID import rejection, valid recovery, and no horizontal overflow. Final output: Chrome example passed: edit-delete, write failure, 500 cap, corrupt-store protection/raw export, invalid and valid import, reload, 375px."},
+    {"name": "artwork module", "result": "passed", "detail": "Required module with Node; reviewNumber 10, three workflow steps, no SVG text or foreignObject element."}
+  ],
+  "notVerified": ["Rendered PNGs and preview layout", "YCPS archive and import", "Screen-reader behavior", "Other mobile devices", "Cloud or calendar integration", "Real user workspace data"]
+}

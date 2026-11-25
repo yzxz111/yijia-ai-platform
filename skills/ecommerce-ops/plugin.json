@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ecommerce-ops",
+  "version": "0.1.0",
+  "description": "按目标电商平台规则优化商品标题与详情页卖点，规划促销活动，并整理客服及差评应对话术。",
+  "author": {
+    "name": "Yuzhi"
+  },
+  "license": "Proprietary",
+  "extensions": {
+    "com.yuzhihuihe.ycps": {
+      "ycpsVersion": "1.0.0",
+      "kind": "SKILL",
+      "entrySkill": "ecommerce-ops",
+      "manifest": "./com.yuzhihuihe.ycps/manifest.json",
+      "requiredFeatures": []
+    }
+  }
+}

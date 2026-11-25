@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/v3/refund/domestic/refunds/ref_fixture_paid"
+  },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": {
+      "refund_id": "503000000020260801000001",
+      "out_refund_no": "ref_fixture_paid",
+      "transaction_id": "420000000020260801000001",
+      "out_trade_no": "pay_fixture_paid",
+      "channel": "ORIGINAL",
+      "user_received_account": "ORIGINAL",
+      "success_time": "2026-08-01T12:10:00+08:00",
+      "create_time": "2026-08-01T12:05:00+08:00",
+      "status": "SUCCESS",
+      "amount": { "refund": 1900, "total": 1900, "currency": "CNY" }
+    }
+  }
+}

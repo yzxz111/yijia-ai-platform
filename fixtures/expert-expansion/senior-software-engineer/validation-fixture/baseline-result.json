@@ -1,0 +1,16 @@
+{
+  "type": "synthetic_project_baseline",
+  "workDirectory": "D:\\code\\Yuzhi9.20\\.scratch\\senior-software-engineer-exercise",
+  "command": "node --test --test-reporter=spec retry-options.test.mjs",
+  "tests": 9,
+  "passed": 5,
+  "failed": 4,
+  "exitCode": 1,
+  "observation": "Observed by root before any expert-directed repair. Four failures expose zero-value fallback. This is a fictional local project, not Yuzai runtime E2E.",
+  "hashes": {
+    "retry-options.mjs": "1be9fd92e7e70bbff1a094137e20655b2059f558dc68989a549f3c178c403d8c",
+    "retry-options.test.mjs": "f8ccfd32203d5cbf874437096b34dab7207ec6af97123f24f1589f31aeaff379",
+    "AGENTS.md": "ac370dd330b75646f100f36ba242c7ca098c0c2937d595129d5e8938b41761ce",
+    "user-notes.txt": "fac02cbd6b62c07fd73d5b9524bd6e4cb4dd40f96f4bddf76cd038f09276b09d"
+  }
+}

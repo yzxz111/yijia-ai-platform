@@ -1,0 +1,30 @@
+{
+  "priority": 1,
+  "scenarioName": "alipay-refund-query",
+  "requiredScenarioState": "FAILED",
+  "request": {
+    "method": "POST",
+    "urlPath": "/gateway.do",
+    "formParameters": {
+      "method": { "equalTo": "alipay.trade.fastpay.refund.query" },
+      "biz_content": {
+        "matches": "(?s)^\\{(?=[^{}]*\\\"out_trade_no\\\":\\\"pay_fixture_paid\\\"(?:,|\\}))(?=[^{}]*\\\"out_request_no\\\":\\\"ref_fixture_paid\\\"(?:,|\\}))[^{}]*\\}$"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": {
+      "alipay_trade_fastpay_refund_query_response": {
+        "code": "40004",
+        "msg": "Business Failed",
+        "sub_code": "ACQ.TRADE_NOT_ALLOW_REFUND",
+        "sub_msg": "refund rejected fixture",
+        "out_trade_no": "pay_fixture_paid",
+        "out_request_no": "ref_fixture_paid"
+      },
+      "sign": "fixture-signature"
+    }
+  }
+}

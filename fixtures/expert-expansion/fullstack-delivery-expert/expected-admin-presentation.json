@@ -1,0 +1,833 @@
+{
+  "canvas": {
+    "en": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "One sentence"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": ", connect one real feature path"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "Task creation · API · user isolation"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "Add My Tasks to the current app so saved items appear when the user returns."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "Auth, frontend page, server routes, and migration tooling already exist."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 36,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "My Tasks vertical slice"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "field": "preview.intro",
+          "height": 42,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "text": "Align the contract, then connect UI, access rules, and storage."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 328
+        },
+        {
+          "field": "preview.table",
+          "height": 172,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "Layer / Delivery / Check"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              25,
+              45,
+              30
+            ],
+            "headers": [
+              "Layer",
+              "Delivery",
+              "Check"
+            ],
+            "rows": [
+              [
+                "UI",
+                "Submit, empty, retry",
+                "Interaction test"
+              ],
+              [
+                "API",
+                "Validate and scope user",
+                "Contract test"
+              ],
+              [
+                "Storage",
+                "Migrate and query user",
+                "Test DB check"
+              ]
+            ]
+          },
+          "width": 520,
+          "x": 48,
+          "y": 380
+        },
+        {
+          "field": "title",
+          "height": 38,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "Fullstack Delivery Expert"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 70,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "Build a focused feature across frontend, API, authorization, and data, with verification by layer."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 272
+        },
+        {
+          "field": "usageGuide",
+          "height": 92,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Share your repo, user action, auth model, and data rules; the expert follows your stack and reports actual integration checks."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 352
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Feature delivery"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 198
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "API and access"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 198
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Data migration"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 226
+        },
+        {
+          "field": "prompt.0",
+          "height": 70,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Add My Tasks in this project: create, list, retry failed saves, and isolate each user."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 458
+        },
+        {
+          "field": "prompt.1",
+          "height": 70,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Connect this form to a real API and test database; show the contract and migration order."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 536
+        },
+        {
+          "field": "prompt.2",
+          "height": 70,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Check expired login, duplicate submit, and storage conflicts in this feature."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 614
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 56,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "A mock proves local state handling; verify live processes and test storage separately."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 566
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 56,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Confirm target environment and authorization before production release or destructive migration."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 628
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    },
+    "zh": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "一句话"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "，贯通一条真实功能路径"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "待办新增 · API · 用户隔离"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "在现有项目增加“我的待办”，保存后可重新进入查看。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "已有登录、前端页面、服务端路由和迁移工具。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 36,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "待办功能纵向切片"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "field": "preview.intro",
+          "height": 42,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "text": "先对齐契约，再接通页面、权限与存储。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 328
+        },
+        {
+          "field": "preview.table",
+          "height": 172,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "层级 / 交付内容 / 验证"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              25,
+              45,
+              30
+            ],
+            "headers": [
+              "层级",
+              "交付内容",
+              "验证"
+            ],
+            "rows": [
+              [
+                "页面",
+                "提交、空态、失败重试",
+                "交互测试"
+              ],
+              [
+                "API",
+                "字段校验与用户归属",
+                "契约测试"
+              ],
+              [
+                "存储",
+                "迁移与按用户查询",
+                "测试库检查"
+              ]
+            ]
+          },
+          "width": 520,
+          "x": 48,
+          "y": 380
+        },
+        {
+          "field": "title",
+          "height": 38,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "全栈开发专家"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 70,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "从需求到最小纵向功能，完成前后端契约、权限、数据迁移和分层验证。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 272
+        },
+        {
+          "field": "usageGuide",
+          "height": 92,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "提供仓库、用户操作目标、现有登录方式和数据约束；专家会沿现有栈贯通功能并说明真实联通层级。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 352
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "纵向功能交付"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 198
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "API 与权限"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 198
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "数据迁移"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 226
+        },
+        {
+          "field": "prompt.0",
+          "height": 70,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "请在现有项目做“我的待办”：新增、列表、保存失败重试，并按登录用户隔离。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 458
+        },
+        {
+          "field": "prompt.1",
+          "height": 70,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "请把这个前端表单接到真实 API 与测试数据库，列出契约和迁移顺序。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 536
+        },
+        {
+          "field": "prompt.2",
+          "height": 70,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "请核对这个功能的登录失效、重复提交和存储冲突，完成最小修复与验证。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 614
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 56,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "mock 只证明局部状态；真实进程和测试库连通需单独验证。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 566
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 56,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "生产发布和破坏性迁移要核对目标环境与明确授权。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 628
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    }
+  },
+  "description": "从需求到最小纵向功能，完成前后端契约、权限、数据迁移和分层验证。",
+  "descriptionEn": "Build a focused feature across frontend, API, authorization, and data, with verification by layer.",
+  "exampleImageLocale": "zh",
+  "examplePrompts": [
+    "请在现有项目做“我的待办”：新增、列表、保存失败重试，并按登录用户隔离。",
+    "请把这个前端表单接到真实 API 与测试数据库，列出契约和迁移顺序。",
+    "请核对这个功能的登录失效、重复提交和存储冲突，完成最小修复与验证。"
+  ],
+  "examplePromptsEn": [
+    "Add My Tasks in this project: create, list, retry failed saves, and isolate each user.",
+    "Connect this form to a real API and test database; show the contract and migration order.",
+    "Check expired login, duplicate submit, and storage conflicts in this feature."
+  ],
+  "name": "全栈开发专家",
+  "nameEn": "Fullstack Delivery Expert",
+  "preview": {
+    "heading": "一句话，贯通一条真实功能路径",
+    "intro": {
+      "text": "先对齐契约，再接通页面、权限与存储。",
+      "tone": "accent"
+    },
+    "material": "已有登录、前端页面、服务端路由和迁移工具。",
+    "outputParagraphs": [
+      "mock 只证明局部状态；真实进程和测试库连通需单独验证。",
+      "生产发布和破坏性迁移要核对目标环境与明确授权。"
+    ],
+    "outputTitle": "待办功能纵向切片",
+    "request": "在现有项目增加“我的待办”，保存后可重新进入查看。",
+    "scene": "待办新增 · API · 用户隔离",
+    "table": {
+      "columnWidths": [
+        25,
+        45,
+        30
+      ],
+      "headers": [
+        "层级",
+        "交付内容",
+        "验证"
+      ],
+      "rows": [
+        [
+          "页面",
+          "提交、空态、失败重试",
+          "交互测试"
+        ],
+        [
+          "API",
+          "字段校验与用户归属",
+          "契约测试"
+        ],
+        [
+          "存储",
+          "迁移与按用户查询",
+          "测试库检查"
+        ]
+      ]
+    }
+  },
+  "previewEn": {
+    "heading": "One sentence, connect one real feature path",
+    "intro": {
+      "text": "Align the contract, then connect UI, access rules, and storage.",
+      "tone": "accent"
+    },
+    "material": "Auth, frontend page, server routes, and migration tooling already exist.",
+    "outputParagraphs": [
+      "A mock proves local state handling; verify live processes and test storage separately.",
+      "Confirm target environment and authorization before production release or destructive migration."
+    ],
+    "outputTitle": "My Tasks vertical slice",
+    "request": "Add My Tasks to the current app so saved items appear when the user returns.",
+    "scene": "Task creation · API · user isolation",
+    "table": {
+      "columnWidths": [
+        25,
+        45,
+        30
+      ],
+      "headers": [
+        "Layer",
+        "Delivery",
+        "Check"
+      ],
+      "rows": [
+        [
+          "UI",
+          "Submit, empty, retry",
+          "Interaction test"
+        ],
+        [
+          "API",
+          "Validate and scope user",
+          "Contract test"
+        ],
+        [
+          "Storage",
+          "Migrate and query user",
+          "Test DB check"
+        ]
+      ]
+    }
+  },
+  "summary": "在现有技术栈中贯通界面、API、身份权限与存储，交付可验证的最小完整功能。",
+  "summaryEn": "Deliver a small end-to-end feature across UI, API, authorization, and storage in the existing stack.",
+  "taskTypes": [
+    "纵向功能交付",
+    "API 与权限",
+    "数据迁移"
+  ],
+  "taskTypesEn": [
+    "Feature delivery",
+    "API and access",
+    "Data migration"
+  ],
+  "usageGuide": "提供仓库、用户操作目标、现有登录方式和数据约束；专家会沿现有栈贯通功能并说明真实联通层级。",
+  "usageGuideEn": "Share your repo, user action, auth model, and data rules; the expert follows your stack and reports actual integration checks."
+}

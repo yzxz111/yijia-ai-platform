@@ -1,0 +1,23 @@
+{
+  "code": "adaptive-delivery-expert",
+  "reviewedAt": "2026-10-08",
+  "scope": "Source authoring review only; no archive build, rendered preview, host import, or live expert execution was performed here.",
+  "filesAuthored": [
+    "specs/adaptive-delivery-expert.json",
+    "adaptive-delivery-expert/references/deliverable-templates.md",
+    "adaptive-delivery-expert/references/worked-example.md",
+    "scripts/expert-artwork/adaptive-delivery-expert.cjs"
+  ],
+  "checksPerformed": {
+    "jsonParse": "passed",
+    "buildGeneratorMetadataFunction": "passed; 44 metadata fields and both 1080x704 canvas geometries accepted",
+    "instructionLength": "2206 characters, including 1834 Han characters",
+    "englishTitleLength": 24,
+    "englishDescriptionLength": 141,
+    "acceptanceCaseCount": 10,
+    "artworkStructure": "Node syntax check passed; exported icon is 240x240 and illustration is 1440x480; no SVG text or foreignObject tags detected",
+    "workedExampleArithmetic": "Python assertions passed: A 800+50*12=1400; B 300+85*12=1320; 1500-1400=100; 1400-1320=80"
+  },
+  "evidenceBoundary": "Worked example uses only its fictional user input. No real vendor prices, product capabilities, tax treatment, file writes, or external facts were asserted as verified.",
+  "pendingForIntegrator": ["Render all three package assets", "Build deterministic package", "Inspect bilingual preview for text overflow", "Run host import and acceptance checks"]
+}

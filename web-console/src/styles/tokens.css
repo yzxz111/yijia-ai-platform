@@ -1,0 +1,503 @@
+:root {
+  /* 一加AI中台 · 石墨绿与薄荷青设计系统 */
+
+  /* --- 背景 & 表面 --- */
+  --app-bg: #f3f6f5;
+  --app-surface: #ffffff;
+  --app-surface-subtle: #f7f9f8;
+  --app-surface-muted: #edf2ef;
+  --app-surface-raised: #ffffff;
+
+  /* --- 主色：一加青绿 --- */
+  --app-primary: #087f6b;
+  --app-on-primary: #ffffff;
+  --app-primary-hover: #066653;
+  --app-primary-pressed: #064e40;
+  --app-primary-soft: #e5f5ee;
+  --app-primary-rail: #19a887;
+
+  /* --- 次强调色：低饱和靛蓝 --- */
+  --app-accent: #5969b3;
+  --app-accent-soft: #edf0fc;
+
+  /* --- 文字 --- */
+  --app-fg: #192b25;
+  --app-text: var(--app-fg);
+  --app-muted-strong: #586b63;
+  --app-muted: #72847b;
+
+  /* --- 边框 (分层不靠阴影, 靠边框颜色变化) --- */
+  --app-border: #e1e9e4;
+  --app-border-strong: #c3d4ca;
+
+  /* --- 语义状态 --- */
+  --app-success: #166534;
+  --app-success-soft: #DCFCE7;
+  --app-warning: #B45309;
+  --app-warning-soft: #FEF3C7;
+  --app-danger: #B91C1C;
+  --app-danger-soft: #FEE2E2;
+  /* 扩展语义边框/文字（页面自有色调收敛目标） */
+  --app-primary-border: #b9e4d3;
+  --app-success-text: #15803D;
+  --app-success-border: #BBE0CE;
+  --app-warning-border: #FCD34D;
+  --app-warning-text: #B45309;
+  --app-danger-text: #DC2626;
+  --app-danger-border: #FECACA;
+  --app-surface-sunken: #EEF2F7;
+  --app-border-subtle: #DFE3E9;
+
+  /* --- 侧边栏 --- */
+  --app-sidebar: #15231e;
+  --app-sidebar-border: #2a3b32;
+  --app-sidebar-muted: #b0c1b6;
+  --app-sidebar-active: #9aefca;
+  --app-sidebar-hover: #21372b;
+
+  /* =========================================================
+     间距 token — 4pt 基数, 节奏感来自紧-松-紧-松
+     用法: gap 或 padding, 不用 margin (避免 collapse)
+     ========================================================= */
+  --space-1: 4px;    /* icon + text 贴身 */
+  --space-2: 8px;    /* 同级兄弟元素 */
+  --space-3: 12px;   /* 相关元素组 */
+  --space-4: 16px;   /* 组件内主要分隔 */
+  --space-5: 24px;   /* 卡片/面板内区块 */
+  --space-6: 32px;   /* 页面模块间 */
+  --space-7: 48px;   /* 大区块间 */
+  --space-8: 64px;   /* Hero 级分隔 */
+
+  /* =========================================================
+     圆角 — 全站统一 12px, 不混用
+     ========================================================= */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --app-radius: 12px;  /* 主卡片圆角 */
+
+  /* =========================================================
+     阴影 — 克制、分层 (Stripe 式双层浅阴影), 层级仍以边框为主
+     ========================================================= */
+  --app-shadow-xs: 0 1px 1px rgb(16 24 40 / 3%), 0 1px 2px rgb(16 24 40 / 4%);
+  --app-shadow-sm: 0 1px 2px rgb(16 24 40 / 4%), 0 2px 6px rgb(16 24 40 / 5%);
+  --app-shadow-md: 0 2px 4px rgb(16 24 40 / 5%), 0 8px 20px rgb(16 24 40 / 8%);
+  --app-shadow-lg: 0 8px 16px rgb(16 24 40 / 8%), 0 20px 40px rgb(16 24 40 / 12%);
+  /* 兼容既有引用（此前 tokens 未定义 --app-shadow，导致弹窗阴影失效） */
+  --app-shadow: var(--app-shadow-md);
+
+  /* --- 尺寸 --- */
+  --app-sidebar-width: 244px;
+  --app-sidebar-collapsed-width: 72px;
+  --app-header-height: 72px;
+
+  /* --- 动效 --- */
+  --app-motion-fast: 160ms;
+  --app-motion-base: 220ms;
+
+  /* =========================================================
+     字体 — 展示字 / 等宽 / 正文 三分
+     改用系统字体栈：内网/国内环境常无法加载 Google Fonts，
+     系统栈可保证首屏稳定且数字对齐（配合 tabular-nums）
+     ========================================================= */
+  --font-display: "Segoe UI Variable Display", "Segoe UI", "PingFang SC",
+    "Microsoft YaHei", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "JetBrains Mono", "IBM Plex Mono",
+    SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  --font-sans: "Segoe UI Variable Text", "Segoe UI", "PingFang SC",
+    "Microsoft YaHei", "Noto Sans SC", system-ui, Arial, sans-serif;
+
+  /* 字号层级 — 页面标题 / 区块标题 / 正文 / 辅助 / 表格 */
+  --text-page-title: 22px;
+  --text-section: 16px;
+  --text-body: 14px;
+  --text-secondary: 13px;
+  --text-caption: 12px;
+  --leading-tight: 1.35;
+  --leading-base: 1.6;
+
+  /* =========================================================
+     运维工单台状态色 — 低饱和，靠"色轨 + 文字 + 图标"三重编码
+     待处理=低饱和黄 / 处理中=蓝 / 已关闭=灰 / 已完成=低饱和绿
+     ========================================================= */
+  --ops-open: #8a6100;          /* 对白底 5.2:1 */
+  --ops-open-rail: #d9a93a;
+  --ops-open-soft: #fbf3dc;
+  --ops-processing: #2f6feb;   /* 对白底 4.9:1 */
+  --ops-processing-rail: #4f95f5;
+  --ops-processing-soft: #e9f1fe;
+  --ops-closed: #6b7280;       /* 对白底 4.8:1 */
+  --ops-closed-rail: #c2c8d2;
+  --ops-closed-soft: #f1f3f6;
+  --ops-done: #1f7a4d;         /* 对白底 4.6:1 */
+  --ops-done-rail: #58a98a;
+  --ops-done-soft: #e7f4ee;
+
+  /* --- 运维台氛围层 --- */
+  --ops-grid-line: rgb(63 70 84 / 4.5%);
+
+  /* --- 全局背景：极淡的光照渐变 + 稀疏网格（控制台观感，不喧宾夺主） --- */
+  --app-grid-line: transparent;
+  --app-grid-size: 48px;
+  /* 线性光照渐变：顶部冷白→底部透明，模拟环境光 */
+  --app-glow-tint: transparent;
+  /* 点阵装饰已停用（保留变量以免外部引用报错） */
+  --app-dot-color: transparent;
+
+  /* =========================================================
+     内容安全风险色板 — 低饱和，克制专业，不做刺眼红警
+     严重=深红 / 高=低饱和红 / 中=低饱和黄 / 低=蓝灰
+     色轨(rail)+软底(soft) 与运维台色板同构，但更"冷"
+     ========================================================= */
+  --risk-critical: #9f1239;       /* 严重：深红，对白底 6.8:1 */
+  --risk-critical-rail: #be4362;
+  --risk-critical-soft: #fde7ec;
+  --risk-high: #b34a4a;           /* 高：低饱和红，对白底 4.9:1 */
+  --risk-high-rail: #d17a7a;
+  --risk-high-soft: #fbeaec;
+  --risk-medium: #9a6b00;         /* 中：低饱和黄，对白底 4.8:1 */
+  --risk-medium-rail: #cfaa3e;
+  --risk-medium-soft: #fbf3dc;
+  --risk-low: #5b7a9e;            /* 低：蓝灰，对白底 4.6:1 */
+  --risk-low-rail: #8ea7c4;
+  --risk-low-soft: #eef3f8;
+
+  /* =========================================================
+     系统运维健康色板 — 柔和绿/低饱和红/黄，真实控制台质感
+     正常=柔和绿 / 异常=低饱和红 / 警告=黄，不做监控大屏炫光
+     ========================================================= */
+  --health-ok: #3d8b63;           /* 正常：柔和绿，对白底 4.6:1 */
+  --health-ok-rail: #6fae8d;
+  --health-ok-soft: #e8f4ed;
+  --health-bad: #b04a4a;          /* 异常：低饱和红，对白底 4.9:1 */
+  --health-bad-rail: #cf7a7a;
+  --health-bad-soft: #fbeaea;
+  --health-warn: #9a6b00;         /* 警告：黄，对白底 4.8:1 */
+  --health-warn-rail: #cfa63e;
+  --health-warn-soft: #fbf3dc;
+  --health-info: #5b7a9e;         /* 未知/信息：蓝灰 */
+  --health-info-rail: #8ea7c4;
+  --health-info-soft: #eef3f8;
+
+  /* --- 布局 --- */
+  --app-content-width: 1440px;
+  --app-z-header: 20;
+  --app-z-drawer: 60;
+
+  /* =========================================================
+     Element Plus 覆盖 — 圆角 12px, 阴影→边框
+     ========================================================= */
+  --el-color-primary: var(--app-primary);
+  --el-border-color: var(--app-border);
+  --el-border-color-light: var(--app-border);
+  --el-fill-color-light: var(--app-surface-subtle);
+  --el-text-color-primary: var(--app-fg);
+  --el-text-color-regular: var(--app-muted-strong);
+  --el-border-radius-base: 10px;
+  --el-border-radius-small: 8px;
+}
+
+/* ========================================================
+   暗色模式覆盖（data-theme 与 Element Plus .dark 共用）
+   - 只做语义变量覆盖，组件内禁止写硬编码色值
+   ======================================================== */
+[data-theme="dark"],
+html.dark {
+  /* 背景 & 表面（整体提亮，减少压抑感） */
+  --app-bg: #111a16;
+  --app-surface: #1a2720;
+  --app-surface-subtle: #202f26;
+  --app-surface-muted: #2b3a30;
+  --app-surface-raised: #203027;
+
+  /* 主色压低亮度 */
+  --app-primary: #65d8ac;
+  --app-on-primary: #102d20;
+  --app-primary-hover: #90e7c3;
+  --app-primary-pressed: #45c799;
+  --app-primary-soft: #193c2c;
+
+  /* 强调色同样压低 */
+  --app-accent: #a7b5ed;
+  --app-accent-soft: #29324c;
+
+  /* 文字（适当调暗，降低与背景的对比度，避免刺眼） */
+  --app-fg: #e5eee7;
+  --app-text: var(--app-fg);
+  --app-muted-strong: #b1c0b5;
+  --app-muted: #94a69a;
+
+  /* 边框（随背景提亮同步调整） */
+  --app-border: #33463a;
+  --app-border-strong: #4b6653;
+
+  /* 语义状态 */
+  --app-success: #4CAF50;
+  --app-success-soft: #1A3320;
+  --app-warning: #F0A84A;
+  --app-warning-soft: #382908;
+  --app-danger: #F27B7B;
+  --app-danger-soft: #3A1C1C;
+  --app-primary-border: #335f49;
+  --app-success-text: #6FCF97;
+  --app-success-border: #2A4D3A;
+  --app-warning-border: #5A431A;
+  --app-warning-text: #F0A84A;
+  --app-danger-text: #F27B7B;
+  --app-danger-border: #5A2A2A;
+  --app-surface-sunken: #111a16;
+  --app-border-subtle: #293d30;
+
+  /* 侧边栏（随背景提亮同步调整） */
+  --app-sidebar: #101b15;
+  --app-sidebar-border: #293c2e;
+  --app-sidebar-muted: #b0c1b6;
+  --app-sidebar-active: #9aefca;
+  --app-sidebar-hover: #21372b;
+
+  /* 主色轨道（暗色下略亮） */
+  --app-primary-rail: #65d8ac;
+
+  /* 阴影：暗色下阴影更透明 */
+  --app-shadow-xs: 0 1px 2px rgb(0 0 0 / 16%);
+  --app-shadow-sm: 0 2px 6px rgb(0 0 0 / 24%);
+  --app-shadow-md: 0 4px 14px rgb(0 0 0 / 32%);
+  --app-shadow-lg: 0 8px 28px rgb(0 0 0 / 40%);
+
+  /* Element Plus 覆盖 */
+  --el-color-primary: var(--app-primary);
+  --el-border-color: var(--app-border);
+  --el-border-color-light: var(--app-border);
+  --el-fill-color-light: var(--app-surface-subtle);
+  --el-text-color-primary: var(--app-fg);
+  --el-text-color-regular: var(--app-muted-strong);
+  --el-bg-color: var(--app-surface);
+  --el-bg-color-page: var(--app-bg);
+  --el-bg-color-overlay: var(--app-surface-raised);
+
+  /* 运维工单台状态 soft 底（浅色 → 暗色软底） */
+  --ops-open-soft: #382908;
+  --ops-processing-soft: #1A2E44;
+  --ops-closed-soft: #2A2E37;
+  --ops-done-soft: #1A3320;
+
+  /* 内容安全风险 soft 底 */
+  --risk-critical-soft: #3A1C1C;
+  --risk-high-soft: #3A1C1C;
+  --risk-medium-soft: #382908;
+  --risk-low-soft: #1A2E44;
+
+  /* 系统健康 soft 底 */
+  --health-ok-soft: #1A3320;
+  --health-bad-soft: #3A1C1C;
+  --health-warn-soft: #382908;
+  --health-info-soft: #1A2E44;
+
+  /* 全局网格底纹：暗色模式下用更柔和的浅色线，避免在深色背景上刺眼 */
+  --app-grid-line: transparent;
+  /* 暗色模式光照渐变：顶部微亮→底部微暗，模拟环境光 */
+  --app-glow-tint: transparent;
+  /* 暗色模式点阵：浅色小点 */
+  --app-dot-color: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  overflow-x: hidden;
+  color: var(--app-fg);
+  background-color: var(--app-bg);
+  /* 艺术背景：网格线 + 线性光照渐变 + 点阵装饰
+     三层叠加：网格提供结构感，渐变模拟环境光，点阵增加质感
+     不使用径向光斑，效果克制不喧宾夺主 */
+  background-image:
+    /* 1. 线性光照渐变：顶部冷白微亮→底部透明，模拟自上而下的环境光 */
+    linear-gradient(to bottom, var(--app-glow-tint), transparent),
+    /* 2. 网格线：横竖交叉细线 */
+    linear-gradient(to right, var(--app-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--app-grid-line) 1px, transparent 1px),
+    /* 3. 点阵装饰：网格交叉点上的小圆点，增加质感层次 */
+    radial-gradient(circle 1.5px at center, var(--app-dot-color), transparent);
+  background-size: 100% 100%, var(--app-grid-size) var(--app-grid-size), var(--app-grid-size) var(--app-grid-size), var(--app-grid-size) var(--app-grid-size);
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  background-attachment: fixed, fixed, fixed, fixed;
+  background-repeat: no-repeat, repeat, repeat, repeat;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-base);
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 数字/编号/时间在表格与统计处必须等宽对齐 */
+.el-table,
+.el-table__cell,
+.el-pagination,
+.el-descriptions__cell,
+.el-statistic,
+.mono,
+.metric-value,
+.metric-number,
+.metric-delta {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+::selection {
+  color: #ffffff;
+  background: var(--app-primary);
+}
+
+h1, h2, h3, h4 {
+  color: var(--app-fg);
+  font-weight: 700;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  letter-spacing: 0;
+}
+
+button { touch-action: manipulation; }
+
+a, button { -webkit-tap-highlight-color: transparent; }
+
+:focus-visible {
+  outline: 2px solid var(--app-primary);
+  outline-offset: 2px;
+}
+
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* =========================================================
+   全站 Element Plus 卡片: 边框替代阴影, 圆角统一 12px
+   ========================================================= */
+.el-card {
+  border-radius: 12px !important;
+  border: 1px solid var(--app-border) !important;
+  box-shadow: none !important;
+  background: var(--app-surface);
+}
+.el-card:hover {
+  border-color: var(--app-border-strong);
+}
+.el-card__body {
+  padding: 20px 24px;
+}
+
+/* 带状态左边条的卡片变体 — 层级不靠阴影靠色彩 */
+.el-card.card--accent-primary { border-left: 3px solid var(--app-primary); }
+.el-card.card--accent-accent   { border-left: 3px solid var(--app-accent); }
+.el-card.card--accent-success  { border-left: 3px solid var(--app-success); }
+.el-card.card--accent-warning  { border-left: 3px solid var(--app-warning); }
+.el-card.card--accent-danger   { border-left: 3px solid var(--app-danger); }
+
+/* 主按钮 */
+.el-button--primary {
+  border-radius: 8px;
+  background: var(--app-primary);
+  border-color: var(--app-primary);
+  box-shadow: none;
+}
+.el-button--primary:hover {
+  background: var(--app-primary-hover);
+  border-color: var(--app-primary-hover);
+  box-shadow: none;
+}
+
+/* =========================================================
+   滚动条：跟随主题色，使用变量
+   ========================================================= */
+* {
+  scrollbar-color: var(--app-scrollbar-thumb) transparent;
+  scrollbar-width: thin;
+}
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb {
+  background: var(--app-scrollbar-thumb);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--app-scrollbar-thumb-hover);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* 亮/暗色滚动条具体色值 */
+:root {
+  --app-scrollbar-thumb: #C8CEDB;
+  --app-scrollbar-thumb-hover: #8895AB;
+}
+[data-theme="dark"],
+html.dark {
+  --app-scrollbar-thumb: #4A5462;
+  --app-scrollbar-thumb-hover: #677488;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+
+/* —— 全局页面标题装饰 —— */
+.page-header,
+
+.page-header h1, .page-header h2, .page-header h3,
+.section-heading h1, .section-heading h2, .section-heading h3,
+.panel-heading h1, .panel-heading h2, .panel-heading h3 {
+  margin: 0 0 var(--space-1, 4px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.page-header p,
+.section-heading p {
+  margin: 0;
+  color: var(--app-muted);
+  font-size: 13px;
+}
+/* 小尺寸 section heading (如 FAQ 子标题) */
+.section-heading--compact {
+  padding-left: 10px;
+  border-left-width: 2px;
+  margin-bottom: var(--space-3, 12px);
+}
+:root {
+  --el-color-primary-light-3: color-mix(in srgb, var(--app-primary) 70%, var(--app-surface));
+  --el-color-primary-light-5: color-mix(in srgb, var(--app-primary) 50%, var(--app-surface));
+  --el-color-primary-light-7: color-mix(in srgb, var(--app-primary) 30%, var(--app-surface));
+  --el-color-primary-light-8: color-mix(in srgb, var(--app-primary) 20%, var(--app-surface));
+  --el-color-primary-light-9: var(--app-primary-soft);
+  --el-color-primary-dark-2: var(--app-primary-pressed);
+}
+
+html.dark :is(.submit-btn, .btn-primary, .btn--primary, .welcome-footer-btn) {
+  color: var(--app-on-primary);
+}

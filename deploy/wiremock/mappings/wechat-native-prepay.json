@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/v3/pay/transactions/native",
+    "bodyPatterns": [{
+      "matchesJsonPath": {
+        "expression": "$.out_trade_no",
+        "equalTo": "pay_fixture_native"
+      }
+    }]
+  },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": { "code_url": "weixin://wxpay/bizpayurl?pr=phase2-native" }
+  }
+}

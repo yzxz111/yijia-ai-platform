@@ -1,0 +1,84 @@
+{
+  "artifactSha256": "8b0aacd81151fc5ede6a64744bc87bd59e09ce7d6f04fc433377c131c0dedafb",
+  "assets": {
+    "exampleImage": {
+      "bytes": 47167,
+      "height": 280,
+      "path": "skills/senior-software-engineer/assets/example-image.png",
+      "sha256": "508d53094404efa849f7a9db90cf3dd09c2c318fc3ebcc4b8f9c675332b8ca7e",
+      "width": 1072
+    },
+    "icon": {
+      "bytes": 5584,
+      "height": 240,
+      "path": "skills/senior-software-engineer/assets/icon.png",
+      "sha256": "dd058e5f68282ae415f22e71eb2e8e9f3d4aece3e6ccff90663dc8c63909a3fd",
+      "width": 240
+    },
+    "illustration": {
+      "bytes": 22859,
+      "height": 480,
+      "path": "skills/senior-software-engineer/assets/illustration.png",
+      "sha256": "2371cda4768aed936e046c33f68c375ccc205b51cfaa2592d94e6e5be12bc09d",
+      "width": 1440
+    }
+  },
+  "cloudPublished": false,
+  "code": "senior-software-engineer",
+  "compressedBytes": 84724,
+  "entries": {
+    "com.yuzhihuihe.ycps/manifest.json": {
+      "bytes": 445,
+      "sha256": "4ebd38fad65a3a04c63fb078e2fb4cd907dda7178741d54987d8b0277377b8ab"
+    },
+    "plugin.json": {
+      "bytes": 721,
+      "sha256": "ef73187e049073b932ea05d7716b4786e3c141849ff64337f8e058fcf8913590"
+    },
+    "skills/senior-software-engineer/SKILL.md": {
+      "bytes": 22965,
+      "sha256": "7478c197e9538132d444087333921495d663dace123e51d405f6c256d46b2c3f"
+    },
+    "skills/senior-software-engineer/assets/example-image.png": {
+      "bytes": 47167,
+      "sha256": "508d53094404efa849f7a9db90cf3dd09c2c318fc3ebcc4b8f9c675332b8ca7e"
+    },
+    "skills/senior-software-engineer/assets/icon.png": {
+      "bytes": 5584,
+      "sha256": "dd058e5f68282ae415f22e71eb2e8e9f3d4aece3e6ccff90663dc8c63909a3fd"
+    },
+    "skills/senior-software-engineer/assets/illustration.png": {
+      "bytes": 22859,
+      "sha256": "2371cda4768aed936e046c33f68c375ccc205b51cfaa2592d94e6e5be12bc09d"
+    },
+    "skills/senior-software-engineer/references/deliverable-templates.md": {
+      "bytes": 3880,
+      "sha256": "e0d61281f18d167faabbd80e3eb195ab153e5f7d86cebffc8d26f5cb2fba2fb4"
+    },
+    "skills/senior-software-engineer/references/worked-example.md": {
+      "bytes": 3453,
+      "sha256": "7344ba202dc51baa33e35184032febe55e0e3169aae6db2ad36ce3fcbdfcb8ab"
+    }
+  },
+  "entryCount": 8,
+  "expandedBytes": 107074,
+  "kind": "EXPERT",
+  "presentation": {
+    "canvasNodes": {
+      "en": 20,
+      "zh": 20
+    },
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  "runtime": {
+    "dependencies": [],
+    "entryAgent": "main",
+    "minClientVersion": "2026.6.30"
+  },
+  "validationScope": "Deterministic packaging, identity, metadata budgets, canvas geometry/runs, decoded asset sizes. See acceptance results for production parser tests.",
+  "version": "1.0.0",
+  "ycpsVersion": "1.1.0"
+}

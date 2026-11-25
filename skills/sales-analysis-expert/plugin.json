@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "sales-analysis-expert",
+  "version": "1.0.0",
+  "description": "Analyze sales by product, region, or period from source data, delivering focused summaries or monthly reports with tables, charts, and traceable data-quality notes.",
+  "author": {
+    "name": "Yuzhi"
+  },
+  "license": "Proprietary",
+  "keywords": [
+    "sales",
+    "analysis",
+    "report",
+    "reconciliation"
+  ],
+  "extensions": {
+    "com.yuzhihuihe.ycps": {
+      "ycpsVersion": "1.0.0",
+      "kind": "EXPERT",
+      "entrySkill": "sales-analysis-expert",
+      "manifest": "./com.yuzhihuihe.ycps/manifest.json",
+      "requiredFeatures": []
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "artifactSha256": "acd754b4338509749364493e9ea9a67269f8467e458d3a8d82b7452c514f8b12",
+  "assets": {
+    "exampleImage": {
+      "bytes": 37673,
+      "height": 280,
+      "path": "skills/academic-writing-mentor/assets/example-image.png",
+      "sha256": "58c934f8e17f62ebf693e33b183dc8875a9c019e5abd6de0b0ede919d0d57064",
+      "width": 1072
+    },
+    "icon": {
+      "bytes": 6316,
+      "height": 240,
+      "path": "skills/academic-writing-mentor/assets/icon.png",
+      "sha256": "649c39fae13058dc43c4bb22e041a8c811cb1dfd07f0b6a2bf05f65bb33c6040",
+      "width": 240
+    },
+    "illustration": {
+      "bytes": 37229,
+      "height": 480,
+      "path": "skills/academic-writing-mentor/assets/illustration.png",
+      "sha256": "3dcb97d20a9b2e49d77ce79cd821252e72629b2959a7a3cb3134ef55eb0ba6d5",
+      "width": 1440
+    }
+  },
+  "cloudPublished": false,
+  "code": "academic-writing-mentor",
+  "compressedBytes": 93127,
+  "entries": {
+    "com.yuzhihuihe.ycps/manifest.json": {
+      "bytes": 445,
+      "sha256": "4ebd38fad65a3a04c63fb078e2fb4cd907dda7178741d54987d8b0277377b8ab"
+    },
+    "plugin.json": {
+      "bytes": 744,
+      "sha256": "967bf3c8fb6cd1a7ce8aaa23d00171289abbe7a65df2ebfb848753fc8fea25b1"
+    },
+    "skills/academic-writing-mentor/SKILL.md": {
+      "bytes": 25990,
+      "sha256": "bcd676dcc6feb9eac230384289ab30c7186a5ad28b8cae05607d262aac38a68e"
+    },
+    "skills/academic-writing-mentor/assets/example-image.png": {
+      "bytes": 37673,
+      "sha256": "58c934f8e17f62ebf693e33b183dc8875a9c019e5abd6de0b0ede919d0d57064"
+    },
+    "skills/academic-writing-mentor/assets/icon.png": {
+      "bytes": 6316,
+      "sha256": "649c39fae13058dc43c4bb22e041a8c811cb1dfd07f0b6a2bf05f65bb33c6040"
+    },
+    "skills/academic-writing-mentor/assets/illustration.png": {
+      "bytes": 37229,
+      "sha256": "3dcb97d20a9b2e49d77ce79cd821252e72629b2959a7a3cb3134ef55eb0ba6d5"
+    },
+    "skills/academic-writing-mentor/references/deliverable-templates.md": {
+      "bytes": 4936,
+      "sha256": "a920a892b3082c150fc480cb1ecbdd758ce2dee32c46d90cf28daff4db2f220b"
+    },
+    "skills/academic-writing-mentor/references/worked-example.md": {
+      "bytes": 2298,
+      "sha256": "f754be23c1b4651ca9f41259e9cb10061285f5e3c78dc88b5ac707a9870e9831"
+    }
+  },
+  "entryCount": 8,
+  "expandedBytes": 115631,
+  "kind": "EXPERT",
+  "presentation": {
+    "canvasNodes": {
+      "en": 20,
+      "zh": 20
+    },
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  "runtime": {
+    "dependencies": [],
+    "entryAgent": "main",
+    "minClientVersion": "2026.6.30"
+  },
+  "validationScope": "Deterministic packaging, identity, metadata budgets, canvas geometry/runs, decoded asset sizes. See acceptance results for production parser tests.",
+  "version": "1.0.0",
+  "ycpsVersion": "1.1.0"
+}

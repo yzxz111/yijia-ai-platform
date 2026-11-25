@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-08",
+  "scope": "Author-side source checks; render, package build, import, real application integration, and host model behavior are separate.",
+  "sourceFiles": ["specs/fullstack-delivery-expert.json", "fullstack-delivery-expert/references/deliverable-templates.md", "fullstack-delivery-expert/references/worked-example.md", "scripts/expert-artwork/fullstack-delivery-expert.cjs"],
+  "checks": [
+    {"name": "builder.metadata(spec)", "result": "passed", "detail": "44 metadata fields; expert metadata values total 11428 UTF-8 bytes before the final reference-path wording edit. English title corrected to 25 characters; description is 98 characters. Re-run at packaging."},
+    {"name": "worked example Python", "result": "passed", "detail": "Extracted fenced Python and ran with bundled Python; output: Task slice model passed: auth, validation, isolation, reopen. First run revealed a Windows SQLite file lock; sample now closes connections explicitly and rerun exited 0."},
+    {"name": "artwork module", "result": "passed", "detail": "Required module with Node; reviewNumber 08, three workflow steps, no SVG text or foreignObject element."},
+    {"name": "external API claim", "result": "not applicable", "detail": "No version-specific library or third-party API behavior is asserted; real project contracts must be checked against its installed versions and official provider docs when needed."}
+  ],
+  "notVerified": ["Rendered PNGs and preview layout", "YCPS archive and import", "Real frontend-to-backend HTTP", "Production migration or deployment"]
+}

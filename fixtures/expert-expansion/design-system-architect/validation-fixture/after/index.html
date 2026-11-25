@@ -1,0 +1,5 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>虚构按钮系统演练</title><link rel="stylesheet" href="styles.css">
+<main><h1>按钮系统</h1><p>这是本地测试页，无外部服务。保留这段用户说明。</p>
+<section data-theme="light"><h2>浅色主题</h2><button class="action" id="light">保存更改</button><button class="action" disabled>不可用</button></section>
+<section data-theme="dark"><h2>深色主题</h2><button class="action" id="dark">保存更改</button><button class="action" disabled>不可用</button></section>
+<output id="result" aria-live="polite">0</output></main><script>document.querySelectorAll('.action').forEach(button=>button.addEventListener('click',()=>{const r=document.querySelector('#result');r.textContent=String(Number(r.textContent)+1)}));</script></html>

@@ -1,0 +1,321 @@
+/* =========================================================
+   Element Plus 覆盖层
+   目标：Stripe / 阿里云控制台观感 —— 边框清晰、层次分明、
+   数字等宽对齐、交互反馈明确。
+   规则：只使用 tokens.css 里的语义变量，不写死色值。
+   ========================================================= */
+
+/* ---------- 按钮 ---------- */
+.el-button {
+  min-height: 36px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  letter-spacing: 0;
+  transition: color var(--app-motion-fast) ease,
+    background-color var(--app-motion-fast) ease,
+    border-color var(--app-motion-fast) ease,
+    box-shadow var(--app-motion-fast) ease;
+}
+
+/* 仅实心主按钮用白字；text / link 变体背景是透明的，
+   若一并刷白会变成"白字 + 白底"而完全不可见（例如列表操作列的"上架"）。 */
+.el-button--primary:not(.is-disabled):not(.is-text):not(.is-link) {
+  color: var(--app-on-primary) !important;
+  --el-button-text-color: var(--app-on-primary);
+  --el-button-hover-text-color: var(--app-on-primary);
+  --el-button-active-text-color: var(--app-on-primary);
+  --el-button-bg-color: var(--app-primary);
+  --el-button-border-color: var(--app-primary);
+  --el-button-hover-bg-color: var(--app-primary-hover);
+  --el-button-hover-border-color: var(--app-primary-hover);
+  --el-button-active-bg-color: var(--app-primary-pressed);
+  --el-button-active-border-color: var(--app-primary-pressed);
+  box-shadow: var(--app-shadow-xs);
+}
+
+/* 文本型主按钮：默认主题蓝字，hover / active 用浅蓝底 + 深一档蓝字。
+   Element Plus 的 is-text 交互态背景写死了 --el-fill-color-light、hover 文字色默认是白，
+   且都不走按钮变量，所以这里必须显式覆盖，否则 hover 同样会变成"白字浅底"而看不见。 */
+.el-button--primary.is-text:not(.is-disabled),
+.el-button--primary.is-link:not(.is-disabled) {
+  color: var(--app-primary);
+}
+
+.el-button--primary.is-text:not(.is-disabled):hover {
+  color: var(--app-primary-hover);
+  background-color: var(--app-primary-soft);
+}
+
+.el-button--primary.is-text:not(.is-disabled):active {
+  color: var(--app-primary-pressed);
+  background-color: var(--app-primary-soft);
+}
+
+.el-button--primary.is-link:not(.is-disabled):hover {
+  color: var(--app-primary-hover);
+}
+
+/* 文本 / 链接按钮不做抬升与投影，避免行内操作列出现多余跳动 */
+.el-button--primary:not(.is-disabled):not(.is-text):not(.is-link):hover {
+  box-shadow: var(--app-shadow-sm);
+  transform: translateY(-1px);
+}
+
+.el-button--primary:not(.is-disabled):not(.is-text):not(.is-link):active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* 次要按钮：边框清晰、白底，与控制台表格操作列更协调 */
+.el-button--default:not(.is-disabled):not(.is-text):not(.is-link) {
+  background: var(--app-surface);
+  border-color: var(--app-border-strong);
+  color: var(--app-fg);
+}
+
+.el-button--default:not(.is-disabled):not(.is-text):not(.is-link):hover {
+  background: var(--app-surface-subtle);
+  border-color: var(--app-primary);
+  color: var(--app-primary);
+}
+
+.el-button.is-disabled,
+.el-button.is-disabled:hover {
+  box-shadow: none;
+  transform: none;
+  opacity: .5;
+}
+
+/* 表格行内操作按钮更紧凑 */
+.el-table .el-button {
+  min-height: 30px;
+  padding: 6px 10px;
+}
+
+/* ---------- 输入 / 选择 / 文本域 ---------- */
+.el-input__wrapper,
+.el-select__wrapper,
+.el-textarea__inner,
+.el-input-number {
+  background: var(--app-surface);
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 0 1px var(--app-border) inset;
+  transition: box-shadow var(--app-motion-fast) ease,
+    background-color var(--app-motion-fast) ease;
+}
+
+.el-input__wrapper:hover,
+.el-select__wrapper:hover,
+.el-textarea__inner:hover {
+  box-shadow: 0 0 0 1px var(--app-border-strong) inset;
+}
+
+.el-input__wrapper.is-focus,
+.el-select__wrapper.is-focused,
+.el-textarea__inner:focus {
+  box-shadow: 0 0 0 1px var(--app-primary) inset,
+    0 0 0 3px var(--app-primary-soft);
+}
+
+.el-input__inner::placeholder,
+.el-textarea__inner::placeholder {
+  color: var(--app-muted);
+}
+
+/* 筛选表单：标签与控件贴紧，减少表单区高度 */
+.el-form-item__label {
+  color: var(--app-muted-strong);
+  font-weight: 600;
+}
+
+/* ---------- 卡片 ---------- */
+.el-card {
+  border-color: var(--app-border);
+  border-radius: var(--app-radius);
+  box-shadow: var(--app-shadow-xs);
+  transition: border-color var(--app-motion-base) ease,
+    box-shadow var(--app-motion-base) ease;
+}
+
+.el-card:hover {
+  border-color: var(--app-border-strong);
+  box-shadow: var(--app-shadow-sm);
+}
+
+/* ---------- 弹窗 / 抽屉 ---------- */
+.el-dialog,
+.el-drawer {
+  border-radius: var(--app-radius);
+  box-shadow: var(--app-shadow-lg);
+}
+
+.el-overlay {
+  background-color: rgb(16 24 40 / 45%);
+  backdrop-filter: blur(1px);
+}
+
+.el-dialog__header,
+.el-drawer__header {
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--app-border);
+}
+
+.el-dialog__title,
+.el-drawer__title {
+  font-size: var(--text-section);
+  font-weight: 700;
+  color: var(--app-fg);
+}
+
+/* ---------- 表格 ---------- */
+.el-table {
+  --el-table-border-color: var(--app-border);
+  --el-table-header-bg-color: var(--app-surface-subtle);
+  --el-table-header-text-color: var(--app-muted-strong);
+  --el-table-row-hover-bg-color: var(--app-primary-soft);
+  --el-table-text-color: var(--app-fg);
+  font-size: var(--text-secondary);
+}
+
+.el-table th.el-table__cell {
+  font-size: var(--text-caption);
+  font-weight: 700;
+  letter-spacing: .02em;
+  text-transform: none;
+  padding: 10px 0;
+}
+
+.el-table td.el-table__cell {
+  padding: 11px 0;
+}
+
+/* 数字列右对齐更易比较（金额/额度/次数） */
+.el-table .cell .num,
+.el-table .cell .mono,
+.el-table .cell .amount {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 标签 / 徽标 ---------- */
+.el-tag {
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  padding: 0 8px;
+}
+
+/* ---------- 分页 ---------- */
+.el-pagination {
+  --el-pagination-button-bg-color: transparent;
+  font-weight: 600;
+}
+
+.el-pagination button,
+.el-pager li {
+  border-radius: var(--radius-sm);
+}
+
+.el-pager li.is-active {
+  background: var(--app-primary);
+  color: #ffffff;
+}
+
+/* ---------- 标签页 ---------- */
+.el-tabs__item {
+  color: var(--app-muted-strong);
+  font-weight: 600;
+}
+
+.el-tabs__item.is-active {
+  color: var(--app-primary);
+}
+
+.el-tabs__active-bar {
+  height: 2px;
+  border-radius: 2px;
+}
+
+/* ---------- 提示 / 描述 / 空态 ---------- */
+.el-alert {
+  border: 1px solid var(--app-border);
+  border-radius: var(--radius-md);
+}
+
+.el-descriptions__label {
+  color: var(--app-muted-strong);
+  font-weight: 600;
+}
+
+.el-empty__description p {
+  color: var(--app-muted);
+}
+
+/* ---------- 骨架屏与加载 ---------- */
+.el-skeleton__item {
+  background: linear-gradient(
+    90deg,
+    var(--app-surface-muted) 25%,
+    var(--app-surface-subtle) 37%,
+    var(--app-surface-muted) 63%
+  );
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- 移动端触控尺寸 ---------- */
+.mobile-nav-drawer .el-drawer__body {
+  padding: 0;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background: var(--app-sidebar);
+}
+
+@media (max-width: 767px) {
+  .el-button,
+  .el-input__wrapper,
+  .el-select__wrapper,
+  .el-textarea__inner {
+    min-height: 44px;
+  }
+}
+
+/* =========================================================
+   暗色模式覆盖
+   ========================================================= */
+[data-theme="dark"],
+html.dark {
+  .el-table {
+    --el-table-row-hover-bg-color: var(--app-surface-muted);
+  }
+
+  .el-input__inner::placeholder,
+  .el-textarea__inner::placeholder {
+    color: var(--app-muted);
+  }
+
+  .el-button--primary:not(.is-disabled):not(.is-text):not(.is-link) {
+    color: #ffffff;
+    --el-button-text-color: #ffffff;
+  }
+
+  /* 暗色下文本型主按钮同样用主题蓝字，保持可读 */
+  .el-button--primary.is-text:not(.is-disabled),
+  .el-button--primary.is-link:not(.is-disabled) {
+    color: var(--app-primary);
+  }
+
+  .el-button--primary.is-text:not(.is-disabled):hover {
+    color: var(--app-primary-hover);
+    background-color: var(--app-primary-soft);
+  }
+
+  .el-button--default:not(.is-disabled):not(.is-text):not(.is-link) {
+    background: var(--app-surface-raised);
+    border-color: var(--app-border-strong);
+    color: var(--app-fg);
+  }
+
+  .el-dialog,
+  .el-drawer {
+    box-shadow: var(--app-shadow-lg);
+  }
+}

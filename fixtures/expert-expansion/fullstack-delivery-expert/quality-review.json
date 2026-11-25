@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-08",
+  "code": "fullstack-delivery-expert",
+  "status": "reviewed",
+  "artifactSha256": "b9a13365bf887e485ffac7f71076cf9cd41095494ae028b608ac38bc73099e8b",
+  "sourceSha256": {
+    "specs/fullstack-delivery-expert.json": "5f5f781ee967811feb7cb597d19bb974ec3f210be31811f578fea0b953e6e15c",
+    "fullstack-delivery-expert/SKILL.md": "e7c50a3f57307cbc54e7c646099f606a40ebf7e4119f783593cc70dc517fadd4",
+    "fullstack-delivery-expert/references/deliverable-templates.md": "a45f38f15ae3d2ad418cfd34d9d979178e467f88c9a25cae751b60f1aa5f31db",
+    "fullstack-delivery-expert/references/worked-example.md": "f4e084d1c2b1ca3c1133d2732dc62b8295b1b763c4ed14bdb464e89f22d24484"
+  },
+  "focus": "前后端契约、服务端权限、真实链路与验证分层",
+  "scope": "Parent and independent agent static review of instructions, 10 specific cases, templates and worked example; not 10 executed host conversations.",
+  "independentEvidence": "正文要求沿现有栈做纵向功能并分层报告验证；示例服务端模型由可信认证层传入 principal，SQLite 重开检查持久化，明确前端/HTTP/项目迁移未验证。",
+  "resolvedIssues": [],
+  "openIssues": [],
+  "actualTrial": "execution-validation.json",
+  "independentReport": "../remaining-independent-review.json"
+}

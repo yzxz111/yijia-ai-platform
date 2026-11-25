@@ -1,0 +1,22 @@
+{
+  "verifiedAt": "2026-10-08",
+  "artifactSha256": "ce6024f823feafbe6f94c3ba8b49ce2082aabcfa42846aec15e09a49d4720e73",
+  "compressedBytes": 89410,
+  "allJsonReportsParse": true,
+  "packageEntriesMatchReport": true,
+  "readmeLocalLinksExist": true,
+  "bilingualOverflow": [],
+  "offlineImportTestsPassed": 4,
+  "isolatedRepairTests": {
+    "baselinePass": 4,
+    "baselineFail": 11,
+    "afterPass": 15,
+    "afterFail": 0
+  },
+  "priorPackagesUnchanged": {
+    "academic-writing-mentor": "acd754b4338509749364493e9ea9a67269f8467e458d3a8d82b7452c514f8b12",
+    "senior-software-engineer": "8b0aacd81151fc5ede6a64744bc87bd59e09ce7d6f04fc433377c131c0dedafb"
+  },
+  "published": false,
+  "limits": "Offline import checks and isolated repair only. Real host-model, DevTools, backend and device acceptance remains unperformed."
+}

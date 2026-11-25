@@ -1,0 +1,22 @@
+{
+  "confirmedEvents": [
+    "A-release",
+    "B-incident"
+  ],
+  "excludedAfterCutoff": [
+    "N5"
+  ],
+  "excludedOld": [
+    "N7"
+  ],
+  "unconfirmed": [
+    "N6"
+  ],
+  "deduplicate": [
+    "N1",
+    "N2",
+    "N3"
+  ],
+  "B_localIncident": "2026-10-08 05:20–06:00 Asia/Shanghai",
+  "B_localPublication": "2026-10-08 07:00 Asia/Shanghai"
+}

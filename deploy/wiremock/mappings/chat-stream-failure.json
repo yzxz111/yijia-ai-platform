@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/mock-primary/chat/completions",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": {
+          "expression": "$.stream",
+          "equalTo": "true"
+        }
+      },
+      {
+        "contains": "trigger-mid-stream-failure"
+      }
+    ]
+  },
+  "priority": 2,
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "text/event-stream"
+    },
+    "chunkedDribbleDelay": {
+      "numberOfChunks": 10,
+      "totalDuration": 3000
+    },
+    "body": "data: {\"id\":\"chatcmpl-wiremock-stream\",\"object\":\"chat.completion.chunk\",\"created\":1785427200,\"model\":\"mock-upstream-model\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"partial\"}}]}          \n\ndata: {invalid-json\n\n"
+  }
+}

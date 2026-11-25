@@ -1,0 +1,27 @@
+{
+  "expert": "fullstack-delivery-expert",
+  "date": "2026-10-08",
+  "status": "passed",
+  "skillSha256": "e7c50a3f57307cbc54e7c646099f606a40ebf7e4119f783593cc70dc517fadd4",
+  "packageZipSha256": "b9a13365bf887e485ffac7f71076cf9cd41095494ae028b608ac38bc73099e8b",
+  "editedFiles": ["server.mjs", "client.mjs"],
+  "createdArtifacts": ["trial-response.md", "trial-result.json"],
+  "protectedFileSha256": {
+    "AGENTS.md": "3ffc31c30614849ce343a0174ec95b3bec986b554a7eb6f2c537aeb642419fd4",
+    "USER-NOTES.md": "2846e5b8c5e70f2a37a13c9c78c7b6bb5a7d6d7446efa84a7643d854b5f96d2b",
+    "acceptance.test.mjs": "c2cc8ce9ce104b18ae291de6eecc8807416f380fa3289c21680a304ee4b7deab"
+  },
+  "editedFileSha256": {
+    "server.mjs": "427edfc5248be4514a4aa918dc8fa6c8cfbc4047a9f8c68770bf49a64df955c7",
+    "client.mjs": "42ca86ded838b341a68fd01fb2680ae2c01e33cd48c2f8ae37096663c1b5bad4"
+  },
+  "test": {
+    "command": "node --test acceptance.test.mjs",
+    "before": {"total": 9, "passed": 1, "failed": 8},
+    "after": {"total": 9, "passed": 9, "failed": 0},
+    "runtime": "Real local loopback HTTP; injected authentication and in-memory Map fixture",
+    "scope": "Missing identity, owner-scoped list and update, title validation, unique id, boolean state, client HTTP-error rejection, malformed JSON recovery"
+  },
+  "limitations": "No production identity provider, persistent database, deployed service, or cloud host was tested.",
+  "externalActions": "No dependencies added, no database migration, no commit, no publication."
+}

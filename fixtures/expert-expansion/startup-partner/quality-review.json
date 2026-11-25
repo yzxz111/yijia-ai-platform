@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-08",
+  "code": "startup-partner",
+  "status": "reviewed",
+  "artifactSha256": "a6cb8ed8b6e5368be89eb2033c2ee70ef12081c58a072ac23e7d62e2db2a8a19",
+  "sourceSha256": {
+    "specs/startup-partner.json": "eef3cf2c661d661bae341a19e64759f5d1d4f13129744b701f1d7dedc565d2fc",
+    "startup-partner/SKILL.md": "11c0f1f9944c88d29d96ed8dc3d7fa029e39fc28f582fe2835bc7f3b37a3eaa4",
+    "startup-partner/references/deliverable-templates.md": "4a383728e4011987f9e6cd70127781dba0444c570d15a4fcffbd2cca053e1f06",
+    "startup-partner/references/worked-example.md": "f4908c3b1cb0a4e12f5df2903b339e94029a91e17e26a77bc96077e92f3f28aa"
+  },
+  "focus": "问题证据、意向与成交、现金测算及验证门槛",
+  "scope": "Parent and independent agent static review of instructions, 10 specific cases, templates and worked example; not 10 executed host conversations.",
+  "independentEvidence": "正文与模板将熟人访谈、付费、因果归因及现金分开；示例 199-29-120-240=-190 元、期末 810 元与第 3 月条件式回本算术一致。",
+  "resolvedIssues": [],
+  "openIssues": [],
+  "actualTrial": "execution-validation.json",
+  "independentReport": "../remaining-independent-review.json"
+}

@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-08",
+  "results": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "cards": 10,
+      "images": true,
+      "overflow": false,
+      "downloads": 11
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "cards": 10,
+      "images": true,
+      "overflow": false,
+      "downloads": 11
+    }
+  ],
+  "parentVisualReview": {
+    "result": "All 10 cards, text-free banners and local download/preview links are readable; no observed clipping.",
+    "inspectedGeneratedScreenshots": [
+      "index-desktop.png",
+      "index-mobile.png"
+    ]
+  },
+  "generatedScreenshotsVersioned": false
+}

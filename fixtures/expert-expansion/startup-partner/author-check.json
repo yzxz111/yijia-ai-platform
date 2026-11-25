@@ -1,0 +1,23 @@
+{
+  "code": "startup-partner",
+  "reviewedAt": "2026-10-08",
+  "scope": "Source authoring review only; no archive build, rendered preview, host import, customer contact, or live expert execution was performed here.",
+  "filesAuthored": [
+    "specs/startup-partner.json",
+    "startup-partner/references/deliverable-templates.md",
+    "startup-partner/references/worked-example.md",
+    "scripts/expert-artwork/startup-partner.cjs"
+  ],
+  "checksPerformed": {
+    "jsonParse": "passed",
+    "buildGeneratorMetadataFunction": "passed; 44 metadata fields and both 1080x704 canvas geometries accepted",
+    "instructionLength": "2273 characters, including 1859 Han characters",
+    "englishTitleLength": 15,
+    "englishDescriptionLength": 144,
+    "acceptanceCaseCount": 10,
+    "artworkStructure": "Node syntax check passed; exported icon is 240x240 and illustration is 1440x480; no SVG text or foreignObject tags detected",
+    "workedExampleArithmetic": "Python assertions passed: response 6/10=60%, interview 4/10=40%, payment 1/10=10%, no-show 8/80=10% and 6/80=7.5% (2.5 percentage points), recurring contribution 199-29=170, first-month service contribution 50, CAC 240, first-month cash -190, ending cash 810, conditional cumulative balances -190/-20/150 after months 1/2/3"
+  },
+  "evidenceBoundary": "All interviews, payment, appointment counts, and costs in the worked example are fictional user-provided facts. No real market size, vendor price, tax rule, causal product effect, retention, or investor outcome was asserted as verified.",
+  "pendingForIntegrator": ["Render all three package assets", "Build deterministic package", "Inspect bilingual preview for text overflow", "Run host import and acceptance checks"]
+}

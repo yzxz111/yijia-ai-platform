@@ -1,0 +1,31 @@
+{
+  "priority": 1,
+  "scenarioName": "alipay-payment-query",
+  "requiredScenarioState": "PENDING",
+  "request": {
+    "method": "POST",
+    "urlPath": "/gateway.do",
+    "formParameters": {
+      "method": { "equalTo": "alipay.trade.query" },
+      "biz_content": {
+        "matches": "(?s)^\\{(?=[^{}]*\\\"out_trade_no\\\":\\\"pay_fixture_paid\\\"(?:,|\\}))[^{}]*\\}$"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": {
+      "alipay_trade_query_response": {
+        "code": "10000",
+        "msg": "Success",
+        "out_trade_no": "pay_fixture_paid",
+        "trade_no": "2026080122000000000001",
+        "trade_status": "WAIT_BUYER_PAY",
+        "total_amount": "19.00",
+        "buyer_pay_amount": "0.00"
+      },
+      "sign": "fixture-signature"
+    }
+  }
+}

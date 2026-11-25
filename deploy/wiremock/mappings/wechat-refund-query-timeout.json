@@ -1,0 +1,15 @@
+{
+  "priority": 1,
+  "scenarioName": "wechat-refund-query",
+  "requiredScenarioState": "TIMEOUT",
+  "request": {
+    "method": "GET",
+    "urlPath": "/v3/refund/domestic/refunds/ref_fixture_paid"
+  },
+  "response": {
+    "status": 200,
+    "fixedDelayMilliseconds": 20000,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": { "code": "TIMEOUT", "message": "delayed timeout fixture" }
+  }
+}

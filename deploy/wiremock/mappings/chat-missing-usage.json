@@ -1,0 +1,40 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/mock-primary/chat/completions",
+    "bodyPatterns": [
+      {
+        "contains": "trigger-missing-usage"
+      },
+      {
+        "matchesJsonPath": {
+          "expression": "$.stream",
+          "equalTo": "false"
+        }
+      }
+    ]
+  },
+  "priority": 2,
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": "chatcmpl-wiremock-estimated",
+      "object": "chat.completion",
+      "created": 1785427200,
+      "model": "text-basic",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "mock response without usage"
+          },
+          "finish_reason": "stop"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "fictional-miniapp-search-exercise",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test search-controller.test.mjs" }
+}

@@ -1,0 +1,29 @@
+{
+  "priority": 1,
+  "scenarioName": "alipay-payment-query",
+  "requiredScenarioState": "FAILED",
+  "request": {
+    "method": "POST",
+    "urlPath": "/gateway.do",
+    "formParameters": {
+      "method": { "equalTo": "alipay.trade.query" },
+      "biz_content": {
+        "matches": "(?s)^\\{(?=[^{}]*\\\"out_trade_no\\\":\\\"pay_fixture_paid\\\"(?:,|\\}))[^{}]*\\}$"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": {
+      "alipay_trade_query_response": {
+        "code": "40004",
+        "msg": "Business Failed",
+        "sub_code": "ACQ.BUYER_BALANCE_NOT_ENOUGH",
+        "sub_msg": "payment rejected fixture",
+        "out_trade_no": "pay_fixture_paid"
+      },
+      "sign": "fixture-signature"
+    }
+  }
+}

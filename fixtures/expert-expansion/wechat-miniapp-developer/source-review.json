@@ -1,0 +1,107 @@
+{
+  "reviewedAt": "2026-10-08",
+  "method": "Public official WeChat documentation. Web reader could not open these pages; direct HTTPS retrieval returned 200. Facts were read, not inferred from search snippets. No documentation code was executed.",
+  "scope": "Limited API and framework facts used by this package, not a review of every platform policy or version. Current project version and latest rules must still be checked at use time.",
+  "sources": [
+    {
+      "title": "wx.request",
+      "url": "https://developers.weixin.qq.com/miniprogram/dev/api/network/request/wx.request.html",
+      "httpStatus": 200,
+      "htmlSha256": "0d3e709c38f1ae11b9fd46fb6579f45feb72f03c87e50b933d934bddc2224fde",
+      "keyTermsPresent": {
+        "RequestTask": true,
+        "statusCode": true,
+        "Promise": true
+      },
+      "reviewedFacts": [
+        "原生接口采用回调，返回 RequestTask；文档标注不支持 Promise 风格。",
+        "success 的响应含 statusCode；项目自己的 Promise 封装应单独识别。"
+      ],
+      "retrieval": "Read official public HTML over HTTPS; stripped navigation for text inspection."
+    },
+    {
+      "title": "网络能力",
+      "url": "https://developers.weixin.qq.com/miniprogram/dev/framework/ability/network.html",
+      "httpStatus": 200,
+      "htmlSha256": "593eb81d19db13e9a8f834d8747fdf9134e7ef5afbcb81ebd9952e7a0e88db8f",
+      "keyTermsPresent": {
+        "success": true,
+        "statusCode": true
+      },
+      "reviewedFacts": [
+        "收到服务器响应会进入 success，HTTP 成功状态与业务成功仍须显式判断。"
+      ],
+      "retrieval": "Read official public HTML over HTTPS; stripped navigation for text inspection."
+    },
+    {
+      "title": "小程序登录",
+      "url": "https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html",
+      "httpStatus": 200,
+      "htmlSha256": "d70f88a24606433024cb76f5e06360ee2d74b244d6091a76fe204587a7807fc4",
+      "keyTermsPresent": {
+        "wx.login": true,
+        "code2Session": true,
+        "session_key": true
+      },
+      "reviewedFacts": [
+        "客户端临时 code 交由开发者服务器换取登录态。",
+        "session_key 属于敏感会话信息，不应下发到小程序。"
+      ],
+      "retrieval": "Read official public HTML over HTTPS; stripped navigation for text inspection."
+    },
+    {
+      "title": "Page",
+      "url": "https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html",
+      "httpStatus": 200,
+      "htmlSha256": "6be1dbe9a096dd5e72f0822fa7aed470321ef4946734e8e07ab9c2b91ff34012",
+      "keyTermsPresent": {
+        "onUnload": true,
+        "setData": true
+      },
+      "reviewedFacts": [
+        "Page 定义包含 onUnload 卸载生命周期与 setData 页面更新用法；用作清理失效请求的接入位置。"
+      ],
+      "retrieval": "Read official public HTML over HTTPS; stripped navigation for text inspection."
+    },
+    {
+      "title": "事件对象",
+      "url": "https://developers.weixin.qq.com/miniprogram/dev/framework/component-framework/event-object.html",
+      "httpStatus": 200,
+      "htmlSha256": "21510e80d2b0bbec490727055a55aa11c7d9c89ad2b6cc3574a7b1002458dc4c",
+      "keyTermsPresent": {
+        "currentTarget": true,
+        "dataset": true,
+        "target": true
+      },
+      "reviewedFacts": [
+        "target 指事件起点，currentTarget 指事件绑定节点；从绑定节点读取 dataset 时需区分两者。"
+      ],
+      "retrieval": "Read official public HTML over HTTPS; stripped navigation for text inspection."
+    },
+    {
+      "title": "列表渲染",
+      "url": "https://developers.weixin.qq.com/miniprogram/dev/reference/wxml/list.html",
+      "httpStatus": 200,
+      "htmlSha256": "e9a548e0e7b0befb2adbd05713dd1d30cf30b2969b84327bff693aa519ad3c7a",
+      "keyTermsPresent": {
+        "wx:key": true,
+        "*this": true
+      },
+      "reviewedFacts": [
+        "wx:key 指定字段名，不写数据绑定表达式；选择 key 需考虑稳定身份与适用范围，不应机械添加。"
+      ],
+      "retrieval": "Read official public HTML over HTTPS; stripped navigation for text inspection."
+    }
+  ],
+  "implementationInferences": [
+    "Request IDs can invalidate stale success/fail/complete callbacks; this is application logic, not a promise that the network request was cancelled.",
+    "A Page unload hook can invalidate pending work; pure JS mock tests do not verify actual WeChat lifecycle integration."
+  ],
+  "notVerified": [
+    "WeChat DevTools",
+    "Real AppID or login",
+    "Real backend integration",
+    "Real device",
+    "Platform review or publication"
+  ]
+}

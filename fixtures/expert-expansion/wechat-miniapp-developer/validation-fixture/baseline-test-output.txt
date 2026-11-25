@@ -1,0 +1,419 @@
+TAP version 13
+# Subtest: normal query is trimmed and callback result becomes ready
+ok 1 - normal query is trimmed and callback result becomes ready
+  ---
+  duration_ms: 2.1915
+  type: 'test'
+  ...
+# Subtest: old success after new success cannot overwrite any state
+not ok 2 - old success after new success cannot overwrite any state
+  ---
+  duration_ms: 1.3381
+  type: 'test'
+  location: 'D:\\code\\Yuzhi9.20\\.scratch\\wechat-miniapp-developer-exercise\\search-controller.test.mjs:46:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      {
+        error: '',
+        items: [
+          {
+    +       id: 'a',
+    +       title: 'a'
+    -       id: 'ab',
+    -       title: 'ab'
+          }
+        ],
+        loading: false,
+        query: 'ab',
+        status: 'ready'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    query: 'ab'
+    items:
+      0:
+        id: 'ab'
+        title: 'ab'
+    status: 'ready'
+    loading: false
+    error: ''
+  actual:
+    query: 'ab'
+    items:
+      0:
+        id: 'a'
+        title: 'a'
+    status: 'ready'
+    loading: false
+    error: ''
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:50:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: old failure and completion cannot stop a new loading state
+not ok 3 - old failure and completion cannot stop a new loading state
+  ---
+  duration_ms: 0.4109
+  type: 'test'
+  location: 'D:\\code\\Yuzhi9.20\\.scratch\\wechat-miniapp-developer-exercise\\search-controller.test.mjs:52:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      {
+    +   error: 'Request failed',
+    -   error: '',
+        items: [],
+    +   loading: false,
+    -   loading: true,
+        query: 'ab',
+    +   status: 'error'
+    -   status: 'loading'
+      }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    query: 'ab'
+    items:
+    status: 'loading'
+    loading: true
+    error: ''
+  actual:
+    query: 'ab'
+    items:
+    status: 'error'
+    loading: false
+    error: 'Request failed'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:55:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: old completion on its own cannot stop current loading
+not ok 4 - old completion on its own cannot stop current loading
+  ---
+  duration_ms: 0.2642
+  type: 'test'
+  location: 'D:\\code\\Yuzhi9.20\\.scratch\\wechat-miniapp-developer-exercise\\search-controller.test.mjs:58:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:61:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: clearing input issues no request and invalidates previous success
+not ok 5 - clearing input issues no request and invalidates previous success
+  ---
+  duration_ms: 0.2183
+  type: 'test'
+  location: 'D:\\code\\Yuzhi9.20\\.scratch\\wechat-miniapp-developer-exercise\\search-controller.test.mjs:63:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    2 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:65:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: clearing null input also invalidates a previous failure
+not ok 6 - clearing null input also invalidates a previous failure
+  ---
+  duration_ms: 0.2827
+  type: 'test'
+  location: 'D:\\code\\Yuzhi9.20\\.scratch\\wechat-miniapp-developer-exercise\\search-controller.test.mjs:70:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      {
+    +   error: 'Request failed',
+    -   error: '',
+        items: [],
+        loading: false,
+        query: '',
+    +   status: 'error'
+    -   status: 'idle'
+      }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    query: ''
+    items:
+    status: 'idle'
+    loading: false
+    error: ''
+  actual:
+    query: ''
+    items:
+    status: 'error'
+    loading: false
+    error: 'Request failed'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:73:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: current network failure permits another search of the same query
+ok 7 - current network failure permits another search of the same query
+  ---
+  duration_ms: 0.3002
+  type: 'test'
+  ...
+# Subtest: HTTP 500 delivered to success is still an error
+not ok 8 - HTTP 500 delivered to success is still an error
+  ---
+  duration_ms: 0.372
+  type: 'test'
+  location: 'D:\\code\\Yuzhi9.20\\.scratch\\wechat-miniapp-developer-exercise\\search-controller.test.mjs:82:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    'ready' !== 'error'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'error'
+  actual: 'ready'
+  operator: 'strictEqual'
+  stack: |-
+    expectError (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:31:10)
+    TestContext.<anonymous> (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:83:82)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: HTTP 401 delivered to success is still an error
+not ok 9 - HTTP 401 delivered to success is still an error
+  ---
+  duration_ms: 0.281
+  type: 'test'
+  location: 'D:\\code\\Yuzhi9.20\\.scratch\\wechat-miniapp-developer-exercise\\search-controller.test.mjs:85:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    'ready' !== 'error'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'error'
+  actual: 'ready'
+  operator: 'strictEqual'
+  stack: |-
+    expectError (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:31:10)
+    TestContext.<anonymous> (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:86:82)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: HTTP 200 with rejected business result is an error
+not ok 10 - HTTP 200 with rejected business result is an error
+  ---
+  duration_ms: 0.3342
+  type: 'test'
+  location: 'D:\\code\\Yuzhi9.20\\.scratch\\wechat-miniapp-developer-exercise\\search-controller.test.mjs:88:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    'ready' !== 'error'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'error'
+  actual: 'ready'
+  operator: 'strictEqual'
+  stack: |-
+    expectError (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:31:10)
+    TestContext.<anonymous> (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:90:111)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: malformed items cannot become successful results
+not ok 11 - malformed items cannot become successful results
+  ---
+  duration_ms: 0.3683
+  type: 'test'
+  location: 'D:\\code\\Yuzhi9.20\\.scratch\\wechat-miniapp-developer-exercise\\search-controller.test.mjs:92:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    'ready' !== 'error'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'error'
+  actual: 'ready'
+  operator: 'strictEqual'
+  stack: |-
+    expectError (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:31:10)
+    TestContext.<anonymous> (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:94:108)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: empty array is a valid empty result
+ok 12 - empty array is a valid empty result
+  ---
+  duration_ms: 0.1759
+  type: 'test'
+  ...
+# Subtest: dispose prevents late callbacks and later searches from writing
+not ok 13 - dispose prevents late callbacks and later searches from writing
+  ---
+  duration_ms: 0.3101
+  type: 'test'
+  location: 'D:\\code\\Yuzhi9.20\\.scratch\\wechat-miniapp-developer-exercise\\search-controller.test.mjs:100:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      {
+        error: '',
+        items: [],
+        loading: true,
+    +   query: 'b',
+    -   query: 'a',
+        status: 'loading'
+      }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    query: 'a'
+    items:
+    status: 'loading'
+    loading: true
+    error: ''
+  actual:
+    query: 'b'
+    items:
+    status: 'loading'
+    loading: true
+    error: ''
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:104:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: synchronous adapter failure becomes a recoverable error state
+not ok 14 - synchronous adapter failure becomes a recoverable error state
+  ---
+  duration_ms: 0.235
+  type: 'test'
+  location: 'D:\\code\\Yuzhi9.20\\.scratch\\wechat-miniapp-developer-exercise\\search-controller.test.mjs:106:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Got unwanted exception.
+    Actual message: "transport unavailable"
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  actual:
+  error: 'transport unavailable'
+  stack: |-
+    request (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:13:33)
+    Object.search (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.mjs:6:5)
+    file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:108:31
+    getActual (node:assert:611:5)
+    strict.doesNotThrow (node:assert:779:32)
+    TestContext.<anonymous> (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:108:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+  operator: 'doesNotThrow'
+  stack: |-
+    TestContext.<anonymous> (file:///D:/code/Yuzhi9.20/.scratch/wechat-miniapp-developer-exercise/search-controller.test.mjs:108:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: two controller instances keep independent current requests
+ok 15 - two controller instances keep independent current requests
+  ---
+  duration_ms: 0.1742
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 4
+# fail 11
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 114.6811

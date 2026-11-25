@@ -1,0 +1,33 @@
+{
+  "type": "root_verification_of_isolated_agent_execution",
+  "verifiedAtLocalDate": "2026-10-08",
+  "trialModel": "gpt-6-sol",
+  "trialReasoningEffort": "ultra",
+  "packageArtifactSha256": "8b0aacd81151fc5ede6a64744bc87bd59e09ce7d6f04fc433377c131c0dedafb",
+  "entrySkillSha256": "7478c197e9538132d444087333921495d663dace123e51d405f6c256d46b2c3f",
+  "testCounts": {
+    "baseline": {
+      "total": 9,
+      "passed": 5,
+      "failed": 4
+    },
+    "afterFix": {
+      "total": 9,
+      "passed": 9,
+      "failed": 0
+    }
+  },
+  "protectedFilesUnchanged": {
+    "retry-options.test.mjs": true,
+    "AGENTS.md": true,
+    "user-notes.txt": true
+  },
+  "beforeCodeSha256": "1be9fd92e7e70bbff1a094137e20655b2059f558dc68989a549f3c178c403d8c",
+  "afterCodeSha256": "7b3c643f5ccefd6010fef5874b95b4688448f632cfcce0f3540bc692972c6733",
+  "observedScope": "One separate Codex subagent read the actual packaged Entry Skill and executed a fictional local repair task using real file and Node test tools. Root checked actual diff and byte hashes against frozen baseline.",
+  "limits": [
+    "Not a Yuzai-host model conversation or installed expert runtime E2E.",
+    "One small JavaScript task does not prove general code review, concurrency, migration, security, or performance competence.",
+    "The worked example uses the same zero-default contract, so this is an execution and preservation check, not a held-out generalization benchmark."
+  ]
+}

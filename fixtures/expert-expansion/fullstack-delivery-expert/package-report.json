@@ -1,0 +1,84 @@
+{
+  "artifactSha256": "b9a13365bf887e485ffac7f71076cf9cd41095494ae028b608ac38bc73099e8b",
+  "assets": {
+    "exampleImage": {
+      "bytes": 26506,
+      "height": 280,
+      "path": "skills/fullstack-delivery-expert/assets/example-image.png",
+      "sha256": "52e57daf1ef11b32646ee3d04fc7792ae06c26831bd8661a16df80600481d2c9",
+      "width": 1072
+    },
+    "icon": {
+      "bytes": 5550,
+      "height": 240,
+      "path": "skills/fullstack-delivery-expert/assets/icon.png",
+      "sha256": "43827389e0ba778114ba85dca0c7e1028e14eb21c36fed8af3812ae51636b6c5",
+      "width": 240
+    },
+    "illustration": {
+      "bytes": 23010,
+      "height": 480,
+      "path": "skills/fullstack-delivery-expert/assets/illustration.png",
+      "sha256": "4222b2b4a4cdf7435f0a2238149919084d5e9c5d542dbe1ed42ad242fb058ca0",
+      "width": 1440
+    }
+  },
+  "cloudPublished": false,
+  "code": "fullstack-delivery-expert",
+  "compressedBytes": 64008,
+  "entries": {
+    "com.yuzhihuihe.ycps/manifest.json": {
+      "bytes": 445,
+      "sha256": "4ebd38fad65a3a04c63fb078e2fb4cd907dda7178741d54987d8b0277377b8ab"
+    },
+    "plugin.json": {
+      "bytes": 692,
+      "sha256": "68b5f310d2b28f68fc9dd15eaeb779187ff723aa8cc64670c7a5112b8b502d8b"
+    },
+    "skills/fullstack-delivery-expert/SKILL.md": {
+      "bytes": 20496,
+      "sha256": "e7c50a3f57307cbc54e7c646099f606a40ebf7e4119f783593cc70dc517fadd4"
+    },
+    "skills/fullstack-delivery-expert/assets/example-image.png": {
+      "bytes": 26506,
+      "sha256": "52e57daf1ef11b32646ee3d04fc7792ae06c26831bd8661a16df80600481d2c9"
+    },
+    "skills/fullstack-delivery-expert/assets/icon.png": {
+      "bytes": 5550,
+      "sha256": "43827389e0ba778114ba85dca0c7e1028e14eb21c36fed8af3812ae51636b6c5"
+    },
+    "skills/fullstack-delivery-expert/assets/illustration.png": {
+      "bytes": 23010,
+      "sha256": "4222b2b4a4cdf7435f0a2238149919084d5e9c5d542dbe1ed42ad242fb058ca0"
+    },
+    "skills/fullstack-delivery-expert/references/deliverable-templates.md": {
+      "bytes": 1962,
+      "sha256": "a45f38f15ae3d2ad418cfd34d9d979178e467f88c9a25cae751b60f1aa5f31db"
+    },
+    "skills/fullstack-delivery-expert/references/worked-example.md": {
+      "bytes": 4690,
+      "sha256": "f4e084d1c2b1ca3c1133d2732dc62b8295b1b763c4ed14bdb464e89f22d24484"
+    }
+  },
+  "entryCount": 8,
+  "expandedBytes": 83351,
+  "kind": "EXPERT",
+  "presentation": {
+    "canvasNodes": {
+      "en": 20,
+      "zh": 20
+    },
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  "runtime": {
+    "dependencies": [],
+    "entryAgent": "main",
+    "minClientVersion": "2026.6.30"
+  },
+  "validationScope": "Deterministic packaging, identity, metadata budgets, canvas geometry/runs, decoded asset sizes. See acceptance results for production parser tests.",
+  "version": "1.0.0",
+  "ycpsVersion": "1.1.0"
+}

@@ -1,0 +1,49 @@
+# 本地开发专用端口覆盖文件 —— 绝不用于生产。
+#
+# 背景：`deploy/compose.yaml` 只发布 nginx 的 NGINX_PORT(18081)，postgres / redis /
+# minio / wiremock / clamav 都只在 Compose 内部网络可达。这是刻意的安全默认值，
+# 但也意味着**在宿主机直接运行 Spring Boot 服务时连不上这些中间件**。
+#
+# 用法（叠加在基础文件之上，顺序不能反）：
+#
+#   docker compose -f .\deploy\compose.yaml -f .\deploy\compose.dev-ports.yaml `
+#     --env-file .\deploy\env\.env up -d postgres postgres-extensions redis minio minio-init
+#
+# 宿主机连接信息：
+#   postgres  localhost:55432   库 api_model_platform，schema platform / gateway
+#   redis     localhost:56379   密码取自 .env 的 REDIS_PASSWORD
+#   minio     localhost:59000   API 端点（控制台 59001）
+#
+# 端口特意错开常用的 5432 / 6379 / 9000，避免与本机已装的服务冲突。
+# 这些端口只绑回环地址，不对外暴露。
+
+services:
+  postgres:
+    ports:
+      # 改用 55432 避免与本机已装的 PostgreSQL 冲突
+      - "127.0.0.1:55432:5432"
+
+  redis:
+    ports:
+      - "127.0.0.1:56379:6379"
+
+  minio:
+    ports:
+      - "127.0.0.1:59000:9000"   # S3 API
+      - "127.0.0.1:59001:9001"   # Web 控制台
+
+  # 网关在宿主机运行时，若要连容器内的 WireMock（本地模型上游）与 ClamAV（文件扫描），
+  # 需要把它们的端口也暴露出来。默认已在下面给出，可按需注释掉。
+  wiremock:
+    ports:
+      - "127.0.0.1:58080:8080"
+
+  clamav:
+    ports:
+      - "127.0.0.1:53310:3310"
+
+  # DOC/XLS 多模态预处理。网关侧 DOCUMENT_CONVERTER_BASE_URL 为空即关闭该能力，
+  # 需要真实转换时把这里放开，并设 base-url 指向本机 58082、auth-token 与 .env 一致。
+  document-converter:
+    ports:
+      - "127.0.0.1:58082:8080"

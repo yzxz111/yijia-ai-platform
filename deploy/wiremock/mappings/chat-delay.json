@@ -1,0 +1,40 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/mock-primary/chat/completions",
+    "bodyPatterns": [
+      {
+        "contains": "trigger-delay"
+      }
+    ]
+  },
+  "priority": 3,
+  "response": {
+    "status": 200,
+    "fixedDelayMilliseconds": 1500,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": "chatcmpl-wiremock-delay",
+      "object": "chat.completion",
+      "created": 1785427200,
+      "model": "text-basic",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "delayed mock response"
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 10,
+        "completion_tokens": 20,
+        "total_tokens": 30
+      }
+    }
+  }
+}

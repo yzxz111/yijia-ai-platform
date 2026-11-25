@@ -1,0 +1,833 @@
+{
+  "canvas": {
+    "en": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "One sentence"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": ", align every claim with evidence"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "From a proposal idea to manuscript revision"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "I have one research question and three abstracts. Build an argument map and flag conclusions I cannot cite yet."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "Draft question and three abstracts; full texts are not available."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 36,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "Research question and evidence check"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "field": "preview.intro",
+          "height": 42,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "text": "Establish what the sources support before drafting the claim."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 328
+        },
+        {
+          "field": "preview.table",
+          "height": 172,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "Stage / Deliverable now / Verification"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              25,
+              45,
+              30
+            ],
+            "headers": [
+              "Stage",
+              "Deliverable now",
+              "Verification"
+            ],
+            "rows": [
+              [
+                "Scope",
+                "Narrow population and context",
+                "Can be framed now"
+              ],
+              [
+                "Claims",
+                "Map abstract to claim",
+                "Check full text"
+              ],
+              [
+                "Citations",
+                "List proposed citation slots",
+                "No invented pages"
+              ]
+            ]
+          },
+          "width": 520,
+          "x": 48,
+          "y": 380
+        },
+        {
+          "field": "title",
+          "height": 38,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "Academic Writing Mentor"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 70,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "Frame research questions, edit sections, trace evidence, and draft reviewer replies. Flag source gaps, conflicting findings, and unrun analyses."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 272
+        },
+        {
+          "field": "usageGuide",
+          "height": 92,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Share a topic or draft, the discipline, current stage, and desired deliverable. Add sources, data, or reviewer comments when available; the mentor will map claims to evidence and flag checks still needed."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 352
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Research framing"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 198
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Citation checks"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 198
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Revision and editing"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 226
+        },
+        {
+          "field": "prompt.0",
+          "height": 70,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "I only have a topic on satisfaction with community eldercare. Propose three researchable questions, evidence sources, and the minimum material for a proposal."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 458
+        },
+        {
+          "field": "prompt.1",
+          "height": 70,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Here are my introduction and three abstracts. Map each claim to the available evidence and mark citations that need full-text verification."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 536
+        },
+        {
+          "field": "prompt.2",
+          "height": 70,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Using these reviewer comments and revised paragraphs, draft a point-by-point response without claiming analyses I have not completed."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 614
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 56,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Every key claim links to a source ID and a location actually seen; an abstract supports only what it says."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 566
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 56,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Missing full texts, raw data, and unrun calculations stay on the verification list."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 628
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    },
+    "zh": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "一句话"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "，让论文主张与证据逐项对齐"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "从开题想法到投稿返修"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "我只有一个研究问题和三篇文献摘要，请帮我搭建论证框架，并标出不能直接引用的结论。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "研究问题草案、三篇摘要；全文尚未提供。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 36,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "研究问题与证据核验草案"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "field": "preview.intro",
+          "height": 42,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "text": "先确认能证明什么，再决定如何写。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 328
+        },
+        {
+          "field": "preview.table",
+          "height": 172,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "环节 / 当前可交付 / 核验状态"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              25,
+              45,
+              30
+            ],
+            "headers": [
+              "环节",
+              "当前可交付",
+              "核验状态"
+            ],
+            "rows": [
+              [
+                "问题界定",
+                "收窄对象与范围",
+                "可据题目拟定"
+              ],
+              [
+                "论点依据",
+                "摘要对应主张",
+                "待核全文"
+              ],
+              [
+                "引用位置",
+                "列出拟引用位",
+                "不得编页码"
+              ]
+            ]
+          },
+          "width": 520,
+          "x": 48,
+          "y": 380
+        },
+        {
+          "field": "title",
+          "height": 38,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "论文写作导师"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 70,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "从只有选题到投稿返修，提供问题收敛、论证框架、章节修订、证据台账和逐条回复草案。对未读全文、冲突资料及未运行分析保留明确状态。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 272
+        },
+        {
+          "field": "usageGuide",
+          "height": 92,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "提供选题或草稿，说明学科、论文阶段和希望交付的内容；如有文献、数据或审稿意见一并提供。专家会给出可追溯证据、待核引用和下一步清单。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 352
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "选题与论证设计"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 198
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "文献与引用核验"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 198
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "论文返修与润色"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 226
+        },
+        {
+          "field": "prompt.0",
+          "height": 70,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "我只有“社区养老服务满意度”这个选题。请给出三个可研究的问题、可能的证据来源和开题最小资料清单。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 458
+        },
+        {
+          "field": "prompt.1",
+          "height": 70,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "这是论文引言和三篇文献摘要。请逐项检查论点能否由现有材料支持，并标出必须核对全文的引用。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 536
+        },
+        {
+          "field": "prompt.2",
+          "height": 70,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "请根据这两条审稿意见和我的修订段落，写逐条回复表；未实际完成的分析不要写成已修改。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 614
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 56,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "每条关键主张关联来源编号和可见位置；摘要只支持摘要中实际出现的内容。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 566
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 56,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "全文、原始数据和未运行计算列为待办，返修时再逐项更新状态。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 628
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    }
+  },
+  "description": "从只有选题到投稿返修，提供问题收敛、论证框架、章节修订、证据台账和逐条回复草案。对未读全文、冲突资料及未运行分析保留明确状态。",
+  "descriptionEn": "Frame research questions, edit sections, trace evidence, and draft reviewer replies. Flag source gaps, conflicting findings, and unrun analyses.",
+  "exampleImageLocale": "zh",
+  "examplePrompts": [
+    "我只有“社区养老服务满意度”这个选题。请给出三个可研究的问题、可能的证据来源和开题最小资料清单。",
+    "这是论文引言和三篇文献摘要。请逐项检查论点能否由现有材料支持，并标出必须核对全文的引用。",
+    "请根据这两条审稿意见和我的修订段落，写逐条回复表；未实际完成的分析不要写成已修改。"
+  ],
+  "examplePromptsEn": [
+    "I only have a topic on satisfaction with community eldercare. Propose three researchable questions, evidence sources, and the minimum material for a proposal.",
+    "Here are my introduction and three abstracts. Map each claim to the available evidence and mark citations that need full-text verification.",
+    "Using these reviewer comments and revised paragraphs, draft a point-by-point response without claiming analyses I have not completed."
+  ],
+  "name": "论文写作导师",
+  "nameEn": "Academic Writing Mentor",
+  "preview": {
+    "heading": "一句话，让论文主张与证据逐项对齐",
+    "intro": {
+      "text": "先确认能证明什么，再决定如何写。",
+      "tone": "accent"
+    },
+    "material": "研究问题草案、三篇摘要；全文尚未提供。",
+    "outputParagraphs": [
+      "每条关键主张关联来源编号和可见位置；摘要只支持摘要中实际出现的内容。",
+      "全文、原始数据和未运行计算列为待办，返修时再逐项更新状态。"
+    ],
+    "outputTitle": "研究问题与证据核验草案",
+    "request": "我只有一个研究问题和三篇文献摘要，请帮我搭建论证框架，并标出不能直接引用的结论。",
+    "scene": "从开题想法到投稿返修",
+    "table": {
+      "columnWidths": [
+        25,
+        45,
+        30
+      ],
+      "headers": [
+        "环节",
+        "当前可交付",
+        "核验状态"
+      ],
+      "rows": [
+        [
+          "问题界定",
+          "收窄对象与范围",
+          "可据题目拟定"
+        ],
+        [
+          "论点依据",
+          "摘要对应主张",
+          "待核全文"
+        ],
+        [
+          "引用位置",
+          "列出拟引用位",
+          "不得编页码"
+        ]
+      ]
+    }
+  },
+  "previewEn": {
+    "heading": "One sentence, align every claim with evidence",
+    "intro": {
+      "text": "Establish what the sources support before drafting the claim.",
+      "tone": "accent"
+    },
+    "material": "Draft question and three abstracts; full texts are not available.",
+    "outputParagraphs": [
+      "Every key claim links to a source ID and a location actually seen; an abstract supports only what it says.",
+      "Missing full texts, raw data, and unrun calculations stay on the verification list."
+    ],
+    "outputTitle": "Research question and evidence check",
+    "request": "I have one research question and three abstracts. Build an argument map and flag conclusions I cannot cite yet.",
+    "scene": "From a proposal idea to manuscript revision",
+    "table": {
+      "columnWidths": [
+        25,
+        45,
+        30
+      ],
+      "headers": [
+        "Stage",
+        "Deliverable now",
+        "Verification"
+      ],
+      "rows": [
+        [
+          "Scope",
+          "Narrow population and context",
+          "Can be framed now"
+        ],
+        [
+          "Claims",
+          "Map abstract to claim",
+          "Check full text"
+        ],
+        [
+          "Citations",
+          "List proposed citation slots",
+          "No invented pages"
+        ]
+      ]
+    }
+  },
+  "summary": "把研究问题、论证和证据逐项对齐，辅助开题、写作、引用核验与返修，并清楚标记未核材料。",
+  "summaryEn": "Align research questions, claims, and evidence for proposals, drafting, citation checks, and reviewer responses, with unresolved sources clearly marked.",
+  "taskTypes": [
+    "选题与论证设计",
+    "文献与引用核验",
+    "论文返修与润色"
+  ],
+  "taskTypesEn": [
+    "Research framing",
+    "Citation checks",
+    "Revision and editing"
+  ],
+  "usageGuide": "提供选题或草稿，说明学科、论文阶段和希望交付的内容；如有文献、数据或审稿意见一并提供。专家会给出可追溯证据、待核引用和下一步清单。",
+  "usageGuideEn": "Share a topic or draft, the discipline, current stage, and desired deliverable. Add sources, data, or reviewer comments when available; the mentor will map claims to evidence and flag checks still needed."
+}

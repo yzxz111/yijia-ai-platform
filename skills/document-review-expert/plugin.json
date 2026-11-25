@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "document-review-expert",
+  "version": "1.0.0",
+  "description": "Review Word and PDF clauses, numbers, and structure with findings traceable to the source, and save a structure-preserving revision copy for specified edits.",
+  "author": {
+    "name": "Yuzhi"
+  },
+  "license": "Proprietary",
+  "keywords": [
+    "document-review",
+    "comparison",
+    "clause",
+    "revision"
+  ],
+  "extensions": {
+    "com.yuzhihuihe.ycps": {
+      "ycpsVersion": "1.0.0",
+      "kind": "EXPERT",
+      "entrySkill": "document-review-expert",
+      "manifest": "./com.yuzhihuihe.ycps/manifest.json",
+      "requiredFeatures": []
+    }
+  }
+}

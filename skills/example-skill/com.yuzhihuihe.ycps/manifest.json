@@ -1,0 +1,10 @@
+{
+  "$schema": "https://schemas.yuzhihuihe.com/ycps/1.0.0/skill-manifest.schema.json",
+  "dependencies": [],
+  "permissionRequests": {
+    "tools": [],
+    "network": [],
+    "filesystem": []
+  },
+  "hostRequirements": {}
+}

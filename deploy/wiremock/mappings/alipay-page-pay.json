@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/gateway.do",
+    "formParameters": {
+      "method": { "equalTo": "alipay.trade.page.pay" },
+      "biz_content": {
+        "matches": "(?s)^\\{(?=[^{}]*\\\"out_trade_no\\\":\\\"pay_fixture_page\\\"(?:,|\\}))[^{}]*\\}$"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": { "alipay_trade_page_pay_response": { "code": "10000", "msg": "Success", "out_trade_no": "pay_fixture_page" }, "sign": "fixture-signature" }
+  }
+}

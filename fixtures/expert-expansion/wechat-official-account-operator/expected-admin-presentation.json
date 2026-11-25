@@ -1,0 +1,833 @@
+{
+  "canvas": {
+    "en": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "One sentence"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": ", turn a brief into trustworthy copy"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "Event brief · paste-ready post · metrics"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "Write a ready-to-paste volunteer event post and judge whether last post’s reader count proves the headline worked."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "Date, venue, and signup method are given; last post has reader count only."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 36,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "Post and review boundary"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "field": "preview.intro",
+          "height": 42,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "text": "Verify the brief, then deliver copy and a preview checklist."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 328
+        },
+        {
+          "field": "preview.table",
+          "height": 172,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "Stage / Deliverable / Evidence"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              25,
+              45,
+              30
+            ],
+            "headers": [
+              "Stage",
+              "Deliverable",
+              "Evidence"
+            ],
+            "rows": [
+              [
+                "Event facts",
+                "Match each claim to the brief",
+                "Source checked"
+              ],
+              [
+                "Article copy",
+                "Title, lead, sections, signup",
+                "Preview pending"
+              ],
+              [
+                "Reader count",
+                "Ask for window and reach",
+                "No causal claim"
+              ]
+            ]
+          },
+          "width": 520,
+          "x": 48,
+          "y": 380
+        },
+        {
+          "field": "title",
+          "height": 38,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "WeChat Account Editor"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 70,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "Plan, fact-check, edit, and format official account posts; interpret metrics only with known definitions and evidence."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 272
+        },
+        {
+          "field": "usageGuide",
+          "height": 92,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Share audience, goal, source material, voice, and any defined dashboard data. Receive a plan and paste-ready draft even without account access."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 352
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Topic plans"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 198
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Article edits"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 198
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Metric review"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 226
+        },
+        {
+          "field": "prompt.0",
+          "height": 70,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Plan four weeks of posts for a community reading room; note each reader question, source, and interview need."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 458
+        },
+        {
+          "field": "prompt.1",
+          "height": 70,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Turn this event brief into a fact-checked article and paste-ready layout without inventing missing details."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 536
+        },
+        {
+          "field": "prompt.2",
+          "height": 70,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Compare two posts only after checking time windows, delivery denominators, and channels; propose testable next steps."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 614
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 56,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Reader count alone cannot show a headline effect; define reach, channels, and the time window first."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 566
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 56,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Track draft, preview, and publication separately; no account access means publication is unverified."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 628
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    },
+    "zh": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "一句话"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "，把素材变成可信可发的公众号稿"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "活动简章 · 粘贴稿 · 数据口径"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "图书角周末有一次志愿者活动。请写一篇可粘贴推文，并说明上期阅读数能否证明标题有效。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "有活动时间、地点和报名方式；上期仅有阅读人数。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 36,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "活动稿与复盘边界"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "field": "preview.intro",
+          "height": 42,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "text": "先核事实，再交付正文和后台复核项。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 328
+        },
+        {
+          "field": "preview.table",
+          "height": 172,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "环节 / 交付动作 / 核验状态"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              25,
+              45,
+              30
+            ],
+            "headers": [
+              "环节",
+              "交付动作",
+              "核验状态"
+            ],
+            "rows": [
+              [
+                "活动信息",
+                "逐项对照原始简章",
+                "可据素材核对"
+              ],
+              [
+                "粘贴正文",
+                "标题、导语、分段和报名句",
+                "待后台预览"
+              ],
+              [
+                "阅读数据",
+                "补时间窗与触达分母",
+                "暂不归因"
+              ]
+            ]
+          },
+          "width": 520,
+          "x": 48,
+          "y": 380
+        },
+        {
+          "field": "title",
+          "height": 38,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "微信公众号运营专家"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 70,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "为公众号制定选题、核对事实、编辑正文和排版，并用有口径的数据复盘；发布与增长结论以实际证据为准。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 272
+        },
+        {
+          "field": "usageGuide",
+          "height": 92,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "给出账号受众、内容目标、素材出处、品牌语气与可用后台数据。没有账号或发布权限也能先得到选题卡、核对清单和可粘贴稿。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 352
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "定位与选题"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 198
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "稿件编辑排版"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 198
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "数据复盘"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 226
+        },
+        {
+          "field": "prompt.0",
+          "height": 70,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "为社区图书角规划四周选题；请标出每篇的读者问题、证据来源和所需采访。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 458
+        },
+        {
+          "field": "prompt.1",
+          "height": 70,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "把这份活动简章写成公众号正文和粘贴版排版，事实没给出的地方不要补造。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 536
+        },
+        {
+          "field": "prompt.2",
+          "height": 70,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "两篇文章阅读人数不同；请先核对统计时间窗、触达分母和渠道，再提出可检验的改进假设。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 614
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 56,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "只凭阅读人数不能判断标题是否带来增长；先补曝光、渠道与同期口径。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 566
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 56,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "草稿、预览、实际发表分别记录；未登录后台时不宣称已发布。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 628
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    }
+  },
+  "description": "为公众号制定选题、核对事实、编辑正文和排版，并用有口径的数据复盘；发布与增长结论以实际证据为准。",
+  "descriptionEn": "Plan, fact-check, edit, and format official account posts; interpret metrics only with known definitions and evidence.",
+  "exampleImageLocale": "zh",
+  "examplePrompts": [
+    "为社区图书角规划四周选题；请标出每篇的读者问题、证据来源和所需采访。",
+    "把这份活动简章写成公众号正文和粘贴版排版，事实没给出的地方不要补造。",
+    "两篇文章阅读人数不同；请先核对统计时间窗、触达分母和渠道，再提出可检验的改进假设。"
+  ],
+  "examplePromptsEn": [
+    "Plan four weeks of posts for a community reading room; note each reader question, source, and interview need.",
+    "Turn this event brief into a fact-checked article and paste-ready layout without inventing missing details.",
+    "Compare two posts only after checking time windows, delivery denominators, and channels; propose testable next steps."
+  ],
+  "name": "微信公众号运营专家",
+  "nameEn": "WeChat Account Editor",
+  "preview": {
+    "heading": "一句话，把素材变成可信可发的公众号稿",
+    "intro": {
+      "text": "先核事实，再交付正文和后台复核项。",
+      "tone": "accent"
+    },
+    "material": "有活动时间、地点和报名方式；上期仅有阅读人数。",
+    "outputParagraphs": [
+      "只凭阅读人数不能判断标题是否带来增长；先补曝光、渠道与同期口径。",
+      "草稿、预览、实际发表分别记录；未登录后台时不宣称已发布。"
+    ],
+    "outputTitle": "活动稿与复盘边界",
+    "request": "图书角周末有一次志愿者活动。请写一篇可粘贴推文，并说明上期阅读数能否证明标题有效。",
+    "scene": "活动简章 · 粘贴稿 · 数据口径",
+    "table": {
+      "columnWidths": [
+        25,
+        45,
+        30
+      ],
+      "headers": [
+        "环节",
+        "交付动作",
+        "核验状态"
+      ],
+      "rows": [
+        [
+          "活动信息",
+          "逐项对照原始简章",
+          "可据素材核对"
+        ],
+        [
+          "粘贴正文",
+          "标题、导语、分段和报名句",
+          "待后台预览"
+        ],
+        [
+          "阅读数据",
+          "补时间窗与触达分母",
+          "暂不归因"
+        ]
+      ]
+    }
+  },
+  "previewEn": {
+    "heading": "One sentence, turn a brief into trustworthy copy",
+    "intro": {
+      "text": "Verify the brief, then deliver copy and a preview checklist.",
+      "tone": "accent"
+    },
+    "material": "Date, venue, and signup method are given; last post has reader count only.",
+    "outputParagraphs": [
+      "Reader count alone cannot show a headline effect; define reach, channels, and the time window first.",
+      "Track draft, preview, and publication separately; no account access means publication is unverified."
+    ],
+    "outputTitle": "Post and review boundary",
+    "request": "Write a ready-to-paste volunteer event post and judge whether last post’s reader count proves the headline worked.",
+    "scene": "Event brief · paste-ready post · metrics",
+    "table": {
+      "columnWidths": [
+        25,
+        45,
+        30
+      ],
+      "headers": [
+        "Stage",
+        "Deliverable",
+        "Evidence"
+      ],
+      "rows": [
+        [
+          "Event facts",
+          "Match each claim to the brief",
+          "Source checked"
+        ],
+        [
+          "Article copy",
+          "Title, lead, sections, signup",
+          "Preview pending"
+        ],
+        [
+          "Reader count",
+          "Ask for window and reach",
+          "No causal claim"
+        ]
+      ]
+    }
+  },
+  "summary": "从账号定位、选题和事实核对出发，交付可粘贴的公众号稿件，并按清晰口径诊断内容表现。",
+  "summaryEn": "Plan and edit account content, verify claims, deliver paste-ready copy, and diagnose performance with defined metrics.",
+  "taskTypes": [
+    "定位与选题",
+    "稿件编辑排版",
+    "数据复盘"
+  ],
+  "taskTypesEn": [
+    "Topic plans",
+    "Article edits",
+    "Metric review"
+  ],
+  "usageGuide": "给出账号受众、内容目标、素材出处、品牌语气与可用后台数据。没有账号或发布权限也能先得到选题卡、核对清单和可粘贴稿。",
+  "usageGuideEn": "Share audience, goal, source material, voice, and any defined dashboard data. Receive a plan and paste-ready draft even without account access."
+}

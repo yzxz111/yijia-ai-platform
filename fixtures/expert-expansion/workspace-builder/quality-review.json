@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-08",
+  "code": "workspace-builder",
+  "status": "reviewed",
+  "artifactSha256": "be989cca0d7fe90bf06abefe4fd15623b98b5383622545f46cb78a5dc5ea6a9f",
+  "sourceSha256": {
+    "specs/workspace-builder.json": "44d54e8df20a1b0190235009849d8e5fe46e7fe8ebbd9143fb5c06c8b99b14df",
+    "workspace-builder/SKILL.md": "430df1333deed3a4c7b5800e81df68d474914fbe84f95abd07ed340bdc71b667",
+    "workspace-builder/references/deliverable-templates.md": "41f0742a11a1941d3ecaa48b743c66296253105e283ccee9f18d1cf240244abf",
+    "workspace-builder/references/worked-example.md": "0fec6035901844a711c3a63d4c61414684a42cd5726b0b62ddc99f21d1da54a1"
+  },
+  "focus": "可操作任务流、保存重载、导出恢复与坏存档保护",
+  "scope": "Parent and independent agent static review of instructions, 10 specific cases, templates and worked example; not 10 executed host conversations.",
+  "independentEvidence": "正文与模板要求可操作、持久化及安全恢复；修复后示例导入与启动均只保留 id/title/done，设 500 条上限，损坏存档阻止普通覆盖并可导出原文，未声称已完成浏览器验证。",
+  "resolvedIssues": [
+    "修复编辑中删除条目后的编辑状态。",
+    "新增与恢复统一限制 500 条，避免保存后无法重载。",
+    "坏存档阻止普通覆盖，支持原始内容导出及明确确认后的恢复。",
+    "数据更新时间改为按任务需要添加。",
+    "导入与启动只提取 id/title/done，移除额外字段；正文补充相同约束。"
+  ],
+  "openIssues": [],
+  "actualTrial": "execution-validation.json",
+  "independentReport": "../remaining-independent-review.json"
+}

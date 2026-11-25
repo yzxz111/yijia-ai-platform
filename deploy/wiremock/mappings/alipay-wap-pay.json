@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/gateway.do",
+    "formParameters": {
+      "method": { "equalTo": "alipay.trade.wap.pay" },
+      "biz_content": {
+        "matches": "(?s)^\\{(?=[^{}]*\\\"out_trade_no\\\":\\\"pay_fixture_wap\\\"(?:,|\\}))[^{}]*\\}$"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": { "alipay_trade_wap_pay_response": { "code": "10000", "msg": "Success", "out_trade_no": "pay_fixture_wap" }, "sign": "fixture-signature" }
+  }
+}

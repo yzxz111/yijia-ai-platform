@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-08",
+  "code": "wechat-official-account-operator",
+  "status": "reviewed",
+  "artifactSha256": "02f469e5ba771cb0a1c56aa7fed22165a0876e513b111088a400935715e1d585",
+  "sourceSha256": {
+    "specs/wechat-official-account-operator.json": "38c5e35d61419d0974c4da053b468d382afe7a440aba25803429175303ca1d8b",
+    "wechat-official-account-operator/SKILL.md": "e8debfaa6686de6d4df8ab12ee4177b2a7f757e24d519d76fdebdffe08d33174",
+    "wechat-official-account-operator/references/deliverable-templates.md": "82b1d32c179a989787a446f5dcd8fe956836b7756cb2407d479aa90a9063dccc",
+    "wechat-official-account-operator/references/worked-example.md": "d648ee464164dfe270f14e1779cb81a2cd94e11c95ba2f47e4b979f966a43063"
+  },
+  "focus": "可粘贴稿件、事实依据、统计分母与发布状态",
+  "scope": "Parent and independent agent static review of instructions, 10 specific cases, templates and worked example; not 10 executed host conversations.",
+  "independentEvidence": "正文与模板均要求可粘贴成稿、逐项核事实和区分写稿/草稿/预览/发表；示例明示冲突日期与缺失报名链接，并正确计算 400/2000=20%、375/2500=15%。",
+  "resolvedIssues": [],
+  "openIssues": [],
+  "actualTrial": "execution-validation.json",
+  "independentReport": "../remaining-independent-review.json"
+}

@@ -1,0 +1,13 @@
+{
+  "requiredHours": 18,
+  "allRequestedHours": 21,
+  "availableHours": 12,
+  "requiredGap": 6,
+  "allGap": 9,
+  "feasibleProposal": "登录4 + 导出6 = 10小时，余2小时；数据清理8另排且仅能给核查方案；主题3推迟",
+  "unknownOwners": [
+    "导出",
+    "数据清理"
+  ],
+  "noCompletedWork": true
+}

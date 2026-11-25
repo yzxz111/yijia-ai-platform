@@ -1,0 +1,22 @@
+{
+  "priority": 1,
+  "scenarioName": "wechat-payment-query",
+  "requiredScenarioState": "FAILED",
+  "request": {
+    "method": "GET",
+    "urlPath": "/v3/pay/transactions/out-trade-no/pay_fixture_paid",
+    "queryParameters": { "mchid": { "equalTo": "1900000109" } }
+  },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": {
+      "appid": "wx_phase2_fixture",
+      "mchid": "1900000109",
+      "out_trade_no": "pay_fixture_paid",
+      "trade_state": "PAYERROR",
+      "trade_state_desc": "payment failed fixture",
+      "amount": { "total": 1900, "currency": "CNY" }
+    }
+  }
+}

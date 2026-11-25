@@ -1,0 +1,44 @@
+{
+  "expert": "adaptive-delivery-expert",
+  "status": "completed_local_trial",
+  "skillSha256": "C617D15078968E5CF06FFE3AB6F782EA469AB12F08AD564773540F40A0A7C952",
+  "readFiles": [
+    "SKILL.md",
+    "references/deliverable-templates.md",
+    "references/worked-example.md",
+    "validation-fixture/input.json"
+  ],
+  "createdFiles": [
+    "validation-fixture/output/brief.html",
+    "validation-fixture/output/plan.csv",
+    "validation-fixture/output/brief-desktop.png",
+    "validation-fixture/output/brief-mobile.png",
+    "validation-fixture/trial-result.json",
+    "validation-fixture/trial-response.md"
+  ],
+  "executedChecks": [
+    "Get-FileHash -Algorithm SHA256 on SKILL.md",
+    "PowerShell recomputed required 4+6+8=18 hours, capacity gap 18-12=6, optional-inclusive total 18+3=21 and gap 21-12=9, and proposed export-plus-login remainder 12-6-4=2",
+    "Decoded plan.csv using strict UTF-8 and imported six actions; checked login owner is 林, all other owners and every deadline remain 待确认",
+    "Read brief.html and asserted all four numeric decision markers plus production-deletion restriction and fact/proposal/unknown sections are present",
+    "Opened local brief.html in headless Chrome via Playwright at 1440x900 and 375x812; checked horizontal scroll width equals viewport and nonempty content; saved full-page screenshots",
+    "Visually inspected both screenshots for readable text and no clipping"
+  ],
+  "arithmetic": {
+    "requiredHours": 18,
+    "availableHours": 12,
+    "requiredGapHours": 6,
+    "optionalIncludedHours": 21,
+    "optionalIncludedGapHours": 9,
+    "proposedExportLoginHours": 10,
+    "unallocatedHours": 2
+  },
+  "unverified": [
+    "Actual task progress beyond the supplied statement that nothing is complete",
+    "Actual approval of scope, capacity, schedule, or theme deferral",
+    "Owner for export and cleanup and all due dates",
+    "Duration of the permitted cleanup-check plan and later authorization for production deletion",
+    "Any customer communication or production-system change"
+  ],
+  "externalActions": "none"
+}

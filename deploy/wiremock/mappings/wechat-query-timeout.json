@@ -1,0 +1,16 @@
+{
+  "priority": 1,
+  "scenarioName": "wechat-payment-query",
+  "requiredScenarioState": "TIMEOUT",
+  "request": {
+    "method": "GET",
+    "urlPath": "/v3/pay/transactions/out-trade-no/pay_fixture_paid",
+    "queryParameters": { "mchid": { "equalTo": "1900000109" } }
+  },
+  "response": {
+    "status": 200,
+    "fixedDelayMilliseconds": 20000,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": { "code": "TIMEOUT", "message": "delayed timeout fixture" }
+  }
+}

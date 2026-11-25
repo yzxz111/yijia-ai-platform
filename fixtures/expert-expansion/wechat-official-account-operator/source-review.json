@@ -1,0 +1,57 @@
+{
+  "reviewedAt": "2026-10-08",
+  "method": "Browsed for official sources, then read public official HTML directly over HTTPS because the web reader could not open the WeChat operations page. No third-party guide was used as authority for a platform rule.",
+  "scope": "Only the platform context and data-definition cautions used in this package. Current account-specific editor, quotas, eligibility, review and publication state remain to be checked at task time.",
+  "sources": [
+    {
+      "title": "微信公众平台运营规范",
+      "url": "https://mp.weixin.qq.com/mp/opshowpage?action=newoplaw",
+      "httpStatus": 200,
+      "htmlSha256": "aec97e63db982b5ad09662ee5c0a4b2e2b7313e2ab11154dd36a61a82bf69300",
+      "reviewedFacts": [
+        "官方页面标题和运营规范入口可见。",
+        "正文条款未从返回 HTML 中可靠提取，因此本包不写具体发布频次、处罚或审核条款。"
+      ],
+      "retrieval": "Direct HTTPS HTML and visible text inspection; body-level rules unavailable."
+    },
+    {
+      "title": "数据统计接口介绍",
+      "url": "https://developers.weixin.qq.com/doc/offiaccount/Analytics/Graphic_Analysis_Data_Interface.html",
+      "httpStatus": 200,
+      "htmlSha256": "a72a9a7b935164341ff8065d59c2a5f560b1e1bd83e6fec35b05940d34c2f28e",
+      "reviewedFacts": [
+        "官方文档分别列出群发图文每日数据、阅读概况、转发数据以及发表内容阅读和分享数据等接口。",
+        "文档提醒某些图文结果有统计阈值，且 user_source 用于区分传播渠道与全部数据；口径不明时不能机械合并。"
+      ],
+      "retrieval": "Direct HTTPS public HTML; inspected text around interface list and 图文分析的注意事项."
+    },
+    {
+      "title": "草稿箱",
+      "url": "https://developers.weixin.qq.com/doc/offiaccount/Draft_Box/Add_draft.html",
+      "httpStatus": 200,
+      "htmlSha256": "040de6efd6a9ca705b4e79a0a4fa3d5dd41bfa900cab4c3ac0e562a57ced81d8",
+      "reviewedFacts": [
+        "官方开发者文档有草稿管理入口；本次可读 HTML 未足以核对具体请求参数或当前账号权限。"
+      ],
+      "retrieval": "Direct HTTPS public HTML; only navigation and page context relied upon."
+    },
+    {
+      "title": "公众号",
+      "url": "https://www.tencent.com/zh-cn/products/official-accounts/",
+      "reviewedFacts": [
+        "腾讯官方产品页把公众号描述为个人或组织的内容发布平台，并介绍订阅号与服务号。"
+      ],
+      "retrieval": "Read through web reader on 2026-10-08."
+    }
+  ],
+  "implementationInferences": [
+    "An audience/content plan is an editorial method, not a guaranteed platform outcome.",
+    "A ratio based on user-supplied delivered and reader counts is conditional on those definitions being comparable; two observed posts do not establish a headline effect."
+  ],
+  "notVerified": [
+    "Current complete operations rules text",
+    "Account-specific publishing eligibility, limits or approval",
+    "Actual account access, draft, preview, send or publication",
+    "Live campaign metrics and dashboard definitions"
+  ]
+}

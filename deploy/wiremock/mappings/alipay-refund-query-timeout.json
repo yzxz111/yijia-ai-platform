@@ -1,0 +1,21 @@
+{
+  "priority": 1,
+  "scenarioName": "alipay-refund-query",
+  "requiredScenarioState": "TIMEOUT",
+  "request": {
+    "method": "POST",
+    "urlPath": "/gateway.do",
+    "formParameters": {
+      "method": { "equalTo": "alipay.trade.fastpay.refund.query" },
+      "biz_content": {
+        "matches": "(?s)^\\{(?=[^{}]*\\\"out_trade_no\\\":\\\"pay_fixture_paid\\\"(?:,|\\}))(?=[^{}]*\\\"out_request_no\\\":\\\"ref_fixture_paid\\\"(?:,|\\}))[^{}]*\\}$"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "fixedDelayMilliseconds": 20000,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": { "code": "TIMEOUT", "message": "delayed timeout fixture" }
+  }
+}

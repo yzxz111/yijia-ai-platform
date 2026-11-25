@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/mock-primary/chat/completions",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": {
+          "expression": "$.stream",
+          "equalTo": "true"
+        }
+      }
+    ]
+  },
+  "priority": 10,
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "text/event-stream"
+    },
+    "body": "data: {\"id\":\"chatcmpl-wiremock-stream\",\"object\":\"chat.completion.chunk\",\"created\":1785427200,\"model\":\"text-basic\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"mock stream response\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-wiremock-stream\",\"object\":\"chat.completion.chunk\",\"created\":1785427200,\"model\":\"text-basic\",\"choices\":[],\"usage\":{\"prompt_tokens\":10,\"completion_tokens\":20,\"total_tokens\":30}}\n\ndata: [DONE]\n\n"
+  }
+}

@@ -1,0 +1,7 @@
+# Keep Linux deployment scripts executable after checkout and git archive on Windows.
+*.sh text eol=lf
+
+# YCPS 一致性测试向量必须按 LF 检出：测试用字面量 "\n"（如 replace("metadata:\n", …)）往
+# SKILL.md 里插字段，Windows 上 core.autocrlf=true 会把夹具换成 CRLF，导致插入静默失效、
+# 用例报出与真实缺陷无关的失败（expert_presentation_asset_path_invalid 等）。
+docs/standards/ycps/** text eol=lf

@@ -1,0 +1,74 @@
+{
+  "reviewedAt": "2026-10-08",
+  "status": "passed_isolated_execution_trial",
+  "runner": {
+    "model": "gpt-6-sol",
+    "reasoningEffort": "ultra",
+    "context": "Fresh independent Codex sub-agent instructed to read this package SKILL.md and repair only the isolated fixture."
+  },
+  "artifactSha256": "ce6024f823feafbe6f94c3ba8b49ce2082aabcfa42846aec15e09a49d4720e73",
+  "entrySkillSha256": "b1a5a2c79029a329dc7e416d4187627285ed2687b71051e005ba83630ee54683",
+  "baseline": {
+    "command": "npm test",
+    "total": 15,
+    "passed": 4,
+    "failed": 11,
+    "exitCode": 1
+  },
+  "afterRepair": {
+    "command": "npm test",
+    "total": 15,
+    "passed": 15,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "protectedFiles": {
+    "AGENTS.md": {
+      "beforeSha256": "7c2e75e673d9fe5ba08069daa62d2fa47d57b7af07414540beffd4bd070a5bbe",
+      "afterSha256": "7c2e75e673d9fe5ba08069daa62d2fa47d57b7af07414540beffd4bd070a5bbe",
+      "byteIdentical": true
+    },
+    "package.json": {
+      "beforeSha256": "1cc8834f3d0d688f4a6ff858df143e2e6200d07452fce5720cf7939348edc602",
+      "afterSha256": "1cc8834f3d0d688f4a6ff858df143e2e6200d07452fce5720cf7939348edc602",
+      "byteIdentical": true
+    },
+    "USER-NOTES.md": {
+      "beforeSha256": "168029ea3bdefeeb1d84666974b030734f68be59f4f234b5ca0a2d3409ce6851",
+      "afterSha256": "168029ea3bdefeeb1d84666974b030734f68be59f4f234b5ca0a2d3409ce6851",
+      "byteIdentical": true
+    },
+    "search-controller.test.mjs": {
+      "beforeSha256": "b7e235f91dab58280839661ee80529c8cf3b019bbbbe744175cb96d57aced081",
+      "afterSha256": "b7e235f91dab58280839661ee80529c8cf3b019bbbbe744175cb96d57aced081",
+      "byteIdentical": true
+    }
+  },
+  "changedImplementation": {
+    "path": "validation-fixture/after/search-controller.mjs",
+    "beforeSha256": "254aea70dc84d98a386421403734145c922eeb1181d6d24b14f0fcaaf729e3f8",
+    "afterSha256": "138ce904e8397fda28517c53b2bbe865f4c7e56fee844d9f6e3c8a7bb540783a"
+  },
+  "finalFixtureGitStatus": [
+    " M USER-NOTES.md",
+    " M search-controller.mjs",
+    "?? trial-response.md",
+    "?? trial-result.json"
+  ],
+  "evidence": [
+    "validation-fixture/baseline-test-output.txt",
+    "validation-fixture/baseline.json",
+    "validation-fixture/trial-result.json",
+    "validation-fixture/trial-response.md",
+    "validation-fixture/repair.diff"
+  ],
+  "verificationProvenance": "The independent trial agent actually ran npm test before and after its edit plus syntax/diff checks. Parent independently froze baseline and executed its baseline tests, inspected final code, compared all protected file hashes and archived immutable snapshots. Parent did not rerun already-passing post-repair tests.",
+  "scope": "Fictional pure JavaScript callback request transport; deterministic test double without network calls. Distinct callback contract from the bundled Promise example. Real file reading/editing and Node test execution, not a held-out benchmark or WeChat runtime.",
+  "notVerified": [
+    "Real Yuzai host model or tool permissions",
+    "WeChat DevTools",
+    "Actual network/backend/login",
+    "Real-device lifecycle or rendering",
+    "Online import or publication"
+  ]
+}

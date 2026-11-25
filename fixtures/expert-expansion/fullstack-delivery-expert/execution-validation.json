@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-08",
+  "code": "fullstack-delivery-expert",
+  "status": "passed_local_trial",
+  "runner": {
+    "model": "gpt-6-sol",
+    "reasoningEffort": "ultra",
+    "environment": "Independent Codex subagent reading the packaged Entry Skill and references; not the Yuzai/cloud-host LLM."
+  },
+  "artifactSha256": "b9a13365bf887e485ffac7f71076cf9cd41095494ae028b608ac38bc73099e8b",
+  "skillSha256": "e7c50a3f57307cbc54e7c646099f606a40ebf7e4119f783593cc70dc517fadd4",
+  "executedSkillSha256": "e7c50a3f57307cbc54e7c646099f606a40ebf7e4119f783593cc70dc517fadd4",
+  "reviewedBy": "Parent agent",
+  "parentReview": [
+    "主代理核对固定基线、修改后源码、完整运行输出和保护文件哈希。",
+    "只修改本地虚构试验目录，没有修改产品源代码或提交。",
+    "9 项真实回环 HTTP 测试；认证身份由夹具注入，存储为内存 Map，不代表真实数据库与登录服务。"
+  ],
+  "trialReport": "validation-fixture/trial-result.json",
+  "evidenceSha256": {
+    "baseline-test-output.txt": "88beba64623fc8f758124a799c310a5d7126e35638697b2edfe9391e59043274",
+    "baseline.json": "30d5d93295f9457a1a07cf34457413f858151c1d9228fda0e0879fa492ae0a9f",
+    "repair.diff": "f487f2642ae24d392db0c63091b049c7cc95249127b84cf1f0c8a6b66bba5004",
+    "trial-response.md": "bfc6a06de9bb7b70e88fd7598641ea33095554e62317821e39da6473766277e4",
+    "trial-result.json": "8dbc0f8d3ebf3e40e22a91e306deb6987fe8c5129366acc2370fb9401a4389e0",
+    "trial-test-output.txt": "8614f4019eab86ff1db31c8cf7f5ec53651d3d1e85bfbd13ee9cf103284a5e50",
+    "after/acceptance.test.mjs": "c2cc8ce9ce104b18ae291de6eecc8807416f380fa3289c21680a304ee4b7deab",
+    "after/AGENTS.md": "3ffc31c30614849ce343a0174ec95b3bec986b554a7eb6f2c537aeb642419fd4",
+    "after/client.mjs": "42ca86ded838b341a68fd01fb2680ae2c01e33cd48c2f8ae37096663c1b5bad4",
+    "after/server.mjs": "427edfc5248be4514a4aa918dc8fa6c8cfbc4047a9f8c68770bf49a64df955c7",
+    "after/USER-NOTES.md": "2846e5b8c5e70f2a37a13c9c78c7b6bb5a7d6d7446efa84a7643d854b5f96d2b",
+    "before/acceptance.test.mjs": "c2cc8ce9ce104b18ae291de6eecc8807416f380fa3289c21680a304ee4b7deab",
+    "before/AGENTS.md": "3ffc31c30614849ce343a0174ec95b3bec986b554a7eb6f2c537aeb642419fd4",
+    "before/client.mjs": "b02f68351a17a60bd6f2e754ca4a348ec8d5da1355975f74ffda263bb43f001c",
+    "before/server.mjs": "04d02e06938466da08ef994a35ec52e89a1afc7b873147a1ae13c73b3025e36e",
+    "before/USER-NOTES.md": "2846e5b8c5e70f2a37a13c9c78c7b6bb5a7d6d7446efa84a7643d854b5f96d2b"
+  },
+  "limits": [
+    "虚构材料与隔离任务的一次试用不证明所有模型和真实项目都能可靠完成。",
+    "没有在线发布、真实客户操作或生产服务验收。",
+    "未把 10 个静态场景写成 10 次模型运行。"
+  ],
+  "tests": {
+    "command": "node --test acceptance.test.mjs",
+    "before": {
+      "total": 9,
+      "passed": 1,
+      "failed": 8
+    },
+    "after": {
+      "total": 9,
+      "passed": 9,
+      "failed": 0
+    },
+    "runtime": "Real local loopback HTTP; injected authentication and in-memory Map fixture",
+    "scope": "Missing identity, owner-scoped list and update, title validation, unique id, boolean state, client HTTP-error rejection, malformed JSON recovery"
+  },
+  "protectedFilesUnchanged": true
+}

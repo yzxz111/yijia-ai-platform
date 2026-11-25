@@ -1,0 +1,1022 @@
+{
+  "canvas": {
+    "en": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "One sentence"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": ", a smarter study plan"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 14,
+              "text": "A seven-day Python basics review, for example"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "I have seven days before a Python basics quiz and 45 minutes a day. Plan review, practice, and self-checks instead of just rereading notes."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "Covered: variables, conditions, loops. Weak areas: functions and lists. Goal: solve basic programming problems independently."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 34,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "Seven-day efficient study plan"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 294
+        },
+        {
+          "field": "preview.intro",
+          "height": 28,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "45 minutes a day | recall, practice, then check"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 332
+        },
+        {
+          "field": "preview.table",
+          "height": 198,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "Technique | Time | Action | Check"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              22,
+              16,
+              38,
+              24
+            ],
+            "headers": [
+              "Technique",
+              "Time",
+              "Action",
+              "Check"
+            ],
+            "rows": [
+              [
+                "Active recall",
+                "10 min",
+                "Close the notes and write 3 key ideas",
+                "Explain them in your own words"
+              ],
+              [
+                "Focused practice",
+                "25 min",
+                "Solve 2 function/list problems; note blockers",
+                "Run and explain the code"
+              ],
+              [
+                "Spaced review",
+                "10 min",
+                "Retry yesterday's mistakes",
+                "Explain why each error happened"
+              ]
+            ],
+            "style": {
+              "borderColor": "#d8e2f3",
+              "borderRadius": 8,
+              "cellPadding": 8,
+              "color": "#28354b",
+              "fontSize": 13,
+              "headerBackgroundColor": "#eaf0ff",
+              "headerColor": "#3152a0",
+              "rowHeight": 39
+            }
+          },
+          "width": 520,
+          "x": 48,
+          "y": 366
+        },
+        {
+          "field": "title",
+          "height": 36,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#436fc6",
+              "fontSize": 23,
+              "fontWeight": 700,
+              "text": "AI "
+            },
+            {
+              "color": "#182a47",
+              "fontSize": 23,
+              "fontWeight": 700,
+              "text": "Learning Assistant"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 64,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3055ad",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "text": "Plan short study sessions"
+            },
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": " around an exam or skill goal, explain difficult ideas, design practice, and track topics to revisit."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 278
+        },
+        {
+          "field": "usageGuide",
+          "height": 90,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "Share your goal, deadline, current level, and daily study time. "
+            },
+            {
+              "color": "#3055ad",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "text": "Attach notes or missed questions"
+            },
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "; I will propose a practical plan, then explain and quiz step by step."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 350
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Study plans"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 192
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Active recall"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 192
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Spaced review"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 218
+        },
+        {
+          "field": "tag.3",
+          "height": 22,
+          "id": "tag-3",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Mistake review"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 218
+        },
+        {
+          "field": "prompt.0",
+          "height": 62,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "I have 7 days before a Python basics quiz and 45 minutes a day. Plan review, practice, and self-checks with efficient study techniques"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 452
+        },
+        {
+          "field": "prompt.1",
+          "height": 62,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Turn these notes into 10 active-recall questions and schedule two reviews of anything I miss"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 522
+        },
+        {
+          "field": "prompt.2",
+          "height": 62,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Find patterns in these mistakes and give me a 30-minute focused practice session"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 592
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 38,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "Days 1–2: reinforce variables, conditions, and loops; days 3–5: focus on functions and lists."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 574
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 38,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "Day 6 is a timed mixed exercise. Day 7 reviews mistakes and confusing ideas, without cramming new material."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 616
+        },
+        {
+          "field": "preview.outputParagraphs.2",
+          "height": 38,
+          "id": "preview-outputParagraphs-2",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#b45a24",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "text": "Efficiency tip: "
+            },
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "if a question takes more than eight minutes, note your approach, read a hint, then solve it again independently."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 658
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    },
+    "zh": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "一句话"
+            },
+            {
+              "fontSize": 24,
+              "fontWeight": 700,
+              "text": "，学得更高效"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 14,
+              "text": "以7天Python基础复习为例"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "我有7天准备Python基础测验，每天45分钟。请安排复习、练习和自测，别只让我重读笔记。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "已学：变量、条件和循环；薄弱：函数与列表。目标：能独立完成基础编程题。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 34,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "7天高效复习计划"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 294
+        },
+        {
+          "field": "preview.intro",
+          "height": 28,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "每天45分钟｜先回忆，再练习，最后检查"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 332
+        },
+        {
+          "field": "preview.table",
+          "height": 198,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "效率方法 | 用时 | 具体行动 | 检查点"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              22,
+              16,
+              38,
+              24
+            ],
+            "headers": [
+              "效率方法",
+              "用时",
+              "具体行动",
+              "检查点"
+            ],
+            "rows": [
+              [
+                "主动回忆",
+                "10分钟",
+                "合上笔记写出今天的3个关键概念",
+                "能用自己的话解释"
+              ],
+              [
+                "针对练习",
+                "25分钟",
+                "做2道函数/列表题并记录卡点",
+                "能独立运行并解释代码"
+              ],
+              [
+                "间隔复习",
+                "10分钟",
+                "重做昨天错题，标记仍不熟的点",
+                "错题原因可复述"
+              ]
+            ],
+            "style": {
+              "borderColor": "#d8e2f3",
+              "borderRadius": 8,
+              "cellPadding": 8,
+              "color": "#28354b",
+              "fontSize": 13,
+              "headerBackgroundColor": "#eaf0ff",
+              "headerColor": "#3152a0",
+              "rowHeight": 39
+            }
+          },
+          "width": 520,
+          "x": 48,
+          "y": 366
+        },
+        {
+          "field": "title",
+          "height": 36,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#436fc6",
+              "fontSize": 24,
+              "fontWeight": 700,
+              "text": "AI"
+            },
+            {
+              "color": "#182a47",
+              "fontSize": 24,
+              "fontWeight": 700,
+              "text": "学习助手"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 64,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3055ad",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "text": "围绕考试或技能目标"
+            },
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "安排短时学习任务，解释难点、设计练习并记录需要回顾的知识点。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 278
+        },
+        {
+          "field": "usageGuide",
+          "height": 90,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "告诉我学习目标、截止日期、已有基础和每天可用时间；"
+            },
+            {
+              "color": "#3055ad",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "text": "附上课程材料或错题"
+            },
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "，我会先给可执行计划，再逐步讲解和测验。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 350
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "学习计划"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 192
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "主动回忆"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 192
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "间隔复习"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 218
+        },
+        {
+          "field": "tag.3",
+          "height": 22,
+          "id": "tag-3",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "错题复盘"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 218
+        },
+        {
+          "field": "prompt.0",
+          "height": 62,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "我有7天准备Python基础测验，每天45分钟；请安排复习、练习和自测，并标出高效学习方法"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 452
+        },
+        {
+          "field": "prompt.1",
+          "height": 62,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "把这章笔记改成10道主动回忆题，答错的知识点安排明后两次复习"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 522
+        },
+        {
+          "field": "prompt.2",
+          "height": 62,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "根据这些错题找出薄弱点，给我一份30分钟补强练习"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 592
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 38,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "第1—2天：巩固变量、条件和循环；第3—5天：集中突破函数与列表。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 574
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 38,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "第6天做限时综合题；第7天只复盘错题与易混概念，不临时堆新内容。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 616
+        },
+        {
+          "field": "preview.outputParagraphs.2",
+          "height": 38,
+          "id": "preview-outputParagraphs-2",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#b45a24",
+              "fontSize": 14,
+              "fontWeight": 700,
+              "text": "效率提示："
+            },
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "如果一道题卡住超过8分钟，先记录思路，再看提示，最后独立重做。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 658
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    }
+  },
+  "description": "围绕考试或技能目标安排短时学习任务，解释难点、设计练习并记录需要回顾的知识点。",
+  "descriptionEn": "Plan short study sessions around an exam or skill goal, explain difficult ideas, design practice, and track topics to revisit.",
+  "exampleImageLocale": "zh",
+  "exampleImageUrl": "/v1/skills/ai-learning-assistant/example-image",
+  "examplePrompts": [
+    "我有7天准备Python基础测验，每天45分钟；请安排复习、练习和自测，并标出高效学习方法",
+    "把这章笔记改成10道主动回忆题，答错的知识点安排明后两次复习",
+    "根据这些错题找出薄弱点，给我一份30分钟补强练习"
+  ],
+  "examplePromptsEn": [
+    "I have 7 days before a Python basics quiz and 45 minutes a day. Plan review, practice, and self-checks with efficient study techniques",
+    "Turn these notes into 10 active-recall questions and schedule two reviews of anything I miss",
+    "Find patterns in these mistakes and give me a 30-minute focused practice session"
+  ],
+  "iconUrl": "/v1/skills/ai-learning-assistant/icon",
+  "illustrationUrl": "/v1/skills/ai-learning-assistant/illustration",
+  "name": "AI学习助手",
+  "nameEn": "AI Learning Assistant",
+  "preview": {
+    "heading": "一句话，学得更高效",
+    "intro": {
+      "text": "每天45分钟｜先回忆，再练习，最后检查",
+      "tone": "accent"
+    },
+    "material": "已学：变量、条件和循环；薄弱：函数与列表。目标：能独立完成基础编程题。",
+    "outputParagraphs": [
+      "第1—2天：巩固变量、条件和循环；第3—5天：集中突破函数与列表。",
+      "第6天做限时综合题；第7天只复盘错题与易混概念，不临时堆新内容。",
+      "效率提示：如果一道题卡住超过8分钟，先记录思路，再看提示，最后独立重做。"
+    ],
+    "outputTitle": "7天高效复习计划",
+    "request": "我有7天准备Python基础测验，每天45分钟。请安排复习、练习和自测，别只让我重读笔记。",
+    "scene": "以7天Python基础复习为例",
+    "table": {
+      "columnWidths": [
+        22,
+        16,
+        38,
+        24
+      ],
+      "headers": [
+        "效率方法",
+        "用时",
+        "具体行动",
+        "检查点"
+      ],
+      "rows": [
+        [
+          "主动回忆",
+          "10分钟",
+          "合上笔记写出今天的3个关键概念",
+          "能用自己的话解释"
+        ],
+        [
+          "针对练习",
+          "25分钟",
+          "做2道函数/列表题并记录卡点",
+          "能独立运行并解释代码"
+        ],
+        [
+          "间隔复习",
+          "10分钟",
+          "重做昨天错题，标记仍不熟的点",
+          "错题原因可复述"
+        ]
+      ],
+      "style": {
+        "borderColor": "#d8e2f3",
+        "borderRadius": 8,
+        "cellPadding": 8,
+        "color": "#28354b",
+        "fontSize": 13,
+        "headerBackgroundColor": "#eaf0ff",
+        "headerColor": "#3152a0",
+        "rowHeight": 39
+      }
+    }
+  },
+  "previewEn": {
+    "heading": "One sentence, a smarter study plan",
+    "intro": {
+      "text": "45 minutes a day | recall, practice, then check",
+      "tone": "accent"
+    },
+    "material": "Covered: variables, conditions, loops. Weak areas: functions and lists. Goal: solve basic programming problems independently.",
+    "outputParagraphs": [
+      "Days 1–2: reinforce variables, conditions, and loops; days 3–5: focus on functions and lists.",
+      "Day 6 is a timed mixed exercise. Day 7 reviews mistakes and confusing ideas, without cramming new material.",
+      "Efficiency tip: if a question takes more than eight minutes, note your approach, read a hint, then solve it again independently."
+    ],
+    "outputTitle": "Seven-day efficient study plan",
+    "request": "I have seven days before a Python basics quiz and 45 minutes a day. Plan review, practice, and self-checks instead of just rereading notes.",
+    "scene": "A seven-day Python basics review, for example",
+    "table": {
+      "columnWidths": [
+        22,
+        16,
+        38,
+        24
+      ],
+      "headers": [
+        "Technique",
+        "Time",
+        "Action",
+        "Check"
+      ],
+      "rows": [
+        [
+          "Active recall",
+          "10 min",
+          "Close the notes and write 3 key ideas",
+          "Explain them in your own words"
+        ],
+        [
+          "Focused practice",
+          "25 min",
+          "Solve 2 function/list problems; note blockers",
+          "Run and explain the code"
+        ],
+        [
+          "Spaced review",
+          "10 min",
+          "Retry yesterday's mistakes",
+          "Explain why each error happened"
+        ]
+      ],
+      "style": {
+        "borderColor": "#d8e2f3",
+        "borderRadius": 8,
+        "cellPadding": 8,
+        "color": "#28354b",
+        "fontSize": 13,
+        "headerBackgroundColor": "#eaf0ff",
+        "headerColor": "#3152a0",
+        "rowHeight": 39
+      }
+    }
+  },
+  "summary": "把学习目标拆成可执行计划，用主动回忆、间隔复习和自测提高学习效率。",
+  "summaryEn": "Turn learning goals into an actionable plan with active recall, spaced review, and self-checks.",
+  "taskTypes": [
+    "学习计划",
+    "主动回忆",
+    "间隔复习",
+    "错题复盘"
+  ],
+  "taskTypesEn": [
+    "Study plans",
+    "Active recall",
+    "Spaced review",
+    "Mistake review"
+  ],
+  "usageGuide": "告诉我学习目标、截止日期、已有基础和每天可用时间；附上课程材料或错题，我会先给可执行计划，再逐步讲解和测验。",
+  "usageGuideEn": "Share your goal, deadline, current level, and daily study time. Attach notes or missed questions; I will propose a practical plan, then explain and quiz step by step."
+}

@@ -1,0 +1,13 @@
+{
+  "A_read_rate": 0.25,
+  "B_read_rate": 0.3,
+  "A_share_rate": 0.04,
+  "B_share_rate": 0.05,
+  "B_menu_click_per_reader": 0.075,
+  "forbiddenConclusions": [
+    "A的菜单点击率为0",
+    "阅读率提升证明标题导致",
+    "保鲜30天保证",
+    "已发布"
+  ]
+}

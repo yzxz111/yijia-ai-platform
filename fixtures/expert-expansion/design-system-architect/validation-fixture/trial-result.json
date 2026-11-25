@@ -1,0 +1,25 @@
+{
+  "expert": "design-system-architect",
+  "date": "2026-10-08",
+  "status": "passed",
+  "skillSha256": "199141eb4ff577f2ba2debe65a7c7f9db197a0bb06545064550aabba73d5ad52",
+  "packageZipSha256": "aef1317e95b72061a9572af9fbd3444ddb8716897ad7b04d7c935cdbcbaf63ad",
+  "editedFiles": ["styles.css"],
+  "createdArtifacts": ["trial-response.md", "trial-result.json", "trial-mobile.png"],
+  "protectedFileSha256": {
+    "AGENTS.md": "a0774bf473d857c34834fc8b2c4779c432b25db737c1b48ec114dd7325679fc3",
+    "index.html": "e6e8f5cc933499db7c97288824e90f72f1a1ae4d045abd7037df171e892e2783",
+    "acceptance.test.cjs": "a429a1d9b0276502b5c8b3107535769c34f723f1e5ed4978c241d93800365f21"
+  },
+  "editedFileSha256": {"styles.css": "0f385fd9c38807588dd8434654d223b212217e007e26e6b9553b21d0227c27f2"},
+  "test": {
+    "command": "node --test acceptance.test.cjs",
+    "before": {"total": 6, "passed": 2, "failed": 4},
+    "after": {"total": 6, "passed": 6, "failed": 0},
+    "runtime": "Local Chrome via Playwright, loopback HTTP page",
+    "scope": "Enabled button computed-color contrast in both themes; Tab focus; native keyboard activation and disabled behavior; semantic token presence; 390px overflow and preserved notice"
+  },
+  "contrastRatio": {"light": 8.14, "dark": 6.12},
+  "limitations": "This is a local page check, not a full WCAG or assistive-technology audit; no Figma action was performed.",
+  "externalActions": "No dependencies added, no commit, no publication."
+}

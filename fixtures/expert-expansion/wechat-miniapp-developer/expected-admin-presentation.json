@@ -1,0 +1,833 @@
+{
+  "canvas": {
+    "en": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "One sentence"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": ", make mini app flows verifiable"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "Search page · async races · UI states"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "Fast typing lets an old search response overwrite new results. Fix the race, clear an empty query, and allow retry after failure."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "Existing page logic and request adapter; no DevTools or device here."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 36,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "Search state fix"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "field": "preview.intro",
+          "height": 42,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "text": "Keep the current stack; test pure logic before device checks."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 328
+        },
+        {
+          "field": "preview.table",
+          "height": 172,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "Case / Expected handling / Check level"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              25,
+              45,
+              30
+            ],
+            "headers": [
+              "Case",
+              "Expected handling",
+              "Check level"
+            ],
+            "rows": [
+              [
+                "Old response",
+                "Ignore stale request ID",
+                "Logic test pending"
+              ],
+              [
+                "Empty query",
+                "Clear results and error",
+                "Logic test pending"
+              ],
+              [
+                "Network error",
+                "Show error and allow retry",
+                "Integration pending"
+              ]
+            ]
+          },
+          "width": 520,
+          "x": 48,
+          "y": 380
+        },
+        {
+          "field": "title",
+          "height": 38,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "WeChat Miniapp Developer"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 70,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "Build and debug WeChat mini program pages in the existing stack. Check project config first and report each verification level honestly."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 272
+        },
+        {
+          "field": "usageGuide",
+          "height": 92,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Share a project or snippet, page goal, expected and actual behavior, and any error or API contract. The expert follows your stack and flags checks not run."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 352
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Page building"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 198
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Bug fixing"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 198
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "API integration"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 226
+        },
+        {
+          "field": "prompt.0",
+          "height": 70,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Add a search page to this native mini program with loading, empty, and retry states; show where it is registered."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 458
+        },
+        {
+          "field": "prompt.1",
+          "height": 70,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Old search responses overwrite new results. Fix the race in this project and test the empty-query path."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 536
+        },
+        {
+          "field": "prompt.2",
+          "height": 70,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Check this page against the list API contract. Without an account or device, report only what you can verify."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 614
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 56,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "A request ID stops stale writes; it does not mean the network request was cancelled."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 566
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 56,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Record logic, simulator, device, and release checks separately; mark unavailable levels pending."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 628
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    },
+    "zh": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "一句话"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "，把小程序交互做成可验证结果"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "搜索页 · 异步竞态 · 状态反馈"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "列表搜索快速输入时旧响应覆盖新结果；请修复竞态，支持空关键词清空和失败重试。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "已有页面逻辑与请求适配层；当前无开发者工具或真机。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 36,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "搜索结果状态修复"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "field": "preview.intro",
+          "height": 42,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "text": "沿用现有工程栈，先验证纯逻辑，再分层联调。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 328
+        },
+        {
+          "field": "preview.table",
+          "height": 172,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "情境 / 预期处理 / 核验层级"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              25,
+              45,
+              30
+            ],
+            "headers": [
+              "情境",
+              "预期处理",
+              "核验层级"
+            ],
+            "rows": [
+              [
+                "旧响应",
+                "忽略过期请求序号",
+                "待逻辑测试"
+              ],
+              [
+                "空关键词",
+                "清空结果与错误态",
+                "待逻辑测试"
+              ],
+              [
+                "网络失败",
+                "显示错误并可重试",
+                "待接口联调"
+              ]
+            ]
+          },
+          "width": 520,
+          "x": 48,
+          "y": 380
+        },
+        {
+          "field": "title",
+          "height": 38,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "微信小程序开发者"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 70,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "面向微信原生小程序与已有框架工程，完成页面、交互和接口联调；先核对配置与现有栈，再按实际工具验证各层结果。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 272
+        },
+        {
+          "field": "usageGuide",
+          "height": 92,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "提供工程目录或代码片段，说明页面目标、预期与实际行为；如有报错和接口文档一并给出。专家会沿用现有栈并标出未做的真机或平台验证。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 352
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "小程序页面"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 198
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "交互故障修复"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 198
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "接口联调"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 226
+        },
+        {
+          "field": "prompt.0",
+          "height": 70,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "请在现有原生小程序中做一个搜索页，包含加载、空结果、失败重试，并说明页面注册位置。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 458
+        },
+        {
+          "field": "prompt.1",
+          "height": 70,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "搜索词快速变化时旧响应覆盖新结果。请在现有工程修复竞态，并用纯逻辑测试覆盖空关键词。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 536
+        },
+        {
+          "field": "prompt.2",
+          "height": 70,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "请核对这个页面与后端列表接口的字段和错误态；没有账号和真机时只报告实际能验证的层级。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 614
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 56,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "请求序号只阻止旧结果写入；未实际取消网络请求时不声称已取消。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 566
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 56,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "逻辑测试、模拟器、真机与发布逐层记录，缺少环境就列为待验证。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 628
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    }
+  },
+  "description": "面向微信原生小程序与已有框架工程，完成页面、交互和接口联调；先核对配置与现有栈，再按实际工具验证各层结果。",
+  "descriptionEn": "Build and debug WeChat mini program pages in the existing stack. Check project config first and report each verification level honestly.",
+  "exampleImageLocale": "zh",
+  "examplePrompts": [
+    "请在现有原生小程序中做一个搜索页，包含加载、空结果、失败重试，并说明页面注册位置。",
+    "搜索词快速变化时旧响应覆盖新结果。请在现有工程修复竞态，并用纯逻辑测试覆盖空关键词。",
+    "请核对这个页面与后端列表接口的字段和错误态；没有账号和真机时只报告实际能验证的层级。"
+  ],
+  "examplePromptsEn": [
+    "Add a search page to this native mini program with loading, empty, and retry states; show where it is registered.",
+    "Old search responses overwrite new results. Fix the race in this project and test the empty-query path.",
+    "Check this page against the list API contract. Without an account or device, report only what you can verify."
+  ],
+  "name": "微信小程序开发者",
+  "nameEn": "WeChat Miniapp Developer",
+  "preview": {
+    "heading": "一句话，把小程序交互做成可验证结果",
+    "intro": {
+      "text": "沿用现有工程栈，先验证纯逻辑，再分层联调。",
+      "tone": "accent"
+    },
+    "material": "已有页面逻辑与请求适配层；当前无开发者工具或真机。",
+    "outputParagraphs": [
+      "请求序号只阻止旧结果写入；未实际取消网络请求时不声称已取消。",
+      "逻辑测试、模拟器、真机与发布逐层记录，缺少环境就列为待验证。"
+    ],
+    "outputTitle": "搜索结果状态修复",
+    "request": "列表搜索快速输入时旧响应覆盖新结果；请修复竞态，支持空关键词清空和失败重试。",
+    "scene": "搜索页 · 异步竞态 · 状态反馈",
+    "table": {
+      "columnWidths": [
+        25,
+        45,
+        30
+      ],
+      "headers": [
+        "情境",
+        "预期处理",
+        "核验层级"
+      ],
+      "rows": [
+        [
+          "旧响应",
+          "忽略过期请求序号",
+          "待逻辑测试"
+        ],
+        [
+          "空关键词",
+          "清空结果与错误态",
+          "待逻辑测试"
+        ],
+        [
+          "网络失败",
+          "显示错误并可重试",
+          "待接口联调"
+        ]
+      ]
+    }
+  },
+  "previewEn": {
+    "heading": "One sentence, make mini app flows verifiable",
+    "intro": {
+      "text": "Keep the current stack; test pure logic before device checks.",
+      "tone": "accent"
+    },
+    "material": "Existing page logic and request adapter; no DevTools or device here.",
+    "outputParagraphs": [
+      "A request ID stops stale writes; it does not mean the network request was cancelled.",
+      "Record logic, simulator, device, and release checks separately; mark unavailable levels pending."
+    ],
+    "outputTitle": "Search state fix",
+    "request": "Fast typing lets an old search response overwrite new results. Fix the race, clear an empty query, and allow retry after failure.",
+    "scene": "Search page · async races · UI states",
+    "table": {
+      "columnWidths": [
+        25,
+        45,
+        30
+      ],
+      "headers": [
+        "Case",
+        "Expected handling",
+        "Check level"
+      ],
+      "rows": [
+        [
+          "Old response",
+          "Ignore stale request ID",
+          "Logic test pending"
+        ],
+        [
+          "Empty query",
+          "Clear results and error",
+          "Logic test pending"
+        ],
+        [
+          "Network error",
+          "Show error and allow retry",
+          "Integration pending"
+        ]
+      ]
+    }
+  },
+  "summary": "沿用现有小程序工程，开发页面、修复交互与请求问题，并把逻辑测试、联调、真机和发布状态分开报告。",
+  "summaryEn": "Build pages and fix interaction or request bugs in the existing mini program, with logic, integration, device, and release checks reported separately.",
+  "taskTypes": [
+    "小程序页面",
+    "交互故障修复",
+    "接口联调"
+  ],
+  "taskTypesEn": [
+    "Page building",
+    "Bug fixing",
+    "API integration"
+  ],
+  "usageGuide": "提供工程目录或代码片段，说明页面目标、预期与实际行为；如有报错和接口文档一并给出。专家会沿用现有栈并标出未做的真机或平台验证。",
+  "usageGuideEn": "Share a project or snippet, page goal, expected and actual behavior, and any error or API contract. The expert follows your stack and flags checks not run."
+}

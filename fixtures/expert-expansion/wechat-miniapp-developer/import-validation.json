@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "verifiedAtLocalDate": "2026-10-08",
+  "package": {
+    "pathFromSystemRoot": "fixtures/expert-expansion/wechat-miniapp-developer/wechat-miniapp-developer-1.0.0.ycps.zip",
+    "code": "wechat-miniapp-developer",
+    "version": "1.0.0",
+    "kind": "EXPERT",
+    "ycpsVersion": "1.1.0",
+    "artifactSha256": "ce6024f823feafbe6f94c3ba8b49ce2082aabcfa42846aec15e09a49d4720e73",
+    "zipEntryCount": 8,
+    "compressedBytes": 89410,
+    "expandedBytes": 113452
+  },
+  "result": {
+    "status": "passed_offline",
+    "gatewayTests": 3,
+    "gatewayPassed": 3,
+    "gatewayFailures": 0,
+    "desktopTests": 1,
+    "desktopPassed": 1,
+    "desktopFailures": 0,
+    "totalAcceptanceTestsPassed": 4,
+    "desktopTestEslint": "passed"
+  },
+  "checks": [
+    "Real SkillPackageInspector accepted the final ZIP and verified identity, YCPS 1.1 Expert runtime, bilingual metadata, 20-node zh/en canvas, and all three decoded image assets.",
+    "Real SkillPortableImportService upload path reached SCANNED with code/version, bilingual fields, and three asset roles; database, object store, and malware-scan boundaries were mocked.",
+    "Real SkillPortableRevisionService rebuilt the ZIP; second real Inspector preserved bilingual presentation and the SHA-256 of icon, illustration, exampleImage, deliverable-templates.md, and worked-example.md.",
+    "Real desktop installer accepted the ZIP, registered one preset agent from the Entry Skill body, preserved both referenced Markdown files, and served byte-identical icon, illustration, and exampleImage through localfile cache URLs.",
+    "Gateway and desktop parsers matched expected-admin-presentation.json for the asserted bilingual fields and canvas."
+  ],
+  "commands": {
+    "gatewayWorkingDirectory": "system/gateway-service",
+    "gateway": "mvn -o -q -Dtest=WechatMiniappDeveloperPackageAcceptanceTest test",
+    "gatewayJavaHomeOnThisMachine": "C:/Users/26084/AppData/Local/Programs/IntelliJ IDEA/jbr",
+    "gatewayMavenOnThisMachine": "C:/Users/26084/AppData/Local/Programs/IntelliJ IDEA/plugins/maven-plugin/lib/maven3/bin/mvn.cmd",
+    "desktopWorkingDirectory": "yuzai",
+    "desktop": "npm test -- tests/wechatMiniappDeveloperPackageAcceptance.test.ts",
+    "desktopEnvironment": "NODE_OPTIONS=--experimental-loader=<file URL of workspace>/.scratch/academic-writing-vite-loader.mjs",
+    "desktopNodeOptionsOnThisMachine": "--experimental-loader=file:///D:/code/Yuzhi9.20/.scratch/academic-writing-vite-loader.mjs",
+    "desktopEslint": "npx eslint --ext ts,tsx --report-unused-disable-directives --max-warnings 0 tests/wechatMiniappDeveloperPackageAcceptance.test.ts"
+  },
+  "temporaryViteLoader": {
+    "workspaceRelativePath": ".scratch/academic-writing-vite-loader.mjs",
+    "purpose": "The current yuzai installation pairs Vitest 4.1.11 with Vite 5.4.21, while Vitest 4 expects Vite 6/7/8. This test-only loader resolves vite and vite/* from the already installed Vite 7.3.6 under system/web-console. It does not change product dependencies or lockfiles.",
+    "resolution": "Compute workspace root as the parent directory of this .scratch loader, then resolve vite and vite/* using a probe URL under <workspace>/system/web-console.",
+    "source": "import path from 'node:path';\nimport { fileURLToPath, pathToFileURL } from 'node:url';\nconst workspaceRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');\nconst viteProbe = pathToFileURL(path.join(workspaceRoot, 'system', 'web-console', '__academic_writing_vite_probe__.mjs')).href;\nexport async function resolve(specifier, context, nextResolve) {\n  if (specifier === 'vite' || specifier.startsWith('vite/')) {\n    return nextResolve(specifier, { ...context, parentURL: viteProbe });\n  }\n  return nextResolve(specifier, context);\n}"
+  },
+  "limits": [
+    "Offline tests isolate the database and object store with mocks; no real cloud upload, revision commit, or publication was performed.",
+    "The malware scan boundary was mocked; the package byte inspector and portable compiler were real.",
+    "No real desktop UI interaction or host LLM conversation was executed."
+  ]
+}

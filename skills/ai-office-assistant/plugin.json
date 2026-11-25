@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ai-office-assistant",
+  "version": "1.0.0",
+  "description": "Read, create, edit, compare, and consolidate Word, PDF, Excel, and PowerPoint files, including payroll and attendance reconciliation and template-based editable presentations.",
+  "author": {
+    "name": "Yuzhi"
+  },
+  "license": "Proprietary",
+  "keywords": [
+    "office",
+    "word",
+    "excel",
+    "pdf",
+    "powerpoint"
+  ],
+  "extensions": {
+    "com.yuzhihuihe.ycps": {
+      "ycpsVersion": "1.0.0",
+      "kind": "EXPERT",
+      "entrySkill": "ai-office-assistant",
+      "manifest": "./com.yuzhihuihe.ycps/manifest.json",
+      "requiredFeatures": []
+    }
+  }
+}

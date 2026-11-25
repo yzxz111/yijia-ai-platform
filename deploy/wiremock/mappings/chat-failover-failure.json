@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/mock-failover/chat/completions",
+    "bodyPatterns": [
+      {
+        "contains": "trigger-all-pre-first-byte-failure"
+      }
+    ]
+  },
+  "priority": 1,
+  "response": {
+    "status": 503,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "error": {
+        "message": "deterministic failover failure",
+        "type": "upstream_unavailable"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+# 生产环境 HTTPS 覆盖文件。在所有生产环境的 Compose 命令中，都必须把本文件放在最后。
+services:
+  platform-service:
+    environment:
+      SECURITY_COOKIES_SECURE: "true"
+
+  gateway-service:
+    environment:
+      GATEWAY_CLIENT_API_BASE_URL: https://api.yuzhh.com/v1
+
+  web-console:
+    build:
+      args:
+        VITE_API_BASE_URL: https://api.yuzhh.com/v1
+
+  nginx:
+    ports:
+      - "${NGINX_HTTPS_PORT:-443}:8443"
+    volumes:
+      - ./nginx/nginx.https.conf:/etc/nginx/nginx.conf:ro
+      - /etc/nginx/ssl/yuzhh.com:/etc/nginx/tls:ro

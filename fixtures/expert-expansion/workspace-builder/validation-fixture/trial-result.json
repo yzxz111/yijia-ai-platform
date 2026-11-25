@@ -1,0 +1,30 @@
+{
+  "expert": "workspace-builder",
+  "date": "2026-10-08",
+  "status": "passed",
+  "skillSha256": "430df1333deed3a4c7b5800e81df68d474914fbe84f95abd07ed340bdc71b667",
+  "referenceSha256": {
+    "references/deliverable-templates.md": "41f0742a11a1941d3ecaa48b743c66296253105e283ccee9f18d1cf240244abf",
+    "references/worked-example.md": "0fec6035901844a711c3a63d4c61414684a42cd5726b0b62ddc99f21d1da54a1"
+  },
+  "packageZipSha256": "be989cca0d7fe90bf06abefe4fd15623b98b5383622545f46cb78a5dc5ea6a9f",
+  "editedFiles": ["app.js"],
+  "createdArtifacts": ["trial-response.md", "trial-result.json", "trial-test-output.txt", "trial-mobile.png"],
+  "protectedFileSha256": {
+    "AGENTS.md": "aaa306f4fe9df2734ef519a7fe9e975f1c3e102ce3f270713627f44732380b4c",
+    "index.html": "a62d0ddaf40b17d3a48fa0aeab9186fc544afa5981f3147da165f0666da59a56",
+    "acceptance.test.cjs": "24190004d1804a49736f602dd3a028d63b2bafca9b523ef255bef0471072ef60"
+  },
+  "editedFileSha256": {"app.js": "eddbf663107e1130771af67b3aa3add21141cf1e5d1984509ec74ec56ff57b7b"},
+  "test": {
+    "command": "node --test acceptance.test.cjs",
+    "before": {"total": 10, "passed": 1, "failed": 9},
+    "after": {"total": 10, "passed": 10, "failed": 0, "exitCode": 0},
+    "outputFile": "trial-test-output.txt",
+    "outputSha256": "b19b8e1fa3e82b41edd1afdcd51b3d0d823c1320d71e18543a454d0df3f7d709",
+    "runtime": "Local Chrome via Playwright, loopback HTTP page, 390px viewport",
+    "scope": "Add/reload, toggle, delete, text-only rendering, valid and invalid import, corrupt storage, blocked writes, JSON download and mobile overflow"
+  },
+  "limitations": "No title-edit action, cross-device sync, cloud backup, or full accessibility audit was tested or delivered.",
+  "externalActions": "No dependencies added, no production data, no commit, no publication."
+}

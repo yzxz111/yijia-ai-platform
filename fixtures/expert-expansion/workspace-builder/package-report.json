@@ -1,0 +1,84 @@
+{
+  "artifactSha256": "be989cca0d7fe90bf06abefe4fd15623b98b5383622545f46cb78a5dc5ea6a9f",
+  "assets": {
+    "exampleImage": {
+      "bytes": 28507,
+      "height": 280,
+      "path": "skills/workspace-builder/assets/example-image.png",
+      "sha256": "862d158dc5f11bb47ac390dd2f3b9b5d99f988cb5e7e101524141d8442cf3a9a",
+      "width": 1072
+    },
+    "icon": {
+      "bytes": 5287,
+      "height": 240,
+      "path": "skills/workspace-builder/assets/icon.png",
+      "sha256": "b20647a0bdf65cabb112e832a87373a58cfc60aab0567190402dcefdaeb6d0d0",
+      "width": 240
+    },
+    "illustration": {
+      "bytes": 16269,
+      "height": 480,
+      "path": "skills/workspace-builder/assets/illustration.png",
+      "sha256": "348f489acde8579310cde4abbe2fc8eb4bd99e258a0cb4e8e66137787cc76b8d",
+      "width": 1440
+    }
+  },
+  "cloudPublished": false,
+  "code": "workspace-builder",
+  "compressedBytes": 60267,
+  "entries": {
+    "com.yuzhihuihe.ycps/manifest.json": {
+      "bytes": 445,
+      "sha256": "4ebd38fad65a3a04c63fb078e2fb4cd907dda7178741d54987d8b0277377b8ab"
+    },
+    "plugin.json": {
+      "bytes": 675,
+      "sha256": "dca76b56f00a9256cf338f12558200a9a46a952e97d02b24d58b64913c86cee5"
+    },
+    "skills/workspace-builder/SKILL.md": {
+      "bytes": 20643,
+      "sha256": "430df1333deed3a4c7b5800e81df68d474914fbe84f95abd07ed340bdc71b667"
+    },
+    "skills/workspace-builder/assets/example-image.png": {
+      "bytes": 28507,
+      "sha256": "862d158dc5f11bb47ac390dd2f3b9b5d99f988cb5e7e101524141d8442cf3a9a"
+    },
+    "skills/workspace-builder/assets/icon.png": {
+      "bytes": 5287,
+      "sha256": "b20647a0bdf65cabb112e832a87373a58cfc60aab0567190402dcefdaeb6d0d0"
+    },
+    "skills/workspace-builder/assets/illustration.png": {
+      "bytes": 16269,
+      "sha256": "348f489acde8579310cde4abbe2fc8eb4bd99e258a0cb4e8e66137787cc76b8d"
+    },
+    "skills/workspace-builder/references/deliverable-templates.md": {
+      "bytes": 1769,
+      "sha256": "41f0742a11a1941d3ecaa48b743c66296253105e283ccee9f18d1cf240244abf"
+    },
+    "skills/workspace-builder/references/worked-example.md": {
+      "bytes": 11057,
+      "sha256": "0fec6035901844a711c3a63d4c61414684a42cd5726b0b62ddc99f21d1da54a1"
+    }
+  },
+  "entryCount": 8,
+  "expandedBytes": 84652,
+  "kind": "EXPERT",
+  "presentation": {
+    "canvasNodes": {
+      "en": 20,
+      "zh": 20
+    },
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  "runtime": {
+    "dependencies": [],
+    "entryAgent": "main",
+    "minClientVersion": "2026.6.30"
+  },
+  "validationScope": "Deterministic packaging, identity, metadata budgets, canvas geometry/runs, decoded asset sizes. See acceptance results for production parser tests.",
+  "version": "1.0.0",
+  "ycpsVersion": "1.1.0"
+}

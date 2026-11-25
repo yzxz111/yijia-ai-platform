@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/gateway.do",
+    "formParameters": {
+      "method": { "equalTo": "alipay.data.dataservice.bill.downloadurl.query" },
+      "biz_content": {
+        "matches": "(?s)^\\{(?=[^{}]*\\\"bill_date\\\":\\\"2026-08\\\"(?:,|\\}))(?=[^{}]*\\\"bill_type\\\":\\\"trade\\\"(?:,|\\}))[^{}]*\\}$"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": {
+      "alipay_data_dataservice_bill_downloadurl_query_response": {
+        "code": "10000",
+        "msg": "Success",
+        "bill_download_url": "https://bill.localhost/alipay/2026-08.zip"
+      },
+      "sign": "fixture-signature"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+**/target/
+**/__pycache__/
+*.py[cod]
+web-console/node_modules/
+web-console/dist/
+web-console/*.tsbuildinfo
+deploy/env/.env
+.secrets/
+# Operator-owned production secrets. deploy/production.sh reads deploy/.secrets/oss.env and
+# deploy/.secrets/local-runtime.env; the whole directory must never be committed.
+deploy/.secrets/
+.planning/
+.superpowers/
+web-console/test-results/
+web-console/playwright-report/
+web-console/.artifacts/
+# Local docker buildx state (node IDs, locks, activity); machine-specific, never committed.
+.docker/
+# Local verification workspaces and generated delivery/preview copies.
+.scratch/
+output/
+
+# Fixture inputs and individual YCPS archives are versioned. Rebuildable previews,
+# delivery bundles and raw verification transcripts stay local.
+fixtures/catalog-snapshot/verification-tests.*
+fixtures/catalog-snapshot/restore-dry-run-*
+fixtures/catalog-snapshot/restore-revision-simulation.*
+fixtures/catalog-snapshot/desktop-projection-tests.json
+fixtures/expert-expansion/*/preview-*.png
+fixtures/expert-expansion/index-*.png
+fixtures/expert-expansion/*/source-assets/*.html
+fixtures/expert-expansion/*/import-*-output.txt
+fixtures/expert-expansion/*/import-*-result.json
+fixtures/expert-expansion/remaining-experts-*.zip
+fixtures/expert-expansion/remaining-work.json
+fixtures/expert-expansion/remaining-build-check.txt
+fixtures/expert-expansion/remaining-package-manifest.json
+
+# Fixed fictional trial deliverables are referenced by the retained fixture guides.
+# Re-include only their data formats under validation-fixture/output, not general output/.
+!fixtures/expert-expansion/*/validation-fixture/output/
+!fixtures/expert-expansion/*/validation-fixture/output/*.md
+!fixtures/expert-expansion/*/validation-fixture/output/*.csv
+!fixtures/expert-expansion/adaptive-delivery-expert/validation-fixture/output/brief.html
+!fixtures/expert-expansion/adaptive-delivery-expert/validation-fixture/output/brief-desktop.png
+!fixtures/expert-expansion/adaptive-delivery-expert/validation-fixture/output/brief-mobile.png
+deploy/geoip/*.xdb
+deploy/backup/.work/
+deploy/backup/.downloads/
+deploy/backup/evidence/*.local.json
+
+# Test and build transcripts. Compose output echoes the whole service environment, so these
+# files can contain live secrets.
+*.log
+test-results/
+
+# State files written by scripts/e2e-subscription-*.ps1 while a local acceptance run is in
+# progress (the account/subscription it is currently driving). Regenerated on every run.
+scripts/.e2e-account.txt
+scripts/.e2e-subscription.txt
+
+# Operator-local deployment/handover scratch output: built tarballs, extracted BOOT-INF
+# classes, server diffs and per-release handover bundles. Multi-megabyte and fully
+# regenerable from the tagged source, so it stays on the machine that produced it.
+.deploy-*/
+.handover-*/
+.upload-filelist.txt
+
+# Generated per-release review reports (rendered PNGs, docx exports, correlation dumps).
+# The human-written conclusions live in docs/; these renders are rebuilt on demand.
+reports/
+
+# The security audit report. It enumerates the issues that are still open (H-09, H-12, L-30) and
+# the exact conditions under which the committed default pepper / encryption key are exploitable, so
+# it is deliberately kept out of the published tree. Keep it local, or publish it to a private repo.
+安全审计与压测报告.md

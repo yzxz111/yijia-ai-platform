@@ -1,0 +1,15 @@
+{
+  "exitCode": 1,
+  "counts": {
+    "tests": 6,
+    "pass": 2,
+    "fail": 4
+  },
+  "hashes": {
+    "acceptance.test.cjs": "a429a1d9b0276502b5c8b3107535769c34f723f1e5ed4978c241d93800365f21",
+    "AGENTS.md": "a0774bf473d857c34834fc8b2c4779c432b25db737c1b48ec114dd7325679fc3",
+    "index.html": "e6e8f5cc933499db7c97288824e90f72f1a1ae4d045abd7037df171e892e2783",
+    "styles.css": "0e5baee897803d0f332d36c238e830a5c346e1e13ef713ca59a5a11ab6755826"
+  },
+  "scope": "Synthetic local fixture; no production integrations or real user data."
+}

@@ -1,0 +1,2 @@
+Synthetic user note: retain the existing worker contract; release timing is undecided.
+Uncommitted user change: investigate config UI separately.

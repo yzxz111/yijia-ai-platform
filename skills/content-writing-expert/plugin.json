@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "content-writing-expert",
+  "version": "1.0.0",
+  "description": "Plan topics and write review-ready, original Chinese content for WeChat Official Accounts, Xiaohongshu, Zhihu, and short-video channels, from outline to polished draft.",
+  "author": {
+    "name": "Yuzhi"
+  },
+  "license": "Proprietary",
+  "keywords": [
+    "content",
+    "writing",
+    "copywriting",
+    "social-media"
+  ],
+  "extensions": {
+    "com.yuzhihuihe.ycps": {
+      "ycpsVersion": "1.0.0",
+      "kind": "EXPERT",
+      "entrySkill": "content-writing-expert",
+      "manifest": "./com.yuzhihuihe.ycps/manifest.json",
+      "requiredFeatures": []
+    }
+  }
+}

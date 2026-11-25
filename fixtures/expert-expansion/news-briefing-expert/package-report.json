@@ -1,0 +1,84 @@
+{
+  "artifactSha256": "7f913ce13cfd053feb9ef5c01c64f7e4553b7fd9ef28c151cf3f12b036a3d5ef",
+  "assets": {
+    "exampleImage": {
+      "bytes": 35051,
+      "height": 280,
+      "path": "skills/news-briefing-expert/assets/example-image.png",
+      "sha256": "6d0ea9b1d0cf6271ff35fc283722620d038866e6aa3c2fe8b545d61aef40999a",
+      "width": 1072
+    },
+    "icon": {
+      "bytes": 8185,
+      "height": 240,
+      "path": "skills/news-briefing-expert/assets/icon.png",
+      "sha256": "50859214d966c8ac7dcf989ec56f071880797855dd44286f59fb23e4bc2ff8c7",
+      "width": 240
+    },
+    "illustration": {
+      "bytes": 53663,
+      "height": 480,
+      "path": "skills/news-briefing-expert/assets/illustration.png",
+      "sha256": "356f10e187e88cdacc6188f1843d1d98063f4d835a9f58d42e7166911002b73c",
+      "width": 1440
+    }
+  },
+  "cloudPublished": false,
+  "code": "news-briefing-expert",
+  "compressedBytes": 106896,
+  "entries": {
+    "com.yuzhihuihe.ycps/manifest.json": {
+      "bytes": 445,
+      "sha256": "4ebd38fad65a3a04c63fb078e2fb4cd907dda7178741d54987d8b0277377b8ab"
+    },
+    "plugin.json": {
+      "bytes": 698,
+      "sha256": "f426c4c9685bdcba89fa1131d41ddc499de879da3c05870d6dee74f92c7c5c02"
+    },
+    "skills/news-briefing-expert/SKILL.md": {
+      "bytes": 22223,
+      "sha256": "7449b29832af054152d41f8f6e18816ef94a0c4ba2cab410b754ae439c01e651"
+    },
+    "skills/news-briefing-expert/assets/example-image.png": {
+      "bytes": 35051,
+      "sha256": "6d0ea9b1d0cf6271ff35fc283722620d038866e6aa3c2fe8b545d61aef40999a"
+    },
+    "skills/news-briefing-expert/assets/icon.png": {
+      "bytes": 8185,
+      "sha256": "50859214d966c8ac7dcf989ec56f071880797855dd44286f59fb23e4bc2ff8c7"
+    },
+    "skills/news-briefing-expert/assets/illustration.png": {
+      "bytes": 53663,
+      "sha256": "356f10e187e88cdacc6188f1843d1d98063f4d835a9f58d42e7166911002b73c"
+    },
+    "skills/news-briefing-expert/references/deliverable-templates.md": {
+      "bytes": 2433,
+      "sha256": "8579ee7693812e94ac4b5ca347d5bac5a8c9aa77154e2d9b9b29f276a95b7df9"
+    },
+    "skills/news-briefing-expert/references/worked-example.md": {
+      "bytes": 3588,
+      "sha256": "8e5d48798c0b80d5b68960e67461ca2d40d11ae890319e35713b506ee5fe74af"
+    }
+  },
+  "entryCount": 8,
+  "expandedBytes": 126286,
+  "kind": "EXPERT",
+  "presentation": {
+    "canvasNodes": {
+      "en": 20,
+      "zh": 20
+    },
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  "runtime": {
+    "dependencies": [],
+    "entryAgent": "main",
+    "minClientVersion": "2026.6.30"
+  },
+  "validationScope": "Deterministic packaging, identity, metadata budgets, canvas geometry/runs, decoded asset sizes. See acceptance results for production parser tests.",
+  "version": "1.0.0",
+  "ycpsVersion": "1.1.0"
+}

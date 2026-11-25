@@ -1,0 +1,78 @@
+✖ light enabled button label contrast is at least 4.5 (626.5981ms)
+✖ dark enabled button label contrast is at least 4.5 (274.3053ms)
+✖ Tab focus is visible on both enabled controls (244.1764ms)
+✔ native keyboard activation works and disabled controls remain inert (231.8419ms)
+✔ same semantic tokens are populated for each theme (235.0063ms)
+✖ mobile viewport has no horizontal overflow and notice is preserved (159.9572ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 2
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2320.1231
+
+✖ failing tests:
+
+test at acceptance.test.cjs:38:39
+✖ light enabled button label contrast is at least 4.5 (626.5981ms)
+  AssertionError [ERR_ASSERTION]: {"fg":"rgb(255, 255, 255)","bg":"rgb(139, 186, 250)"}
+      at TestContext.<anonymous> (D:\code\Yuzhi9.20\.scratch\remaining-expert-trials\design-system-architect\acceptance.test.cjs:41:10)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at acceptance.test.cjs:38:39
+✖ dark enabled button label contrast is at least 4.5 (274.3053ms)
+  AssertionError [ERR_ASSERTION]: {"fg":"rgb(61, 70, 84)","bg":"rgb(57, 98, 160)"}
+      at TestContext.<anonymous> (D:\code\Yuzhi9.20\.scratch\remaining-expert-trials\design-system-architect\acceptance.test.cjs:41:10)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at acceptance.test.cjs:43:1
+✖ Tab focus is visible on both enabled controls (244.1764ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok((focus.width>=2 && focus.style!=='none') || focus.shadow!=='none')
+  
+      at TestContext.<anonymous> (D:\code\Yuzhi9.20\.scratch\remaining-expert-trials\design-system-architect\acceptance.test.cjs:47:12)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at acceptance.test.cjs:60:1
+✖ mobile viewport has no horizontal overflow and notice is preserved (159.9572ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth))
+  
+      at TestContext.<anonymous> (D:\code\Yuzhi9.20\.scratch\remaining-expert-trials\design-system-architect\acceptance.test.cjs:61:10)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

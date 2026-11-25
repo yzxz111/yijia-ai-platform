@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "content-summarizer",
+  "version": "1.0.0",
+  "description": "Distill articles, meeting transcripts, web pages, and multi-source material into summaries, decisions, and action items without losing key detail.",
+  "author": {
+    "name": "Yuzhi"
+  },
+  "license": "Proprietary",
+  "keywords": [
+    "summary",
+    "minutes",
+    "distillation",
+    "action-items"
+  ],
+  "extensions": {
+    "com.yuzhihuihe.ycps": {
+      "ycpsVersion": "1.0.0",
+      "kind": "EXPERT",
+      "entrySkill": "content-summarizer",
+      "manifest": "./com.yuzhihuihe.ycps/manifest.json",
+      "requiredFeatures": []
+    }
+  }
+}

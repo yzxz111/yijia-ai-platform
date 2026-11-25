@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-08",
+  "code": "adaptive-delivery-expert",
+  "status": "reviewed",
+  "artifactSha256": "0f510e904d3546dceedfa2fe6cb408efd5a724301673760384582d82cd9011dd",
+  "sourceSha256": {
+    "specs/adaptive-delivery-expert.json": "4fda67dd7cdf32639cefbb9c458569bfed792d5b89ec73974c38b72afb3554c3",
+    "adaptive-delivery-expert/SKILL.md": "275129b71126e022dd131ef9dcf9938a6cc8105e0734ee654493a5f441906d60",
+    "adaptive-delivery-expert/references/deliverable-templates.md": "5c355a737dc6870334dcd08488c3f9cafd58a34b3a02c279a3e817a25b384cbf",
+    "adaptive-delivery-expert/references/worked-example.md": "f43c079c085dae87b3a735a7d6d63cd01e652c0a2e4f48c413ab25b1cb9ae988"
+  },
+  "focus": "实际文件、最小完整成果、冲突材料与数字一致性",
+  "scope": "Parent and independent agent static review of instructions, 10 specific cases, templates and worked example; not 10 executed host conversations.",
+  "independentEvidence": "正文和模板要求直接交付完整成果并重新读取已写文件；示例一页建议满足离线硬条件，首年 A=1400 元、B=1320 元及 100 元预算余量正确。",
+  "resolvedIssues": [
+    "收短三个英文展示标签并同步到最终包；执行正文及参考资料逐字节不变，最终包重新通过导入验收。"
+  ],
+  "openIssues": [],
+  "actualTrial": "execution-validation.json",
+  "independentReport": "../remaining-independent-review.json"
+}

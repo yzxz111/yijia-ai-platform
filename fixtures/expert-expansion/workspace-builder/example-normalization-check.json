@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "sourcePath": "D:/code/Yuzhi9.20/system/fixtures/expert-expansion/workspace-builder/references/worked-example.md",
+  "sourceSha256": "0FEC6035901844A711C3A63D4C61414684A42CD5726B0B62DDC99F21D1DA54A1",
+  "extractedFenceCount": 1,
+  "localLoopbackOnly": true,
+  "externalRequests": [],
+  "runtimeErrors": [],
+  "cases": {
+    "importExtraFields": {
+      "confirmedOverwrite": true,
+      "savedExactSchema": true,
+      "exportedExactSchema": true,
+      "trimmedTitles": true,
+      "importedTaskCount": 2
+    },
+    "bootExtraFields": {
+      "exportedExactSchemaBeforeSave": true,
+      "rawStorageStillContainsExtraFieldsBeforeFirstSave": true,
+      "savedExactSchemaAfterAdd": true
+    },
+    "normalAddReload": {
+      "saved": true,
+      "survivedReload": true,
+      "exportedExactSchemaAfterReload": true,
+      "finalTaskCount": 2
+    }
+  },
+  "date": "2026-10-08",
+  "runner": "gpt-6-sol / ultra subagent; parent reviewed completed browser script and saved result after agent capacity interruption",
+  "runtime": "Installed Chrome via Playwright on loopback HTTP",
+  "scope": "Final worked-example fenced HTML; fictional tasks only; import extra-field stripping, startup export normalization, add and reload. Not a real user workspace or cloud host.",
+  "script": "validation-fixture/example-normalization-check.cjs"
+}

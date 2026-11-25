@@ -1,0 +1,44 @@
+{
+  "expert": "startup-partner",
+  "status": "completed_local_trial",
+  "skillSha256": "11C0F1F9944C88D29D96ED8DC3D7FA029E39FC28F582FE2835BC7F3B37A3EAA4",
+  "readFiles": [
+    "SKILL.md",
+    "references/deliverable-templates.md",
+    "references/worked-example.md",
+    "validation-fixture/input.json"
+  ],
+  "createdFiles": [
+    "validation-fixture/output/decision.md",
+    "validation-fixture/output/experiment.csv",
+    "validation-fixture/output/cash.csv",
+    "validation-fixture/trial-result.json",
+    "validation-fixture/trial-response.md"
+  ],
+  "executedChecks": [
+    "Get-FileHash -Algorithm SHA256 on SKILL.md",
+    "Node decoded both CSV files as strict UTF-8 and confirmed experiment.csv has five rows and nine columns, cash.csv five rows and fifteen columns",
+    "Node re-read input.json and recalculated each cash.csv row from assumed customer count, price, variable cost, fixed cash cost, experiment expense, and starting cash; all receipts, outflows, net cash, and ending cash matched",
+    "Node recalculated hypothetical monthly contribution as 199-39=160 CNY and conditional paying-customer thresholds as ceil(1800/160)=12 and ceil((1800+600)/160)=15",
+    "Read decision.md and checked the continue-validation conclusion, undefined CAC, conditional thresholds, no-contact rule, and unspent experiment fee"
+  ],
+  "arithmetic": {
+    "hypotheticalContributionPerPayingCustomerCNY": 160,
+    "conditionalPayersToCoverFixedCost": 12,
+    "conditionalPayersToCoverFixedAndExperimentCost": 15,
+    "scenarioEndingCashCNY": {
+      "S0_noExperimentNoPayers": 10200,
+      "S1_experimentNoPayers": 9600,
+      "S2_experimentOneHypotheticalPayer": 9760,
+      "S3_experimentTwelveHypotheticalPayers": 11520,
+      "S4_experimentFifteenHypotheticalPayers": 12000
+    }
+  },
+  "unverified": [
+    "Any actual purchase, contact, interview transcript, customer segment, or repeatable acquisition rate beyond the supplied teaching counts",
+    "Whether the 20 leads, eight interviews, six problem reports, and four verbal intentions are one deduplicated funnel",
+    "Realized 199 CNY price, 39 CNY variable cost, renewal, tax, founder pay, and full actual cash ledger",
+    "Execution of the 14-day plan, terms approval, external permission, or spending of the proposed 600 CNY"
+  ],
+  "externalActions": "none"
+}

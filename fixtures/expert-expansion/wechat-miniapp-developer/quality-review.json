@@ -1,0 +1,68 @@
+{
+  "artifact": "wechat-miniapp-developer",
+  "reviewType": "static_instructions_and_offline_scenario_walkthrough",
+  "status": "reviewed",
+  "initialReviewStatus": "issues_found_initial",
+  "scopeStatement": "子 Agent 阅读初版与修订版 spec.instructions、交付模板和虚构微型示例，并手工对十个含短代码或明确条件的虚构输入做离线指令演练；又核对生成的 SKILL.md 和归档内容。这里没有调用 Yuzai 应用端模型，没有使用微信开发者工具或真机，也不代表导入后端到端行为测试通过。微信官方条文的事实核验由主任务的 source-review 另行记录；本文件只判断专家指令的覆盖、证据边界和包内一致性。",
+  "initialReviewedSource": {
+    "spec": "system/fixtures/expert-expansion/specs/wechat-miniapp-developer.json",
+    "specSha256": "525616b1b0a380ab6badc3017ada1e5bf390542dc909fa9a2031a018431f9c78",
+    "templatesSha256": "3e8217e30d49e0abbe3fc8037276d61ad3e3cb6133833d49608408c2ce34bc21",
+    "workedExampleSha256": "d21c15810ee1bc9392052c0e84fc9c49f8ed54af60e51b41713fc94a7b86adb9"
+  },
+  "initialAssessment": "十项案例中八项已有足够明确的指令覆盖。发现一处实质表述冲突：正文允许由可见代码或运行证据确认根因，但故障模板把所有静态分析一律降为候选原因，易使直接赋值未调用 setData 或旧请求覆盖新结果这类局部逻辑错误被误报为纯猜测。",
+  "findings": [
+    {
+      "id": "Q01",
+      "severity": "medium",
+      "location": "references/deliverable-templates.md / 2. 故障修复 / 定位；与 spec.instructions 分步工作 2",
+      "issue": "模板写‘只做静态分析时写候选原因；别填根因已确认’，但正文写‘只有从代码或运行证据确认后才写根因已确认’。给定完整代码和明确合同，某些局部错误可以由代码及已核平台语义静态证明，不能仅因未打开微信开发者工具就统一称推测。",
+      "impact": "局部代码诊断的证据强度被误报；反过来若模糊表述，又可能把局部静态证明误当成项目运行或真机验收。",
+      "recommendedChange": "将定位状态拆开：局部代码逻辑可静态确认时，写‘代码逻辑已确认，开发者工具/真机运行未验证’并给语义或分支证据；依赖未知调用方、环境、后端或时序的根因仍列候选假设。不得以局部证明替代整体工程验收。",
+      "scenarioIds": ["M03", "M05"],
+      "initialDisposition": "open"
+    }
+  ],
+  "nonblockingObservation": "M02 的嵌套事件 target/currentTarget 与稳定 id key 可由给定代码和正文‘事件绑定、稳定列表 key’推导；若指令增加一句按绑定元素核对 dataset 来源，将更不易漏修，但目前证据不足以判为独立缺陷。",
+  "scenarioFile": "quality-scenarios.json",
+  "initialScenarioJudgments": {
+    "supported": ["M01", "M02", "M04", "M06", "M07", "M08", "M09", "M10"],
+    "partial": ["M03", "M05"],
+    "uncovered": []
+  },
+  "finalReview": {
+    "status": "static_review_passed",
+    "sourceFiles": {
+      "spec": "system/fixtures/expert-expansion/specs/wechat-miniapp-developer.json",
+      "specSha256": "61a46d0304c82320678a3867a556b387474a2de9ec0c94a2bbef9bde1fe80e74",
+      "skill": "system/fixtures/expert-expansion/wechat-miniapp-developer/SKILL.md",
+      "skillSha256": "b1a5a2c79029a329dc7e416d4187627285ed2687b71051e005ba83630ee54683",
+      "templatesSha256": "b34be837b6978cc56261af36b80666c0fc776646ac90e093aff07819b2de571b",
+      "workedExampleSha256": "d21c15810ee1bc9392052c0e84fc9c49f8ed54af60e51b41713fc94a7b86adb9",
+      "archive": "system/fixtures/expert-expansion/wechat-miniapp-developer/wechat-miniapp-developer-1.0.0.ycps.zip",
+      "archiveSha256": "ce6024f823feafbe6f94c3ba8b49ce2082aabcfa42846aec15e09a49d4720e73"
+    },
+    "consistencyChecks": {
+      "specInstructionsEqualSkillBody": true,
+      "archiveSkillMatchesDisk": true,
+      "archiveReferencesMatchDisk": true,
+      "archiveHashMatchesPackageReport": true,
+      "archiveEntryCount": 8
+    },
+    "findingDisposition": [
+      {
+        "id": "Q01",
+        "status": "resolved_in_instructions_and_template",
+        "evidence": "修订后的分步工作2和故障模板均允许完整代码直接证明局部逻辑错误，并标‘局部逻辑已确认（静态证明），微信端运行未验’；环境、调用链或时序仍未知时继续列候选原因。"
+      }
+    ],
+    "nonblockingObservationDisposition": "已补足：修订版分步工作3明确稳定id下 wx:key 的字段写法、事件绑定节点的 currentTarget.dataset，以及嵌套 target 的差异。",
+    "scenarioCoverage": {
+      "count": 10,
+      "finalStaticJudgments": "M01—M10 全部 supported；逐例依据见 quality-scenarios.json。",
+      "behavioralValidation": "未执行：案例为子 Agent 的手工离线演练，示例回复不是 Yuzai 应用端模型生成。"
+    },
+    "limits": "本审查验证了专家指令、参考文件、十个离线情景与归档内容一致性。未在真实 Yuzai 应用端导入并调用模型；未使用微信开发者工具、AppID、真实接口或真机测试。主任务的微信官方资料核验与后续隔离纯 JS 演练应单独记录，不能替代应用端端到端验收。",
+    "conclusion": "初审唯一确认的指令冲突已修复，未发现其他可确认的内容缺陷。最终包可进入下一步验收，但静态覆盖不能证明真实微信环境或 Yuzai 模型行为通过。"
+  }
+}

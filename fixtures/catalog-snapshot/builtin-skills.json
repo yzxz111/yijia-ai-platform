@@ -1,0 +1,140 @@
+{
+  "$comment": "本地内置 skills。源码就在 Yuzai/SKILLs/ 下，随仓库分发，无需复原。",
+  "source": "Yuzai/SKILLs",
+  "index": "Yuzai/SKILLs/ycps.index.json",
+  "config": "Yuzai/SKILLs/skills.config.json",
+  "packages": [
+    {
+      "code": "docx",
+      "kind": "SKILL",
+      "version": "1.0.0",
+      "revision": 1,
+      "path": "Yuzai/SKILLs/docx",
+      "artifactSha256": "e8d5d4b95e188341786120a4f2059201265fb05d297faecaee9b3b0b1c9da2b8",
+      "contentSha256": "742ceec2c7e6752466dfc9d16880ce7a785ed792b6e4e91378c4f8cd6a7216fa",
+      "order": 10,
+      "enabled": true
+    },
+    {
+      "code": "web-search",
+      "kind": "SKILL",
+      "version": "1.0.2",
+      "revision": 3,
+      "path": "Yuzai/SKILLs/web-search",
+      "artifactSha256": "d9f7d59aa75adfa72eee5a9e72e161befd7abc57063af8452f6a534729acc54a",
+      "contentSha256": "d9f7d59aa75adfa72eee5a9e72e161befd7abc57063af8452f6a534729acc54a",
+      "order": 15,
+      "enabled": true
+    },
+    {
+      "code": "xlsx",
+      "kind": "SKILL",
+      "version": "1.0.0",
+      "revision": 1,
+      "path": "Yuzai/SKILLs/xlsx",
+      "artifactSha256": "9409dc9d1dbf061242a3d8e44cee63d35b40ea1d732670168f37b4c79a71c455",
+      "contentSha256": "8673cc6dabc629221931150a44c12bb5ef8d39743f3acb12b036357a43bac50d",
+      "order": 20,
+      "enabled": true
+    },
+    {
+      "code": "pptx",
+      "kind": "SKILL",
+      "version": "1.0.0",
+      "revision": 1,
+      "path": "Yuzai/SKILLs/pptx",
+      "artifactSha256": "a89362ab811cbeac59455f6f550321637c3762778aa3ddcd53b9a61a8a2c13a5",
+      "contentSha256": "cc3e648e0643a7eb789691b122d6ae37b5bea9ab1707b062602e05f7b44e6964",
+      "order": 30,
+      "enabled": true
+    },
+    {
+      "code": "pdf",
+      "kind": "SKILL",
+      "version": "1.0.0",
+      "revision": 1,
+      "path": "Yuzai/SKILLs/pdf",
+      "artifactSha256": "daa8e6fe6c0c8289624084685ebde0f99c75267734770a8fd6c30933f777b1fd",
+      "contentSha256": "192d4f8a0e5286ef2597a5da3a18889f3a02b5ebf64cc9d37c46e9c37e53c4b1",
+      "order": 40,
+      "enabled": true
+    },
+    {
+      "code": "playwright",
+      "kind": "SKILL",
+      "version": "1.0.0",
+      "revision": 1,
+      "path": "Yuzai/SKILLs/playwright",
+      "artifactSha256": "56a261d7536a01cac79b7ede91dfc0c80f9b7b4c40dde9dfe06dbc912d3453f3",
+      "contentSha256": "a57fc622231dc4948835afd7e15fd4f66304b12fb97c5bc4504287107fcde12e",
+      "order": 70,
+      "enabled": true
+    },
+    {
+      "code": "content-planner",
+      "kind": "SKILL",
+      "version": "1.0.0",
+      "revision": 1,
+      "path": "Yuzai/SKILLs/content-planner",
+      "artifactSha256": "16213e8ebe88be0e5179bf8ed649092ce47e84504ccb0f515a97cd790df92bc8",
+      "contentSha256": "215feb1e2e1a755f50f51da465ae54b66d240e089400c893eaf8816395aef5f4",
+      "order": 120,
+      "enabled": true
+    },
+    {
+      "code": "article-writer",
+      "kind": "SKILL",
+      "version": "1.0.0",
+      "revision": 1,
+      "path": "Yuzai/SKILLs/article-writer",
+      "artifactSha256": "c6a2fea86e639a79ecbe29ce11fbc6987e4810b4e2c32c53f75fb17f5dc9f5b6",
+      "contentSha256": "d8d944367c0648331a1320bedfc1ca703d16af1808fb34ca5a778f52bc68653d",
+      "order": 121,
+      "enabled": true
+    },
+    {
+      "code": "daily-trending",
+      "kind": "SKILL",
+      "version": "1.0.0",
+      "revision": 1,
+      "path": "Yuzai/SKILLs/daily-trending",
+      "artifactSha256": "8e275ecfd95c2f0df473b5139eb1264982babd7bf68a82c6bc18ebc69f52248f",
+      "contentSha256": "66c2836ab221c3327eca1b5bcbd97b78811f25296e921549d64c232098fbcea7",
+      "order": 122,
+      "enabled": true
+    },
+    {
+      "code": "local-tools",
+      "kind": "SKILL",
+      "version": "1.0.0",
+      "revision": 1,
+      "path": "Yuzai/SKILLs/local-tools",
+      "artifactSha256": "0c8b4f7d78873d694570a32689b8bd45c37342a84917736037794387c2cc5f5a",
+      "contentSha256": "0377bb503f31cacf4c1793dab3a49c206d5fc7929a4785e82c3b77bac56e3d0e",
+      "order": 200,
+      "enabled": true
+    },
+    {
+      "code": "skill-vetter",
+      "kind": "SKILL",
+      "version": "1.1.0",
+      "revision": 1,
+      "path": "Yuzai/SKILLs/skill-vetter",
+      "artifactSha256": "2adb4468fc84d619a80252504e974c2ac4f0f27ed6dd24b792d3f98eefd14263",
+      "contentSha256": "6d16ea742974a0c3ae298413f347049afb8b4e0bb049bf5cec214ffedb594261",
+      "order": 299,
+      "enabled": true
+    },
+    {
+      "code": "skill-creator",
+      "kind": "SKILL",
+      "version": "1.1.0",
+      "revision": 1,
+      "path": "Yuzai/SKILLs/skill-creator",
+      "artifactSha256": "de60d712ca6f30dc6cb36df38e1ff8b8c405e46b93edbe615e693c3c2e148f17",
+      "contentSha256": "3cc44ac2c0d61626e70bbd47df7f4f322dda641c04ac4c21c81a750c57ef39da",
+      "order": 300,
+      "enabled": true
+    }
+  ]
+}

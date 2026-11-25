@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-08",
+  "code": "design-system-architect",
+  "status": "passed_local_trial",
+  "runner": {
+    "model": "gpt-6-sol",
+    "reasoningEffort": "ultra",
+    "environment": "Independent Codex subagent reading the packaged Entry Skill and references; not the Yuzai/cloud-host LLM."
+  },
+  "artifactSha256": "aef1317e95b72061a9572af9fbd3444ddb8716897ad7b04d7c935cdbcbaf63ad",
+  "skillSha256": "199141eb4ff577f2ba2debe65a7c7f9db197a0bb06545064550aabba73d5ad52",
+  "executedSkillSha256": "199141eb4ff577f2ba2debe65a7c7f9db197a0bb06545064550aabba73d5ad52",
+  "reviewedBy": "Parent agent",
+  "parentReview": [
+    "主代理核对固定基线、修改后源码、完整运行输出和保护文件哈希。",
+    "只修改本地虚构试验目录，没有修改产品源代码或提交。",
+    "查看 390px 截图；6 项测试含双主题启用按钮对比度、Tab 焦点、原生键盘及禁用行为和溢出。"
+  ],
+  "trialReport": "validation-fixture/trial-result.json",
+  "evidenceSha256": {
+    "baseline-test-output.txt": "7c9694d69b8ffe08e4273b9447ade7ac50ebef3b41b3b03df0bf42f3a7406fe5",
+    "baseline.json": "fe12b88cc7f30ddf3aa01442e1b98ead7ec35ba0d24000412ef3bdcea41b87b9",
+    "repair.diff": "ca1751af2f71a2569a465f00dff5cf68e67947e29a065957e767f5711df35bd1",
+    "trial-mobile.png": "26cfa99af2b5ae9d04f2a17642e2d308cd7fa509ce3fd49a379d2aa169d3f650",
+    "trial-response.md": "79029450a117e95e9fcc0e9d8897ea232a83765fcfb4bea153a6bbceebc39421",
+    "trial-result.json": "2a08434a519d2acef4e7436183c2d77fecea98f6f33a308f936be36a732ea42a",
+    "trial-test-output.txt": "f1b35fe48169d70928f198e4268b14af829b03ce717e4642f6ae4022895501d8",
+    "after/acceptance.test.cjs": "a429a1d9b0276502b5c8b3107535769c34f723f1e5ed4978c241d93800365f21",
+    "after/AGENTS.md": "a0774bf473d857c34834fc8b2c4779c432b25db737c1b48ec114dd7325679fc3",
+    "after/index.html": "e6e8f5cc933499db7c97288824e90f72f1a1ae4d045abd7037df171e892e2783",
+    "after/styles.css": "0f385fd9c38807588dd8434654d223b212217e007e26e6b9553b21d0227c27f2",
+    "before/acceptance.test.cjs": "a429a1d9b0276502b5c8b3107535769c34f723f1e5ed4978c241d93800365f21",
+    "before/AGENTS.md": "a0774bf473d857c34834fc8b2c4779c432b25db737c1b48ec114dd7325679fc3",
+    "before/index.html": "e6e8f5cc933499db7c97288824e90f72f1a1ae4d045abd7037df171e892e2783",
+    "before/styles.css": "0e5baee897803d0f332d36c238e830a5c346e1e13ef713ca59a5a11ab6755826"
+  },
+  "limits": [
+    "虚构材料与隔离任务的一次试用不证明所有模型和真实项目都能可靠完成。",
+    "没有在线发布、真实客户操作或生产服务验收。",
+    "未把 10 个静态场景写成 10 次模型运行。"
+  ],
+  "tests": {
+    "command": "node --test acceptance.test.cjs",
+    "before": {
+      "total": 6,
+      "passed": 2,
+      "failed": 4
+    },
+    "after": {
+      "total": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    "runtime": "Local Chrome via Playwright, loopback HTTP page",
+    "scope": "Enabled button computed-color contrast in both themes; Tab focus; native keyboard activation and disabled behavior; semantic token presence; 390px overflow and preserved notice"
+  },
+  "protectedFilesUnchanged": true
+}

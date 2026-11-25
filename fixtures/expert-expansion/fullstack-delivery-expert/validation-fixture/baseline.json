@@ -1,0 +1,16 @@
+{
+  "exitCode": 1,
+  "counts": {
+    "tests": 9,
+    "pass": 1,
+    "fail": 8
+  },
+  "hashes": {
+    "acceptance.test.mjs": "c2cc8ce9ce104b18ae291de6eecc8807416f380fa3289c21680a304ee4b7deab",
+    "AGENTS.md": "3ffc31c30614849ce343a0174ec95b3bec986b554a7eb6f2c537aeb642419fd4",
+    "client.mjs": "b02f68351a17a60bd6f2e754ca4a348ec8d5da1355975f74ffda263bb43f001c",
+    "server.mjs": "04d02e06938466da08ef994a35ec52e89a1afc7b873147a1ae13c73b3025e36e",
+    "USER-NOTES.md": "2846e5b8c5e70f2a37a13c9c78c7b6bb5a7d6d7446efa84a7643d854b5f96d2b"
+  },
+  "scope": "Synthetic local fixture; no production integrations or real user data."
+}

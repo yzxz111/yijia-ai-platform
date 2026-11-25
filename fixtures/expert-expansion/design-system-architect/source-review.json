@@ -1,0 +1,23 @@
+{
+  "reviewedAt": "2026-10-08",
+  "method": "Read public W3C official pages through the web reader; reviewed only the standard facts used in this package.",
+  "sources": [
+    {
+      "title": "WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "reviewedFacts": ["The recommendation lists distinct success criteria for contrast, keyboard access, focus, reflow, and name/role/value.", "A color check alone does not establish page conformance."]
+    },
+    {
+      "title": "Understanding Contrast (Minimum)",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "reviewedFacts": ["Contrast assessment depends on the text and its specific foreground/background pairing; this package does not assert a universal ratio for a product."]
+    },
+    {
+      "title": "Developing a Keyboard Interface",
+      "url": "https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/",
+      "reviewedFacts": ["Custom interactive widgets require deliberate keyboard and focus behavior; the actual pattern depends on the widget."]
+    }
+  ],
+  "implementationInferences": ["Semantic token mapping and staged consumer migration are engineering recommendations, not W3C certification."],
+  "notVerified": ["Any user's design file or repository", "Figma write access", "A browser or assistive-technology run", "Full WCAG conformance"]
+}

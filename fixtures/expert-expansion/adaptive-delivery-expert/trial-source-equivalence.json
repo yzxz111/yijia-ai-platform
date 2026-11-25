@@ -1,0 +1,23 @@
+{
+  "status": "equivalent_execution_instructions",
+  "executedSkillSha256": "c617d15078968e5cf06ffe3ab6f782ea469ab12f08ad564773540f40a0a7c952",
+  "finalSkillSha256": "275129b71126e022dd131ef9dcf9938a6cc8105e0734ee654493a5f441906d60",
+  "instructionBodySha256": "4f3ad1b96c6f6f421c8f4bba16529e4d9c5908377e5c436d114935719d0e707e",
+  "bodyByteIdentical": true,
+  "referencesUnchanged": true,
+  "changes": [
+    {
+      "from": "Format selection",
+      "to": "Choose format"
+    },
+    {
+      "from": "File and content delivery",
+      "to": "Deliver files"
+    },
+    {
+      "from": "Completeness checks",
+      "to": "Check result"
+    }
+  ],
+  "scope": "Only three English display tags and matching canvas text were shortened. Actual trial used the preserved earlier SKILL header. No execution instruction or reference changed; actual trial was not rerun. Final ZIP import tests and preview were rerun."
+}

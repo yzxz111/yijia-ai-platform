@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/gateway.do",
+    "formParameters": {
+      "method": { "equalTo": "alipay.trade.refund" },
+      "biz_content": {
+        "matches": "(?s)^\\{(?=[^{}]*\\\"out_trade_no\\\":\\\"pay_fixture_paid\\\"(?:,|\\}))(?=[^{}]*\\\"out_request_no\\\":\\\"ref_fixture_paid\\\"(?:,|\\}))[^{}]*\\}$"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": {
+      "alipay_trade_refund_response": {
+        "code": "10000",
+        "msg": "Success",
+        "out_trade_no": "pay_fixture_paid",
+        "trade_no": "2026080122000000000001",
+        "refund_fee": "19.00",
+        "fund_change": "Y"
+      },
+      "sign": "fixture-signature"
+    }
+  }
+}

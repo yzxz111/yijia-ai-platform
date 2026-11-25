@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/v3/pay/transactions/out-trade-no/pay_fixture_paid",
+    "queryParameters": { "mchid": { "equalTo": "1900000109" } }
+  },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": {
+      "appid": "wx_phase2_fixture",
+      "mchid": "1900000109",
+      "out_trade_no": "pay_fixture_paid",
+      "transaction_id": "420000000020260801000001",
+      "trade_type": "NATIVE",
+      "trade_state": "SUCCESS",
+      "trade_state_desc": "paid fixture",
+      "success_time": "2026-08-01T12:00:00+08:00",
+      "payer": { "openid": "fixture-openid" },
+      "amount": { "total": 1900, "payer_total": 1900, "currency": "CNY", "payer_currency": "CNY" }
+    }
+  }
+}

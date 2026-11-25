@@ -1,0 +1,16 @@
+{
+  "exitCode": 1,
+  "counts": {
+    "tests": 10,
+    "pass": 1,
+    "fail": 9
+  },
+  "hashes": {
+    "acceptance.test.cjs": "24190004d1804a49736f602dd3a028d63b2bafca9b523ef255bef0471072ef60",
+    "AGENTS.md": "aaa306f4fe9df2734ef519a7fe9e975f1c3e102ce3f270713627f44732380b4c",
+    "app.js": "9d4ea09befc6520e41abc0cfea3425da9b93d0a9c1fb541ead7ac994128a20e6",
+    "index.html": "a62d0ddaf40b17d3a48fa0aeab9186fc544afa5981f3147da165f0666da59a56"
+  },
+  "scope": "Synthetic local fixture; no production integrations or real user data.",
+  "harnessNote": "Before repair agent started, browser harness was updated to accept user confirmation dialogs for deliberate deletes and imports; no assertions were removed or weakened. Baseline rerun on this exact frozen version."
+}

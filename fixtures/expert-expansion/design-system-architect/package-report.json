@@ -1,0 +1,84 @@
+{
+  "artifactSha256": "aef1317e95b72061a9572af9fbd3444ddb8716897ad7b04d7c935cdbcbaf63ad",
+  "assets": {
+    "exampleImage": {
+      "bytes": 30119,
+      "height": 280,
+      "path": "skills/design-system-architect/assets/example-image.png",
+      "sha256": "9d500e56657b515d98dcb8d437f4f93b97ec6b186fa38950c527939a6b685a4c",
+      "width": 1072
+    },
+    "icon": {
+      "bytes": 4987,
+      "height": 240,
+      "path": "skills/design-system-architect/assets/icon.png",
+      "sha256": "61ea2c45e562b1fd56d4db17770c27628100c90c35e5277b39e3a251240fa3f8",
+      "width": 240
+    },
+    "illustration": {
+      "bytes": 18432,
+      "height": 480,
+      "path": "skills/design-system-architect/assets/illustration.png",
+      "sha256": "a1c5b83a66199bbd9e571262d97dceb9342b15d58d2ca6b1af24033cd63c6f88",
+      "width": 1440
+    }
+  },
+  "cloudPublished": false,
+  "code": "design-system-architect",
+  "compressedBytes": 61909,
+  "entries": {
+    "com.yuzhihuihe.ycps/manifest.json": {
+      "bytes": 445,
+      "sha256": "4ebd38fad65a3a04c63fb078e2fb4cd907dda7178741d54987d8b0277377b8ab"
+    },
+    "plugin.json": {
+      "bytes": 694,
+      "sha256": "47a57ef5a15e50d57d1a6876ab5065ea4490d0904586a086e69ccc0690e1ea1e"
+    },
+    "skills/design-system-architect/SKILL.md": {
+      "bytes": 19802,
+      "sha256": "199141eb4ff577f2ba2debe65a7c7f9db197a0bb06545064550aabba73d5ad52"
+    },
+    "skills/design-system-architect/assets/example-image.png": {
+      "bytes": 30119,
+      "sha256": "9d500e56657b515d98dcb8d437f4f93b97ec6b186fa38950c527939a6b685a4c"
+    },
+    "skills/design-system-architect/assets/icon.png": {
+      "bytes": 4987,
+      "sha256": "61ea2c45e562b1fd56d4db17770c27628100c90c35e5277b39e3a251240fa3f8"
+    },
+    "skills/design-system-architect/assets/illustration.png": {
+      "bytes": 18432,
+      "sha256": "a1c5b83a66199bbd9e571262d97dceb9342b15d58d2ca6b1af24033cd63c6f88"
+    },
+    "skills/design-system-architect/references/deliverable-templates.md": {
+      "bytes": 2294,
+      "sha256": "30399705db18726aaa6850ddd06df8ddd5469e4a1c808edcf728b501c90f79bb"
+    },
+    "skills/design-system-architect/references/worked-example.md": {
+      "bytes": 3963,
+      "sha256": "a08ea0dffaebcab9d918a50e48927cab1eab2aea20433f5b429636aa5df37c11"
+    }
+  },
+  "entryCount": 8,
+  "expandedBytes": 80736,
+  "kind": "EXPERT",
+  "presentation": {
+    "canvasNodes": {
+      "en": 20,
+      "zh": 20
+    },
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  "runtime": {
+    "dependencies": [],
+    "entryAgent": "main",
+    "minClientVersion": "2026.6.30"
+  },
+  "validationScope": "Deterministic packaging, identity, metadata budgets, canvas geometry/runs, decoded asset sizes. See acceptance results for production parser tests.",
+  "version": "1.0.0",
+  "ycpsVersion": "1.1.0"
+}

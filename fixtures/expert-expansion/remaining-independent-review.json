@@ -1,0 +1,94 @@
+{
+  "reviewKind": "independent-static-content-review",
+  "reviewDate": "2026-10-08",
+  "scope": "逐份阅读 7 个 spec 的 instructions 与 acceptanceCases，以及各自 deliverable-templates.md 和 worked-example.md。",
+  "evidenceBoundary": "仅为源内容与示例代码的静态审查；实际示例运行记录见各自 author-check，导入和模型试验另行记录；本报告不声称宿主实际测试。",
+  "openIssueCount": 0,
+  "experts": [
+    {
+      "code": "wechat-official-account-operator",
+      "result": "reviewed",
+      "sourceSha256": {
+        "specs/wechat-official-account-operator.json": "38c5e35d61419d0974c4da053b468d382afe7a440aba25803429175303ca1d8b",
+        "wechat-official-account-operator/references/deliverable-templates.md": "82b1d32c179a989787a446f5dcd8fe956836b7756cb2407d479aa90a9063dccc",
+        "wechat-official-account-operator/references/worked-example.md": "d648ee464164dfe270f14e1779cb81a2cd94e11c95ba2f47e4b979f966a43063"
+      },
+      "evidenceNote": "正文与模板均要求可粘贴成稿、逐项核事实和区分写稿/草稿/预览/发表；示例明示冲突日期与缺失报名链接，并正确计算 400/2000=20%、375/2500=15%。",
+      "openIssues": []
+    },
+    {
+      "code": "adaptive-delivery-expert",
+      "result": "reviewed",
+      "sourceSha256": {
+        "specs/adaptive-delivery-expert.json": "4fda67dd7cdf32639cefbb9c458569bfed792d5b89ec73974c38b72afb3554c3",
+        "adaptive-delivery-expert/references/deliverable-templates.md": "5c355a737dc6870334dcd08488c3f9cafd58a34b3a02c279a3e817a25b384cbf",
+        "adaptive-delivery-expert/references/worked-example.md": "f43c079c085dae87b3a735a7d6d63cd01e652c0a2e4f48c413ab25b1cb9ae988"
+      },
+      "evidenceNote": "正文和模板要求直接交付完整成果并重新读取已写文件；示例一页建议满足离线硬条件，首年 A=1400 元、B=1320 元及 100 元预算余量正确。",
+      "openIssues": []
+    },
+    {
+      "code": "news-briefing-expert",
+      "result": "reviewed",
+      "sourceSha256": {
+        "specs/news-briefing-expert.json": "0c657609cb00079d0906ef4d93027c82eb8be9dd33c76bd465334d777c6cb7a9",
+        "news-briefing-expert/references/deliverable-templates.md": "8579ee7693812e94ac4b5ca347d5bac5a8c9aa77154e2d9b9b29f276a95b7df9",
+        "news-briefing-expert/references/worked-example.md": "8e5d48798c0b80d5b68960e67461ca2d40d11ae890319e35713b506ee5fe74af"
+      },
+      "evidenceNote": "正文、模板与示例把 10:30 公开号截止、13:00 快照取阅和事后更正分开；13:10+09:00 换算为 12:10+08:00，较 11:40 晚 30 分钟；转载未当独立证据。",
+      "openIssues": []
+    },
+    {
+      "code": "design-system-architect",
+      "result": "reviewed",
+      "sourceSha256": {
+        "specs/design-system-architect.json": "8c507526baa4e24890a30221249037298ea2901f6a84df09edd5d9da39e17cbf",
+        "design-system-architect/references/deliverable-templates.md": "30399705db18726aaa6850ddd06df8ddd5469e4a1c808edcf728b501c90f79bb",
+        "design-system-architect/references/worked-example.md": "a08ea0dffaebcab9d918a50e48927cab1eab2aea20433f5b429636aa5df37c11"
+      },
+      "evidenceNote": "正文与模板区分 token 映射、真实消费方和运行验证；示例悬停仅对非禁用按钮生效，静态映射检查明确不证明浏览器键盘行为或 WCAG 整体符合。",
+      "openIssues": []
+    },
+    {
+      "code": "fullstack-delivery-expert",
+      "result": "reviewed",
+      "sourceSha256": {
+        "specs/fullstack-delivery-expert.json": "5f5f781ee967811feb7cb597d19bb974ec3f210be31811f578fea0b953e6e15c",
+        "fullstack-delivery-expert/references/deliverable-templates.md": "a45f38f15ae3d2ad418cfd34d9d979178e467f88c9a25cae751b60f1aa5f31db",
+        "fullstack-delivery-expert/references/worked-example.md": "f4e084d1c2b1ca3c1133d2732dc62b8295b1b763c4ed14bdb464e89f22d24484"
+      },
+      "evidenceNote": "正文要求沿现有栈做纵向功能并分层报告验证；示例服务端模型由可信认证层传入 principal，SQLite 重开检查持久化，明确前端/HTTP/项目迁移未验证。",
+      "openIssues": []
+    },
+    {
+      "code": "startup-partner",
+      "result": "reviewed",
+      "sourceSha256": {
+        "specs/startup-partner.json": "eef3cf2c661d661bae341a19e64759f5d1d4f13129744b701f1d7dedc565d2fc",
+        "startup-partner/references/deliverable-templates.md": "4a383728e4011987f9e6cd70127781dba0444c570d15a4fcffbd2cca053e1f06",
+        "startup-partner/references/worked-example.md": "f4908c3b1cb0a4e12f5df2903b339e94029a91e17e26a77bc96077e92f3f28aa"
+      },
+      "evidenceNote": "正文与模板将熟人访谈、付费、因果归因及现金分开；示例 199-29-120-240=-190 元、期末 810 元与第 3 月条件式回本算术一致。",
+      "openIssues": []
+    },
+    {
+      "code": "workspace-builder",
+      "result": "reviewed",
+      "sourceSha256": {
+        "specs/workspace-builder.json": "44d54e8df20a1b0190235009849d8e5fe46e7fe8ebbd9143fb5c06c8b99b14df",
+        "workspace-builder/references/deliverable-templates.md": "41f0742a11a1941d3ecaa48b743c66296253105e283ccee9f18d1cf240244abf",
+        "workspace-builder/references/worked-example.md": "0fec6035901844a711c3a63d4c61414684a42cd5726b0b62ddc99f21d1da54a1"
+      },
+      "evidenceNote": "正文与模板要求可操作、持久化及安全恢复；修复后示例导入与启动均只保留 id/title/done，设 500 条上限，损坏存档阻止普通覆盖并可导出原文，未声称已完成浏览器验证。",
+      "openIssues": [],
+      "resolvedFindings": [
+        {
+          "id": "WB-IMPORT-EXTRA-FIELDS",
+          "status": "resolved",
+          "originalEvidence": "先前示例 validBackup 仅检查 id/title/done，却把 incoming.tasks 原对象直接传入 persist，会保留并重新导出额外字段；这与 spec 验收用例的只提取约定字段不一致。",
+          "resolutionEvidence": "当前示例在导入时使用 incoming.tasks.map(({id, title, done}) => ({id, title: title.trim(), done}))；启动读取已有存档也作相同映射；当前 spec 正文补充只提取约定字段并忽略额外指令文字。"
+        }
+      ]
+    }
+  ]
+}

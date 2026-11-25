@@ -1,0 +1,37 @@
+{
+  "expert": "wechat-official-account-operator",
+  "status": "completed_local_trial",
+  "skillSha256": "E8DEBFAA6686DE6D4DF8AB12EE4177B2A7F757E24D519D76FDEBDFFE08D33174",
+  "readFiles": [
+    "SKILL.md",
+    "references/deliverable-templates.md",
+    "references/worked-example.md",
+    "validation-fixture/input.json"
+  ],
+  "createdFiles": [
+    "validation-fixture/output/article.md",
+    "validation-fixture/output/metrics.csv",
+    "validation-fixture/output/review.md",
+    "validation-fixture/trial-result.json",
+    "validation-fixture/trial-response.md"
+  ],
+  "executedChecks": [
+    "Get-FileHash -Algorithm SHA256 on SKILL.md",
+    "Import-Csv metrics.csv; recomputed readPeople/deliveredPeople*100 and sharePeople/readPeople*100 for both rows; asserted equality with CSV values",
+    "Asserted A menuClickPeople blank, B menuClickPeople 18",
+    "Read article.md and review.md; asserted article excludes the unsupported 30-day guarantee and review excludes cross-article menu-click-rate comparison",
+    "Listed created output files and verified nonzero lengths"
+  ],
+  "arithmetic": {
+    "A": {"readRatePct": 25, "sharePeoplePerReadPeoplePct": 4},
+    "B": {"readRatePct": 30, "sharePeoplePerReadPeoplePct": 5},
+    "differenceBMinusA": {"readRatePercentagePoints": 5, "sharePeoplePerReadPeoplePercentagePoints": 1}
+  },
+  "unverified": [
+    "WeChat account, editor insertion, mobile preview, saved draft, and publication",
+    "Actual backend report and metric field definitions beyond the supplied input",
+    "Original care instructions for individual flower varieties, image rights, and cover suitability",
+    "Title or content causal impact, audience/channel comparability, timezone, extraction date, and deduplication details"
+  ],
+  "externalActions": "none"
+}

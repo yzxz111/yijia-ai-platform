@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.yuzhihuihe.com/ycps/1.0.0/expert-manifest.schema.json",
+  "entryAgent": "main",
+  "agents": [
+    {
+      "id": "main",
+      "role": "LEAD",
+      "instructions": {
+        "type": "ENTRY_SKILL"
+      },
+      "bindings": []
+    }
+  ],
+  "dependencies": [],
+  "permissionRequests": {
+    "tools": [],
+    "network": [],
+    "filesystem": []
+  },
+  "hostRequirements": {}
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-08",
+  "code": "news-briefing-expert",
+  "status": "passed_local_trial",
+  "runner": {
+    "model": "gpt-6-sol",
+    "reasoningEffort": "ultra",
+    "environment": "Independent Codex subagent reading the packaged Entry Skill and references; not the Yuzai/cloud-host LLM."
+  },
+  "artifactSha256": "7f913ce13cfd053feb9ef5c01c64f7e4553b7fd9ef28c151cf3f12b036a3d5ef",
+  "skillSha256": "7449b29832af054152d41f8f6e18816ef94a0c4ba2cab410b754ae439c01e651",
+  "executedSkillSha256": "7449b29832af054152d41f8f6e18816ef94a0c4ba2cab410b754ae439c01e651",
+  "reviewedBy": "Parent agent",
+  "parentReview": [
+    "完整读取 brief.md 与 sources.csv；7 条摘要归并为 2 条窗口内确认动态，转载和更正没有多算为独立事件。",
+    "复核 UTC 到 +08 时间，N5 08:30 晚于截止排除，N7 前日 07:00 早于窗口排除；N6 匿名传言单列。",
+    "明确只读取输入摘要，不把 N1.txt 等文件标签冒充实际打开的文件，不声称实时联网或已发送提醒。"
+  ],
+  "trialReport": "validation-fixture/trial-result.json",
+  "evidenceSha256": {
+    "input.json": "b6b4d7180fe7c5bbc11d6684e1cfc8d0b011716db32f56c52ee3d1f5f81dff7f",
+    "N1.txt": "4302845e10c8217b44b3a9768d083d6d574a7171e95984d4828a2e11f9963477",
+    "N2.txt": "546d25a8313624dbbaca91fd5e05ff7186f82440cf94dc9189073dd6505410a6",
+    "N3.txt": "9c6e09a154a726d6e92c9e3b4892127e5219926c3a619fe23b817113707dbc61",
+    "N4.txt": "5a7b82c903b9e0cced4524b36652bdca689ba48360723c85f3e951fa1132b261",
+    "N5.txt": "a16ad106ea5d91ca2005c7269e4760d2402ba246bc8a9646459fb75a15eddede",
+    "N6.txt": "0135c51902986941800270ab53c85317a47c6a390cdd1f3aaac861390e9a1ed7",
+    "N7.txt": "d88c13c3178bd1b667fdb03048b71e8c9c77decb0c537e9060811ac8fc0da9f7",
+    "review-contract.json": "3a4fc0211ce0b0329b2c35313c191d4818c9aa5aa657ddd583f9fe1d462e7dd4",
+    "trial-response.md": "c0eebb16a9f52335cb5fa97f50e10db74bb41cc7c19af4b8f74db36c8fbec69b",
+    "trial-result.json": "12ff5d1fe003d1ff286475a9b01461888037fb8e5567d852d317c046a3b835e2",
+    "output/brief.md": "d265783822ed13dea8428963c1e0ab2ae677c5b8543a6482554302441319654a",
+    "output/sources.csv": "f790773a866a8c36e692a2dc7fbbef37edf08f1e903240bd23d4173952509716"
+  },
+  "limits": [
+    "虚构材料与隔离任务的一次试用不证明所有模型和真实项目都能可靠完成。",
+    "没有在线发布、真实客户操作或生产服务验收。",
+    "未把 10 个静态场景写成 10 次模型运行。"
+  ]
+}

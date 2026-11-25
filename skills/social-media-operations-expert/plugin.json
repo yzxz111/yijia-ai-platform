@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "social-media-operations-expert",
+  "version": "1.0.0",
+  "description": "Produce evidence-backed ads, platform copy, content calendars, and short-video plans, scripts, storyboards and packaging copy for manual use.",
+  "author": {
+    "name": "Yuzhi"
+  },
+  "license": "Proprietary",
+  "keywords": [
+    "social-media",
+    "advertising",
+    "short-video",
+    "content-calendar"
+  ],
+  "extensions": {
+    "com.yuzhihuihe.ycps": {
+      "ycpsVersion": "1.0.0",
+      "kind": "EXPERT",
+      "entrySkill": "social-media-operations-expert",
+      "manifest": "./com.yuzhihuihe.ycps/manifest.json",
+      "requiredFeatures": []
+    }
+  }
+}

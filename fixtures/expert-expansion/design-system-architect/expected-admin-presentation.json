@@ -1,0 +1,833 @@
+{
+  "canvas": {
+    "en": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "One sentence"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": ", turn design rules into components"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "Existing tokens · themes · button states"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "Four blues appear in old buttons. Define semantic tokens for both themes and focus state."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "CSS variables, a button component, and two consumer pages are available."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 36,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "Button token migration"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "field": "preview.intro",
+          "height": 42,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "text": "Audit old values, then update the component and real consumers."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 328
+        },
+        {
+          "field": "preview.table",
+          "height": 172,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "Layer / Decision / Check"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              25,
+              45,
+              30
+            ],
+            "headers": [
+              "Layer",
+              "Decision",
+              "Check"
+            ],
+            "rows": [
+              [
+                "Primitives",
+                "Consolidate blues",
+                "Audit uses"
+              ],
+              [
+                "Semantics",
+                "Map action color per theme",
+                "Check states"
+              ],
+              [
+                "Consumers",
+                "Update button and pages",
+                "Build and keys"
+              ]
+            ]
+          },
+          "width": 520,
+          "x": 48,
+          "y": 380
+        },
+        {
+          "field": "title",
+          "height": 38,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "Design System Architect"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 70,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "Turn existing UI rules into usable tokens, component contracts, and a measured migration plan."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 272
+        },
+        {
+          "field": "usageGuide",
+          "height": 92,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Share your repo or design references, target components, themes, and platform; the expert records checks and migration gaps."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 352
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Token audit"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 198
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Component rules"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 198
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Migration checks"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 226
+        },
+        {
+          "field": "prompt.0",
+          "height": 70,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Audit current colors and define semantic tokens and interaction states for buttons and forms."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 458
+        },
+        {
+          "field": "prompt.1",
+          "height": 70,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Add a dark theme to this component library with migration mapping, usage, and rollback."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 536
+        },
+        {
+          "field": "prompt.2",
+          "height": 70,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Check this dialog’s keyboard, focus, and color evidence; separate local checks from page review."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 614
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 56,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Check focus and keyboard use in a running page; one contrast ratio proves only a local pairing."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 566
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 56,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "List remaining hardcoded values and old tokens with a rollback point."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 628
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    },
+    "zh": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "一句话"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "，让设计规则真正进入组件"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "现有变量 · 双主题 · 按钮状态"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "旧按钮用了四种蓝色；请统一语义 token，覆盖两主题和焦点态。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "提供 CSS 变量、按钮组件与两个消费页面。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 36,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "按钮 token 迁移切片"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "field": "preview.intro",
+          "height": 42,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "text": "先盘点旧值，再改一处组件和实际消费方。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 328
+        },
+        {
+          "field": "preview.table",
+          "height": 172,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "层级 / 决定 / 核验"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              25,
+              45,
+              30
+            ],
+            "headers": [
+              "层级",
+              "决定",
+              "核验"
+            ],
+            "rows": [
+              [
+                "基础值",
+                "归并重复蓝色值",
+                "清查引用"
+              ],
+              [
+                "语义层",
+                "行动色映射双主题",
+                "检查状态"
+              ],
+              [
+                "消费方",
+                "替换按钮与两页用法",
+                "构建与键盘"
+              ]
+            ]
+          },
+          "width": 520,
+          "x": 48,
+          "y": 380
+        },
+        {
+          "field": "title",
+          "height": 38,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "设计系统架构师"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 70,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "将现有视觉规范变成可消费的 token、组件契约与迁移计划，逐层验证一致性和可访问性。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 272
+        },
+        {
+          "field": "usageGuide",
+          "height": 92,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "提供代码仓库、现有设计规范或页面截图，并说明目标组件、主题和使用平台；专家会标明可验证范围与待迁移处。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 352
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Token 清查"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 198
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "组件契约"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 198
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "迁移验收"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 226
+        },
+        {
+          "field": "prompt.0",
+          "height": 70,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "请清查现有颜色变量，为按钮和表单建立语义 token 与交互状态。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 458
+        },
+        {
+          "field": "prompt.1",
+          "height": 70,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "请在原组件库补齐深色主题，给迁移映射、消费样例和回退办法。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 536
+        },
+        {
+          "field": "prompt.2",
+          "height": 70,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "请核对这个弹层的键盘、焦点和颜色证据，区分局部通过与整页待验。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 614
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 56,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "焦点样式和键盘路径需在可运行页面核验；颜色比值只证明局部组合。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 566
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 56,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "剩余硬编码与旧 token 列入迁移清单，并附回退位置。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 628
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    }
+  },
+  "description": "将现有视觉规范变成可消费的 token、组件契约与迁移计划，逐层验证一致性和可访问性。",
+  "descriptionEn": "Turn existing UI rules into usable tokens, component contracts, and a measured migration plan.",
+  "exampleImageLocale": "zh",
+  "examplePrompts": [
+    "请清查现有颜色变量，为按钮和表单建立语义 token 与交互状态。",
+    "请在原组件库补齐深色主题，给迁移映射、消费样例和回退办法。",
+    "请核对这个弹层的键盘、焦点和颜色证据，区分局部通过与整页待验。"
+  ],
+  "examplePromptsEn": [
+    "Audit current colors and define semantic tokens and interaction states for buttons and forms.",
+    "Add a dark theme to this component library with migration mapping, usage, and rollback.",
+    "Check this dialog’s keyboard, focus, and color evidence; separate local checks from page review."
+  ],
+  "name": "设计系统架构师",
+  "nameEn": "Design System Architect",
+  "preview": {
+    "heading": "一句话，让设计规则真正进入组件",
+    "intro": {
+      "text": "先盘点旧值，再改一处组件和实际消费方。",
+      "tone": "accent"
+    },
+    "material": "提供 CSS 变量、按钮组件与两个消费页面。",
+    "outputParagraphs": [
+      "焦点样式和键盘路径需在可运行页面核验；颜色比值只证明局部组合。",
+      "剩余硬编码与旧 token 列入迁移清单，并附回退位置。"
+    ],
+    "outputTitle": "按钮 token 迁移切片",
+    "request": "旧按钮用了四种蓝色；请统一语义 token，覆盖两主题和焦点态。",
+    "scene": "现有变量 · 双主题 · 按钮状态",
+    "table": {
+      "columnWidths": [
+        25,
+        45,
+        30
+      ],
+      "headers": [
+        "层级",
+        "决定",
+        "核验"
+      ],
+      "rows": [
+        [
+          "基础值",
+          "归并重复蓝色值",
+          "清查引用"
+        ],
+        [
+          "语义层",
+          "行动色映射双主题",
+          "检查状态"
+        ],
+        [
+          "消费方",
+          "替换按钮与两页用法",
+          "构建与键盘"
+        ]
+      ]
+    }
+  },
+  "previewEn": {
+    "heading": "One sentence, turn design rules into components",
+    "intro": {
+      "text": "Audit old values, then update the component and real consumers.",
+      "tone": "accent"
+    },
+    "material": "CSS variables, a button component, and two consumer pages are available.",
+    "outputParagraphs": [
+      "Check focus and keyboard use in a running page; one contrast ratio proves only a local pairing.",
+      "List remaining hardcoded values and old tokens with a rollback point."
+    ],
+    "outputTitle": "Button token migration",
+    "request": "Four blues appear in old buttons. Define semantic tokens for both themes and focus state.",
+    "scene": "Existing tokens · themes · button states",
+    "table": {
+      "columnWidths": [
+        25,
+        45,
+        30
+      ],
+      "headers": [
+        "Layer",
+        "Decision",
+        "Check"
+      ],
+      "rows": [
+        [
+          "Primitives",
+          "Consolidate blues",
+          "Audit uses"
+        ],
+        [
+          "Semantics",
+          "Map action color per theme",
+          "Check states"
+        ],
+        [
+          "Consumers",
+          "Update button and pages",
+          "Build and keys"
+        ]
+      ]
+    }
+  },
+  "summary": "清查现有视觉资产，建立语义 token 与组件状态契约，并分批迁移到真实消费方。",
+  "summaryEn": "Audit existing styles, define semantic tokens and component states, then migrate consumers with evidence.",
+  "taskTypes": [
+    "Token 清查",
+    "组件契约",
+    "迁移验收"
+  ],
+  "taskTypesEn": [
+    "Token audit",
+    "Component rules",
+    "Migration checks"
+  ],
+  "usageGuide": "提供代码仓库、现有设计规范或页面截图，并说明目标组件、主题和使用平台；专家会标明可验证范围与待迁移处。",
+  "usageGuideEn": "Share your repo or design references, target components, themes, and platform; the expert records checks and migration gaps."
+}

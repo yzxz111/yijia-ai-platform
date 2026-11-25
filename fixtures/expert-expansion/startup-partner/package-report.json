@@ -1,0 +1,84 @@
+{
+  "artifactSha256": "a6cb8ed8b6e5368be89eb2033c2ee70ef12081c58a072ac23e7d62e2db2a8a19",
+  "assets": {
+    "exampleImage": {
+      "bytes": 31398,
+      "height": 280,
+      "path": "skills/startup-partner/assets/example-image.png",
+      "sha256": "893b4b07b7ca36320cf7697abccfba5e87d0fdd2e8b3cf8a5a1890284df0984f",
+      "width": 1072
+    },
+    "icon": {
+      "bytes": 5807,
+      "height": 240,
+      "path": "skills/startup-partner/assets/icon.png",
+      "sha256": "03e032e1839c635a819476696a9ae1903476c98191dbff02324cbaf6a4e89d05",
+      "width": 240
+    },
+    "illustration": {
+      "bytes": 27714,
+      "height": 480,
+      "path": "skills/startup-partner/assets/illustration.png",
+      "sha256": "9f14eeffb34b8c1c1682a2b5b8318e94528419eeae3683fc80a3771495d4ec7a",
+      "width": 1440
+    }
+  },
+  "cloudPublished": false,
+  "code": "startup-partner",
+  "compressedBytes": 74985,
+  "entries": {
+    "com.yuzhihuihe.ycps/manifest.json": {
+      "bytes": 445,
+      "sha256": "4ebd38fad65a3a04c63fb078e2fb4cd907dda7178741d54987d8b0277377b8ab"
+    },
+    "plugin.json": {
+      "bytes": 731,
+      "sha256": "4583378e49d9e55e1a67bcc60e62ae293c04ae870c7c950cf845e93d019647c7"
+    },
+    "skills/startup-partner/SKILL.md": {
+      "bytes": 22247,
+      "sha256": "11c0f1f9944c88d29d96ed8dc3d7fa029e39fc28f582fe2835bc7f3b37a3eaa4"
+    },
+    "skills/startup-partner/assets/example-image.png": {
+      "bytes": 31398,
+      "sha256": "893b4b07b7ca36320cf7697abccfba5e87d0fdd2e8b3cf8a5a1890284df0984f"
+    },
+    "skills/startup-partner/assets/icon.png": {
+      "bytes": 5807,
+      "sha256": "03e032e1839c635a819476696a9ae1903476c98191dbff02324cbaf6a4e89d05"
+    },
+    "skills/startup-partner/assets/illustration.png": {
+      "bytes": 27714,
+      "sha256": "9f14eeffb34b8c1c1682a2b5b8318e94528419eeae3683fc80a3771495d4ec7a"
+    },
+    "skills/startup-partner/references/deliverable-templates.md": {
+      "bytes": 2760,
+      "sha256": "4a383728e4011987f9e6cd70127781dba0444c570d15a4fcffbd2cca053e1f06"
+    },
+    "skills/startup-partner/references/worked-example.md": {
+      "bytes": 4763,
+      "sha256": "f4908c3b1cb0a4e12f5df2903b339e94029a91e17e26a77bc96077e92f3f28aa"
+    }
+  },
+  "entryCount": 8,
+  "expandedBytes": 95865,
+  "kind": "EXPERT",
+  "presentation": {
+    "canvasNodes": {
+      "en": 20,
+      "zh": 20
+    },
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  "runtime": {
+    "dependencies": [],
+    "entryAgent": "main",
+    "minClientVersion": "2026.6.30"
+  },
+  "validationScope": "Deterministic packaging, identity, metadata budgets, canvas geometry/runs, decoded asset sizes. See acceptance results for production parser tests.",
+  "version": "1.0.0",
+  "ycpsVersion": "1.1.0"
+}

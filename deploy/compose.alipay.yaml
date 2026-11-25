@@ -1,0 +1,11 @@
+# Loaded by production.sh only when .secrets/alipay.env exists.
+# Keep the HTTPS overlay last. Keys must be provisioned before starting the service.
+services:
+  platform-service:
+    volumes:
+      - type: bind
+        source: ../.secrets/alipay
+        target: /run/payment/alipay
+        read_only: true
+        bind:
+          create_host_path: false

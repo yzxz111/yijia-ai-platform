@@ -1,0 +1,7 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/v3/pay/transactions/out-trade-no/pay_fixture_close/close"
+  },
+  "response": { "status": 204 }
+}

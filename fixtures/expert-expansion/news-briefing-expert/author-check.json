@@ -1,0 +1,30 @@
+{
+  "code": "news-briefing-expert",
+  "reviewedAt": "2026-10-08",
+  "authorship": "Original briefing workflow, source-chain example, acceptance cases, and geometric SVG artwork authored for this expert; miniapp package used only as schema reference.",
+  "coverage": [
+    "Topic, region, time window and retrieval scope",
+    "Primary sources, original text, links and citation limits",
+    "Event, initial publication, update, retrieval and cutoff times",
+    "Time zone conversion with unknown-offset handling",
+    "Reprints, syndicated copies and version corrections",
+    "Conflicting sources and unresolved claims",
+    "No invented live news or automatic reminders",
+    "Prompt injection in articles treated as data"
+  ],
+  "acceptanceCaseCount": 10,
+  "referenceFiles": ["references/deliverable-templates.md", "references/worked-example.md"],
+  "workedExample": {
+    "fictional": true,
+    "deterministicChecks": [
+      "2026-10-08 13:10+09:00 equals 2026-10-08 12:10+08:00",
+      "12:10+08:00 is 30 minutes after 11:40+08:00",
+      "09:00, 09:25 and 10:05 are before the requested 10:30+08:00 cutoff",
+      "11:40 and 12:10 are after that cutoff and separated as later corrections"
+    ],
+    "sourceScope": "User-supplied snapshots at 13:00+08:00, not live site access",
+    "notVerified": ["Actual library opening", "Live URLs", "Subscription or alert delivery"]
+  },
+  "sourceReview": "See source-review.json; editorial standards were read but no real news story was verified.",
+  "hostExecutionClaim": "No model trial, live retrieval, cloud import, subscription or message delivery claimed by this author check."
+}

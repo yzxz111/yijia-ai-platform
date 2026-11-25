@@ -1,0 +1,6 @@
+scenario,basis,currency,startingCash,payingCustomersAssumed,hypotheticalMonthlyPrice,hypotheticalVariableCostPerCustomer,customerReceiptsAssumed,variableCashOutAssumed,fixedCashOutAssumed,experimentCashOutAssumed,netCashAssumed,endingCashAssumed,formula,status
+S0_无实验费零付费,固定支出付现情景,CNY,12000,0,199,39,0,0,1800,0,-1800,10200,12000+0-0-1800-0,条件测算非实际余额
+S1_实验费零付费,固定支出与拟实验费均付现情景,CNY,12000,0,199,39,0,0,1800,600,-2400,9600,12000+0-0-1800-600,条件测算；600元未实际支出
+S2_实验费一位假设付费,假设1位按199元付费且发生39元变动付现,CNY,12000,1,199,39,199,39,1800,600,-2240,9760,12000+199-39-1800-600,条件测算；实际付费人数为0
+S3_实验费十二位假设付费,假设12位按199元付费且发生相应变动付现,CNY,12000,12,199,39,2388,468,1800,600,-480,11520,12000+2388-468-1800-600,敏感度情景非销售预测
+S4_实验费十五位假设付费,假设15位按199元付费且发生相应变动付现,CNY,12000,15,199,39,2985,585,1800,600,0,12000,12000+2985-585-1800-600,敏感度情景非销售预测

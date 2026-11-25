@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-08",
+  "code": "wechat-official-account-operator",
+  "status": "passed_local_trial",
+  "runner": {
+    "model": "gpt-6-sol",
+    "reasoningEffort": "ultra",
+    "environment": "Independent Codex subagent reading the packaged Entry Skill and references; not the Yuzai/cloud-host LLM."
+  },
+  "artifactSha256": "02f469e5ba771cb0a1c56aa7fed22165a0876e513b111088a400935715e1d585",
+  "skillSha256": "e8debfaa6686de6d4df8ab12ee4177b2a7f757e24d519d76fdebdffe08d33174",
+  "executedSkillSha256": "e8debfaa6686de6d4df8ab12ee4177b2a7f757e24d519d76fdebdffe08d33174",
+  "reviewedBy": "Parent agent",
+  "parentReview": [
+    "完整读取 article.md、metrics.csv、review.md；成稿仅依据给定虚构花材资料，未写成实际发布。",
+    "A/B 阅读率 250/1000=25%、240/800=30%；分享人数/阅读人数为 4%、5%；缺失菜单点击保持缺失，没有编造因果归因。",
+    "输出没有额外计算 B 菜单点击/阅读人数比；请求未要求该指标，材料中的 18 次点击已保留，因此不作为缺陷。"
+  ],
+  "trialReport": "validation-fixture/trial-result.json",
+  "evidenceSha256": {
+    "input.json": "fe62df51ebad8b1e6a1fb19a61956dbda69c28c9e50196ff7520fa8fbc76f39f",
+    "review-contract.json": "e5fb9bb3cdaf7b2c8fc8797be8289f49ed32915dc949d49a333715f3ab410b3c",
+    "trial-response.md": "6c8188d8d305be2cda06fa4eb49324c292e52e28b65fa11f5fc05c0eaae5ef18",
+    "trial-result.json": "b4110d8319ef4c4f8308c7281184b8eee740a6c86bbf88f55456275d7fae7c61",
+    "output/article.md": "e2582282458b72c61231f080116a97cf73b894b0dd2058c7d44cc687dd2577dd",
+    "output/metrics.csv": "c206731a0389b381235966a930a58a4a8acd038cc7e67bf9fb6ee83798639333",
+    "output/review.md": "afa5fe94ff4cdbe7285287c2d2efbb395c3796fbaf157e78d78744e460ea58d5"
+  },
+  "limits": [
+    "虚构材料与隔离任务的一次试用不证明所有模型和真实项目都能可靠完成。",
+    "没有在线发布、真实客户操作或生产服务验收。",
+    "未把 10 个静态场景写成 10 次模型运行。"
+  ]
+}

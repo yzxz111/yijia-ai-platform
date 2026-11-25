@@ -1,0 +1,3 @@
+org.springframework.test.context.TestExecutionListener=\
+com.yuzhihuihe.apiplatform.gateway.testsupport.GatewaySchedulingTestExecutionListener,\
+com.yuzhihuihe.apiplatform.gateway.testsupport.TestcontainersContextLifecycleListener

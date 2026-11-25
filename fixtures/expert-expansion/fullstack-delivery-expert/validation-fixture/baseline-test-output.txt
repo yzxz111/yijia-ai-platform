@@ -1,0 +1,171 @@
+✖ missing identity cannot list tasks (36.8778ms)
+✖ list contains only the authenticated owner records (9.6172ms)
+✖ new task trims title and cannot collide with sparse existing ids (7.0402ms)
+✖ blank and oversized titles are rejected without writes (5.3058ms)
+✖ foreign update returns 404 and leaves another owner record unchanged (4.3533ms)
+✔ boolean state crosses the real local HTTP boundary (4.4948ms)
+✖ string false is rejected without changing a boolean (3.3848ms)
+✖ client rejects HTTP failure with status (4.297ms)
+✖ malformed JSON returns 400 and subsequent request still works (6.134ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 1
+ℹ fail 8
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 219.4157
+
+✖ failing tests:
+
+test at acceptance.test.mjs:14:1
+✖ missing identity cannot list tasks (36.8778ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  200 !== 401
+  
+      at file:///D:/code/Yuzhi9.20/.scratch/remaining-expert-trials/fullstack-delivery-expert/acceptance.test.mjs:15:71
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async fixture (file:///D:/code/Yuzhi9.20/.scratch/remaining-expert-trials/fullstack-delivery-expert/acceptance.test.mjs:12:9)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 200,
+    expected: 401,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at acceptance.test.mjs:17:1
+✖ list contains only the authenticated owner records (9.6172ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      '1',
+  +   '3'
+    ]
+  
+      at file:///D:/code/Yuzhi9.20/.scratch/remaining-expert-trials/fullstack-delivery-expert/acceptance.test.mjs:18:78
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async fixture (file:///D:/code/Yuzhi9.20/.scratch/remaining-expert-trials/fullstack-delivery-expert/acceptance.test.mjs:12:9)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ '1', '3' ],
+    expected: [ '1' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at acceptance.test.mjs:20:1
+✖ new task trims title and cannot collide with sparse existing ids (7.0402ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '  New  ' !== 'New'
+  
+      at file:///D:/code/Yuzhi9.20/.scratch/remaining-expert-trials/fullstack-delivery-expert/acceptance.test.mjs:22:10
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async fixture (file:///D:/code/Yuzhi9.20/.scratch/remaining-expert-trials/fullstack-delivery-expert/acceptance.test.mjs:12:9)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '  New  ',
+    expected: 'New',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at acceptance.test.mjs:24:1
+✖ blank and oversized titles are rejected without writes (5.3058ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  201 !== 400
+  
+      at file:///D:/code/Yuzhi9.20/.scratch/remaining-expert-trials/fullstack-delivery-expert/acceptance.test.mjs:25:119
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async fixture (file:///D:/code/Yuzhi9.20/.scratch/remaining-expert-trials/fullstack-delivery-expert/acceptance.test.mjs:12:9)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 201,
+    expected: 400,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at acceptance.test.mjs:28:1
+✖ foreign update returns 404 and leaves another owner record unchanged (4.3533ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  200 !== 404
+  
+      at file:///D:/code/Yuzhi9.20/.scratch/remaining-expert-trials/fullstack-delivery-expert/acceptance.test.mjs:29:76
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async fixture (file:///D:/code/Yuzhi9.20/.scratch/remaining-expert-trials/fullstack-delivery-expert/acceptance.test.mjs:12:9)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 200,
+    expected: 404,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at acceptance.test.mjs:34:1
+✖ string false is rejected without changing a boolean (3.3848ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  200 !== 400
+  
+      at file:///D:/code/Yuzhi9.20/.scratch/remaining-expert-trials/fullstack-delivery-expert/acceptance.test.mjs:35:79
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async fixture (file:///D:/code/Yuzhi9.20/.scratch/remaining-expert-trials/fullstack-delivery-expert/acceptance.test.mjs:12:9)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 200,
+    expected: 400,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at acceptance.test.mjs:37:1
+✖ client rejects HTTP failure with status (4.297ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/code/Yuzhi9.20/.scratch/remaining-expert-trials/fullstack-delivery-expert/acceptance.test.mjs:38:3
+      at async fixture (file:///D:/code/Yuzhi9.20/.scratch/remaining-expert-trials/fullstack-delivery-expert/acceptance.test.mjs:12:9)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at acceptance.test.mjs:40:1
+✖ malformed JSON returns 400 and subsequent request still works (6.134ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  500 !== 400
+  
+      at file:///D:/code/Yuzhi9.20/.scratch/remaining-expert-trials/fullstack-delivery-expert/acceptance.test.mjs:42:10
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async fixture (file:///D:/code/Yuzhi9.20/.scratch/remaining-expert-trials/fullstack-delivery-expert/acceptance.test.mjs:12:9)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 500,
+    expected: 400,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

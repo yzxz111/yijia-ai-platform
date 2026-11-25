@@ -1,0 +1,16 @@
+{
+  "overflow": [],
+  "previewType": "Standalone rendering of package presentation; not a live application screenshot.",
+  "reviewedAt": "2026-10-08",
+  "visualInspection": {
+    "result": "Both preview PNGs inspected: title, cards and table readable, no observed clipping. Banner is a geometric phone/page/request illustration without letters, words or digits.",
+    "bannerHtmlCheck": "Renderer verified empty body textContent and no SVG text or foreignObject before rasterizing.",
+    "sharedBannerSha256": "e1ab389c6ca89817c696a6a61c50b253dfa4555f0a20f3b37303b6152799f71d",
+    "reviewedGeneratedScreenshots": [
+      "preview-zh.png",
+      "preview-en.png"
+    ]
+  },
+  "generatedPreviewScreenshotsVersioned": false,
+  "regenerate": "node scripts/render-expert-expansion.cjs --code wechat-miniapp-developer --preview"
+}

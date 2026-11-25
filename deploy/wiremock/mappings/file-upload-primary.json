@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/mock-primary/files"
+  },
+  "priority": 10,
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": "file-wiremock-primary",
+      "object": "file",
+      "purpose": "file-extract"
+    }
+  }
+}

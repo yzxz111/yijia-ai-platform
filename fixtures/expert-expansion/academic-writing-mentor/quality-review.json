@@ -1,0 +1,139 @@
+{
+  "artifact": "academic-writing-mentor",
+  "reviewType": "static_instructions_and_offline_scenario_walkthrough",
+  "reviewedSource": "system/fixtures/expert-expansion/specs/academic-writing-mentor.json",
+  "scenarioFile": "quality-scenarios.json",
+  "status": "reviewed",
+  "initialReviewStatus": "issues_found",
+  "scopeStatement": "由子 Agent 初次阅读 spec.instructions 与生成的 SKILL.md，并手工按指令构造八个简短示例响应和逐条判定；其后对修订版 spec、SKILL、两份参考文件与重建归档逐项复核。全程是离线指令演练与静态审查；没有调用真实 Yuzai 应用端模型、没有走导入后的会话，也不代表端到端行为测试通过。",
+  "overallAssessment": "初版发现六项影响可用性或可信度的指令问题，保留如下供追溯。最终修订版的逐项结论见 finalReview。",
+  "findings": [
+    {
+      "id": "Q01",
+      "severity": "high",
+      "location": "instructions / 固定交付格式与降级 / 末句",
+      "issue": "“亦不得声称已检索、已执行、已保存、已提交或已发表”按字面连确实检索、执行和保存的情形也禁止如实汇报，与文件交付及核验流程冲突。",
+      "impact": "已完成的操作可能被误报为未完成，用户无法判定真正进度。",
+      "recommendedChange": "改为只有在相应操作真实完成、成功状态得到核对后才能声称已检索、已执行或已保存；提交或发表需能确认外部系统回执。",
+      "scenarioIds": ["T06", "T08"]
+    },
+    {
+      "id": "Q02",
+      "severity": "high",
+      "location": "instructions / 固定交付格式与降级；执行流程 1、2、4",
+      "issue": "所有任务默认强制任务状态、材料范围、证据台账、引文待核与下一步，且正文每项事实主张都须嵌 Cxx/Sxx；一段纯语言润色也会变成多表格答复，降低可复制性。附件无法读取时固定给问题框架与检索清单，也可能与润色任务无关。",
+      "impact": "用户要的成稿被元信息淹没，回答偏题。",
+      "recommendedChange": "以用户指定交付为主；只有证据审查、综述、结果写作和返修等需要追溯时提供简明台账。成稿正文保持可复制，编号映射放在必要的附注中。附件不可读时只给与当前任务有关的最小可用结果。",
+      "scenarioIds": ["T05", "T07", "T08"]
+    },
+    {
+      "id": "Q03",
+      "severity": "high",
+      "location": "instructions / 执行流程 2、5",
+      "issue": "“已核原文、仅摘要可见、仅书目信息、冲突待核”混合了材料读取范围、出版身份核验、主张支持度和冲突状态；用户贴出的摘录若含原话，也容易被标成已核原文，给人已外部验证的印象。",
+      "impact": "把未核实的出版物或片段误包装成可直接引用的证据；两份已读但冲突的材料会失去各自原有的核验状态。",
+      "recommendedChange": "至少分开记录：可见范围（用户贴书目/摘要/摘录/全文）、来源身份（外部未核/已按原站点核）、对特定主张的关系（支持/部分支持/不支持/相反/不确定）、冲突及适用条件。只有亲自取得可靠出版来源并核对对应位置时称“原文已核”，用户贴文则写“所给片段内可见”。",
+      "scenarioIds": ["T02", "T03", "T04"]
+    },
+    {
+      "id": "Q04",
+      "severity": "medium",
+      "location": "instructions / 执行流程 3",
+      "issue": "统一要求“可检验主张”“变量”“数据处理”，容易把理论研究、史料考证、文学细读和质性分析硬套进定量研究框架。",
+      "impact": "开题建议会误设变量或假检验，并忽略概念澄清、解释路径、反例与材料版本。",
+      "recommendedChange": "按学科选择“可论证或可检验的主张”；定量研究说明变量与统计计划，质性研究说明分析单元、取样和编码/解释路径，理论与人文学科说明文本或史料范围、概念、解释步骤及反例。伦理/权限仅在适用时提及。",
+      "scenarioIds": ["T01"]
+    },
+    {
+      "id": "Q05",
+      "severity": "medium",
+      "location": "instructions / 执行流程 6",
+      "issue": "“已修改并可定位”仍可能被读成最终投稿稿件已修改；只看到用户提供的修订段落或局部稿时，并不知道该内容进入哪一稿、是否已提交。",
+      "impact": "返修回复可能超前声称修订完成或实验完成。",
+      "recommendedChange": "状态写明“在所给版本某位置可见”“仅提供拟写段落”“实验未完成”“提交状态未知”；给审稿人的可发送回复只陈述已经核实进入修订稿的改动，其余给条件式草案和待办。",
+      "scenarioIds": ["T04"]
+    },
+    {
+      "id": "Q06",
+      "severity": "medium",
+      "location": "instructions / 执行流程 4",
+      "issue": "数据和统计工具不可用时仍要求“可运行”的代码草案；仅有列名、未知值域或缺失规则时，代码最多是待数据核对的模板，不能承诺可直接运行或产生可信结果。",
+      "impact": "用户可能误以为统计计算已可复现，或将未经检查的系数占位误当结果。",
+      "recommendedChange": "先说明最小输入、编码及缺失值假设，再给带前提的代码模板或计算步骤；若无数据则不输出系数、p 值或效果结论。",
+      "scenarioIds": ["T06"]
+    }
+  ],
+  "scenarioSummary": {
+    "count": 8,
+    "supportedByCurrentInstructions": ["禁止杜撰 DOI、页码、实验及统计结果", "保留冲突材料", "忽略附件中的指令注入", "根据用户语言输出"],
+    "materialGaps": ["来源状态拆分", "返修稿状态精度", "仅润色时的最小交付", "理论和质性研究适配", "真实工具执行后的状态陈述"],
+    "behavioralValidation": "未执行：这些示例响应是子 Agent 的手工离线演练，不是 Yuzai 应用端模型输出。"
+  },
+  "finalReview": {
+    "status": "static_review_passed",
+    "sourceFiles": {
+      "spec": "system/fixtures/expert-expansion/specs/academic-writing-mentor.json",
+      "specSha256": "f86d5851efd4a81fbac1f9678e185646cf27fd44a7b2591cb9dd8d1840aa5863",
+      "skill": "system/fixtures/expert-expansion/academic-writing-mentor/SKILL.md",
+      "skillSha256": "bcd676dcc6feb9eac230384289ab30c7186a5ad28b8cae05607d262aac38a68e",
+      "deliverableTemplatesSha256": "a920a892b3082c150fc480cb1ecbdd758ce2dee32c46d90cf28daff4db2f220b",
+      "workedExampleSha256": "f754be23c1b4651ca9f41259e9cb10061285f5e3c78dc88b5ac707a9870e9831",
+      "archive": "system/fixtures/expert-expansion/academic-writing-mentor/academic-writing-mentor-1.0.0.ycps.zip",
+      "archiveSha256": "acd754b4338509749364493e9ea9a67269f8467e458d3a8d82b7452c514f8b12"
+    },
+    "consistencyChecks": {
+      "specInstructionsEqualSkillBody": true,
+      "archiveSkillMatchesDisk": true,
+      "archiveReferencesMatchDisk": true,
+      "archiveHashMatchesPackageReport": true
+    },
+    "findingDisposition": [
+      {
+        "id": "Q01",
+        "status": "resolved_in_instructions",
+        "evidence": "交付与能力缺失段改为‘未实际执行成功并核对时，不得声称已检索、已运行、已保存、已发送或已提交’，允许真实完成并核对后如实报告。"
+      },
+      {
+        "id": "Q02",
+        "status": "resolved_in_instructions",
+        "evidence": "先判断任务段明确纯润色只给修订段落和必要说明；执行流程4保持正文清洁，Cxx/Sxx放附表；交付段只对论证/引用附最小台账；不可读附件只交当前任务可完成部分。"
+      },
+      {
+        "id": "Q03",
+        "status": "resolved_in_instructions",
+        "evidence": "执行流程2将读取范围、来源身份、相对Cxx支持度及争议关联列为四个独立维度；用户摘录不等于外部核实真实出版记录，已核书目不等于全文支持。参考模板也单列争议关联。"
+      },
+      {
+        "id": "Q04",
+        "status": "resolved_in_instructions",
+        "evidence": "执行流程3分别列出实证、质性、理论/规范/文学研究的材料和推理路径，采用‘可论证或可检验主张’，不强迫量化假设。"
+      },
+      {
+        "id": "Q05",
+        "status": "resolved_in_instructions",
+        "evidence": "执行流程7区分整稿某处已核、局部片段已核但整稿未核、仅用户声称和计划工作，并要求返修提交前核对实际版本；不得代作者承诺额外实验。"
+      },
+      {
+        "id": "Q06",
+        "status": "resolved_in_instructions",
+        "evidence": "执行流程5要求代码模板声明列名、编码、缺失处理和依赖前提；未用实际输入核查时不保证可直接运行，不填未提供的计算结果。"
+      }
+    ],
+    "additionalIssuesFoundDuringFinalPass": [
+      {
+        "issue": "曾一度禁止在没有原始数据时填写任何样本量或置信区间，阻止忠实转述用户材料明示数值。",
+        "status": "resolved_in_instructions",
+        "evidence": "最终执行流程5允许带出处转述用户材料明示的系数、p值、区间和样本量，并要求标‘未独立复算’；同时禁止补造材料未提供的数值。"
+      },
+      {
+        "issue": "曾将‘冲突’和‘支持/不支持’放在同一个支持度枚举里，难以同时表达局部支持与材料分歧。",
+        "status": "resolved_in_instructions",
+        "evidence": "最终执行流程2把相对Cxx支持度与独立争议关联分开，并明确支持局部主张与另一材料有分歧可同时成立。"
+      }
+    ],
+    "nonblockingObservation": "来源身份中的‘仅用户提供’与‘未作外部核验’语义可重叠；实际台账宜合写‘仅用户提供，外部未核’。正文已经明确用户贴出的内容不等于核实出版身份，因此此处不阻断静态结论。",
+    "scenarioCoverage": "T01—T08 的最终静态判定和相应覆盖依据见 quality-scenarios.json；示例响应是人工按指令写出的目标样例，不是模型输出。",
+    "limits": "本复核只验证文本指令、参考资料、归档内容一致性和八个离线情景的静态覆盖。没有在真实 Yuzai 应用端导入后调用模型进行端到端行为测试，也没有用真实论文、真实数据库或投稿系统验证实际答复质量。",
+    "conclusion": "原六项问题和复核时新增的两处冲突均有可定位修复；八个案例的目标行为在最终指令中有明确依据。可进入真实宿主验收，但不能据此声称模型行为或端到端体验已通过。"
+  }
+}

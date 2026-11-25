@@ -1,0 +1,84 @@
+{
+  "artifactSha256": "ce6024f823feafbe6f94c3ba8b49ce2082aabcfa42846aec15e09a49d4720e73",
+  "assets": {
+    "exampleImage": {
+      "bytes": 41360,
+      "height": 280,
+      "path": "skills/wechat-miniapp-developer/assets/example-image.png",
+      "sha256": "38603b11263a451a44ebcfa26b1cdf8e1a907486e368d945e2f7eacad3813b56",
+      "width": 1072
+    },
+    "icon": {
+      "bytes": 5843,
+      "height": 240,
+      "path": "skills/wechat-miniapp-developer/assets/icon.png",
+      "sha256": "274f91ae7b9debf6f2750c36f59ce5dda144395956386966ab679e01d73265e1",
+      "width": 240
+    },
+    "illustration": {
+      "bytes": 31389,
+      "height": 480,
+      "path": "skills/wechat-miniapp-developer/assets/illustration.png",
+      "sha256": "e1ab389c6ca89817c696a6a61c50b253dfa4555f0a20f3b37303b6152799f71d",
+      "width": 1440
+    }
+  },
+  "cloudPublished": false,
+  "code": "wechat-miniapp-developer",
+  "compressedBytes": 89410,
+  "entries": {
+    "com.yuzhihuihe.ycps/manifest.json": {
+      "bytes": 445,
+      "sha256": "4ebd38fad65a3a04c63fb078e2fb4cd907dda7178741d54987d8b0277377b8ab"
+    },
+    "plugin.json": {
+      "bytes": 741,
+      "sha256": "f17178f8faf87fd0ac681df5589375020d72efa546c56846374292909eb607e1"
+    },
+    "skills/wechat-miniapp-developer/SKILL.md": {
+      "bytes": 23452,
+      "sha256": "b1a5a2c79029a329dc7e416d4187627285ed2687b71051e005ba83630ee54683"
+    },
+    "skills/wechat-miniapp-developer/assets/example-image.png": {
+      "bytes": 41360,
+      "sha256": "38603b11263a451a44ebcfa26b1cdf8e1a907486e368d945e2f7eacad3813b56"
+    },
+    "skills/wechat-miniapp-developer/assets/icon.png": {
+      "bytes": 5843,
+      "sha256": "274f91ae7b9debf6f2750c36f59ce5dda144395956386966ab679e01d73265e1"
+    },
+    "skills/wechat-miniapp-developer/assets/illustration.png": {
+      "bytes": 31389,
+      "sha256": "e1ab389c6ca89817c696a6a61c50b253dfa4555f0a20f3b37303b6152799f71d"
+    },
+    "skills/wechat-miniapp-developer/references/deliverable-templates.md": {
+      "bytes": 4534,
+      "sha256": "b34be837b6978cc56261af36b80666c0fc776646ac90e093aff07819b2de571b"
+    },
+    "skills/wechat-miniapp-developer/references/worked-example.md": {
+      "bytes": 5688,
+      "sha256": "d21c15810ee1bc9392052c0e84fc9c49f8ed54af60e51b41713fc94a7b86adb9"
+    }
+  },
+  "entryCount": 8,
+  "expandedBytes": 113452,
+  "kind": "EXPERT",
+  "presentation": {
+    "canvasNodes": {
+      "en": 20,
+      "zh": 20
+    },
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  "runtime": {
+    "dependencies": [],
+    "entryAgent": "main",
+    "minClientVersion": "2026.6.30"
+  },
+  "validationScope": "Deterministic packaging, identity, metadata budgets, canvas geometry/runs, decoded asset sizes. See acceptance results for production parser tests.",
+  "version": "1.0.0",
+  "ycpsVersion": "1.1.0"
+}

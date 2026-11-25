@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "example-skill",
+  "version": "0.0.1",
+  "description": "用于验证技能包导入与展示流程的最小占位示例，不提供特定业务领域能力。",
+  "author": {
+    "name": "Yuzhi"
+  },
+  "license": "Proprietary",
+  "extensions": {
+    "com.yuzhihuihe.ycps": {
+      "ycpsVersion": "1.0.0",
+      "kind": "SKILL",
+      "entrySkill": "example-skill",
+      "manifest": "./com.yuzhihuihe.ycps/manifest.json",
+      "requiredFeatures": []
+    }
+  }
+}

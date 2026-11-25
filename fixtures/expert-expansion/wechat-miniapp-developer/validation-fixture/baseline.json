@@ -1,0 +1,12 @@
+{
+  "exitCode": 1,
+  "hashes": {
+    "AGENTS.md": "7c2e75e673d9fe5ba08069daa62d2fa47d57b7af07414540beffd4bd070a5bbe",
+    "package.json": "1cc8834f3d0d688f4a6ff858df143e2e6200d07452fce5720cf7939348edc602",
+    "USER-NOTES.md": "168029ea3bdefeeb1d84666974b030734f68be59f4f234b5ca0a2d3409ce6851",
+    "search-controller.mjs": "254aea70dc84d98a386421403734145c922eeb1181d6d24b14f0fcaaf729e3f8",
+    "search-controller.test.mjs": "b7e235f91dab58280839661ee80529c8cf3b019bbbbe744175cb96d57aced081"
+  },
+  "gitStatus": "M USER-NOTES.md",
+  "scope": "Synthetic callback transport; no network or WeChat runtime."
+}

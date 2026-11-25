@@ -1,0 +1,42 @@
+{
+  "expert": "news-briefing-expert",
+  "status": "completed_local_trial",
+  "skillSha256": "7449B29832AF054152D41F8F6E18816EF94A0C4BA2CAB410B754AE439C01E651",
+  "readFiles": [
+    "SKILL.md",
+    "references/deliverable-templates.md",
+    "references/worked-example.md",
+    "validation-fixture/input.json"
+  ],
+  "createdFiles": [
+    "validation-fixture/output/brief.md",
+    "validation-fixture/output/sources.csv",
+    "validation-fixture/trial-result.json",
+    "validation-fixture/trial-response.md"
+  ],
+  "executedChecks": [
+    "Get-FileHash -Algorithm SHA256 on SKILL.md",
+    "Node parsed input.json and sources.csv, verified seven source IDs and file labels and all supplied UTC publication and event times",
+    "Node converted each UTC timestamp to Asia/Shanghai and checked every written CSV local time; classified each publication as within, before, or after the supplied window",
+    "Read brief.md and verified all seven source citations include both the local source ID and file label",
+    "Verified brief has two grouped confirmed dynamics, with N2 and N3 attached to the N1 event rather than counted separately"
+  ],
+  "timeChecks": {
+    "windowStartAsiaShanghai": "2026-10-07 08:00+08:00",
+    "asOfAsiaShanghai": "2026-10-08 08:00+08:00",
+    "N1Published": "2026-10-07 09:00+08:00",
+    "N1Event": "2026-10-07 02:00+08:00",
+    "N3CorrectionPublished": "2026-10-07 19:00+08:00",
+    "N4Published": "2026-10-08 07:00+08:00",
+    "N4RestoredAt": "2026-10-08 06:00+08:00",
+    "N5AfterCutoff": "2026-10-08 08:30+08:00",
+    "N7BeforeWindow": "2026-10-07 07:00+08:00"
+  },
+  "unverified": [
+    "Actual N1.txt through N7.txt file contents; only file labels and summaries in input.json were provided and used",
+    "Original websites, current versions, and any real-world news or service state",
+    "Actual retrieval time, absent from supplied material",
+    "Independent confirmation of anonymous N6 rumor or affected-user count for N4"
+  ],
+  "externalActions": "none"
+}

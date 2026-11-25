@@ -1,0 +1,833 @@
+{
+  "canvas": {
+    "en": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "One sentence"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": ", turn a goal into a checked result"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "Goal · sources · format · checks"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "Use two quotes and an offline requirement to advise a manager. Compare twelve-month costs."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "User-provided quotes only; vendor terms and tax are unchecked."
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 36,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "One-page decision brief"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "field": "preview.intro",
+          "height": 42,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "text": "Filter by the hard requirement, then compare costs."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 328
+        },
+        {
+          "field": "preview.table",
+          "height": 172,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "Input / Deliverable / Check"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              25,
+              45,
+              30
+            ],
+            "headers": [
+              "Input",
+              "Deliverable",
+              "Check"
+            ],
+            "rows": [
+              [
+                "Goal",
+                "One-page recommendation",
+                "Matches request"
+              ],
+              [
+                "Quotes",
+                "Show 12-month formula",
+                "Reproducible"
+              ],
+              [
+                "Offline need",
+                "Exclude failing option",
+                "From supplied facts"
+              ]
+            ]
+          },
+          "width": 520,
+          "x": 48,
+          "y": 380
+        },
+        {
+          "field": "title",
+          "height": 38,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "Adaptive Delivery Expert"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 70,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "Turn a request into a usable document, table, file edit, or action list. Match the format to the task and verify what was actually delivered."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 272
+        },
+        {
+          "field": "usageGuide",
+          "height": 92,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "State the goal, audience, deadline, and any source material or file requirements. The expert picks a practical format, completes the work, and reports its verification scope."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 352
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Choose format"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 198
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Deliver files"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 198
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "Check result"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 226
+        },
+        {
+          "field": "prompt.0",
+          "height": 70,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Turn these six meeting notes into an action list; use only the owners and dates actually stated."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 458
+        },
+        {
+          "field": "prompt.1",
+          "height": 70,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Update this budget sheet with monthly totals and flags, then check formulas and sample figures."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 536
+        },
+        {
+          "field": "prompt.2",
+          "height": 70,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "Use two quotes and one hard requirement to make a one-page decision brief; flag facts that remain unverified."
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 614
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 56,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "The conclusion uses only the supplied quotes and features; vendor terms and tax still need checking."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 566
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 56,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "If a file exists, verify the edit and path. If writing is unavailable, provide the full result inline."
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 628
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    },
+    "zh": {
+      "height": 704,
+      "nodes": [
+        {
+          "field": "preview.heading",
+          "height": 42,
+          "id": "preview-heading",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#5574b5",
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "一句话"
+            },
+            {
+              "fontSize": 22,
+              "fontWeight": 700,
+              "text": "，把目标变成可验收成果"
+            }
+          ],
+          "width": 560,
+          "x": 32,
+          "y": 28
+        },
+        {
+          "field": "preview.scene",
+          "height": 28,
+          "id": "preview-scene",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "目标 · 材料 · 格式 · 核验"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 78
+        },
+        {
+          "field": "preview.request",
+          "height": 88,
+          "id": "preview-request",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 14,
+              "text": "根据两份报价和离线使用要求，给经理一页选型建议；总费用按十二个月算。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 116
+        },
+        {
+          "field": "preview.material",
+          "height": 52,
+          "id": "preview-material",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#64748b",
+              "fontSize": 13,
+              "text": "仅有用户提供的报价；尚未核验供应商与税费。"
+            }
+          ],
+          "width": 536,
+          "x": 32,
+          "y": 204
+        },
+        {
+          "field": "preview.outputTitle",
+          "height": 36,
+          "id": "preview-outputTitle",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 18,
+              "fontWeight": 700,
+              "text": "一页选型建议"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "field": "preview.intro",
+          "height": 42,
+          "id": "preview-intro",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "text": "先满足硬性要求，再比较可算出的成本。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 328
+        },
+        {
+          "field": "preview.table",
+          "height": 172,
+          "id": "preview-table",
+          "kind": "table",
+          "runs": [
+            {
+              "color": "#3152a0",
+              "fontSize": 13,
+              "fontWeight": 700,
+              "text": "输入 / 本次交付 / 核验状态"
+            }
+          ],
+          "style": {
+            "backgroundColor": "#ffffff",
+            "borderColor": "#d8e2f3",
+            "borderRadius": 8,
+            "overflow": "auto"
+          },
+          "table": {
+            "columnWidths": [
+              25,
+              45,
+              30
+            ],
+            "headers": [
+              "输入",
+              "本次交付",
+              "核验状态"
+            ],
+            "rows": [
+              [
+                "目标",
+                "一页建议与依据",
+                "对齐请求"
+              ],
+              [
+                "报价",
+                "列公式与十二月成本",
+                "可复算"
+              ],
+              [
+                "离线需求",
+                "筛除不符合方案",
+                "据所给材料"
+              ]
+            ]
+          },
+          "width": 520,
+          "x": 48,
+          "y": 380
+        },
+        {
+          "field": "title",
+          "height": 38,
+          "id": "title",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#182a47",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "text": "自适应成果交付专家"
+            }
+          ],
+          "width": 338,
+          "x": 710,
+          "y": 150
+        },
+        {
+          "field": "description",
+          "height": 70,
+          "id": "description",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 14,
+              "text": "把模糊请求落成恰当的文稿、表格、文件修改或操作清单；按实际材料与工具交付，明确证据范围和可验收结果。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 272
+        },
+        {
+          "field": "usageGuide",
+          "height": 92,
+          "id": "usageGuide",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "说清想达成什么、给谁使用和期限；提供已有材料、文件或格式要求。专家会选择最省事的可用形式，完成成果并标出真实验证范围。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 352
+        },
+        {
+          "assetRole": "illustration",
+          "field": "asset.illustration",
+          "height": 136,
+          "id": "asset-illustration",
+          "kind": "image",
+          "width": 410,
+          "x": 638,
+          "y": 0
+        },
+        {
+          "assetRole": "icon",
+          "field": "asset.icon",
+          "height": 58,
+          "id": "asset-icon",
+          "kind": "image",
+          "width": 58,
+          "x": 638,
+          "y": 150
+        },
+        {
+          "field": "tag.0",
+          "height": 22,
+          "id": "tag-0",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "成果格式选择"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 198
+        },
+        {
+          "field": "tag.1",
+          "height": 22,
+          "id": "tag-1",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "文件与内容交付"
+            }
+          ],
+          "width": 160,
+          "x": 880,
+          "y": 198
+        },
+        {
+          "field": "tag.2",
+          "height": 22,
+          "id": "tag-2",
+          "kind": "tag",
+          "runs": [
+            {
+              "fontSize": 12,
+              "text": "完整性核验"
+            }
+          ],
+          "width": 160,
+          "x": 710,
+          "y": 226
+        },
+        {
+          "field": "prompt.0",
+          "height": 70,
+          "id": "prompt-0",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "把这六条会议纪要整理成发给团队的行动清单，责任人和日期只用原文里的信息。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 458
+        },
+        {
+          "field": "prompt.1",
+          "height": 70,
+          "id": "prompt-1",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "现有预算表需要新增月度合计和异常标记；请直接改文件，并核对公式与样例数字。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 536
+        },
+        {
+          "field": "prompt.2",
+          "height": 70,
+          "id": "prompt-2",
+          "kind": "card",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "我要给经理一页决策建议，材料只有两家报价和一项硬性需求；选合适格式并标明尚未核实的信息。"
+            }
+          ],
+          "width": 410,
+          "x": 638,
+          "y": 614
+        },
+        {
+          "field": "preview.outputParagraphs.0",
+          "height": 56,
+          "id": "preview-outputParagraphs-0",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "结论只覆盖已给报价与功能描述；供应商条款和税费列为待核。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 566
+        },
+        {
+          "field": "preview.outputParagraphs.1",
+          "height": 56,
+          "id": "preview-outputParagraphs-1",
+          "kind": "text",
+          "runs": [
+            {
+              "color": "#475569",
+              "fontSize": 13,
+              "text": "若有现成文件，核对修改后的内容与路径；无法写文件则交付完整内联稿。"
+            }
+          ],
+          "width": 520,
+          "x": 48,
+          "y": 628
+        }
+      ],
+      "version": 1,
+      "width": 1080
+    }
+  },
+  "description": "把模糊请求落成恰当的文稿、表格、文件修改或操作清单；按实际材料与工具交付，明确证据范围和可验收结果。",
+  "descriptionEn": "Turn a request into a usable document, table, file edit, or action list. Match the format to the task and verify what was actually delivered.",
+  "exampleImageLocale": "zh",
+  "examplePrompts": [
+    "把这六条会议纪要整理成发给团队的行动清单，责任人和日期只用原文里的信息。",
+    "现有预算表需要新增月度合计和异常标记；请直接改文件，并核对公式与样例数字。",
+    "我要给经理一页决策建议，材料只有两家报价和一项硬性需求；选合适格式并标明尚未核实的信息。"
+  ],
+  "examplePromptsEn": [
+    "Turn these six meeting notes into an action list; use only the owners and dates actually stated.",
+    "Update this budget sheet with monthly totals and flags, then check formulas and sample figures.",
+    "Use two quotes and one hard requirement to make a one-page decision brief; flag facts that remain unverified."
+  ],
+  "name": "自适应成果交付专家",
+  "nameEn": "Adaptive Delivery Expert",
+  "preview": {
+    "heading": "一句话，把目标变成可验收成果",
+    "intro": {
+      "text": "先满足硬性要求，再比较可算出的成本。",
+      "tone": "accent"
+    },
+    "material": "仅有用户提供的报价；尚未核验供应商与税费。",
+    "outputParagraphs": [
+      "结论只覆盖已给报价与功能描述；供应商条款和税费列为待核。",
+      "若有现成文件，核对修改后的内容与路径；无法写文件则交付完整内联稿。"
+    ],
+    "outputTitle": "一页选型建议",
+    "request": "根据两份报价和离线使用要求，给经理一页选型建议；总费用按十二个月算。",
+    "scene": "目标 · 材料 · 格式 · 核验",
+    "table": {
+      "columnWidths": [
+        25,
+        45,
+        30
+      ],
+      "headers": [
+        "输入",
+        "本次交付",
+        "核验状态"
+      ],
+      "rows": [
+        [
+          "目标",
+          "一页建议与依据",
+          "对齐请求"
+        ],
+        [
+          "报价",
+          "列公式与十二月成本",
+          "可复算"
+        ],
+        [
+          "离线需求",
+          "筛除不符合方案",
+          "据所给材料"
+        ]
+      ]
+    }
+  },
+  "previewEn": {
+    "heading": "One sentence, turn a goal into a checked result",
+    "intro": {
+      "text": "Filter by the hard requirement, then compare costs.",
+      "tone": "accent"
+    },
+    "material": "User-provided quotes only; vendor terms and tax are unchecked.",
+    "outputParagraphs": [
+      "The conclusion uses only the supplied quotes and features; vendor terms and tax still need checking.",
+      "If a file exists, verify the edit and path. If writing is unavailable, provide the full result inline."
+    ],
+    "outputTitle": "One-page decision brief",
+    "request": "Use two quotes and an offline requirement to advise a manager. Compare twelve-month costs.",
+    "scene": "Goal · sources · format · checks",
+    "table": {
+      "columnWidths": [
+        25,
+        45,
+        30
+      ],
+      "headers": [
+        "Input",
+        "Deliverable",
+        "Check"
+      ],
+      "rows": [
+        [
+          "Goal",
+          "One-page recommendation",
+          "Matches request"
+        ],
+        [
+          "Quotes",
+          "Show 12-month formula",
+          "Reproducible"
+        ],
+        [
+          "Offline need",
+          "Exclude failing option",
+          "From supplied facts"
+        ]
+      ]
+    }
+  },
+  "summary": "依据目标、受众、证据和约束选定交付形式，直接完成可用成果，并核对完整性、来源、数字及实际保存状态。",
+  "summaryEn": "Choose a useful deliverable from the goal, audience, evidence, and constraints; complete it and check its contents, figures, sources, and save status.",
+  "taskTypes": [
+    "成果格式选择",
+    "文件与内容交付",
+    "完整性核验"
+  ],
+  "taskTypesEn": [
+    "Choose format",
+    "Deliver files",
+    "Check result"
+  ],
+  "usageGuide": "说清想达成什么、给谁使用和期限；提供已有材料、文件或格式要求。专家会选择最省事的可用形式，完成成果并标出真实验证范围。",
+  "usageGuideEn": "State the goal, audience, deadline, and any source material or file requirements. The expert picks a practical format, completes the work, and reports its verification scope."
+}

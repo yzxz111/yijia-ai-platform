@@ -1,0 +1,797 @@
+{
+  "checkedAtUtc": "2026-10-08T07:47:50.356438+00:00",
+  "status": "passed",
+  "scope": "Normal administrator login followed exclusively by GET requests; complete current catalog inventory, category fields/covers, uploaded package identity/bytes, Expert presentation and referenced media, recorded rosters. No cloud content write or download-session creation.",
+  "apiBase": "http://127.0.0.1:18081",
+  "catalogSha256": "4eb7361436f53e80003696cd64a02cb9295a4f683c7657ad6ca1a92cf2d080b5",
+  "packagesChecked": 18,
+  "assetsChecked": 65,
+  "expertPresentationsChecked": 17,
+  "checks": [
+    {
+      "kind": "asset",
+      "label": "category.tencent-expert",
+      "file": "images/categories/tencent-expert-cover.png",
+      "sha256": "08ba3f004d0396818aab524a276413c6de9b3f9e5694c3fc88e20fd4ba71d7c8"
+    },
+    {
+      "kind": "asset",
+      "label": "category.product-design",
+      "file": "images/categories/product-design-cover.png",
+      "sha256": "bb1802b7419b3d1ae23cab741796ca6950c99d83515bbe494d690ee5b6de67c9"
+    },
+    {
+      "kind": "asset",
+      "label": "category.engineering",
+      "file": "images/categories/engineering-cover.png",
+      "sha256": "f5e4489094baf0ff6ed21f64629d5efcda131ef7f9e8ffccbd0aebb7534a342e"
+    },
+    {
+      "kind": "asset",
+      "label": "category.investment",
+      "file": "images/categories/investment-cover.png",
+      "sha256": "7ae648998d01219dd617fd472082b05c0908b2bdc8afd24ce4cd944b95ba393e"
+    },
+    {
+      "kind": "asset",
+      "label": "category.global-growth",
+      "file": "images/categories/global-growth-cover.png",
+      "sha256": "32e9e47eda8fa5500c2e194388cae851bf301125c85ea093dd44300048f50157"
+    },
+    {
+      "kind": "asset",
+      "label": "category.learning",
+      "file": "images/categories/learning-cover.png",
+      "sha256": "ceefecd918c7d2a393a6625c5b4d68396db49b3bdeb462c08366f24845e7b614"
+    },
+    {
+      "kind": "asset",
+      "label": "category.gaming",
+      "file": "images/categories/gaming-cover.png",
+      "sha256": "3fab8ff2547811c14c9fa8f4a89ff94d3729ba42696a06367859b25c13a6a777"
+    },
+    {
+      "kind": "asset",
+      "label": "category.data-intelligence",
+      "file": "images/categories/data-intelligence-cover.png",
+      "sha256": "91300e0fe455a02bf07f82b9e8383a501286846857c00a5feddb8280d889ead3"
+    },
+    {
+      "kind": "asset",
+      "label": "category.marketing-growth",
+      "file": "images/categories/marketing-growth-cover.png",
+      "sha256": "f081acddc4028521deeb884af84b43c35514600b0f563558bab74297706caf83"
+    },
+    {
+      "kind": "asset",
+      "label": "category.content-creation",
+      "file": "images/categories/content-creation-cover.webp",
+      "sha256": "148f893511c0b66002fad790388391b52f26635e21ffeb4079e30a782e0f7d2b"
+    },
+    {
+      "kind": "asset",
+      "label": "category.sales-business",
+      "file": "images/categories/sales-business-cover.webp",
+      "sha256": "7875db7fbee8a3d51cc3c867404e56299d91ff263faca84ee5dedeead1e3446d"
+    },
+    {
+      "kind": "asset",
+      "label": "category.office-productivity",
+      "file": "images/categories/office-productivity-cover.webp",
+      "sha256": "4900ecce273350e052a73a49667bd09629ba0da9015bdc749de080468a98d4ed"
+    },
+    {
+      "kind": "asset",
+      "label": "category.project-quality",
+      "file": "images/categories/project-quality-cover.png",
+      "sha256": "54e5158283ca5c07e1f31da43e30fca369fd959b5788b19cc628612a282bf1a4"
+    },
+    {
+      "kind": "asset",
+      "label": "category.legal-security",
+      "file": "images/categories/legal-security-cover.png",
+      "sha256": "fcc8d4931812aa14c2692dfeb3984f430cd0d78b30aa5d35f6e09041fedd6d66"
+    },
+    {
+      "kind": "asset",
+      "label": "category.industry-advisory",
+      "file": "images/categories/industry-advisory-cover.png",
+      "sha256": "3cbff929bcf05fb4bb30fd090b555fdbfd6c0e9f7f873dd8db70542bf33af170"
+    },
+    {
+      "kind": "package",
+      "code": "academic-writing-mentor",
+      "version": "1.0.0",
+      "revision": 1,
+      "sha256": "acd754b4338509749364493e9ea9a67269f8467e458d3a8d82b7452c514f8b12",
+      "bytes": 93127
+    },
+    {
+      "kind": "presentation",
+      "code": "academic-writing-mentor",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn",
+        "canvas"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "academic-writing-mentor.icon",
+      "file": "images/skills/academic-writing-mentor-icon.png",
+      "sha256": "649c39fae13058dc43c4bb22e041a8c811cb1dfd07f0b6a2bf05f65bb33c6040"
+    },
+    {
+      "kind": "asset",
+      "label": "academic-writing-mentor.illustration",
+      "file": "images/skills/academic-writing-mentor-illustration.png",
+      "sha256": "3dcb97d20a9b2e49d77ce79cd821252e72629b2959a7a3cb3134ef55eb0ba6d5"
+    },
+    {
+      "kind": "asset",
+      "label": "academic-writing-mentor.example_image",
+      "file": "images/skills/academic-writing-mentor-example.png",
+      "sha256": "58c934f8e17f62ebf693e33b183dc8875a9c019e5abd6de0b0ede919d0d57064"
+    },
+    {
+      "kind": "package",
+      "code": "adaptive-delivery-expert",
+      "version": "1.0.0",
+      "revision": 1,
+      "sha256": "0f510e904d3546dceedfa2fe6cb408efd5a724301673760384582d82cd9011dd",
+      "bytes": 96166
+    },
+    {
+      "kind": "presentation",
+      "code": "adaptive-delivery-expert",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn",
+        "canvas"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "adaptive-delivery-expert.icon",
+      "file": "images/skills/adaptive-delivery-expert-icon.png",
+      "sha256": "6e38959827452675b86ccdcf19f8d25eeb0a332f6843a58ffed02b97e39b5f8d"
+    },
+    {
+      "kind": "asset",
+      "label": "adaptive-delivery-expert.illustration",
+      "file": "images/skills/adaptive-delivery-expert-illustration.png",
+      "sha256": "3d336dfd3eb8775b674298d1d9192f35c141a4766956bb90bb46fd401be2343c"
+    },
+    {
+      "kind": "asset",
+      "label": "adaptive-delivery-expert.example_image",
+      "file": "images/skills/adaptive-delivery-expert-example.png",
+      "sha256": "ed92258a312f52d6a767c9e240c9b29eecc3990dff7caa2c4b70b5343e93db40"
+    },
+    {
+      "kind": "package",
+      "code": "ai-learning-assistant",
+      "version": "1.0.0",
+      "revision": 12,
+      "sha256": "38c104271e0e94a30fbcc7445d919bfa68019d79c5b84b71e551b58451ba4771",
+      "bytes": 101046
+    },
+    {
+      "kind": "presentation",
+      "code": "ai-learning-assistant",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn",
+        "canvas"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "ai-learning-assistant.icon",
+      "file": "images/skills/ai-learning-assistant-icon.webp",
+      "sha256": "fcb44058e4ced90df02f5a45ec8fce969472f909f9dcbb1db9911305eb3b1fbe"
+    },
+    {
+      "kind": "asset",
+      "label": "ai-learning-assistant.illustration",
+      "file": "images/skills/ai-learning-assistant-illustration.webp",
+      "sha256": "4543fb8d67127324041fa3aebf723b1e16c9c20082768b42f70b71cb26a828a1"
+    },
+    {
+      "kind": "package",
+      "code": "ai-office-assistant",
+      "version": "1.0.0",
+      "revision": 9,
+      "sha256": "058021b5eacbc97119ff901a0148e814f43a969e2942e59b4471165f5a806715",
+      "bytes": 151802
+    },
+    {
+      "kind": "presentation",
+      "code": "ai-office-assistant",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn",
+        "canvas"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "ai-office-assistant.icon",
+      "file": "images/skills/ai-office-assistant-icon.png",
+      "sha256": "736d0fe15864b546829677c36bc565a53e0c3a549be9ea2cc54c7f01688dca2a"
+    },
+    {
+      "kind": "asset",
+      "label": "ai-office-assistant.illustration",
+      "file": "images/skills/ai-office-assistant-illustration.webp",
+      "sha256": "bc378b3cf2348f4a2fff96b439718ce9577580edd66269c711de2e8d24147145"
+    },
+    {
+      "kind": "asset",
+      "label": "ai-office-assistant.example_image",
+      "file": "images/skills/ai-office-assistant-example.png",
+      "sha256": "17b0070f8dc27feccf269120949a997a917c2af8d5f0615437d1ccd5b1c21201"
+    },
+    {
+      "kind": "package",
+      "code": "content-summarizer",
+      "version": "1.0.0",
+      "revision": 7,
+      "sha256": "0f35a51f7ecef53e3b3ba70a6077bc13a90b133e146b02dbdbeb34875d50cbbb",
+      "bytes": 150235
+    },
+    {
+      "kind": "presentation",
+      "code": "content-summarizer",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "content-summarizer.icon",
+      "file": "images/skills/content-summarizer-icon.png",
+      "sha256": "fb72c370955f12126b43d84223509529a65254864faa9fd5a7ea1d528e33e48d"
+    },
+    {
+      "kind": "asset",
+      "label": "content-summarizer.illustration",
+      "file": "images/skills/content-summarizer-illustration.webp",
+      "sha256": "b56ab06e76d3e406a06af75b7de8ca0b360862667457f4966c878839f0de79b9"
+    },
+    {
+      "kind": "asset",
+      "label": "content-summarizer.example_image",
+      "file": "images/skills/content-summarizer-example.png",
+      "sha256": "ba09d7d33e08199f15e159d5340ab3e0047d80083b225fa60316445ccef162f0"
+    },
+    {
+      "kind": "package",
+      "code": "content-writing-expert",
+      "version": "1.0.0",
+      "revision": 4,
+      "sha256": "9a24576cb17d619a2a4378528a1c39a09bb04fbb74a44be082f31af56abafd2c",
+      "bytes": 151572
+    },
+    {
+      "kind": "presentation",
+      "code": "content-writing-expert",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "content-writing-expert.icon",
+      "file": "images/skills/content-writing-expert-icon.png",
+      "sha256": "88735e5b73f747daea4e007c550b17fd9808760faa8fab1c92febb448bb4a0bd"
+    },
+    {
+      "kind": "asset",
+      "label": "content-writing-expert.illustration",
+      "file": "images/skills/content-writing-expert-illustration.webp",
+      "sha256": "e0060efc534378912e56338f815f371861d3fd72fd7d00575033c7ef70f24d98"
+    },
+    {
+      "kind": "asset",
+      "label": "content-writing-expert.example_image",
+      "file": "images/skills/content-writing-expert-example.png",
+      "sha256": "5747c5bea91d980d385b0cdb87b75cb26b180a1fb72808e1e2cc5ef10d582bfd"
+    },
+    {
+      "kind": "package",
+      "code": "design-system-architect",
+      "version": "1.0.0",
+      "revision": 1,
+      "sha256": "aef1317e95b72061a9572af9fbd3444ddb8716897ad7b04d7c935cdbcbaf63ad",
+      "bytes": 61909
+    },
+    {
+      "kind": "presentation",
+      "code": "design-system-architect",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn",
+        "canvas"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "design-system-architect.icon",
+      "file": "images/skills/design-system-architect-icon.png",
+      "sha256": "61ea2c45e562b1fd56d4db17770c27628100c90c35e5277b39e3a251240fa3f8"
+    },
+    {
+      "kind": "asset",
+      "label": "design-system-architect.illustration",
+      "file": "images/skills/design-system-architect-illustration.png",
+      "sha256": "a1c5b83a66199bbd9e571262d97dceb9342b15d58d2ca6b1af24033cd63c6f88"
+    },
+    {
+      "kind": "asset",
+      "label": "design-system-architect.example_image",
+      "file": "images/skills/design-system-architect-example.png",
+      "sha256": "9d500e56657b515d98dcb8d437f4f93b97ec6b186fa38950c527939a6b685a4c"
+    },
+    {
+      "kind": "package",
+      "code": "document-review-expert",
+      "version": "1.0.0",
+      "revision": 6,
+      "sha256": "4e4379ff2349712587e99e55eddf5f87dbae088d9750586fda882bc109a5544c",
+      "bytes": 165242
+    },
+    {
+      "kind": "presentation",
+      "code": "document-review-expert",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "document-review-expert.icon",
+      "file": "images/skills/document-review-expert-icon.png",
+      "sha256": "ac279afdd9607a99914154b2b4518b7e5a94734a2ab8b377a00d5fb983001ec6"
+    },
+    {
+      "kind": "asset",
+      "label": "document-review-expert.illustration",
+      "file": "images/skills/document-review-expert-illustration.webp",
+      "sha256": "4c71bdc663f60dbbfca2297cf1ce14fe656436a945fa571f6e8252cd1c5eee53"
+    },
+    {
+      "kind": "asset",
+      "label": "document-review-expert.example_image",
+      "file": "images/skills/document-review-expert-example.png",
+      "sha256": "ac9cc4c1ba361c13d23a41b18a03ba20274c2ecddba11527fbf321487591cd86"
+    },
+    {
+      "kind": "package",
+      "code": "fullstack-delivery-expert",
+      "version": "1.0.0",
+      "revision": 1,
+      "sha256": "b9a13365bf887e485ffac7f71076cf9cd41095494ae028b608ac38bc73099e8b",
+      "bytes": 64008
+    },
+    {
+      "kind": "presentation",
+      "code": "fullstack-delivery-expert",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn",
+        "canvas"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "fullstack-delivery-expert.icon",
+      "file": "images/skills/fullstack-delivery-expert-icon.png",
+      "sha256": "43827389e0ba778114ba85dca0c7e1028e14eb21c36fed8af3812ae51636b6c5"
+    },
+    {
+      "kind": "asset",
+      "label": "fullstack-delivery-expert.illustration",
+      "file": "images/skills/fullstack-delivery-expert-illustration.png",
+      "sha256": "4222b2b4a4cdf7435f0a2238149919084d5e9c5d542dbe1ed42ad242fb058ca0"
+    },
+    {
+      "kind": "asset",
+      "label": "fullstack-delivery-expert.example_image",
+      "file": "images/skills/fullstack-delivery-expert-example.png",
+      "sha256": "52e57daf1ef11b32646ee3d04fc7792ae06c26831bd8661a16df80600481d2c9"
+    },
+    {
+      "kind": "package",
+      "code": "news-briefing-expert",
+      "version": "1.0.0",
+      "revision": 1,
+      "sha256": "7f913ce13cfd053feb9ef5c01c64f7e4553b7fd9ef28c151cf3f12b036a3d5ef",
+      "bytes": 106896
+    },
+    {
+      "kind": "presentation",
+      "code": "news-briefing-expert",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn",
+        "canvas"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "news-briefing-expert.icon",
+      "file": "images/skills/news-briefing-expert-icon.png",
+      "sha256": "50859214d966c8ac7dcf989ec56f071880797855dd44286f59fb23e4bc2ff8c7"
+    },
+    {
+      "kind": "asset",
+      "label": "news-briefing-expert.illustration",
+      "file": "images/skills/news-briefing-expert-illustration.png",
+      "sha256": "356f10e187e88cdacc6188f1843d1d98063f4d835a9f58d42e7166911002b73c"
+    },
+    {
+      "kind": "asset",
+      "label": "news-briefing-expert.example_image",
+      "file": "images/skills/news-briefing-expert-example.png",
+      "sha256": "6d0ea9b1d0cf6271ff35fc283722620d038866e6aa3c2fe8b545d61aef40999a"
+    },
+    {
+      "kind": "package",
+      "code": "sales-analysis-expert",
+      "version": "1.0.0",
+      "revision": 6,
+      "sha256": "5b074d784eea0b909d83fb052de2d1ecc9ae14946aad3307dbd2caa791b45a3a",
+      "bytes": 136746
+    },
+    {
+      "kind": "presentation",
+      "code": "sales-analysis-expert",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "sales-analysis-expert.icon",
+      "file": "images/skills/sales-analysis-expert-icon.png",
+      "sha256": "9b14d07184db3688067da9c0b6aacdcc15e68149ba44ca74b67d911be0176555"
+    },
+    {
+      "kind": "asset",
+      "label": "sales-analysis-expert.illustration",
+      "file": "images/skills/sales-analysis-expert-illustration.webp",
+      "sha256": "7e609ad829e05792cd43b02b13a88397541e9858a081bb1f8caf41ce389a2d71"
+    },
+    {
+      "kind": "asset",
+      "label": "sales-analysis-expert.example_image",
+      "file": "images/skills/sales-analysis-expert-example.png",
+      "sha256": "b95b5f9cffbcbe3ca3b801fc03a2c6f78abbc8188c8447dac3ce09d471d4d540"
+    },
+    {
+      "kind": "package",
+      "code": "senior-software-engineer",
+      "version": "1.0.0",
+      "revision": 1,
+      "sha256": "8b0aacd81151fc5ede6a64744bc87bd59e09ce7d6f04fc433377c131c0dedafb",
+      "bytes": 84724
+    },
+    {
+      "kind": "presentation",
+      "code": "senior-software-engineer",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn",
+        "canvas"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "senior-software-engineer.icon",
+      "file": "images/skills/senior-software-engineer-icon.png",
+      "sha256": "dd058e5f68282ae415f22e71eb2e8e9f3d4aece3e6ccff90663dc8c63909a3fd"
+    },
+    {
+      "kind": "asset",
+      "label": "senior-software-engineer.illustration",
+      "file": "images/skills/senior-software-engineer-illustration.png",
+      "sha256": "2371cda4768aed936e046c33f68c375ccc205b51cfaa2592d94e6e5be12bc09d"
+    },
+    {
+      "kind": "asset",
+      "label": "senior-software-engineer.example_image",
+      "file": "images/skills/senior-software-engineer-example.png",
+      "sha256": "508d53094404efa849f7a9db90cf3dd09c2c318fc3ebcc4b8f9c675332b8ca7e"
+    },
+    {
+      "kind": "package",
+      "code": "social-media-operations-expert",
+      "version": "1.0.0",
+      "revision": 4,
+      "sha256": "3ac27da205d6841c3b2ceccc2544666f31713b94be561814b41c7e0d7e8e5560",
+      "bytes": 162540
+    },
+    {
+      "kind": "presentation",
+      "code": "social-media-operations-expert",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "social-media-operations-expert.icon",
+      "file": "images/skills/social-media-operations-expert-icon.png",
+      "sha256": "9894114a6b203123f9609c43bb3bf7336f82e45ae34d252fe7d4d9294ddb2243"
+    },
+    {
+      "kind": "asset",
+      "label": "social-media-operations-expert.illustration",
+      "file": "images/skills/social-media-operations-expert-illustration.webp",
+      "sha256": "879faef211de3c77b27f235c1f8d40ef9325678182339be2a4b686982bb800fa"
+    },
+    {
+      "kind": "asset",
+      "label": "social-media-operations-expert.example_image",
+      "file": "images/skills/social-media-operations-expert-example.png",
+      "sha256": "efb7ac312243414b306c2255e60a64277610c1fbfa55999ae3aa030e3c5d149e"
+    },
+    {
+      "kind": "package",
+      "code": "startup-partner",
+      "version": "1.0.0",
+      "revision": 1,
+      "sha256": "a6cb8ed8b6e5368be89eb2033c2ee70ef12081c58a072ac23e7d62e2db2a8a19",
+      "bytes": 74985
+    },
+    {
+      "kind": "presentation",
+      "code": "startup-partner",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn",
+        "canvas"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "startup-partner.icon",
+      "file": "images/skills/startup-partner-icon.png",
+      "sha256": "03e032e1839c635a819476696a9ae1903476c98191dbff02324cbaf6a4e89d05"
+    },
+    {
+      "kind": "asset",
+      "label": "startup-partner.illustration",
+      "file": "images/skills/startup-partner-illustration.png",
+      "sha256": "9f14eeffb34b8c1c1682a2b5b8318e94528419eeae3683fc80a3771495d4ec7a"
+    },
+    {
+      "kind": "asset",
+      "label": "startup-partner.example_image",
+      "file": "images/skills/startup-partner-example.png",
+      "sha256": "893b4b07b7ca36320cf7697abccfba5e87d0fdd2e8b3cf8a5a1890284df0984f"
+    },
+    {
+      "kind": "package",
+      "code": "wechat-miniapp-developer",
+      "version": "1.0.0",
+      "revision": 1,
+      "sha256": "ce6024f823feafbe6f94c3ba8b49ce2082aabcfa42846aec15e09a49d4720e73",
+      "bytes": 89410
+    },
+    {
+      "kind": "presentation",
+      "code": "wechat-miniapp-developer",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn",
+        "canvas"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "wechat-miniapp-developer.icon",
+      "file": "images/skills/wechat-miniapp-developer-icon.png",
+      "sha256": "274f91ae7b9debf6f2750c36f59ce5dda144395956386966ab679e01d73265e1"
+    },
+    {
+      "kind": "asset",
+      "label": "wechat-miniapp-developer.illustration",
+      "file": "images/skills/wechat-miniapp-developer-illustration.png",
+      "sha256": "e1ab389c6ca89817c696a6a61c50b253dfa4555f0a20f3b37303b6152799f71d"
+    },
+    {
+      "kind": "asset",
+      "label": "wechat-miniapp-developer.example_image",
+      "file": "images/skills/wechat-miniapp-developer-example.png",
+      "sha256": "38603b11263a451a44ebcfa26b1cdf8e1a907486e368d945e2f7eacad3813b56"
+    },
+    {
+      "kind": "package",
+      "code": "wechat-official-account-operator",
+      "version": "1.0.0",
+      "revision": 1,
+      "sha256": "02f469e5ba771cb0a1c56aa7fed22165a0876e513b111088a400935715e1d585",
+      "bytes": 94214
+    },
+    {
+      "kind": "presentation",
+      "code": "wechat-official-account-operator",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn",
+        "canvas"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "wechat-official-account-operator.icon",
+      "file": "images/skills/wechat-official-account-operator-icon.png",
+      "sha256": "39e8f47087fb972cc7e1abc7b602bf4d668e3217914d3a863407d96aa74b8f94"
+    },
+    {
+      "kind": "asset",
+      "label": "wechat-official-account-operator.illustration",
+      "file": "images/skills/wechat-official-account-operator-illustration.png",
+      "sha256": "0b3e619d9eb2347cf439536f272862dc84c99bb7b24a7e857102de0e61edbb6f"
+    },
+    {
+      "kind": "asset",
+      "label": "wechat-official-account-operator.example_image",
+      "file": "images/skills/wechat-official-account-operator-example.png",
+      "sha256": "88c937e951b2a9fd984640d1cb95d68321064391bb88a7978fc3120476ff7813"
+    },
+    {
+      "kind": "package",
+      "code": "workspace-builder",
+      "version": "1.0.0",
+      "revision": 1,
+      "sha256": "be989cca0d7fe90bf06abefe4fd15623b98b5383622545f46cb78a5dc5ea6a9f",
+      "bytes": 60267
+    },
+    {
+      "kind": "presentation",
+      "code": "workspace-builder",
+      "fields": [
+        "taskTypes",
+        "taskTypesEn",
+        "usageGuide",
+        "usageGuideEn",
+        "examplePrompts",
+        "examplePromptsEn",
+        "preview",
+        "previewEn",
+        "canvas"
+      ]
+    },
+    {
+      "kind": "asset",
+      "label": "workspace-builder.icon",
+      "file": "images/skills/workspace-builder-icon.png",
+      "sha256": "b20647a0bdf65cabb112e832a87373a58cfc60aab0567190402dcefdaeb6d0d0"
+    },
+    {
+      "kind": "asset",
+      "label": "workspace-builder.illustration",
+      "file": "images/skills/workspace-builder-illustration.png",
+      "sha256": "348f489acde8579310cde4abbe2fc8eb4bd99e258a0cb4e8e66137787cc76b8d"
+    },
+    {
+      "kind": "asset",
+      "label": "workspace-builder.example_image",
+      "file": "images/skills/workspace-builder-example.png",
+      "sha256": "862d158dc5f11bb47ac390dd2f3b9b5d99f988cb5e7e101524141d8442cf3a9a"
+    },
+    {
+      "kind": "package",
+      "code": "content-writer",
+      "version": "1.0.0",
+      "revision": 2,
+      "sha256": "d247fc6c95fbf844290fde207099f79579f54ee7e92b43c787f34ae5bf1f912c",
+      "bytes": 2801
+    }
+  ],
+  "failures": []
+}

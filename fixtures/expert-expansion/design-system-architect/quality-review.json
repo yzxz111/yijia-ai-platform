@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-08",
+  "code": "design-system-architect",
+  "status": "reviewed",
+  "artifactSha256": "aef1317e95b72061a9572af9fbd3444ddb8716897ad7b04d7c935cdbcbaf63ad",
+  "sourceSha256": {
+    "specs/design-system-architect.json": "8c507526baa4e24890a30221249037298ea2901f6a84df09edd5d9da39e17cbf",
+    "design-system-architect/SKILL.md": "199141eb4ff577f2ba2debe65a7c7f9db197a0bb06545064550aabba73d5ad52",
+    "design-system-architect/references/deliverable-templates.md": "30399705db18726aaa6850ddd06df8ddd5469e4a1c808edcf728b501c90f79bb",
+    "design-system-architect/references/worked-example.md": "a08ea0dffaebcab9d918a50e48927cab1eab2aea20433f5b429636aa5df37c11"
+  },
+  "focus": "语义变量、组件状态、实际消费方与键盘操作",
+  "scope": "Parent and independent agent static review of instructions, 10 specific cases, templates and worked example; not 10 executed host conversations.",
+  "independentEvidence": "正文与模板区分 token 映射、真实消费方和运行验证；示例悬停仅对非禁用按钮生效，静态映射检查明确不证明浏览器键盘行为或 WCAG 整体符合。",
+  "resolvedIssues": [
+    "正文明确两份参考资料的读取路径。",
+    "示例 hover/active 限定为非禁用控件。"
+  ],
+  "openIssues": [],
+  "actualTrial": "execution-validation.json",
+  "independentReport": "../remaining-independent-review.json"
+}

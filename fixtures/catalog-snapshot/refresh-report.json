@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "completedAtUtc": "2026-10-08T08:01:51.015645+00:00",
+  "status": "passed",
+  "source": {
+    "apiBase": "http://127.0.0.1:18081",
+    "database": "api_model_platform/gateway"
+  },
+  "scope": "Current authoritative uploaded YCPS package per entry, category covers and expert presentation/media; historical revisions and external-source skill bodies are not duplicated.",
+  "counts": {
+    "uploadedPackages": 18,
+    "experts": 17,
+    "ordinarySkills": 1,
+    "categories": 22,
+    "categoryCovers": 15,
+    "expertImages": 50,
+    "totalImages": 65,
+    "members": 7,
+    "builtinSkillIdentities": 12,
+    "externalSourceInventoryEntries": 5
+  },
+  "changes": {
+    "addedPackages": [
+      "academic-writing-mentor",
+      "adaptive-delivery-expert",
+      "ai-learning-assistant",
+      "design-system-architect",
+      "fullstack-delivery-expert",
+      "news-briefing-expert",
+      "senior-software-engineer",
+      "startup-partner",
+      "wechat-miniapp-developer",
+      "wechat-official-account-operator",
+      "workspace-builder"
+    ],
+    "replacedChangedPackages": [],
+    "unchangedPackages": [
+      "ai-office-assistant",
+      "content-summarizer",
+      "content-writer",
+      "content-writing-expert",
+      "document-review-expert",
+      "sales-analysis-expert",
+      "social-media-operations-expert"
+    ],
+    "removedFromActiveSnapshot": [
+      "ecommerce-ops"
+    ],
+    "removalReason": "These entries are absent from the source cloud current catalog. No cloud deletion was performed. The previous local fixture is preserved in the backup.",
+    "addedCategoryCovers": [
+      "EXPERT/data-intelligence",
+      "EXPERT/engineering",
+      "EXPERT/gaming",
+      "EXPERT/global-growth",
+      "EXPERT/industry-advisory",
+      "EXPERT/investment",
+      "EXPERT/learning",
+      "EXPERT/legal-security",
+      "EXPERT/marketing-growth",
+      "EXPERT/product-design",
+      "EXPERT/project-quality",
+      "EXPERT/tencent-expert"
+    ],
+    "replacedChangedCategoryCovers": [],
+    "unchangedCategoryCovers": [
+      "EXPERT/content-creation",
+      "EXPERT/office-productivity",
+      "EXPERT/sales-business"
+    ],
+    "removedCategoryCovers": []
+  },
+  "overwriteBehavior": "Export validates all downloaded bytes and manifest in a staging directory, then replaces the active fixture. Package paths use stable code-version filenames; source file_name is retained as metadata. Changed same-name packages are overwritten with the downloaded bytes. Only obsolete previously managed package/image references are removed.",
+  "backup": {
+    "workspaceRelativePath": ".scratch/catalog-snapshot-refresh-20261008/before.zip",
+    "sha256": "6ff5446b1771f4f26cb60c62a033f9ed0384e985ee55d046f91a9918752def1a",
+    "requiredForCurrentRestore": false
+  },
+  "verification": {
+    "cloudByteComparison": {
+      "status": "passed",
+      "packagesChecked": 18,
+      "imagesChecked": 65,
+      "expertPresentationsChecked": 17
+    },
+    "offlineTests": {
+      "checkedAt": "2026-10-08T07:47:39.843439+00:00",
+      "status": "passed",
+      "testsRun": 71,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "modules": [
+        "scripts.test_export_catalog_snapshot",
+        "scripts.test_restore_catalog_snapshot",
+        "scripts.test_catalog_snapshot",
+        "scripts.test_cloud_repro_manifest",
+        "scripts.test_verify_catalog_snapshot"
+      ],
+      "manifestMatches": true
+    },
+    "restorePreview": {
+      "checkedAt": "2026-10-08T07:47:37.400585+00:00",
+      "emptyTargetSimulation": {
+        "status": "passed",
+        "scope": "Local fake empty target; no network",
+        "readOperations": 19,
+        "contentWriteOperations": 0
+      },
+      "currentCloud": {
+        "status": "passed",
+        "scope": "Current source environment; auth login then GET-only restore preview",
+        "readOperations": 61,
+        "contentWriteOperations": 0
+      },
+      "actualRestorePerformed": false,
+      "transcriptsVersioned": false
+    },
+    "currentHighRevisionSimulation": {
+      "checkedAtUtc": "2026-10-08T07:54:51.538824+00:00",
+      "scope": "Local HTTP double using the actual ai-learning-assistant snapshot row; no network and no real restore. READY successors are unsealed, matching production insertVersion and publish-only sealing.",
+      "code": "ai-learning-assistant",
+      "sourceRevision": 12,
+      "cases": [
+        {
+          "initialRevision": null,
+          "initialSealed": false,
+          "finalRevision": 12,
+          "finalStatus": "PUBLISHED",
+          "packageUploads": 1,
+          "packageReplacements": 11,
+          "portableGenerationCalls": 0,
+          "status": "passed"
+        },
+        {
+          "initialRevision": 2,
+          "initialSealed": true,
+          "finalRevision": 12,
+          "finalStatus": "PUBLISHED",
+          "packageUploads": 0,
+          "packageReplacements": 9,
+          "portableGenerationCalls": 1,
+          "status": "passed"
+        }
+      ],
+      "productionEvidence": [
+        "gateway-service/src/main/resources/db/migration/V57__ycps_package_protocol.sql:46",
+        "gateway-service/src/main/java/com/yuzhihuihe/apiplatform/gateway/skill/SkillVersionRepository.java:683",
+        "gateway-service/src/main/java/com/yuzhihuihe/apiplatform/gateway/skill/SkillVersionRepository.java:881",
+        "gateway-service/src/main/java/com/yuzhihuihe/apiplatform/gateway/skill/SkillPackageIngestService.java:277"
+      ],
+      "actualRestorePerformed": false
+    },
+    "desktopProjection": {
+      "status": "passed",
+      "testsPassed": 2,
+      "environment": "Isolated temporary Vitest 4.1.11 and Vite 7.3.1; unchanged repository dependency files.",
+      "defaultRunnerLimitation": "Existing repository Vitest 4 / Vite 5 combination failed before running tests with ERR_PACKAGE_PATH_NOT_EXPORTED for vite/module-runner.",
+      "updatedFiles": [
+        {
+          "workspaceRelativePath": "yuzai/tests/fixtures/cloud-skill-catalog/manifest.json",
+          "sha256": "0e725bc5ff649ad80bbba8d2fb1a1aca15c493353a6bd71b7d9bd50e8be7da2b"
+        },
+        {
+          "workspaceRelativePath": "yuzai/tests/fixtures/cloud-skill-catalog/README.md",
+          "sha256": "3aa09925a490debd01a01facae018b750902ef02f823a432d6f251d629d0f083"
+        },
+        {
+          "workspaceRelativePath": "yuzai/tests/cloudPackageReproManifest.test.ts",
+          "sha256": "a1d18cf974384bd33c000ddd692907de54400313e0fe2916747639648e569c84"
+        }
+      ]
+    },
+    "packageAndImageDirectoriesContainExactlyReferencedFiles": true
+  },
+  "cloudContentWritesPerformed": false,
+  "actualRestorePerformed": false,
+  "knownSourceState": [
+    "ai-learning-assistant has no separate directory example image. Its released ZIP contains its own example asset; both facts are preserved without rewriting the ZIP.",
+    "Operational tags are empty for the 11 newly captured Experts and remain [ycps] for the original six curated Experts. Business taskTypes are separate."
+  ],
+  "limitations": [
+    "Only the current authoritative uploaded package per entry is archived, not every historical revision.",
+    "External-source Skill entries have metadata inventory only and are excluded from YCPS restore.",
+    "Restore validation used offline tests, a simulated empty target, and a GET-only preview against the current source. No real target restore was performed.",
+    "Generated database ids, object keys and timestamps are expected to differ in a new target.",
+    "Existing higher revisions and complete administrator presentation are preserved by the restore tool. The active local snapshot nevertheless stores the current source bytes."
+  ],
+  "evidenceFiles": [
+    {
+      "file": "catalog.json",
+      "sha256": "4eb7361436f53e80003696cd64a02cb9295a4f683c7657ad6ca1a92cf2d080b5"
+    },
+    {
+      "file": "repro-manifest.json",
+      "sha256": "c64617658e6707e56434f668f3569704f9d37bf0ba43ac7959c2c7df26223c50"
+    },
+    {
+      "file": "builtin-skills.json",
+      "sha256": "ec9c7ab0e54c19ced856ea6b77834ba140ecd0b14d4dc51b980205c66a25e452"
+    },
+    {
+      "file": "external-skills-inventory.json",
+      "sha256": "720459450a240bd6252c89a6dc66421ae71cc5d9dc4ed2a5881fad16489d6fd1"
+    },
+    {
+      "file": "cloud-byte-verification.json",
+      "sha256": "ad54e0e573a03aacb271da65f5a0249923ee13b5bd758986d1c478f871583b5d"
+    }
+  ],
+  "generatedEvidenceRetention": {
+    "rawReportsAndTranscriptsVersioned": false,
+    "summaryPreservedInline": true,
+    "reason": "Single-run test output and dry-run transcripts are rebuildable local artifacts, not restore inputs."
+  }
+}

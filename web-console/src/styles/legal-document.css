@@ -1,0 +1,96 @@
+/* 服务条款与隐私政策文档共用的排版样式。
+   全局（非 scoped）：同一份标记既渲染在路由页面中，也渲染在
+   body 被 teleport 到 <body> 的 Element Plus 对话框里。 */
+
+.legal-document h2 {
+  margin: 22px 0 8px;
+  color: var(--app-fg);
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.legal-document p,
+.legal-document li {
+  margin: 0 0 10px;
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.legal-document ul {
+  margin: 0 0 10px;
+  padding-left: 22px;
+}
+
+.legal-document__meta {
+  margin: 0;
+  color: var(--app-muted-strong);
+  font-size: 13px;
+}
+
+.legal-document__placeholder {
+  margin: 24px 0 0;
+  padding: 12px 14px;
+  color: var(--app-muted-strong);
+  background: var(--app-primary-soft);
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* 对话框外框：文档滚动时保持头部与底部固定。 */
+.legal-document-dialog.el-dialog {
+  display: flex;
+  max-height: min(84vh, 760px);
+  flex-direction: column;
+  border-radius: 12px;
+}
+
+.legal-document-dialog .el-dialog__header {
+  flex: 0 0 auto;
+  margin-right: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--app-border);
+}
+
+.legal-document-dialog .el-dialog__body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 4px 20px 8px;
+}
+
+.legal-document-dialog .el-dialog__footer {
+  flex: 0 0 auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--app-border);
+}
+
+.legal-document-dialog__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.legal-document-dialog__heading strong {
+  color: var(--app-fg);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.legal-document-dialog__actions {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+@media (max-width: 767px) {
+  .legal-document-dialog.el-dialog {
+    max-height: 88vh;
+  }
+
+  .legal-document-dialog .el-dialog__body {
+    padding: 4px 14px 8px;
+  }
+}
